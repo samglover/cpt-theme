@@ -2,7 +2,9 @@
 
 function theme_setup() {
 
+  add_theme_support( 'custom-logo', [ 'height' => 480, 'width'  => 720, 'flex-width' => true ] );
   add_theme_support( 'editor-styles' );
+  add_theme_support( 'html5' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'title-tag' );
@@ -15,6 +17,15 @@ function theme_setup() {
 }
 
 add_action( 'after_setup_theme', 'theme_setup' );
+
+
+function image_sizes() {
+
+  add_image_size( 'tiny', 0, 90 );
+
+}
+
+add_action( 'after_setup_theme', 'image_sizes' );
 
 
 function register_stylesheets_scripts() {

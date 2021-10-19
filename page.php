@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-<div id="content">
+  <main id="content">
 
-  <?php get_template_part( 'template-parts/loop', 'single' ); ?>
+    <?php get_template_part( 'template-parts/loop', 'single' ); ?>
 
-</div>
+  </main>
 
 <?php get_footer(); ?>

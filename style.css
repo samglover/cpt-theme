@@ -14,3 +14,44 @@ html {
   font-size: 62.5%; /* 10px */
   line-height: 1;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+#header {
+  margin: 0 0 4rem 0;
+  padding: 2rem;
+}
+
+#header.has-custom-logo {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-areas: 'logo title-tagline';
+  grid-template-columns: min-content 1fr;
+}
+
+.site-logo {
+  align-self: center;
+  grid-area: logo;
+}
+
+#title-tagline {
+  align-self: center;
+  grid-area: title-tagline;
+}
+
+#title {
+
+}
+
+#title a {
+  color: Black;
+  text-decoration: none;
+}
+
+#tagline {
+  font-size:
+}

@@ -1,3 +1,9 @@
+<?php
+
+namespace CPT_Sites;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,16 +20,48 @@
 
   <?php wp_body_open(); ?>
 
-	<header id="header">
+  <?php
 
-		<?php if ( is_front_page() ) { ?>
+    if ( get_theme_mod( 'custom_logo' ) ) {
+      $header_class = ' class="has-custom-logo"';
+    } else {
+      $header_class = '';
+    }
 
-			<h1 id="title"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+  ?>
 
-		<?php } else { ?>
+	<header id="header"<?php header_class(); ?>>
 
-			<p id="title"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></p>
+    <?php
 
-		<?php } ?>
+      if ( get_theme_mod( 'custom_logo' ) ) {
+        echo wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'tiny', false,
+          [
+            'class' => 'site-logo',
+            'alt'   => get_bloginfo( 'title' ),
+          ]
+        );
+      }
+
+      echo '<div id="title-tagline">';
+
+        if ( get_option( 'cpt_sites_show_site_title' ) ) {
+
+          if ( is_front_page() ) {
+            echo '<h1 id="title"><a href="' . home_url() . '">' . get_bloginfo( 'name' ) . '</a></h1>';
+          } else {
+            echo '<p id="title"><a href="' . home_url() . '">' . get_bloginfo( 'name' ) . '</a></p>';
+          }
+
+        }
+
+        if ( get_option( 'cpt_sites_show_site_tagline' ) ) {
+          echo '<p id="tagline">' . get_bloginfo( 'description' ) . '</p>';
+        }
+
+      echo '</div>';
+
+    ?>
+
 
 	</header>
