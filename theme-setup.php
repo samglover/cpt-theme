@@ -1,5 +1,7 @@
 <?php
 
+namespace CPT_Sites\Theme_Setup;
+
 function theme_setup() {
 
   add_theme_support( 'custom-logo', [ 'height' => 480, 'width'  => 720, 'flex-width' => true ] );
@@ -16,7 +18,7 @@ function theme_setup() {
 
 }
 
-add_action( 'after_setup_theme', 'theme_setup' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\theme_setup' );
 
 
 function image_sizes() {
@@ -25,7 +27,7 @@ function image_sizes() {
 
 }
 
-add_action( 'after_setup_theme', 'image_sizes' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\image_sizes' );
 
 
 function register_stylesheets_scripts() {
@@ -36,4 +38,14 @@ function register_stylesheets_scripts() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'register_stylesheets_scripts' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_stylesheets_scripts' );
+
+
+/**
+ * Register Nav Menus
+ */
+function register_nav_menus() {
+  register_nav_menu( 'header-menu', __( 'Header Menu', 'cpt-sites' ) );
+}
+
+add_action( 'after_setup_theme', __NAMESPACE__ . '\register_nav_menus' );

@@ -104,6 +104,8 @@ function google_fonts_head() {
 
         #title,
         #title a,
+        #tagline,
+        #header-menu a,
         h1, h1 a,
         h2, h2 a,
         h3, h3 a,

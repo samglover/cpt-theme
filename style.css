@@ -21,52 +21,141 @@ body {
 }
 
 
+/**
+ * Typography
+ */
+
+* {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+#title,
+#tagline,
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+#title {
+  font-size: 3.516rem;
+  margin: 0;
+}
+
+  #title a {
+    color: #111;
+    font-size: inherit;
+    text-decoration: none;
+  }
+
+#tagline {
+  color: #666;
+  font-weight: normal;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4.395rem;
+}
+
+h2 {
+  font-size: 3.516rem;
+}
+
+h3 {
+  font-size: 2.813rem;
+}
+
+h4 {
+  font-size: 2.25rem;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 1.44rem;
+  text-transform: uppercase;
+}
+
+small {
+  font-size: 1.44rem;
+}
+
+
+/**
+ * Header
+ */
+
 #header {
   margin: 0 0 4rem 0;
-  padding: 2rem;
+  padding: 1rem 2rem;
   position: relative;
 }
 
-#header::after {
-  background-color: Black;
-  content: '';
-  opacity: .1;
-  position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  z-index: -1;
-}
+  #header::after {
+    background-color: Black;
+    content: '';
+    opacity: .1;
+    position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    z-index: -1;
+  }
 
 #header.has-custom-logo {
   display: grid;
   grid-gap: 2rem;
-  grid-template-areas: 'logo title-tagline';
-  grid-template-columns: min-content 1fr;
+  grid-template-areas: 'logo title-tagline header-menu';
+  grid-template-columns: repeat( 3, max-content );
 }
 
-.site-logo {
-  align-self: center;
-  grid-area: logo;
+  .site-logo {
+    align-self: center;
+    grid-area: logo;
+  }
+
+  #title-tagline {
+    align-self: center;
+    grid-area: title-tagline;
+  }
+
+  #header-menu {
+    align-self: center;
+    grid-area: header-menu;
+  }
+
+  #header-menu ul.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #header-menu > ul > li {
+    display: inline-block;
+  }
+
+  #header-menu a {
+    text-decoration: none;
+  }
+
+
+/**
+ * Content
+ */
+
+#content {
+  margin: 0 auto;
+  padding: 0 2rem;
+  max-width: 104rem;
 }
 
-#title-tagline {
-  align-self: center;
-  grid-area: title-tagline;
-}
 
-#title {
-}
+/**
+ * Footer
+ */
 
-#title a {
-  color: Black;
-  text-decoration: none;
-}
-
-#tagline {
-}
-
-#footer {
-
-}
+ #footer {
+   margin: 4rem 0 0 0;
+   padding: 2rem;
+ }

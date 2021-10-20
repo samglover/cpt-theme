@@ -61,6 +61,13 @@ namespace CPT_Sites;
 
       echo '</div>';
 
+      wp_nav_menu(
+        [
+          'menu'          => 'header-menu',
+          'container_id'  => 'header-menu'
+        ]
+      );
+
     ?>
 
 
