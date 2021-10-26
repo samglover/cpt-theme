@@ -25,7 +25,7 @@ body {
  * Typography
  */
 
-* {
+body {
   font-size: 1.8rem;
   line-height: 1.5;
 }
@@ -107,7 +107,7 @@ small {
   display: grid;
   grid-gap: 2rem;
   grid-template-areas: 'logo title-tagline header-menu';
-  grid-template-columns: repeat( 3, max-content );
+  grid-template-columns: max-content max-content minmax( min-content, auto );
 }
 
   .site-logo {
@@ -126,17 +126,42 @@ small {
   }
 
   #header-menu ul.menu {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    float: right;
+    justify-content: flex-end;
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  #header-menu > ul > li {
-    display: inline-block;
+  #header-menu > ul > li:not( :last-child ) {
+    margin-right: 1em;
   }
 
   #header-menu a {
+    display: block;
     text-decoration: none;
+    white-space: nowrap;
+  }
+
+  #header-menu .menu-item-has-children {
+    position: relative;
+  }
+
+  #header-menu .menu-item-has-children:hover > .sub-menu {
+    display: block;
+  }
+
+  #header-menu .sub-menu {
+    background-color: rgba( 255, 255, 255, 0.75 );
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+    position: absolute;
+      right: 0;
   }
 
 
