@@ -13,8 +13,25 @@ function menuCollapser() {
   let subMenuContainer    = document.querySelector( '#header-menu .collapsed-menu' );
   let subMenu             = document.querySelector( '#header-menu .collapsed-menu > .sub-menu' );
 
-  // console.log( 'The menu container is ' + menuContainerWidth + ' pixels wide.' );
-  // console.log( 'The menu is ' + headerMenuWidth + ' pixels wide.' );
+  if ( menuContainerWidth > headerMenuWidth && subMenuContainer ) {
+
+    let subMenuItems  = document.querySelectorAll( '#header-menu .collapsed-menu > .sub-menu > li' );
+    headerMenuItems   = document.querySelectorAll( '#header-menu ul.menu > li:not( .collapsed-menu )' );
+
+    subMenuItems.forEach( function( e ) {
+
+      let item = subMenu.removeChild( e );
+      headerMenu.appendChild( item );
+
+      subMenuItems = document.querySelectorAll( '#header-menu .collapsed-menu > .sub-menu > li' );
+
+    });
+
+    headerMenu.removeChild( subMenuContainer );
+
+    menuCollapser();
+
+  }
 
   if ( menuContainerWidth <= headerMenuWidth ) {
 
@@ -42,8 +59,7 @@ function menuCollapser() {
     }
 
     let headerMenuItems = document.querySelectorAll( '#header-menu ul.menu > li:not( .collapsed-menu )' );
-
-    let i = headerMenuItems.length - 1;
+    let i               = headerMenuItems.length - 1;
 
     while ( menuContainerWidth <= headerMenuWidth && i >= 0 ) {
 
@@ -55,39 +71,6 @@ function menuCollapser() {
       // Re-measure the container and menu widths. (Usually the container
       // doesn't change unless the window is resized, but sometimes it doesn't
       // load properly at narrow widths.)
-      menuContainerWidth  = document.querySelector( '#header-menu' ).offsetWidth;
-      headerMenuWidth     = document.querySelector( '#header-menu  ul.menu' ).offsetWidth;
-
-      // console.log( 'The menu container is now ' + menuContainerWidth + ' pixels wide.' );
-      // console.log( 'The menu is now ' + headerMenuWidth + ' pixels wide.' );
-
-      i--;
-
-    }
-
-  } else if ( menuContainerWidth > headerMenuWidth && subMenuContainer ) {
-
-    console.log( 'Needs to grow!' );
-
-    headerMenuItems   = document.querySelectorAll( '#header-menu ul.menu > li:not( .collapsed-menu )' );
-    let subMenuItems  = document.querySelectorAll( '#header-menu .collapsed-menu > .sub-menu > li' );
-
-    let i = subMenuItems.length - 1;
-
-    while ( menuContainerWidth > headerMenuWidth && i >= 0 ) {
-
-      if ( subMenuItems.length > 0 ) {
-
-        if ( ( subMenuItems.item( 0 ).offsetWidth + headerMenuWidth ) > menuContainerWidth ) {
-          headerMenuItems.appendChild( subMenuItems.item( 0 ) );
-        }
-
-      } else {
-
-        headerMenuItems.removeChild( subMenuContainer );
-
-      }
-
       menuContainerWidth  = document.querySelector( '#header-menu' ).offsetWidth;
       headerMenuWidth     = document.querySelector( '#header-menu  ul.menu' ).offsetWidth;
 
