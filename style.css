@@ -38,20 +38,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #title {
+  display: block;
   font-size: 3.516rem;
   margin: 0;
+  padding: 0;
 }
 
   #title a {
     color: #111;
+    display: block;
     font-size: inherit;
+    margin: 0;
+    padding: 0;
     text-decoration: none;
   }
 
 #tagline {
   color: #666;
+  display: block;
   font-weight: normal;
   margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -68,6 +75,9 @@ h3 {
 
 h4 {
   font-size: 2.25rem;
+}
+
+h5 {
   text-transform: uppercase;
 }
 
@@ -86,27 +96,19 @@ small {
  */
 
 #header {
+  background-color: rgba( 0, 0, 0, .2 );
   margin: 0 0 4rem 0;
   padding: 1rem 2rem;
-  position: relative;
 }
 
-  #header::after {
-    background-color: Black;
-    content: '';
-    opacity: .1;
-    position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    z-index: -1;
-  }
+#header.show-primary-menu {
+  margin-bottom: 0;
+}
 
 #header.has-custom-logo {
   display: grid;
   grid-gap: 2rem;
-  grid-template-areas: 'logo title-tagline header-menu';
+  grid-template-areas: 'logo title-tagline primary-menu';
   grid-template-columns: max-content max-content minmax( min-content, auto );
 }
 
@@ -120,49 +122,113 @@ small {
     grid-area: title-tagline;
   }
 
-  #header-menu {
-    align-self: center;
-    grid-area: header-menu;
-  }
 
-  #header-menu ul.menu {
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    float: right;
-    justify-content: flex-end;
+  /* Nav Menus */
+
+  .menu,
+  .sub-menu {
+    display: block;
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  #header-menu > ul > li:not( :last-child ) {
+  .menu > .menu-item {
+    display: inline-block;
     margin-right: 1em;
+    position: relative;
   }
 
-  #header-menu a {
+  .menu > .menu-item:last-child {
+    margin-right: unset;
+  }
+
+  .menu a,
+  .menu a:visited {
+    color: DarkSlateGray;
     display: block;
     text-decoration: none;
     white-space: nowrap;
   }
 
-  #header-menu .menu-item-has-children {
-    position: relative;
+  .menu a:hover,
+  .menu a:focus {
+    text-decoration: underline;
   }
 
-  #header-menu .menu-item-has-children:hover > .sub-menu {
+  .menu > .menu-item-has-children > a:hover,
+  .menu > .menu-item-has-children > a:focus {
+    text-decoration: none;
+  }
+
+  .menu > .menu-item-has-children:not( .collapsed-menu ) > a::after {
+    color: LightSlateGray;
+    content: '\02009\0002B';
+  }
+
+  .menu > .menu-item-has-children > .sub-menu {
+    background-color: WhiteSmoke;
+    border: 1px solid SlateGray;
+    box-shadow: .1rem .1rem .3rem rgba( 0, 0, 0, .25 );
+    display: none;
+    padding: 1rem 2rem;
+    position: absolute;
+      left: 0;
+    z-index: 10;
+  }
+
+  .menu > .menu-item-has-children:hover > .sub-menu {
     display: block;
   }
 
-  #header-menu .sub-menu {
-    background-color: rgba( 255, 255, 255, 0.75 );
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding: 1rem;
-    position: absolute;
+  .menu > .menu-item-has-children:last-child > .sub-menu {
       right: 0;
+      left: unset;
   }
+
+  .sub-menu > .menu-item {
+    display: block;
+    margin-bottom: .25em;
+  }
+
+  .sub-menu > .menu-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .sub-menu .sub-menu {
+    background-color: unset;
+    border: unset;
+    box-shadow: unset;
+    color: LightSlateGray;
+    display: block;
+    list-style-type: disc;
+    margin: 0 0 0 2rem;
+    padding: 0;
+    position: unset;
+  }
+
+  .sub-menu .sub-menu .menu-item {
+    display: list-item;
+  }
+
+  #primary-menu {
+    align-self: center;
+    grid-area: primary-menu;
+  }
+
+  #primary-menu > .menu {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    float: right;
+  }
+
+#secondary-menu {
+  background-color: rgba( 0, 0, 0, .1 );
+  font-size: 90%;
+  margin-bottom: 4rem;
+  padding: 1rem 2rem;
+}
 
 
 /**

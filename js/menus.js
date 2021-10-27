@@ -5,25 +5,25 @@
  */
 function menuCollapser() {
 
-  let menuContainerWidth  = document.querySelector( '#header-menu' ).offsetWidth;
+  let menuContainerWidth  = document.querySelector( '#primary-menu' ).offsetWidth;
 
-  let headerMenu          = document.querySelector( '#header-menu ul.menu' );
+  let headerMenu          = document.querySelector( '#primary-menu ul.menu' );
   let headerMenuWidth     = headerMenu.offsetWidth;
 
-  let subMenuContainer    = document.querySelector( '#header-menu .collapsed-menu' );
-  let subMenu             = document.querySelector( '#header-menu .collapsed-menu > .sub-menu' );
+  let subMenuContainer    = document.querySelector( '#primary-menu .collapsed-menu' );
+  let subMenu             = document.querySelector( '#primary-menu .collapsed-menu > .sub-menu' );
 
   if ( menuContainerWidth > headerMenuWidth && subMenuContainer ) {
 
-    let subMenuItems  = document.querySelectorAll( '#header-menu .collapsed-menu > .sub-menu > li' );
-    headerMenuItems   = document.querySelectorAll( '#header-menu ul.menu > li:not( .collapsed-menu )' );
+    let subMenuItems  = document.querySelectorAll( '#primary-menu .collapsed-menu > .sub-menu > li' );
+    headerMenuItems   = document.querySelectorAll( '#primary-menu ul.menu > li:not( .collapsed-menu )' );
 
     subMenuItems.forEach( function( e ) {
 
       let item = subMenu.removeChild( e );
       headerMenu.appendChild( item );
 
-      subMenuItems = document.querySelectorAll( '#header-menu .collapsed-menu > .sub-menu > li' );
+      subMenuItems = document.querySelectorAll( '#primary-menu .collapsed-menu > .sub-menu > li' );
 
     });
 
@@ -46,7 +46,7 @@ function menuCollapser() {
       container.insertAdjacentHTML( 'afterbegin', '<a>&bull;&bull;&bull;</a>' );
       headerMenu.appendChild( container );
 
-      subMenuContainer = document.querySelector( '#header-menu .collapsed-menu' );
+      subMenuContainer = document.querySelector( '#primary-menu .collapsed-menu' );
 
       // Creates the .collapsed-menu submenu.
       let menu = document.createElement( 'ul' );
@@ -54,25 +54,25 @@ function menuCollapser() {
       menu.classList.add( 'sub-menu' );
       subMenuContainer.appendChild( menu );
 
-      subMenu = document.querySelector( '#header-menu .collapsed-menu > .sub-menu' );
+      subMenu = document.querySelector( '#primary-menu .collapsed-menu > .sub-menu' );
 
     }
 
-    let headerMenuItems = document.querySelectorAll( '#header-menu ul.menu > li:not( .collapsed-menu )' );
+    let headerMenuItems = document.querySelectorAll( '#primary-menu ul.menu > li:not( .collapsed-menu )' );
     let i               = headerMenuItems.length - 1;
 
     while ( menuContainerWidth <= headerMenuWidth && i >= 0 ) {
 
       let item          = headerMenu.removeChild( headerMenuItems.item( i ) );
-      let subMenuItems  = document.querySelectorAll( '#header-menu .collapsed-menu > .sub-menu > li' )
+      let subMenuItems  = document.querySelectorAll( '#primary-menu .collapsed-menu > .sub-menu > li' )
 
       subMenu.insertBefore( item, subMenuItems.item( 0 ) );
 
       // Re-measure the container and menu widths. (Usually the container
       // doesn't change unless the window is resized, but sometimes it doesn't
       // load properly at narrow widths.)
-      menuContainerWidth  = document.querySelector( '#header-menu' ).offsetWidth;
-      headerMenuWidth     = document.querySelector( '#header-menu  ul.menu' ).offsetWidth;
+      menuContainerWidth  = document.querySelector( '#primary-menu' ).offsetWidth;
+      headerMenuWidth     = document.querySelector( '#primary-menu  ul.menu' ).offsetWidth;
 
       i--;
 

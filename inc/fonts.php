@@ -102,10 +102,9 @@ function google_fonts_head() {
           font-family: '<?php echo get_option( 'cpt_sites_body' ); ?>';
         }
 
-        #title,
         #title a,
         #tagline,
-        #header-menu a,
+        .menu a,
         h1, h1 a,
         h2, h2 a,
         h3, h3 a,

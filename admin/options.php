@@ -50,6 +50,27 @@ function site_appearance_init() {
 
   register_setting( 'cpt-sites', 'cpt_sites_show_site_tagline' );
 
+  add_settings_field(
+    'cpt_sites_show_primary_menu',
+    '<label for="cpt_sites_show_primary_menu">' . __( 'Primary Menu (In Header)', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_show_primary_menu',
+    'cpt-sites-appearance',
+    'header',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu' );
+
+  add_settings_field(
+    'cpt_sites_show_secondary_menu',
+    '<label for="cpt_sites_show_secondary_menu">' . __( 'Secondary Menu (Below Header)', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_show_secondary_menu',
+    'cpt-sites-appearance',
+    'header',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_show_secondary_menu' );
+
+
   add_settings_section(
     'fonts',
     __( 'Fonts', 'cpt-sites' ),
@@ -158,6 +179,45 @@ function header() {
       echo ob_get_clean();
 
   }
+
+  function cpt_sites_show_primary_menu() {
+
+    ob_start();
+
+        ?>
+
+          <fieldset>
+            <label for="cpt_sites_show_primary_menu">
+              <input name="cpt_sites_show_primary_menu" id="cpt_sites_show_primary_menu" type="checkbox" value="1" <?php checked( get_option( 'cpt_sites_show_primary_menu' ) ); ?>>
+              <?php _e( 'Enable the primary menu in the header.', 'cpt-sites' ); ?>
+            </label>
+          </fieldset>
+
+        <?php
+
+      echo ob_get_clean();
+
+  }
+
+  function cpt_sites_show_secondary_menu() {
+
+    ob_start();
+
+        ?>
+
+          <fieldset>
+            <label for="cpt_sites_show_secondary_menu">
+              <input name="cpt_sites_show_secondary_menu" id="cpt_sites_show_secondary_menu" type="checkbox" value="1" <?php checked( get_option( 'cpt_sites_show_secondary_menu' ) ); ?>>
+              <?php _e( 'Enable the secondary menu below the header.', 'cpt-sites' ); ?>
+            </label>
+          </fieldset>
+
+        <?php
+
+      echo ob_get_clean();
+
+  }
+
 
 function fonts() {
 }

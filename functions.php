@@ -12,11 +12,11 @@ define( 'CPT_SITES_DIR_URI', get_template_directory_uri() );
 /**
  * Theme Files
  */
-require_once( get_template_directory() . '/theme-setup.php' );
-require_once( get_template_directory() . '/inc/fonts.php' );
+require_once( CPT_SITES_DIR_PATH . '/theme-setup.php' );
+require_once( CPT_SITES_DIR_PATH . '/inc/fonts.php' );
 
 if ( is_admin() ) {
-  require_once( get_template_directory() . '/admin/options.php' );
+  require_once( CPT_SITES_DIR_PATH . '/admin/options.php' );
 }
 
 function customizer_options( $wp_customize ) {
@@ -77,8 +77,16 @@ function header_class() {
     $classes[] = 'show-site-tagline';
   }
 
+  if ( get_option( 'cpt_sites_show_primary_menu' ) ) {
+    $classes[] = 'show-primary-menu';
+  }
+
+  if ( get_option( 'cpt_sites_show_secondary_menu' ) ) {
+    $classes[] = 'show-secondary-menu';
+  }
+
   if ( ! empty( $classes ) ) {
-    echo ' class="' . implode( $classes, ' ' ) . '"';
+    echo ' class="' . implode( ' ', $classes ) . '"';
   } else {
     return;
   }

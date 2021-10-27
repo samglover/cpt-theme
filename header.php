@@ -61,14 +61,33 @@ namespace CPT_Sites;
 
       echo '</div>';
 
-      wp_nav_menu(
-        [
-          'menu'          => 'header-menu',
-          'container_id'  => 'header-menu'
-        ]
-      );
+      if ( get_option( 'cpt_sites_show_primary_menu' ) ) {
+
+        wp_nav_menu(
+          [
+            'theme_location'  => 'primary',
+            'container_id'    => 'primary-menu',
+            'fallback_cb'     => false,
+          ]
+        );
+
+      }
 
     ?>
 
 
 	</header>
+
+  <?php
+
+    if ( get_option( 'cpt_sites_show_secondary_menu' ) ) {
+
+      wp_nav_menu([
+        'theme_location'  => 'secondary',
+        'container_id'    => 'secondary-menu',
+        'fallback_cb'     => false,
+      ]);
+
+    }
+
+  ?>
