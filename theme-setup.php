@@ -12,18 +12,14 @@ function theme_setup() {
 
   add_editor_style( 'editor-styles.css' );
 
+  add_image_size( 'tiny', 0, 90 );
+
+  register_nav_menu( 'primary', __( 'Primary Menu (In Header)', 'cpt-sites' ) );
+  register_nav_menu( 'secondary', __( 'Secondary Menu (Below Header)', 'cpt-sites' ) );
+
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\theme_setup' );
-
-
-function image_sizes() {
-
-  add_image_size( 'tiny', 0, 90 );
-
-}
-
-add_action( 'after_setup_theme', __NAMESPACE__ . '\image_sizes' );
 
 
 function register_stylesheets_scripts() {
@@ -38,14 +34,3 @@ function register_stylesheets_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_stylesheets_scripts' );
-
-
-/**
- * Register Menus
- */
-function register_menus() {
-  register_nav_menu( 'primary', __( 'Primary Menu (In Header)', 'cpt-sites' ) );
-  register_nav_menu( 'secondary', __( 'Secondary Menu (Below Header)', 'cpt-sites' ) );
-}
-
-add_action( 'after_setup_theme', __NAMESPACE__ . '\register_menus' );
