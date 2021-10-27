@@ -22,6 +22,24 @@ function theme_setup() {
 add_action( 'after_setup_theme', __NAMESPACE__ . '\theme_setup' );
 
 
+/**
+ * Register Widget Areas
+ */
+function register_widget_areas() {
+
+  register_sidebar(
+    [
+      'id'            => 'footer-widgets',
+      'name'          => __( 'Footer Widget Area' ),
+      'description'   => __( 'Displayed in the footer.' ),
+    ]
+  );
+
+}
+
+add_action( 'widgets_init', __NAMESPACE__ . '\register_widget_areas' );
+
+
 function register_stylesheets_scripts() {
 
   $cache_buster = filemtime( CPT_SITES_DIR_PATH . '/style.css' );

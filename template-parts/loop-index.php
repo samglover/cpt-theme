@@ -1,20 +1,18 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-  <a <?php post_class( 'card post-card' ); ?> href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
+  <div <?php post_class(); ?>>
 
-    <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'medium' ); } ?>
+    <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
-    <div class="headline-excerpt">
+    <div class="thumbnail-excerpt">
 
-      <h2 class="headline"><?php the_title(); ?></h2>
+      <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'medium' ); } ?>
 
-      <?php $excerpt = get_the_excerpt(); ?>
-
-      <p class="excerpt"><?php echo $excerpt; ?></p>
+      <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
 
     </div>
 
-  </a>
+  </div>
 
   <?php endwhile; ?>
 

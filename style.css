@@ -18,6 +18,14 @@ html {
 body {
   margin: 0;
   padding: 0;
+  --heading-color: DarkSlateGray;
+  --link-color: SlateBlue;
+  --link-color-hover: DarkSlateBlue;
+  --menu-color: DarkSlateGray;
+  --menu-color-light: LightSlateGray;
+  --text-color: #111;
+  --text-color-light: SlateGray;
+  --title-color: #111;
 }
 
 
@@ -26,26 +34,32 @@ body {
  */
 
 body {
+  color: var( --text-color );
   font-size: 1.8rem;
   line-height: 1.5;
 }
 
-#title,
-#tagline,
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-  line-height: 1.1;
+a,
+a:visited {
+  color: var( --link-color );
+}
+
+a:hover,
+a:focus {
+  color: var( --link-color-hover );
 }
 
 #title {
   display: block;
   font-size: 3.516rem;
+  font-weight: bold;
+  line-height: 1.1;
   margin: 0;
   padding: 0;
 }
 
   #title a {
-    color: #111;
+    color: var( --title-color );
     display: block;
     font-size: inherit;
     margin: 0;
@@ -54,11 +68,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 
 #tagline {
-  color: #666;
+  color: var( --text-color-light );
   display: block;
   font-weight: normal;
+  line-height: 1.1;
   margin: 0;
   padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var( --heading-color );
+  font-weight: bold;
+  line-height: 1.1;
 }
 
 h1 {
@@ -84,6 +105,14 @@ h5 {
 h6 {
   font-size: 1.44rem;
   text-transform: uppercase;
+}
+
+blockquote,
+p,
+ol,
+ul {
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
 }
 
 small {
@@ -145,7 +174,7 @@ small {
 
   .menu a,
   .menu a:visited {
-    color: DarkSlateGray;
+    color: var( --menu-color );
     display: block;
     text-decoration: none;
     white-space: nowrap;
@@ -153,6 +182,7 @@ small {
 
   .menu a:hover,
   .menu a:focus {
+    color: var( --link-color-hover );
     text-decoration: underline;
   }
 
@@ -162,13 +192,13 @@ small {
   }
 
   .menu > .menu-item-has-children:not( .collapsed-menu ) > a::after {
-    color: LightSlateGray;
+    color: var( --text-color-light );
     content: '\02009\0002B';
   }
 
   .menu > .menu-item-has-children > .sub-menu {
     background-color: WhiteSmoke;
-    border: 1px solid SlateGray;
+    border: 1px solid var( --menu-color-light );
     box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 );
     display: none;
     padding: 1rem 2rem;
@@ -199,7 +229,7 @@ small {
     background-color: unset;
     border: unset;
     box-shadow: unset;
-    color: LightSlateGray;
+    color: var( --menu-color-light );
     display: block;
     list-style-type: disc;
     margin: 0 0 0 2rem;
@@ -241,12 +271,50 @@ small {
   max-width: 104rem;
 }
 
+.post {
+  margin-bottom: 6rem;
+}
+
+.post-title a,
+.post-title a:visited {
+  color: var( --heading-color );
+  text-decoration: none;
+}
+
+.post-title a:hover,
+.post-title a:focus {
+  color: var( --link-color-hover );
+}
+
+.post.has-post-thumbnail .thumbnail-excerpt {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-areas: 'thumbnail excerpt';
+  grid-template-columns: max-content auto;
+}
+
+  .post.has-post-thumbnail .wp-post-image {
+    grid-area: thumbnail;
+  }
+
+  .post.has-post-thumbnail .excerpt {
+    grid-area: excerpt;
+  }
+
 
 /**
  * Footer
  */
 
  #footer {
+   background-color: rgba( 0, 0, 0, .1 );
    margin: 4rem 0 0 0;
    padding: 2rem;
+ }
+
+ #footer-widgets {
+   font-size: 90%;
+   list-style: none;
+   margin: 0;
+   padding: 0;
  }
