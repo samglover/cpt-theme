@@ -22,7 +22,7 @@ body {
   --link-color: SlateBlue;
   --link-color-hover: DarkSlateBlue;
   --menu-color: DarkSlateGray;
-  --menu-color-light: LightSlateGray;
+  --menu-border: LightSlateGray;
   --text-color: #111;
   --text-color-light: SlateGray;
   --title-color: #111;
@@ -107,12 +107,39 @@ h6 {
   text-transform: uppercase;
 }
 
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.wp-caption {
+  max-width: 100%;
+}
+
 blockquote,
 p,
 ol,
 ul {
   line-height: 1.5;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1em 0;
+}
+
+blockquote {
+  border-left: .3rem solid var( --menu-border );
+  padding: 1rem 2rem;
+}
+
+blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+cite {
+  color: var( --text-color-light );
+}
+
+code,
+pre {
+  font-family: monospace;
 }
 
 small {
@@ -198,7 +225,7 @@ small {
 
   .menu > .menu-item-has-children > .sub-menu {
     background-color: WhiteSmoke;
-    border: 1px solid var( --menu-color-light );
+    border: 1px solid var( --menu-border );
     box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 );
     display: none;
     padding: 1rem 2rem;
@@ -229,7 +256,7 @@ small {
     background-color: unset;
     border: unset;
     box-shadow: unset;
-    color: var( --menu-color-light );
+    color: var( --menu-border );
     display: block;
     list-style-type: disc;
     margin: 0 0 0 2rem;
@@ -266,7 +293,7 @@ small {
  */
 
 #content {
-  margin: 0 auto;
+  margin: 0 auto 6rem auto;
   padding: 0 2rem;
   max-width: 104rem;
 }
@@ -318,3 +345,18 @@ small {
    margin: 0;
    padding: 0;
  }
+
+
+/**
+ * Utilities
+ */
+
+.alignright {
+  float: right;
+  margin-left: 1em;
+}
+
+.alignleft {
+  float: left;
+  margin-right: 1em;
+}
