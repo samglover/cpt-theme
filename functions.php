@@ -99,12 +99,12 @@ function header_class() {
     $classes[] = 'show-primary-menu';
   }
 
-  if ( get_option( 'cpt_sites_show_secondary_menu' ) ) {
-    $classes[] = 'show-secondary-menu';
-  }
-
   if ( get_option( 'cpt_sites_show_primary_menu_cta' ) ) {
     $classes[] = 'show-header-cta';
+  }
+
+  if ( get_option( 'cpt_sites_show_secondary_menu' ) ) {
+    $classes[] = 'show-secondary-menu';
   }
 
   if ( ! empty( $classes ) ) {
