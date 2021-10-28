@@ -92,3 +92,34 @@ function header_class() {
   }
 
 }
+
+/**
+ * CSS Variables
+ */
+function css_variables() {
+
+  ob_start();
+
+  ?>
+
+    <style>
+
+      body {
+        --heading-color: <?php echo get_option( 'cpt_sites_heading_color' ); ?>;
+        --menu-text-color: <?php echo get_option( 'cpt_sites_menu_text_color' ); ?>;
+        --menu-border-color: <?php echo get_option( 'cpt_sites_menu_border_color' ); ?>;
+        --text-color: <?php echo get_option( 'cpt_sites_text_color' ); ?>;
+        --text-color-light: <?php echo get_option( 'cpt_sites_text_color_light' ); ?>;
+        --link-color: <?php echo get_option( 'cpt_sites_link_color' ); ?>;
+        --link-color-hover: <?php echo get_option( 'cpt_sites_link_color_hover' ); ?>;
+      }
+
+    </style>
+
+  <?php
+
+  echo ob_get_clean();
+
+}
+
+add_action( 'wp_head', __NAMESPACE__ . '\css_variables' );

@@ -22,6 +22,45 @@ function theme_setup() {
 add_action( 'after_setup_theme', __NAMESPACE__ . '\theme_setup' );
 
 
+function default_options() {
+
+  $default_options = [
+
+    // Heading
+		'cpt_sites_show_site_title'     => true,
+		'cpt_sites_show_site_tagline'	  => true,
+		'cpt_sites_show_primary_menu'	  => true,
+    'cpt_sites_show_secondary_menu' => false,
+
+    // Fonts
+    'cpt_sites_headings'            => 'Josefin Sans',
+    'cpt_sites_body'                => 'Source Serif Pro',
+
+    // Colors
+    'cpt_sites_heading_color'       => '#333333',
+    'cpt_sites_menu_text_color'     => 'DarkSlateGray',
+    'cpt_sites_menu_border_color'   => 'LightSlateGray',
+    'cpt_sites_text_color'          => '#111111',
+    'cpt_sites_text_color_light'    => 'SlateGray',
+    'cpt_sites_link_color'          => 'SlateBlue',
+    'cpt_sites_link_color_hover'    => 'DarkSlateBlue',
+
+
+  ];
+
+  foreach ( $default_options as $key => $val ) {
+
+    if ( ! get_option( $key ) ) {
+      update_option( $key, $val );
+    }
+
+  }
+
+}
+
+add_action( 'after_switch_theme', __NAMESPACE__ . '\default_options' );
+
+
 /**
  * Register Widget Areas
  */
@@ -42,13 +81,23 @@ add_action( 'widgets_init', __NAMESPACE__ . '\register_widget_areas' );
 
 function register_stylesheets_scripts() {
 
-  $cache_buster = filemtime( CPT_SITES_DIR_PATH . '/style.css' );
-	wp_register_style( 'stylesheet', CPT_SITES_DIR_URI . '/style.css', '', $cache_buster, 'all' );
-	wp_enqueue_style( 'stylesheet' );
+	wp_enqueue_style( 'stylesheet', CPT_SITES_DIR_URI . '/style.css', '', filemtime( CPT_SITES_DIR_PATH . '/style.css' ) );
 
-  wp_register_script( 'menus-js', CPT_SITES_DIR_URI . '/js/menus.js', '', '', true );
-	wp_enqueue_script( 'menus-js' );
+	wp_enqueue_script( 'menus-js', CPT_SITES_DIR_URI . '/js/menus.js', '', '', true );
 
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_stylesheets_scripts' );
+
+
+function register_admin_stylesheets_scripts() {
+
+  wp_enqueue_style( 'admin-stylesheet', CPT_SITES_DIR_URI . '/admin/admin-style.css', '', filemtime( CPT_SITES_DIR_PATH . '/admin/admin-style.css' ) );
+
+  // Color Picker
+  wp_enqueue_style( 'wp-color-picker' );
+  wp_enqueue_script( 'color-picker', CPT_SITES_DIR_URI . '/js/color-picker.js', [ 'wp-color-picker' ], '', true );
+
+}
+
+add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\register_admin_stylesheets_scripts' );

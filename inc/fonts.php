@@ -127,12 +127,10 @@ add_action( 'wp_head', __NAMESPACE__ . '\google_fonts_head' );
 
 function enqueue_google_fonts() {
 
-  wp_register_style( 'body-font', 'https://fonts.googleapis.com/css2?family=' . get_font_params( get_option( 'cpt_sites_body' ) ) . '&display=swap' );
-	wp_enqueue_style( 'body-font' );
+	wp_enqueue_style( 'body-font', 'https://fonts.googleapis.com/css2?family=' . get_font_params( get_option( 'cpt_sites_body' ) ) . '&display=swap' );
 
   if ( get_option( 'cpt_sites_body' ) != get_option( 'cpt_sites_headings' ) ) {
-    wp_register_style( 'heading-font', 'https://fonts.googleapis.com/css2?family=' . get_font_params( get_option( 'cpt_sites_headings' ) ) . '&display=swap' );
-  	wp_enqueue_style( 'heading-font' );
+  	wp_enqueue_style( 'heading-font', 'https://fonts.googleapis.com/css2?family=' . get_font_params( get_option( 'cpt_sites_headings' ) ) . '&display=swap' );
   }
 
 }

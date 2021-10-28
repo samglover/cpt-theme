@@ -8,6 +8,8 @@
 
     <?php the_content(); ?>
 
+    <div class="clearfix"></div>
+
     <?php wp_link_pages(); ?>
 
   </div>

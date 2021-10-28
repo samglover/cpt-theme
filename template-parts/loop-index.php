@@ -1,18 +1,22 @@
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php if ( have_posts() ) : ?>
 
-  <div <?php post_class(); ?>>
+  <?php while ( have_posts() ) : the_post(); ?>
 
-    <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+    <div <?php post_class(); ?>>
 
-    <div class="thumbnail-excerpt">
+      <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
-      <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'medium' ); } ?>
+      <div class="thumbnail-excerpt">
 
-      <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
+        <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'medium' ); } ?>
+
+        <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
+
+      </div>
+
+      <div class="clearfix"></div>
 
     </div>
-
-  </div>
 
   <?php endwhile; ?>
 

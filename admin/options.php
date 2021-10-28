@@ -98,6 +98,85 @@ function site_appearance_init() {
 
   register_setting( 'cpt-sites', 'cpt_sites_body' );
 
+
+  add_settings_section(
+    'colors',
+    __( 'Colors', 'cpt-sites' ),
+    __NAMESPACE__ . '\colors',
+    'cpt-sites-appearance',
+  );
+
+  add_settings_field(
+    'cpt_sites_heading_color',
+    '<label for="cpt_sites_heading_color">' . __( 'Heading Color', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_heading_color',
+    'cpt-sites-appearance',
+    'colors',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_heading_color' );
+
+  add_settings_field(
+    'cpt_sites_menu_text_color',
+    '<label for="cpt_sites_menu_text_color">' . __( 'Menu Text Color', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_menu_text_color',
+    'cpt-sites-appearance',
+    'colors',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_menu_text_color' );
+
+  add_settings_field(
+    'cpt_sites_menu_border_color',
+    '<label for="cpt_sites_menu_border_color">' . __( 'Menu Border Color', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_menu_border_color',
+    'cpt-sites-appearance',
+    'colors',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_menu_border_color' );
+
+  add_settings_field(
+    'cpt_sites_text_color',
+    '<label for="cpt_sites_text_color">' . __( 'Text Color', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_text_color',
+    'cpt-sites-appearance',
+    'colors',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_text_color' );
+
+  add_settings_field(
+    'cpt_sites_text_color_light',
+    '<label for="cpt_sites_text_color_light">' . __( 'Text Color (Light)', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_text_color_light',
+    'cpt-sites-appearance',
+    'colors',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_text_color_light' );
+
+  add_settings_field(
+    'cpt_sites_link_color',
+    '<label for="cpt_sites_link_color">' . __( 'Link Color', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_link_color',
+    'cpt-sites-appearance',
+    'colors',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_link_color' );
+
+  add_settings_field(
+    'cpt_sites_link_color_hover',
+    '<label for="cpt_sites_link_color_hover">' . __( 'Link Color (Hover)', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_link_color_hover',
+    'cpt-sites-appearance',
+    'colors',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_link_color_hover' );
+
+
   // TODO: Add layout & style options. Cards (w/ _px spacing value), Shadows (big or small), Corners: Square, Rounded (w/ _px value), or Round.
 
 }
@@ -257,4 +336,36 @@ function fonts() {
 
   function  cpt_sites_body() {
     font_select( 'cpt_sites_body' );
+  }
+
+function colors() {
+  echo '<p>' . __( 'Enter hex values.', 'cpt-sites' ) . '</p>';
+}
+
+  function cpt_sites_heading_color() {
+    echo '<input name="cpt_sites_heading_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_heading_color' ) . '">';
+  }
+
+  function cpt_sites_menu_text_color() {
+    echo '<input name="cpt_sites_menu_text_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_menu_text_color' ) . '">';
+  }
+
+  function cpt_sites_menu_border_color() {
+    echo '<input name="cpt_sites_menu_border_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_menu_border_color' ) . '">';
+  }
+
+  function cpt_sites_text_color() {
+    echo '<input name="cpt_sites_text_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_text_color' ) . '">';
+  }
+
+  function cpt_sites_text_color_light() {
+    echo '<input name="cpt_sites_text_color_light" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_text_color_light' ) . '">';
+  }
+
+  function cpt_sites_link_color() {
+    echo '<input name="cpt_sites_link_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_link_color' ) . '">';
+  }
+
+  function cpt_sites_link_color_hover() {
+    echo '<input name="cpt_sites_link_color_hover" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_link_color_hover' ) . '">';
   }
