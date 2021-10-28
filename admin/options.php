@@ -71,6 +71,26 @@ function site_appearance_init() {
   register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta_text' );
 
   add_settings_field(
+    'cpt_sites_show_primary_menu_cta_text_color',
+    '<label for="cpt_sites_show_primary_menu_cta_text_color">' . __( 'Header CTA Text Color', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta_text_color',
+    'cpt-sites-appearance',
+    'header',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta_text_color' );
+
+  add_settings_field(
+    'cpt_sites_show_primary_menu_cta_button_color',
+    '<label for="cpt_sites_show_primary_menu_cta_button_color">' . __( 'Header CTA Button Color', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta_button_color',
+    'cpt-sites-appearance',
+    'header',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta_button_color' );
+
+  add_settings_field(
     'cpt_sites_show_primary_menu_cta_url',
     '<label for="cpt_sites_show_primary_menu_cta_url">' . __( 'Header CTA URL', 'cpt-sites' ) . '</label>',
     __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta_url',
@@ -79,16 +99,6 @@ function site_appearance_init() {
   );
 
   register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta_url' );
-
-  add_settings_field(
-    'cpt_sites_show_primary_menu_cta_color',
-    '<label for="cpt_sites_show_primary_menu_cta_color">' . __( 'Header CTA Color', 'cpt-sites' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta_color',
-    'cpt-sites-appearance',
-    'header',
-  );
-
-  register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta_color' );
 
   add_settings_field(
     'cpt_sites_show_secondary_menu',
@@ -331,12 +341,16 @@ function header() {
     echo '<input name="cpt_sites_show_primary_menu_cta_text" class="regular-text" type="text" value="' . get_option( 'cpt_sites_show_primary_menu_cta_text' ) . '">';
   }
 
-  function cpt_sites_show_primary_menu_cta_url() {
-    echo '<input name="cpt_sites_show_primary_menu_cta_url" class="regular-text" type="url" value="' . get_option( 'cpt_sites_show_primary_menu_cta_url' ) . '">';
+  function cpt_sites_show_primary_menu_cta_text_color() {
+    echo '<input name="cpt_sites_show_primary_menu_cta_text_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_show_primary_menu_cta_text_color' ) . '">';
   }
 
-  function cpt_sites_show_primary_menu_cta_color() {
-    echo '<input name="cpt_sites_show_primary_menu_cta_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_show_primary_menu_cta_color' ) . '">';
+  function cpt_sites_show_primary_menu_cta_button_color() {
+    echo '<input name="cpt_sites_show_primary_menu_cta_button_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_show_primary_menu_cta_button_color' ) . '">';
+  }
+
+  function cpt_sites_show_primary_menu_cta_url() {
+    echo '<input name="cpt_sites_show_primary_menu_cta_url" class="regular-text" type="url" value="' . get_option( 'cpt_sites_show_primary_menu_cta_url' ) . '">';
   }
 
   function cpt_sites_show_secondary_menu() {

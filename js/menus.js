@@ -13,6 +13,7 @@ function menuCollapser() {
   let subMenuContainer    = document.querySelector( '#primary-menu .collapsed-menu' );
   let subMenu             = document.querySelector( '#primary-menu .collapsed-menu > .sub-menu' );
 
+  // Reconstructs the menu if the menu container is larger than the menu.
   if ( menuContainerWidth > headerMenuWidth && subMenuContainer ) {
 
     let subMenuItems  = document.querySelectorAll( '#primary-menu .collapsed-menu > .sub-menu > li' );
@@ -33,6 +34,8 @@ function menuCollapser() {
 
   }
 
+  // Collapses the menu if the menu container is the same width as (or smaller
+  // than) the menu.
   if ( menuContainerWidth <= headerMenuWidth ) {
 
     // First, checks to see if the submenu already exists in order to prevent

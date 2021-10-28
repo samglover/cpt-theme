@@ -193,6 +193,7 @@ a.button:visited,
 .wp-block-button .wp-block-button__link {
   background-color: WhiteSmoke;
   border: .1rem solid var( --menu-border-color );
+  border-radius: 9999px;
   color: var( --link-color );
   cursor: pointer;
   font-family: var( --heading-font );
@@ -200,6 +201,7 @@ a.button:visited,
   line-height: 1.5;
   margin: 1em 0;
   padding: .75rem 2.5rem;
+  text-decoration: none;
   transition: background-color .2s, box-shadow .2s;
   -webkit-appearance: none;
 }
@@ -222,7 +224,6 @@ button:active,
 a.button:active,
 .wp-block-button .wp-block-button__link:active {
   box-shadow: unset;
-  color: var( --text-color );
   outline: none;
 }
 
@@ -244,8 +245,8 @@ a.button:active,
 #header {
   display: grid;
   grid-gap: 2rem;
-  grid-template-areas: 'logo title-tagline primary-menu';
-  grid-template-columns: max-content max-content minmax( min-content, auto );
+  grid-template-areas: 'logo title-tagline primary-menu header-cta';
+  grid-template-columns: max-content max-content minmax( min-content, auto ) max-content;
 }
 
 #header.show-site-title:not( .has-custom-logo ) {
@@ -275,6 +276,14 @@ a.button:active,
     text-indent: -99999px;
   }
 
+  #header-cta {
+    align-self: center;
+    background-color: var( --header-cta-button-color );
+    color: var( --header-cta-text-color );
+    grid-area: header-cta;
+    margin: 0;
+  }
+
 
   /* Nav Menus */
 
@@ -298,6 +307,7 @@ a.button:active,
 
   .menu a,
   .menu a:visited {
+    align-self: center;
     color: var( --menu-text-color );
     display: block;
     font-family: var( --heading-font );

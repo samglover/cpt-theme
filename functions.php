@@ -43,6 +43,40 @@ add_action( 'customize_register', __NAMESPACE__ . '\customizer_options' );
 
 
 /**
+ * CSS Variables
+ */
+function css_variables() {
+
+  ob_start();
+
+  ?>
+
+    <style>
+
+      body {
+        --heading-color: <?php echo get_option( 'cpt_sites_heading_color' ); ?>;
+        --menu-text-color: <?php echo get_option( 'cpt_sites_menu_text_color' ); ?>;
+        --menu-border-color: <?php echo get_option( 'cpt_sites_menu_border_color' ); ?>;
+        --text-color: <?php echo get_option( 'cpt_sites_text_color' ); ?>;
+        --text-color-light: <?php echo get_option( 'cpt_sites_text_color_light' ); ?>;
+        --link-color: <?php echo get_option( 'cpt_sites_link_color' ); ?>;
+        --link-color-hover: <?php echo get_option( 'cpt_sites_link_color_hover' ); ?>;
+        --header-cta-text-color: <?php echo get_option( 'cpt_sites_show_primary_menu_cta_text_color' ); ?>;
+        --header-cta-button-color: <?php echo get_option( 'cpt_sites_show_primary_menu_cta_button_color' ); ?>;
+      }
+
+    </style>
+
+  <?php
+
+  echo ob_get_clean();
+
+}
+
+add_action( 'wp_head', __NAMESPACE__ . '\css_variables' );
+
+
+/**
  * Header Classes
  */
 function header_class() {
@@ -69,6 +103,10 @@ function header_class() {
     $classes[] = 'show-secondary-menu';
   }
 
+  if ( get_option( 'cpt_sites_show_primary_menu_cta' ) ) {
+    $classes[] = 'show-header-cta';
+  }
+
   if ( ! empty( $classes ) ) {
     echo ' class="' . implode( ' ', $classes ) . '"';
   } else {
@@ -76,34 +114,3 @@ function header_class() {
   }
 
 }
-
-/**
- * CSS Variables
- */
-function css_variables() {
-
-  ob_start();
-
-  ?>
-
-    <style>
-
-      body {
-        --heading-color: <?php echo get_option( 'cpt_sites_heading_color' ); ?>;
-        --menu-text-color: <?php echo get_option( 'cpt_sites_menu_text_color' ); ?>;
-        --menu-border-color: <?php echo get_option( 'cpt_sites_menu_border_color' ); ?>;
-        --text-color: <?php echo get_option( 'cpt_sites_text_color' ); ?>;
-        --text-color-light: <?php echo get_option( 'cpt_sites_text_color_light' ); ?>;
-        --link-color: <?php echo get_option( 'cpt_sites_link_color' ); ?>;
-        --link-color-hover: <?php echo get_option( 'cpt_sites_link_color_hover' ); ?>;
-      }
-
-    </style>
-
-  <?php
-
-  echo ob_get_clean();
-
-}
-
-add_action( 'wp_head', __NAMESPACE__ . '\css_variables' );
