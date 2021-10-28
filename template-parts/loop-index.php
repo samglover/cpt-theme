@@ -6,15 +6,18 @@
 
       <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
-      <div class="thumbnail-excerpt">
+      <div class="thumbnail-excerpt-container">
 
         <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'medium' ); } ?>
 
-        <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
+        <div class="excerpt-container">
+
+          <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
+          <p class="post-byline">By <?php the_author(); ?> on <?php the_date( 'F jS, Y' ); ?></p>
+
+        </div>
 
       </div>
-
-      <div class="clearfix"></div>
 
     </div>
 

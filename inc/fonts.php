@@ -98,20 +98,9 @@ function google_fonts_head() {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <style>
 
-        * {
-          font-family: '<?php echo get_option( 'cpt_sites_body' ); ?>';
-        }
-
-        #title a,
-        #tagline,
-        .menu a,
-        h1, h1 a,
-        h2, h2 a,
-        h3, h3 a,
-        h4, h4 a,
-        h5, h5 a,
-        h6, h6 a {
-          font-family: '<?php echo get_option( 'cpt_sites_headings' ); ?>';
+        body {
+          --heading-font: <?php echo get_option( 'cpt_sites_headings' ); ?>;
+          --body-font: <?php echo get_option( 'cpt_sites_body' ); ?>;
         }
 
       </style>

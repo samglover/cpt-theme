@@ -51,6 +51,46 @@ function site_appearance_init() {
   register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu' );
 
   add_settings_field(
+    'cpt_sites_show_primary_menu_cta',
+    '<label for="cpt_sites_show_primary_menu_cta">' . __( 'Header CTA', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta',
+    'cpt-sites-appearance',
+    'header',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta' );
+
+  add_settings_field(
+    'cpt_sites_show_primary_menu_cta_text',
+    '<label for="cpt_sites_show_primary_menu_cta_text">' . __( 'Header CTA Text', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta_text',
+    'cpt-sites-appearance',
+    'header',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta_text' );
+
+  add_settings_field(
+    'cpt_sites_show_primary_menu_cta_url',
+    '<label for="cpt_sites_show_primary_menu_cta_url">' . __( 'Header CTA URL', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta_url',
+    'cpt-sites-appearance',
+    'header',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta_url' );
+
+  add_settings_field(
+    'cpt_sites_show_primary_menu_cta_color',
+    '<label for="cpt_sites_show_primary_menu_cta_color">' . __( 'Header CTA Color', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta_color',
+    'cpt-sites-appearance',
+    'header',
+  );
+
+  register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta_color' );
+
+  add_settings_field(
     'cpt_sites_show_secondary_menu',
     '<label for="cpt_sites_show_secondary_menu">' . __( 'Secondary Menu (Below Header)', 'cpt-sites' ) . '</label>',
     __NAMESPACE__ . '\cpt_sites_show_secondary_menu',
@@ -266,6 +306,37 @@ function header() {
 
       echo ob_get_clean();
 
+  }
+
+  function cpt_sites_show_primary_menu_cta() {
+
+    ob_start();
+
+        ?>
+
+          <fieldset>
+            <label for="cpt_sites_show_primary_menu_cta">
+              <input name="cpt_sites_show_primary_menu_cta" id="cpt_sites_show_primary_menu_cta" type="checkbox" value="1" <?php checked( get_option( 'cpt_sites_show_primary_menu_cta' ) ); ?>>
+              <?php _e( 'Enable the header call-to-action button.', 'cpt-sites' ); ?>
+            </label>
+          </fieldset>
+
+        <?php
+
+      echo ob_get_clean();
+
+  }
+
+  function cpt_sites_show_primary_menu_cta_text() {
+    echo '<input name="cpt_sites_show_primary_menu_cta_text" class="regular-text" type="text" value="' . get_option( 'cpt_sites_show_primary_menu_cta_text' ) . '">';
+  }
+
+  function cpt_sites_show_primary_menu_cta_url() {
+    echo '<input name="cpt_sites_show_primary_menu_cta_url" class="regular-text" type="url" value="' . get_option( 'cpt_sites_show_primary_menu_cta_url' ) . '">';
+  }
+
+  function cpt_sites_show_primary_menu_cta_color() {
+    echo '<input name="cpt_sites_show_primary_menu_cta_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_show_primary_menu_cta_color' ) . '">';
   }
 
   function cpt_sites_show_secondary_menu() {
