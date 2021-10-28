@@ -35,17 +35,12 @@ namespace CPT_Sites;
     <?php
 
       if ( get_theme_mod( 'custom_logo' ) ) {
-        echo wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'tiny', false,
-          [
-            'class' => 'site-logo',
-            'alt'   => get_bloginfo( 'title' ),
-          ]
-        );
+        echo '<a class="site-logo" href="' . home_url() . '">' . wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'tiny', false, [ 'alt'   => get_bloginfo( 'title' ) ] ) . '</a>';
       }
 
-      echo '<div id="title-tagline">';
+      if ( get_option( 'cpt_sites_show_site_title' ) ) {
 
-        if ( get_option( 'cpt_sites_show_site_title' ) ) {
+        echo '<div id="title-tagline">';
 
           if ( is_front_page() ) {
             echo '<h1 id="title"><a href="' . home_url() . '">' . get_bloginfo( 'name' ) . '</a></h1>';
@@ -53,13 +48,17 @@ namespace CPT_Sites;
             echo '<p id="title"><a href="' . home_url() . '">' . get_bloginfo( 'name' ) . '</a></p>';
           }
 
-        }
+          if ( get_bloginfo( 'description' ) ) {
+            echo '<p id="tagline">' . get_bloginfo( 'description' ) . '</p>';
+          }
 
-        if ( get_option( 'cpt_sites_show_site_tagline' ) ) {
-          echo '<p id="tagline">' . get_bloginfo( 'description' ) . '</p>';
-        }
+        echo '</div>';
 
-      echo '</div>';
+      } elseif ( is_front_page() ) {
+
+        echo '<h1 id="title">' . get_bloginfo( 'name' ) . '</h1>';
+
+      }
 
       if ( get_option( 'cpt_sites_show_primary_menu' ) ) {
 

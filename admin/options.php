@@ -41,16 +41,6 @@ function site_appearance_init() {
   register_setting( 'cpt-sites', 'cpt_sites_show_site_title' );
 
   add_settings_field(
-    'cpt_sites_show_site_tagline',
-    '<label for="cpt_sites_show_site_tagline">' . __( 'Site Tagline', 'cpt-sites' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_show_site_tagline',
-    'cpt-sites-appearance',
-    'header',
-  );
-
-  register_setting( 'cpt-sites', 'cpt_sites_show_site_tagline' );
-
-  add_settings_field(
     'cpt_sites_show_primary_menu',
     '<label for="cpt_sites_show_primary_menu">' . __( 'Primary Menu (In Header)', 'cpt-sites' ) . '</label>',
     __NAMESPACE__ . '\cpt_sites_show_primary_menu',

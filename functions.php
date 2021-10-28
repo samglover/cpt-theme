@@ -37,22 +37,6 @@ function customizer_options( $wp_customize ) {
     ]
   );
 
-  $wp_customize->add_setting( 'cpt_sites_show_site_tagline',
-    [
-      'capability'  => 'edit_theme_options',
-      'default'     => true,
-      'type'        => 'option',
-    ]
-  );
-
-  $wp_customize->add_control( 'cpt_sites_show_site_tagline',
-    [
-      'label'   => __( 'Show site tagline?', 'cpt-sites' ),
-      'section' => 'title_tagline',
-      'type'    => 'checkbox',
-    ]
-  );
-
 }
 
 add_action( 'customize_register', __NAMESPACE__ . '\customizer_options' );

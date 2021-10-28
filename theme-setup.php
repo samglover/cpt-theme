@@ -10,7 +10,7 @@ function theme_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'wp-block-styles' );
 
-  add_editor_style( 'editor-styles.css' );
+  add_editor_style( '/css/editor-styles.css' );
 
   add_image_size( 'tiny', 0, 90 );
 
@@ -28,7 +28,6 @@ function default_options() {
 
     // Heading
 		'cpt_sites_show_site_title'     => true,
-		'cpt_sites_show_site_tagline'	  => true,
 		'cpt_sites_show_primary_menu'	  => true,
     'cpt_sites_show_secondary_menu' => false,
 
@@ -81,6 +80,7 @@ add_action( 'widgets_init', __NAMESPACE__ . '\register_widget_areas' );
 
 function register_stylesheets_scripts() {
 
+  wp_enqueue_style( 'normalize-css', CPT_SITES_DIR_URI . '/css/normalize.css' );
 	wp_enqueue_style( 'stylesheet', CPT_SITES_DIR_URI . '/style.css', '', filemtime( CPT_SITES_DIR_PATH . '/style.css' ) );
 
 	wp_enqueue_script( 'menus-js', CPT_SITES_DIR_URI . '/js/menus.js', '', '', true );
@@ -91,8 +91,6 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_stylesheets_scripts
 
 
 function register_admin_stylesheets_scripts() {
-
-  wp_enqueue_style( 'admin-stylesheet', CPT_SITES_DIR_URI . '/admin/admin-style.css', '', filemtime( CPT_SITES_DIR_PATH . '/admin/admin-style.css' ) );
 
   // Color Picker
   wp_enqueue_style( 'wp-color-picker' );
