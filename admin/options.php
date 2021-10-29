@@ -150,7 +150,7 @@ function site_appearance_init() {
 
   add_settings_field(
     'cpt_sites_link_color_hover',
-    '<label for="cpt_sites_link_color_hover">' . __( 'Link Color (Hover)', 'cpt-sites' ) . '</label>',
+    '<label for="cpt_sites_link_color_hover">' . __( 'Link Hover Color', 'cpt-sites' ) . '</label>',
     __NAMESPACE__ . '\cpt_sites_link_color_hover',
     'cpt-sites-appearance',
     'fonts',
@@ -198,9 +198,6 @@ function site_appearance() {
 }
 
 function header() {
-
-  echo '<p>' . __( 'You can also modify these options using the customizer.', 'cpt-sites' ) . '</p>';
-
 }
 
   function cpt_sites_show_site_title() {
