@@ -3,10 +3,12 @@
 
 <?php get_header(); ?>
 
-  <main id="content">
+  <div id="content-sidebar-container">
 
     <?php get_template_part( 'template-parts/loop', 'page' ); ?>
 
-  </main>
+    <ul id="sidebar"><?php dynamic_sidebar( 'sidebar' ); ?></ul>
+
+  </div>
 
 <?php get_footer(); ?>

@@ -2,23 +2,19 @@
 
 <?php get_header(); ?>
 
-  <main id="content">
+<main id="content">
 
-    <?php if ( is_archive() ) { ?>
+  <?php if ( is_archive() ) { ?>
+    <h1 class="headline"><?php echo single_term_title( '', FALSE ); ?></h1>
+  <?php } ?>
 
-      <h1 class="headline"><?php echo single_term_title( '', FALSE ); ?></h1>
+  <?php if ( is_search() ) { ?>
+    <h1>Search Results for "<?php echo get_search_query() ?>"</h1>
+		<?php get_search_form(); ?>
+  <?php } ?>
 
-    <?php } ?>
+  <?php get_template_part( 'template-parts/loop', 'index' ); ?>
 
-    <?php if ( is_search() ) { ?>
-
-      <h1>Search Results for "<?php echo get_search_query() ?>"</h1>
-  		<?php get_search_form(); ?>
-
-    <?php } ?>
-
-    <?php get_template_part( 'template-parts/loop', 'index' ); ?>
-
-  </main>
+</main>
 
 <?php get_footer(); ?>

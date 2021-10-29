@@ -2,7 +2,7 @@
 Theme Name:   CPT Sites
 Author:       Sam Glover
 Description:  A base theme for Client Power Tools sites.
-Version:      1.0
+Version:      0.1
 Text Domain:  cpt-sites
 
 License:      Copyright Sam Glover
@@ -82,6 +82,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var( --heading-font );
   font-weight: bold;
   line-height: 1.1;
+  margin: 1em 0 .5em 0;
 }
 
 h1 {
@@ -409,11 +410,41 @@ a.button:active,
  * Content
  */
 
+#content-sidebar-container {
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-columns: 2fr 1fr;
+  margin: 0 auto 6rem auto;
+  max-width: 104rem;
+}
+
+  #content-sidebar-container #content {
+    margin: unset;
+    padding: unset;
+  }
+
+  ul#sidebar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+    #sidebar > *:first-child h1,
+    #sidebar > *:first-child h2,
+    #sidebar > *:first-child h3,
+    #sidebar > *:first-child h4 {
+      margin-top: 0;
+    }
+
 #content {
   margin: 0 auto 6rem auto;
   padding: 0 2rem;
   max-width: 104rem;
 }
+
+  #content > *:first-child {
+    margin-top: 0;
+  }
 
 .post {
   margin-bottom: 6rem;

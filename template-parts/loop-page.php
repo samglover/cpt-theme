@@ -2,7 +2,7 @@
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-  <div <?php post_class(); ?>>
+  <main id="content" <?php post_class(); ?>>
 
     <?php if ( ! is_front_page() ) { ?>
       <h1 class="headline"><?php the_title(); ?></h1>
@@ -19,6 +19,6 @@
 
     <?php wp_link_pages(); ?>
 
-  </div>
+  </main>
 
 <?php endwhile; endif; ?>
