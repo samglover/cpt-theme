@@ -80,8 +80,8 @@
 
         if ( get_option( 'cpt_sites_show_primary_menu_cta' ) ) {
 
-          echo '<a id="header-cta" class="button" href="' . get_option( 'cpt_sites_show_primary_menu_url' ) . '">';
-            echo get_option( 'cpt_sites_show_primary_menu_cta_text' );
+          echo '<a id="header-cta" class="button" href="' . get_option( 'cpt_sites_primary_menu_url' ) . '">';
+            echo get_option( 'cpt_sites_primary_menu_cta_text' );
           echo '</a>';
 
         }

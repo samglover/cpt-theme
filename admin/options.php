@@ -277,19 +277,19 @@ function header() {
   }
 
   function cpt_sites_primary_menu_cta_text() {
-    echo '<input name="cpt_sites_show_primary_menu_cta_text" class="regular-text" type="text" value="' . get_option( 'cpt_sites_show_primary_menu_cta_text' ) . '">';
+    echo '<input name="cpt_sites_primary_menu_cta_text" class="regular-text" type="text" value="' . get_option( 'cpt_sites_primary_menu_cta_text' ) . '">';
   }
 
   function cpt_sites_primary_menu_cta_text_color() {
-    echo '<input name="cpt_sites_show_primary_menu_cta_text_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_show_primary_menu_cta_text_color' ) . '">';
+    echo '<input name="cpt_sites_primary_menu_cta_text_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_primary_menu_cta_text_color' ) . '">';
   }
 
   function cpt_sites_primary_menu_cta_button_color() {
-    echo '<input name="cpt_sites_show_primary_menu_cta_button_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_show_primary_menu_cta_button_color' ) . '">';
+    echo '<input name="cpt_sites_primary_menu_cta_button_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_primary_menu_cta_button_color' ) . '">';
   }
 
   function cpt_sites_primary_menu_cta_url() {
-    echo '<input name="cpt_sites_show_primary_menu_cta_url" class="regular-text" type="url" value="' . get_option( 'cpt_sites_show_primary_menu_cta_url' ) . '">';
+    echo '<input name="cpt_sites_primary_menu_cta_url" class="regular-text" type="url" value="' . get_option( 'cpt_sites_primary_menu_cta_url' ) . '">';
   }
 
   function cpt_sites_show_secondary_menu() {

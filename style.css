@@ -2,7 +2,7 @@
 Theme Name:   CPT Sites
 Author:       Sam Glover
 Description:  A base theme for Client Power Tools sites.
-Version:      0.1
+Version:      0.1.1
 Text Domain:  cpt-sites
 
 License:      Copyright Sam Glover
@@ -150,7 +150,6 @@ small {
  */
 
 img {
-  height: auto;
   max-width: 100%;
 }
 
