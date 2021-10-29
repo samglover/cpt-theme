@@ -1,3 +1,5 @@
+<?php namespace CPT_Sites; ?>
+
 <?php get_header(); ?>
 
   <main id="content">

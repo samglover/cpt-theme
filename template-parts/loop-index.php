@@ -1,3 +1,5 @@
+<?php namespace CPT_Sites\Template_Parts; ?>
+
 <?php if ( have_posts() ) : ?>
 
   <?php while ( have_posts() ) : the_post(); ?>

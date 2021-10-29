@@ -72,6 +72,14 @@ function register_widget_areas() {
     ]
   );
 
+  register_sidebar(
+    [
+      'id'            => 'sidebar',
+      'name'          => __( 'Sidebar Widget Area' ),
+      'description'   => __( 'Displayed as a sidebar when using the Sidebar page template.' ),
+    ]
+  );
+
 }
 
 add_action( 'widgets_init', __NAMESPACE__ . '\register_widget_areas' );

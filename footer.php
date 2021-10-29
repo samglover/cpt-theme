@@ -1,3 +1,5 @@
+<?php namespace CPT_Sites; ?>
+
 <footer id="footer">
 
   <ul id="footer-widgets"><?php dynamic_sidebar( 'footer-widgets' ); ?></ul>

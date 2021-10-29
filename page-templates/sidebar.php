@@ -1,4 +1,5 @@
-<?php namespace CPT_Sites; ?>
+<?php namespace CPT_Sites\Page_Templates; ?>
+<?php /* Template Name: Sidebar */ ?>
 
 <?php get_header(); ?>
 
