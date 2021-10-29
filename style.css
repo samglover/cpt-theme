@@ -196,7 +196,7 @@ button,
 a.button,
 a.button:visited {
   background-color: WhiteSmoke;
-  border: .1rem solid var( --menu-border-color );
+  border: .2rem solid var( --menu-border-color );
   border-radius: 9999px;
   color: var( --link-color );
   cursor: pointer;
