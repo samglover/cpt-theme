@@ -54,15 +54,10 @@ function css_variables() {
     <style>
 
       body {
-        --heading-color: <?php echo get_option( 'cpt_sites_heading_color' ); ?>;
-        --menu-text-color: <?php echo get_option( 'cpt_sites_menu_text_color' ); ?>;
-        --menu-border-color: <?php echo get_option( 'cpt_sites_menu_border_color' ); ?>;
-        --text-color: <?php echo get_option( 'cpt_sites_text_color' ); ?>;
-        --text-color-light: <?php echo get_option( 'cpt_sites_text_color_light' ); ?>;
-        --link-color: <?php echo get_option( 'cpt_sites_link_color' ); ?>;
-        --link-color-hover: <?php echo get_option( 'cpt_sites_link_color_hover' ); ?>;
         --header-cta-text-color: <?php echo get_option( 'cpt_sites_show_primary_menu_cta_text_color' ); ?>;
         --header-cta-button-color: <?php echo get_option( 'cpt_sites_show_primary_menu_cta_button_color' ); ?>;
+        --link-color: <?php echo get_option( 'cpt_sites_link_color' ); ?>;
+        --link-color-hover: <?php echo get_option( 'cpt_sites_link_color_hover' ); ?>;
       }
 
     </style>

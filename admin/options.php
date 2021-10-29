@@ -61,44 +61,44 @@ function site_appearance_init() {
   register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta' );
 
   add_settings_field(
-    'cpt_sites_show_primary_menu_cta_text',
-    '<label for="cpt_sites_show_primary_menu_cta_text">' . __( 'Header CTA Text', 'cpt-sites' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta_text',
+    'cpt_sites_primary_menu_cta_text',
+    '<label for="cpt_sites_primary_menu_cta_text">' . __( 'Header CTA Text', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_primary_menu_cta_text',
     'cpt-sites-appearance',
     'header',
   );
 
-  register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta_text' );
+  register_setting( 'cpt-sites', 'cpt_sites_primary_menu_cta_text' );
 
   add_settings_field(
-    'cpt_sites_show_primary_menu_cta_text_color',
-    '<label for="cpt_sites_show_primary_menu_cta_text_color">' . __( 'Header CTA Text Color', 'cpt-sites' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta_text_color',
+    'cpt_sites_primary_menu_cta_text_color',
+    '<label for="cpt_sites_primary_menu_cta_text_color">' . __( 'Header CTA Text Color', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_primary_menu_cta_text_color',
     'cpt-sites-appearance',
     'header',
   );
 
-  register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta_text_color' );
+  register_setting( 'cpt-sites', 'cpt_sites_primary_menu_cta_text_color' );
 
   add_settings_field(
-    'cpt_sites_show_primary_menu_cta_button_color',
-    '<label for="cpt_sites_show_primary_menu_cta_button_color">' . __( 'Header CTA Button Color', 'cpt-sites' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta_button_color',
+    'cpt_sites_primary_menu_cta_button_color',
+    '<label for="cpt_sites_primary_menu_cta_button_color">' . __( 'Header CTA Button Color', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_primary_menu_cta_button_color',
     'cpt-sites-appearance',
     'header',
   );
 
-  register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta_button_color' );
+  register_setting( 'cpt-sites', 'cpt_sites_primary_menu_cta_button_color' );
 
   add_settings_field(
-    'cpt_sites_show_primary_menu_cta_url',
-    '<label for="cpt_sites_show_primary_menu_cta_url">' . __( 'Header CTA URL', 'cpt-sites' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta_url',
+    'cpt_sites_primary_menu_cta_url',
+    '<label for="cpt_sites_primary_menu_cta_url">' . __( 'Header CTA URL', 'cpt-sites' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_primary_menu_cta_url',
     'cpt-sites-appearance',
     'header',
   );
 
-  register_setting( 'cpt-sites', 'cpt_sites_show_primary_menu_cta_url' );
+  register_setting( 'cpt-sites', 'cpt_sites_primary_menu_cta_url' );
 
   add_settings_field(
     'cpt_sites_show_secondary_menu',
@@ -138,70 +138,12 @@ function site_appearance_init() {
 
   register_setting( 'cpt-sites', 'cpt_sites_body' );
 
-
-  add_settings_section(
-    'colors',
-    __( 'Colors', 'cpt-sites' ),
-    __NAMESPACE__ . '\colors',
-    'cpt-sites-appearance',
-  );
-
-  add_settings_field(
-    'cpt_sites_heading_color',
-    '<label for="cpt_sites_heading_color">' . __( 'Heading Color', 'cpt-sites' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_heading_color',
-    'cpt-sites-appearance',
-    'colors',
-  );
-
-  register_setting( 'cpt-sites', 'cpt_sites_heading_color' );
-
-  add_settings_field(
-    'cpt_sites_menu_text_color',
-    '<label for="cpt_sites_menu_text_color">' . __( 'Menu Text Color', 'cpt-sites' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_menu_text_color',
-    'cpt-sites-appearance',
-    'colors',
-  );
-
-  register_setting( 'cpt-sites', 'cpt_sites_menu_text_color' );
-
-  add_settings_field(
-    'cpt_sites_menu_border_color',
-    '<label for="cpt_sites_menu_border_color">' . __( 'Menu Border Color', 'cpt-sites' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_menu_border_color',
-    'cpt-sites-appearance',
-    'colors',
-  );
-
-  register_setting( 'cpt-sites', 'cpt_sites_menu_border_color' );
-
-  add_settings_field(
-    'cpt_sites_text_color',
-    '<label for="cpt_sites_text_color">' . __( 'Text Color', 'cpt-sites' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_text_color',
-    'cpt-sites-appearance',
-    'colors',
-  );
-
-  register_setting( 'cpt-sites', 'cpt_sites_text_color' );
-
-  add_settings_field(
-    'cpt_sites_text_color_light',
-    '<label for="cpt_sites_text_color_light">' . __( 'Text Color (Light)', 'cpt-sites' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_text_color_light',
-    'cpt-sites-appearance',
-    'colors',
-  );
-
-  register_setting( 'cpt-sites', 'cpt_sites_text_color_light' );
-
   add_settings_field(
     'cpt_sites_link_color',
     '<label for="cpt_sites_link_color">' . __( 'Link Color', 'cpt-sites' ) . '</label>',
     __NAMESPACE__ . '\cpt_sites_link_color',
     'cpt-sites-appearance',
-    'colors',
+    'fonts',
   );
 
   register_setting( 'cpt-sites', 'cpt_sites_link_color' );
@@ -211,7 +153,7 @@ function site_appearance_init() {
     '<label for="cpt_sites_link_color_hover">' . __( 'Link Color (Hover)', 'cpt-sites' ) . '</label>',
     __NAMESPACE__ . '\cpt_sites_link_color_hover',
     'cpt-sites-appearance',
-    'colors',
+    'fonts',
   );
 
   register_setting( 'cpt-sites', 'cpt_sites_link_color_hover' );
@@ -337,19 +279,19 @@ function header() {
 
   }
 
-  function cpt_sites_show_primary_menu_cta_text() {
+  function cpt_sites_primary_menu_cta_text() {
     echo '<input name="cpt_sites_show_primary_menu_cta_text" class="regular-text" type="text" value="' . get_option( 'cpt_sites_show_primary_menu_cta_text' ) . '">';
   }
 
-  function cpt_sites_show_primary_menu_cta_text_color() {
+  function cpt_sites_primary_menu_cta_text_color() {
     echo '<input name="cpt_sites_show_primary_menu_cta_text_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_show_primary_menu_cta_text_color' ) . '">';
   }
 
-  function cpt_sites_show_primary_menu_cta_button_color() {
+  function cpt_sites_primary_menu_cta_button_color() {
     echo '<input name="cpt_sites_show_primary_menu_cta_button_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_show_primary_menu_cta_button_color' ) . '">';
   }
 
-  function cpt_sites_show_primary_menu_cta_url() {
+  function cpt_sites_primary_menu_cta_url() {
     echo '<input name="cpt_sites_show_primary_menu_cta_url" class="regular-text" type="url" value="' . get_option( 'cpt_sites_show_primary_menu_cta_url' ) . '">';
   }
 
@@ -411,30 +353,6 @@ function fonts() {
 
   function  cpt_sites_body() {
     font_select( 'cpt_sites_body' );
-  }
-
-function colors() {
-  echo '<p>' . __( 'Enter hex values.', 'cpt-sites' ) . '</p>';
-}
-
-  function cpt_sites_heading_color() {
-    echo '<input name="cpt_sites_heading_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_heading_color' ) . '">';
-  }
-
-  function cpt_sites_menu_text_color() {
-    echo '<input name="cpt_sites_menu_text_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_menu_text_color' ) . '">';
-  }
-
-  function cpt_sites_menu_border_color() {
-    echo '<input name="cpt_sites_menu_border_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_menu_border_color' ) . '">';
-  }
-
-  function cpt_sites_text_color() {
-    echo '<input name="cpt_sites_text_color" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_text_color' ) . '">';
-  }
-
-  function cpt_sites_text_color_light() {
-    echo '<input name="cpt_sites_text_color_light" class="color-field" type="text" required aria-required="true" value="' . get_option( 'cpt_sites_text_color_light' ) . '">';
   }
 
   function cpt_sites_link_color() {

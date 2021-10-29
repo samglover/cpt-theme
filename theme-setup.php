@@ -27,26 +27,21 @@ function default_options() {
   $default_options = [
 
     // Heading
-		'cpt_sites_show_site_title'                     => true,
-		'cpt_sites_show_primary_menu'	                  => true,
-    'cpt_sites_show_secondary_menu'                 => false,
-    'cpt_sites_show_primary_menu_cta'               => false,
-    'cpt_sites_show_primary_menu_cta_text_color'    => 'White',
-    'cpt_sites_show_primary_menu_cta_button_color'  => 'Coral',
-    'cpt_sites_show_primary_menu_cta_text'          => 'Contact Us',
+		'cpt_sites_show_site_title'               => true,
+		'cpt_sites_show_primary_menu'	            => true,
+    'cpt_sites_show_secondary_menu'           => false,
+    'cpt_sites_show_primary_menu_cta'         => false,
+    'cpt_sites_primary_menu_cta_text_color'   => 'White',
+    'cpt_sites_primary_menu_cta_button_color' => 'Coral',
+    'cpt_sites_primary_menu_cta_text'         => 'Contact Us',
 
     // Fonts
-    'cpt_sites_headings'                            => 'Josefin Sans',
-    'cpt_sites_body'                                => 'Source Serif Pro',
+    'cpt_sites_headings'                      => 'Josefin Sans',
+    'cpt_sites_body'                          => 'Source Serif Pro',
 
     // Colors
-    'cpt_sites_heading_color'                       => '#333333',
-    'cpt_sites_menu_text_color'                     => 'DarkSlateGray',
-    'cpt_sites_menu_border_color'                   => 'LightSlateGray',
-    'cpt_sites_text_color'                          => '#111111',
-    'cpt_sites_text_color_light'                    => 'SlateGray',
-    'cpt_sites_link_color'                          => 'SlateBlue',
-    'cpt_sites_link_color_hover'                    => 'DarkSlateBlue',
+    'cpt_sites_link_color'                    => 'SlateBlue',
+    'cpt_sites_link_color_hover'              => 'DarkSlateBlue',
 
 
   ];
