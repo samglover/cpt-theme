@@ -6,7 +6,7 @@ Version:      0.1
 Text Domain:  cpt-sites
 
 License:      Copyright Sam Glover
-License URI:  N/A`
+License URI:  N/A
 ------------------------------*/
 
 html {
@@ -21,7 +21,7 @@ body {
   padding: 0;
   --heading-color: #333333;
   --menu-text-color: DarkSlateGray;
-  --menu-border-color: LightSlateGray;
+  --menu-border-color: White;
   --text-color: #111111;
   --text-color-light: SlateGray;
   --font-size-small: 1.44rem;
@@ -196,7 +196,7 @@ button,
 a.button,
 a.button:visited {
   background-color: WhiteSmoke;
-  border: .2rem solid var( --menu-border-color );
+  border: .2rem solid var( --link-color );
   border-radius: 9999px;
   color: var( --link-color );
   cursor: pointer;
@@ -220,14 +220,15 @@ button:focus,
 .button:focus,
 a.button:hover,
 a.button:focus {
-  box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .25rem .25rem 1.5rem rgba( 0, 0, 0, .1 );
+  border-color: var( --link-color-hover );
+  box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .5rem .5rem 1.5rem rgba( 0, 0, 0, .25 );
   color: var( --link-color-hover );
   text-decoration: none;
 }
 
 .wp-block-button .wp-block-button__link:hover,
 .wp-block-button .wp-block-button__link:focus {
-  box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .25rem .25rem 1.5rem rgba( 0, 0, 0, .1 );
+  box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .5rem .5rem 1.5rem rgba( 0, 0, 0, .25 );
 }
 
 button:active,
@@ -251,12 +252,8 @@ a.button:active {
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: max-content minmax( min-content, auto );
-  margin: 0 0 4rem 0;
+  margin: 0;
   padding: 1rem 2rem;
-}
-
-#header.show-secondary-menu {
-  margin-bottom: 0;
 }
 
   #logo-title,
@@ -294,6 +291,7 @@ a.button:active {
   #header-cta {
     align-self: center;
     background-color: var( --header-cta-button-color );
+    border-color: var( --header-cta-text-color );
     color: var( --header-cta-text-color );
     margin: 0;
   }
@@ -311,6 +309,7 @@ a.button:active {
 
   .menu > .menu-item {
     display: inline-block;
+    font-weight: bold;
     margin-right: 1em;
     position: relative;
   }
@@ -422,7 +421,7 @@ a.button:active {
   display: grid;
   grid-gap: 4rem;
   grid-template-columns: 2fr 1fr;
-  margin: 0 auto 6rem auto;
+  margin: 2rem auto 6rem auto;
   max-width: 104rem;
 }
 
@@ -445,7 +444,7 @@ a.button:active {
     }
 
 #content {
-  margin: 0 auto 6rem auto;
+  margin: 2rem auto 6rem auto;
   padding: 0 2rem;
   max-width: 104rem;
 }
