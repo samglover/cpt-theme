@@ -21,7 +21,7 @@ body {
   padding: 0;
   --heading-color: #333333;
   --menu-text-color: DarkSlateGray;
-  --menu-border-color: White;
+  --menu-border-color: LightSlateGray;
   --text-color: #111111;
   --text-color-light: SlateGray;
   --font-size-small: 1.44rem;
@@ -195,7 +195,7 @@ button,
 .button,
 a.button,
 a.button:visited {
-  background-color: WhiteSmoke;
+  background-color: inherit;
   border: .2rem solid var( --link-color );
   border-radius: 9999px;
   color: var( --link-color );
@@ -309,7 +309,6 @@ a.button:active {
 
   .menu > .menu-item {
     display: inline-block;
-    font-weight: bold;
     margin-right: 1em;
     position: relative;
   }
@@ -344,7 +343,7 @@ a.button:active {
     content: '\02009\0002B';
   }
 
-  .collapsed-menu a {
+  .collapsed-menu > a {
     color: var( --menu-border-color );
     cursor: pointer;
   }
