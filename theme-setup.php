@@ -10,8 +10,6 @@ function theme_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'wp-block-styles' );
 
-  add_editor_style( '/css/editor-styles.css' );
-
   add_image_size( 'tiny', 0, 90 );
 
   register_nav_menu( 'primary', __( 'Primary Menu (In Header)', 'cpt-sites' ) );
