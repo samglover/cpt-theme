@@ -311,7 +311,7 @@ a.button:active {
 
   #header-cta {
     align-self: center;
-    animation: pulse 1s ease-in-out 1s 1 running;
+    animation: pulse 1s ease-in-out .5s 1 running;
     background-color: var( --header-cta-button-color );
     border-color: var( --header-cta-text-color );
     color: var( --header-cta-text-color );
