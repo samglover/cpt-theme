@@ -98,7 +98,7 @@ function google_fonts_head() {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <style>
 
-        body {
+        :root {
           --heading-font: <?php echo get_option( 'cpt_sites_headings' ); ?>;
           --body-font: <?php echo get_option( 'cpt_sites_body' ); ?>;
         }

@@ -9,6 +9,15 @@ License:      Copyright Sam Glover
 License URI:  N/A
 ------------------------------*/
 
+:root {
+  --heading-color: #333333;
+  --menu-text-color: DarkSlateGray;
+  --menu-border-color: LightSlateGray;
+  --text-color: #111111;
+  --text-color-light: SlateGray;
+  --font-size-small: 1.44rem;
+}
+
 html {
   font-family: sans-serif;
   font-size: 62.5%; /* 10px */
@@ -19,12 +28,6 @@ body {
   font-family: var( --body-font );
   margin: 0;
   padding: 0;
-  --heading-color: #333333;
-  --menu-text-color: DarkSlateGray;
-  --menu-border-color: LightSlateGray;
-  --text-color: #111111;
-  --text-color-light: SlateGray;
-  --font-size-small: 1.44rem;
 }
 
 
@@ -252,6 +255,7 @@ a.button:active {
 #header {
   background-color: rgba( 0, 0, 0, .2 );
   background: radial-gradient( circle, rgba( 0, 0, 0, .2 ) 0%, rgba( 0, 0, 0, .1 ) 100%);
+  box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .25rem .25rem 1.5rem rgba( 0, 0, 0, .1 );
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: max-content minmax( min-content, auto );
@@ -291,8 +295,23 @@ a.button:active {
     text-indent: -99999px;
   }
 
+  @keyframes pulse {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
   #header-cta {
     align-self: center;
+    animation: pulse 1s ease-in-out 1s 1 running;
     background-color: var( --header-cta-button-color );
     border-color: var( --header-cta-text-color );
     color: var( --header-cta-text-color );

@@ -53,7 +53,7 @@ function css_variables() {
 
     <style>
 
-      body {
+      :root {
         --header-cta-text-color: <?php echo get_option( 'cpt_sites_primary_menu_cta_text_color' ); ?>;
         --header-cta-button-color: <?php echo get_option( 'cpt_sites_primary_menu_cta_button_color' ); ?>;
         --link-color: <?php echo get_option( 'cpt_sites_link_color' ); ?>;
