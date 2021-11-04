@@ -559,3 +559,11 @@ a.button:active {
 .clearfix {
   clear: both;
 }
+
+.remove-bottom-margin {
+  margin-bottom: 0 !important;
+}
+
+.remove-top-margin {
+  margin-top: 0 !important;
+}
