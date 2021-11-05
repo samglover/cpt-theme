@@ -36,6 +36,7 @@ body {
  */
 
 body {
+  background-color: Snow;
   color: var( --text-color );
   font-size: 1.8rem;
   line-height: 1.5;
@@ -245,6 +246,12 @@ a.button:active {
 
 .wp-block-button .wp-block-button__link:active {
   box-shadow: unset;
+}
+
+.wp-block-search .wp-block-search__button {
+  border-width: .2rem;
+  margin-top: unset;
+  padding: .75rem 2.5rem;
 }
 
 
@@ -472,6 +479,11 @@ a.button:active {
   max-width: 140rem;
 }
 
+  body:not( .home.page ) #content {
+    margin-top: 4rem;
+    max-width: 102.4rem;
+  }
+
   #content > *:first-child {
     margin-top: 0;
   }
@@ -566,4 +578,14 @@ a.button:active {
 
 .remove-top-margin {
   margin-top: 0 !important;
+}
+
+.screen-reader-only,
+.wp-block-search label {
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+    left: -9999px;
+    top: auto;
+  width: 1px;
 }
