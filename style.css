@@ -451,9 +451,13 @@ a.button:active {
   display: grid;
   grid-gap: 4rem;
   grid-template-columns: 2fr 1fr;
-  margin: 2rem auto 6rem auto;
+  margin: 4rem auto 6rem auto;
   max-width: 140rem;
 }
+
+  body:not( .home.page ) #content-sidebar-container {
+    max-width: 110rem;
+  }
 
   #content-sidebar-container #content {
     margin: unset;
@@ -474,14 +478,13 @@ a.button:active {
     }
 
 #content {
-  margin: 2rem auto 6rem auto;
+  margin: 4rem auto 6rem auto;
   padding: 0 2rem;
   max-width: 140rem;
 }
 
-  body:not( .home.page ) #content {
-    margin-top: 4rem;
-    max-width: 102.4rem;
+  body:not( .home.page ):not( .page-template-sidebar ) #content {
+    max-width: 110rem;
   }
 
   #content > *:first-child {
