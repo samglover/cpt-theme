@@ -268,7 +268,12 @@ a.button:active {
   grid-template-columns: max-content minmax( min-content, auto );
   margin: 0;
   padding: 1rem 2rem;
+  position: relative;
 }
+
+  .stacked-header #header {
+    display: block;
+  }
 
   #logo-title,
   #menu-cta {
@@ -394,7 +399,7 @@ a.button:active {
     display: block;
   }
 
-  .menu > .menu-item-has-children:last-child > .sub-menu {
+  .menu > .menu-item-has-children:last-child:not( :first-child ) > .sub-menu {
       right: 0;
       left: unset;
   }
@@ -433,6 +438,23 @@ a.button:active {
     flex-direction: row;
     flex-wrap: nowrap;
     float: right;
+  }
+
+  .stacked-header #primary-menu > .menu {
+    float: none;
+  }
+
+  .stacked-header #primary-menu > .menu > .menu-item {
+    position: static;
+  }
+
+  .stacked-header #primary-menu > .menu > .menu-item-has-children:hover > .sub-menu {
+    border-left: 0;
+    border-right: 0;
+    box-sizing: border-box;
+      right: unset;
+      left: 0;
+    width: 100%;
   }
 
 #secondary-menu {

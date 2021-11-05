@@ -42,7 +42,7 @@ function site_appearance_init() {
 
   add_settings_field(
     'cpt_sites_show_primary_menu',
-    '<label for="cpt_sites_show_primary_menu">' . __( 'Primary Menu (In Header)', 'cpt-sites' ) . '</label>',
+    '<label for="cpt_sites_show_primary_menu">' . __( 'Primary Menu (in Header)', 'cpt-sites' ) . '</label>',
     __NAMESPACE__ . '\cpt_sites_show_primary_menu',
     'cpt-sites-appearance',
     'header',
