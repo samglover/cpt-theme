@@ -580,7 +580,7 @@ a.button:active {
   margin-top: 0 !important;
 }
 
-.screen-reader-only,
+.screen-reader-text,
 .wp-block-search label {
   height: 1px;
   overflow: hidden;
