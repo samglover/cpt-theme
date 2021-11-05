@@ -452,8 +452,12 @@ a.button:active {
   grid-gap: 4rem;
   grid-template-columns: 2fr 1fr;
   margin: 4rem auto 6rem auto;
-  max-width: 140rem;
 }
+
+  .home.page #content-sidebar-container {
+    margin-top: 2rem;
+    max-width: 140rem;
+  }
 
   body:not( .home.page ) #content-sidebar-container {
     max-width: 110rem;
@@ -480,8 +484,12 @@ a.button:active {
 #content {
   margin: 4rem auto 6rem auto;
   padding: 0 2rem;
-  max-width: 140rem;
 }
+
+  .home.page #content {
+    margin-top: 2rem;
+    max-width: 140rem;
+  }
 
   body:not( .home.page ):not( .page-template-sidebar ) #content {
     max-width: 110rem;
