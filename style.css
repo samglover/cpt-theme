@@ -177,7 +177,7 @@ label {
 input,
 select,
 textarea {
-  border: .1rem solid var( --menu-border );
+  border: .1rem solid var( --menu-border-color );
   box-sizing: border-box;
   font-weight: normal;
   line-height: 1.5;
@@ -603,6 +603,14 @@ a.button:active {
 
 .clearfix {
   clear: both;
+}
+
+.gradient {
+  background: radial-gradient( circle, rgba( 0, 0, 0, .1 ) 0%, rgba( 256, 256, 256, .1 ) 150%);
+}
+
+.hover-glow:hover {
+  background: radial-gradient( circle, rgba( 256, 256, 256, .1 ) 0%, rgba( 0, 0, 0, .1 ) 150%);
 }
 
 .remove-bottom-margin {
