@@ -89,6 +89,15 @@ h1, h2, h3, h4, h5, h6 {
   margin: 1em 0 .5em 0;
 }
 
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+  margin-top: 0;
+}
+
 h1 {
   font-size: 4.395rem;
 }
@@ -391,17 +400,13 @@ a.button:active {
     display: none;
     padding: 1rem 2rem;
     position: absolute;
-      left: 0;
+      left: 50%;
+    transform: translateX( -50% );
     z-index: 10;
   }
 
   .menu > .menu-item-has-children:hover > .sub-menu {
     display: block;
-  }
-
-  .menu > .menu-item-has-children:last-child:not( :first-child ) > .sub-menu {
-      right: 0;
-      left: unset;
   }
 
   .sub-menu > .menu-item {
@@ -454,6 +459,7 @@ a.button:active {
     box-sizing: border-box;
       right: unset;
       left: 0;
+    transform: unset;
     width: 100%;
   }
 
@@ -599,6 +605,12 @@ a.button:active {
 .alignleft {
   float: left;
   margin-right: 1em;
+}
+
+.card {
+  box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .25rem .25rem 1.5rem rgba( 0, 0, 0, .1 );
+  margin-bottom: 1.5em !important;
+  padding: 3em !important;
 }
 
 .clearfix {
