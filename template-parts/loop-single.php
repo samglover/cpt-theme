@@ -1,4 +1,4 @@
-<?php namespace CPT_Sites\Template_Parts; ?>
+<?php namespace CPT_Theme\Template_Parts; ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

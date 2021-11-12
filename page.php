@@ -1,4 +1,4 @@
-<?php namespace CPT_Sites; ?>
+<?php namespace CPT_Theme; ?>
 
 <?php get_header(); ?>
 

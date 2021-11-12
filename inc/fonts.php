@@ -1,6 +1,6 @@
 <?php
 
-namespace CPT_Sites\Inc;
+namespace CPT_Theme\Inc;
 
 /**
  * Google Fonts.

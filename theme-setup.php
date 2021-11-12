@@ -1,6 +1,6 @@
 <?php
 
-namespace CPT_Sites\Theme_Setup;
+namespace CPT_Theme\Theme_Setup;
 
 function theme_setup() {
 
@@ -12,8 +12,8 @@ function theme_setup() {
 
   add_image_size( 'tiny', 0, 90 );
 
-  register_nav_menu( 'primary', __( 'Primary Menu (In Header)', 'cpt-sites' ) );
-  register_nav_menu( 'secondary', __( 'Secondary Menu (Below Header)', 'cpt-sites' ) );
+  register_nav_menu( 'primary', __( 'Primary Menu (In Header)', 'cpt-theme' ) );
+  register_nav_menu( 'secondary', __( 'Secondary Menu (Below Header)', 'cpt-theme' ) );
 
 }
 

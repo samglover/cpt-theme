@@ -1,6 +1,6 @@
 <?php
 
-namespace CPT_Sites;
+namespace CPT_Theme;
 
 /**
  * Constants
@@ -31,7 +31,7 @@ function customizer_options( $wp_customize ) {
 
   $wp_customize->add_control( 'cpt_sites_show_site_title',
     [
-      'label'   => __( 'Show site title?', 'cpt-sites' ),
+      'label'   => __( 'Show site title?', 'cpt-theme' ),
       'section' => 'title_tagline',
       'type'    => 'checkbox',
     ]
