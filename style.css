@@ -378,11 +378,6 @@ a.button:active {
     text-decoration: underline;
   }
 
-  .menu > .menu-item-has-children > a:hover,
-  .menu > .menu-item-has-children > a:focus {
-    text-decoration: none;
-  }
-
   .menu > .menu-item-has-children:not( .collapsed-menu ) > a::after {
     color: var( --text-color-light );
     content: '\02009\0002B';
