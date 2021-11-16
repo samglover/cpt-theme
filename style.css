@@ -462,12 +462,29 @@ a.button:active {
     width: 100%;
   }
 
-#secondary-menu {
-  background-color: rgba( 0, 0, 0, .1 );
-  font-size: 90%;
-  margin-bottom: 4rem;
-  padding: 1rem 2rem;
-}
+  #secondary-menu {
+    background-color: rgba( 0, 0, 0, .1 );
+    font-size: 90%;
+    margin-bottom: 4rem;
+    padding: 1rem 2rem;
+  }
+
+  #breadcrumbs {
+    color: var( --text-color-light );
+    font-family: var( --heading-font );
+    font-size: var( --font-size-small );
+    margin: 4rem auto;
+    padding: 1rem 2rem;
+    max-width: 110rem;
+  }
+
+  .breadcrumb {
+  }
+
+  .last-breadcrumb {
+    color: var( --text-color );
+    font-weight: bold;
+  }
 
 
 /**

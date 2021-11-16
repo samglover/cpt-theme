@@ -110,6 +110,16 @@ function site_appearance_init() {
 
   register_setting( 'cpt-theme', 'cpt_sites_show_secondary_menu' );
 
+  add_settings_field(
+    'cpt_sites_show_breadcrumbs',
+    '<label for="cpt_sites_show_breadcrumbs">' . __( 'Breadcrumbs', 'cpt-theme' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_show_breadcrumbs',
+    'cpt-theme-appearance',
+    'header',
+  );
+
+  register_setting( 'cpt-theme', 'cpt_sites_show_breadcrumbs' );
+
 
   add_settings_section(
     'fonts',
@@ -302,6 +312,25 @@ function header() {
             <label for="cpt_sites_show_secondary_menu">
               <input name="cpt_sites_show_secondary_menu" id="cpt_sites_show_secondary_menu" type="checkbox" value="1" <?php checked( get_option( 'cpt_sites_show_secondary_menu' ) ); ?>>
               <?php _e( 'Enable the secondary menu below the header.', 'cpt-theme' ); ?>
+            </label>
+          </fieldset>
+
+        <?php
+
+      echo ob_get_clean();
+
+  }
+
+  function cpt_sites_show_breadcrumbs() {
+
+    ob_start();
+
+        ?>
+
+          <fieldset>
+            <label for="cpt_sites_show_breadcrumbs">
+              <input name="cpt_sites_show_breadcrumbs" id="cpt_sites_show_breadcrumbs" type="checkbox" value="1" <?php checked( get_option( 'cpt_sites_show_breadcrumbs' ) ); ?>>
+              <?php _e( 'Show breadcrumb navigation below the header.', 'cpt-theme' ); ?>
             </label>
           </fieldset>
 
