@@ -45,11 +45,13 @@ body {
 a,
 a:visited {
   color: var( --link-color );
+  text-decoration: none;
 }
 
 a:hover,
 a:focus {
   color: var( --link-color-hover );
+  text-decoration: underline;
 }
 
 #title {
@@ -372,14 +374,12 @@ a.button:active {
     color: var( --menu-text-color );
     display: block;
     font-family: var( --heading-font );
-    text-decoration: none;
     white-space: nowrap;
   }
 
   .menu a:hover,
   .menu a:focus {
     color: var( --link-color-hover );
-    text-decoration: underline;
   }
 
   .menu > .menu-item-has-children:not( .collapsed-menu ) > a::after {
@@ -476,9 +476,6 @@ a.button:active {
     margin: 4rem auto;
     padding: 1rem 2rem;
     max-width: 110rem;
-  }
-
-  .breadcrumb {
   }
 
   .last-breadcrumb {
