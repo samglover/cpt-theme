@@ -97,6 +97,8 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_stylesheets_scripts
 
 function register_admin_stylesheets_scripts() {
 
+  wp_enqueue_style( 'admin-css', CPT_THEME_DIR_URI . '/css/admin.css' );
+
   // Color Picker
   wp_enqueue_style( 'wp-color-picker' );
   wp_enqueue_script( 'color-picker', CPT_THEME_DIR_URI . '/js/color-picker.js', [ 'wp-color-picker' ], '', true );
