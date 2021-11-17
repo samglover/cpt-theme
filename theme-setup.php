@@ -64,17 +64,17 @@ function register_widget_areas() {
 
   register_sidebar(
     [
-      'id'            => 'footer-widgets',
-      'name'          => __( 'Footer Widget Area' ),
-      'description'   => __( 'Displayed in the footer.' ),
+      'id'            => 'sidebar',
+      'name'          => __( 'Sidebar Widget Area' ),
+      'description'   => __( 'Displayed as a sidebar when using the Sidebar page template.' ),
     ]
   );
 
   register_sidebar(
     [
-      'id'            => 'sidebar',
-      'name'          => __( 'Sidebar Widget Area' ),
-      'description'   => __( 'Displayed as a sidebar when using the Sidebar page template.' ),
+      'id'            => 'footer-widgets',
+      'name'          => __( 'Footer Widget Area' ),
+      'description'   => __( 'Displayed in the footer.' ),
     ]
   );
 
@@ -85,10 +85,10 @@ add_action( 'widgets_init', __NAMESPACE__ . '\register_widget_areas' );
 
 function register_stylesheets_scripts() {
 
-  wp_enqueue_style( 'normalize-css', CPT_SITES_DIR_URI . '/css/normalize.css' );
-	wp_enqueue_style( 'stylesheet', CPT_SITES_DIR_URI . '/style.css', '', filemtime( CPT_SITES_DIR_PATH . '/style.css' ) );
+  wp_enqueue_style( 'normalize-css', CPT_THEME_DIR_URI . '/css/normalize.css' );
+	wp_enqueue_style( 'stylesheet', CPT_THEME_DIR_URI . '/style.css', '', filemtime( CPT_THEME_DIR_PATH . '/style.css' ) );
 
-	wp_enqueue_script( 'menus-js', CPT_SITES_DIR_URI . '/js/menus.js', '', '', true );
+	wp_enqueue_script( 'menus-js', CPT_THEME_DIR_URI . '/js/menus.js', '', '', true );
 
 }
 
@@ -99,7 +99,7 @@ function register_admin_stylesheets_scripts() {
 
   // Color Picker
   wp_enqueue_style( 'wp-color-picker' );
-  wp_enqueue_script( 'color-picker', CPT_SITES_DIR_URI . '/js/color-picker.js', [ 'wp-color-picker' ], '', true );
+  wp_enqueue_script( 'color-picker', CPT_THEME_DIR_URI . '/js/color-picker.js', [ 'wp-color-picker' ], '', true );
 
 }
 

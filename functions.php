@@ -5,18 +5,19 @@ namespace CPT_Theme;
 /**
  * Constants
  */
-define( 'CPT_SITES_DIR_PATH', get_template_directory() );
-define( 'CPT_SITES_DIR_URI', get_template_directory_uri() );
+define( 'CPT_THEME_DIR_PATH', get_template_directory() );
+define( 'CPT_THEME_DIR_URI', get_template_directory_uri() );
 
 
 /**
  * Theme Files
  */
-require_once( CPT_SITES_DIR_PATH . '/theme-setup.php' );
-require_once( CPT_SITES_DIR_PATH . '/inc/fonts.php' );
+require_once( CPT_THEME_DIR_PATH . '/theme-setup.php' );
+require_once( CPT_THEME_DIR_PATH . '/inc/fonts.php' );
+require_once( CPT_THEME_DIR_PATH . '/inc/shortcodes.php' );
 
 if ( is_admin() ) {
-  require_once( CPT_SITES_DIR_PATH . '/admin/options.php' );
+  require_once( CPT_THEME_DIR_PATH . '/admin/options.php' );
 }
 
 function customizer_options( $wp_customize ) {
