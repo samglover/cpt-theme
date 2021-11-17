@@ -9,8 +9,8 @@ function cpt_sites_submenu_pages() {
 
   add_submenu_page(
     'themes.php',
-    __( 'Theme Options', 'cpt-theme' ),
-    __( 'Theme Options', 'cpt-theme' ),
+    __( 'CPT Theme Options', 'cpt-theme' ),
+    __( 'CPT Theme Options', 'cpt-theme' ),
     'manage_options',
     'cpt-theme-appearance',
     __NAMESPACE__ . '\site_appearance',
