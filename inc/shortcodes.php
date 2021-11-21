@@ -35,10 +35,7 @@ function list_child_pages( $atts ) {
   $post__not_in[] = get_the_ID();
 
   $args = [
-    'meta_key'        => '_yoast_wpseo_meta-robots-noindex',
-    'meta_value'      => [ 0, 2 ], // 0 = not set; 2 = no.
-    'order'           => 'ASC',
-    'orderby'			    => 'menu_order',
+    'orderby'			    => [ 'menu_order' => 'ASC', 'date' => 'DESC'],
     'post__not_in'    => $post__not_in,
     'post_parent'     => $atts[ 'parent' ],
     'posts_per_page'  => -1,
