@@ -393,6 +393,12 @@ a.button:active {
     cursor: pointer;
   }
 
+  .collapsed-menu > a:hover,
+  .collapsed-menu > a:focus {
+    color: var( --text-color-light );
+    text-decoration: none;
+  }
+
   .menu > .menu-item-has-children > .sub-menu {
     background-color: WhiteSmoke;
     border: 1px solid var( --menu-border-color );
@@ -405,7 +411,8 @@ a.button:active {
     z-index: 10;
   }
 
-  .menu > .menu-item-has-children:hover > .sub-menu {
+  .menu > .menu-item-has-children:hover > .sub-menu,
+  .menu > .menu-item-has-children:focus > .sub-menu {
     display: block;
   }
 
@@ -453,7 +460,8 @@ a.button:active {
     position: static;
   }
 
-  .stacked-header #primary-menu > .menu > .menu-item-has-children:hover > .sub-menu {
+  .stacked-header #primary-menu > .menu > .menu-item-has-children:hover > .sub-menu,
+  .stacked-header #primary-menu > .menu > .menu-item-has-children:focus > .sub-menu {
     border-left: 0;
     border-right: 0;
     box-sizing: border-box;
@@ -633,10 +641,6 @@ a.button:active {
 
 .gradient {
   background: radial-gradient( circle, rgba( 0, 0, 0, .1 ) 0%, rgba( 256, 256, 256, .1 ) 150%);
-}
-
-.hover-glow:hover {
-  background: radial-gradient( circle, rgba( 256, 256, 256, .1 ) 0%, rgba( 0, 0, 0, .1 ) 150%);
 }
 
 .remove-bottom-margin {
