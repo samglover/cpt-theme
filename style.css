@@ -572,7 +572,7 @@ a.button:active {
 
   }
 
-  @media ( max-width: 500px ) {
+  @media ( max-width: 600px ) {
 
     #content-sidebar-container #sidebar {
       grid-template-columns: 1fr;
