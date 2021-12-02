@@ -445,23 +445,27 @@ a.button:active {
     align-self: center;
   }
 
-  #primary-menu > .menu {
+  #primary-menu .menu {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: nowrap;
     float: right;
   }
 
-  .stacked-header #primary-menu > .menu {
+  #primary-menu .menu > .menu-item {
+    margin-bottom: 0;
+  }
+
+  .stacked-header #primary-menu .menu {
     float: none;
   }
 
-  .stacked-header #primary-menu > .menu > .menu-item {
+  .stacked-header #primary-menu .menu > .menu-item {
     position: static;
   }
 
-  .stacked-header #primary-menu > .menu > .menu-item-has-children:hover > .sub-menu,
-  .stacked-header #primary-menu > .menu > .menu-item-has-children:focus > .sub-menu {
+  .stacked-header #primary-menu .menu > .menu-item-has-children:hover > .sub-menu,
+  .stacked-header #primary-menu .menu > .menu-item-has-children:focus > .sub-menu {
     border-left: 0;
     border-right: 0;
     box-sizing: border-box;
