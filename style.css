@@ -674,6 +674,10 @@ a.button:active {
   background: radial-gradient( circle, rgba( 0, 0, 0, .1 ) 0%, rgba( 256, 256, 256, .1 ) 150%);
 }
 
+.hide {
+  display: none;
+}
+
 .remove-bottom-margin {
   margin-bottom: 0 !important;
 }
