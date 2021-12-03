@@ -20,7 +20,7 @@ function list_child_pages( $atts ) {
   $atts = shortcode_atts( [
     'parent'  => get_the_ID(),
     'exclude' => false,
-    'hide'    => true,
+    'hide'    => false,
   ], $atts );
 
   if ( $atts[ 'hide' ] == true ) { return; }
@@ -51,7 +51,7 @@ function list_child_pages( $atts ) {
 
     if ( $child_pages_query->have_posts() ) :
 
-      echo '<h2>More About ' . get_the_title() . '</h2>';
+      echo '<h2>More About ' . get_the_title( $atts[ 'parent' ] ) . '</h2>';
       echo '<ul class="child-pages">';
 
         while ( $child_pages_query->have_posts() ) : $child_pages_query->the_post();
