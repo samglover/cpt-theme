@@ -20,7 +20,10 @@ function list_child_pages( $atts ) {
   $atts = shortcode_atts( [
     'parent'  => get_the_ID(),
     'exclude' => false,
+    'hide'    => true,
   ], $atts );
+
+  if ( $atts[ 'hide' ] == true ) { return; }
 
   $exclude      = $atts[ 'exclude' ];
   $post__not_in = array();
