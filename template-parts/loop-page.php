@@ -14,7 +14,7 @@
     <div class="clearfix"></div>
 
     <?php if ( ! is_front_page() ) { ?>
-      <?php if ( ! has_shortcode( $post->post_content, 'list-child-pages' ) ) { echo do_shortcode( '[list-child-pages]' ); } ?>
+      <?php if ( ! has_shortcode( $post->post_content, 'list-child-pages' ) ) { echo 'Shortcode Not Found!'; echo do_shortcode( '[list-child-pages]' ); } ?>
       <p class="post-byline">By <?php the_author(); ?>. Last updated on <?php the_modified_date( 'F jS, Y' ); ?>.</p>
     <?php } ?>
 

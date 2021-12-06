@@ -153,6 +153,10 @@ li:not( :last-child ) {
   margin-bottom: .5em;
 }
 
+li li:first-child {
+  margin-top: .5em;
+}
+
 blockquote {
   border-left: .3rem solid var( --menu-border-color );
 }
