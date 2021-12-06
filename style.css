@@ -54,6 +54,13 @@ a:focus {
   text-decoration: underline;
 }
 
+:target:before {
+  content: '';
+  display: block;
+  height: 1em;
+  margin-top: -1em;
+}
+
 #title {
   display: block;
   font-family: var( --heading-font );
