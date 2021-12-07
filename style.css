@@ -523,7 +523,6 @@ a.button:active {
   .home.page #content,
   .home.page #content-sidebar-container {
     margin-top: 2rem;
-    max-width: 140rem;
   }
 
   body:not( .home.page ):not( .page-template-sidebar ) #content,
@@ -531,7 +530,7 @@ a.button:active {
     max-width: 110rem;
   }
 
-  #content {
+  #content:not( .home.page #content ) {
     margin: 4rem auto 6rem auto;
     padding: 0 2rem;
   }
