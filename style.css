@@ -153,7 +153,7 @@ li:not( :last-child ) {
   margin-bottom: .5em;
 }
 
-li li:first-child {
+li li:first-child:not( .menu-item ) {
   margin-top: .5em;
 }
 
