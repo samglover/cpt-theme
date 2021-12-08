@@ -14,7 +14,6 @@ define( 'CPT_THEME_DIR_URI', get_template_directory_uri() );
  */
 require_once( CPT_THEME_DIR_PATH . '/theme-setup.php' );
 require_once( CPT_THEME_DIR_PATH . '/inc/fonts.php' );
-require_once( CPT_THEME_DIR_PATH . '/inc/shortcodes.php' );
 
 if ( is_admin() ) {
   require_once( CPT_THEME_DIR_PATH . '/admin/options.php' );
