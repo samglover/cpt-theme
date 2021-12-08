@@ -640,7 +640,46 @@ a.button:active {
 .pagination,
 .post-nav-links {
   font-family: var( --heading-font );
+  font-variant-numeric: lining-nums;
 }
+
+.nav-links * {
+  display: inline-block;
+}
+
+.nav-links *:not( :last-child ) {
+  margin-right: .25em;
+}
+
+.nav-links *:not( .dots ) {
+  border-radius: 9999px;
+  padding: .75rem 2.5rem;
+}
+
+.nav-links .current {
+  background-color: var( --text-color-light );
+  border: .2rem solid var( --text-color-light );
+  color: White;
+}
+
+.nav-links .dots {
+  padding: .75rem 0;
+}
+
+.nav-links a,
+.nav-links a:visited   {
+  border: .2rem solid var( --link-color );
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  border-color: var( --link-color-hover );
+  box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .5rem .5rem 1.5rem rgba( 0, 0, 0, .25 );
+  color: var( --link-color-hover );
+  text-decoration: none;
+}
+
 
 /**
  * Footer
