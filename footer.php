@@ -4,7 +4,7 @@
 
   <ul id="footer-widgets"><?php dynamic_sidebar( 'footer-widgets' ); ?></ul>
 
-  <p class="copyright"><small>The original content within this website is &copy; <?php echo date('Y') ?>. <a href="https://samglover.net/sitemap_index.xml">XML Sitemap</a></small></p>
+  <p class="copyright"><small>The original content within this website is &copy; <?php echo date('Y') ?>.</small></p>
 
 </footer>
 
