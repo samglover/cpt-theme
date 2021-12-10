@@ -516,8 +516,6 @@ a.button:active {
   display: grid;
   grid-gap: 4rem;
   grid-template-columns: 2fr 1fr;
-  margin: 4rem auto 6rem auto;
-  padding: 0 2rem;
 }
 
   .home.page #content,
@@ -525,24 +523,21 @@ a.button:active {
     margin-top: 2rem;
   }
 
-  body:not( .home.page ):not( .page-template-sidebar ) #content,
+  body:not( .home.page ) #content,
   body:not( .home.page ) #content-sidebar-container {
+    margin: 4rem auto 6rem auto;
     max-width: 110rem;
+    padding: 0 2rem;
   }
 
-  #content:not( .home.page #content ) {
-    margin: 4rem auto 6rem auto;
-    padding: 0 2rem;
+  #content-sidebar-container #content {
+    margin: 0;
+    padding: 0;
   }
 
     #content > *:first-child {
       margin-top: 0;
     }
-
-  #content-sidebar-container #content {
-    margin: unset;
-    padding: unset;
-  }
 
   ul#sidebar {
     list-style: none;
