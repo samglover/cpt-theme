@@ -1,10 +1,10 @@
 /*------------------------------
 Theme Name:   CPT Theme
-Author:       Sam Glover
 Description:  A base Client Power Tools theme.
-Version:      1.0
+Version:      1.1
+Author:       Sam Glover
+Author URI:   https://samglover.net
 Text Domain:  cpt-theme
-
 License:      Copyright Sam Glover
 License URI:  N/A
 ------------------------------*/
@@ -359,6 +359,81 @@ a.button:active {
     margin: 0;
   }
 
+  .modal-screen {
+    background-color: Black;
+    display: none;
+    opacity: .75;
+    position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    z-index: 10;
+  }
+
+  .modal {
+    background-color: Snow;
+    display: none;
+    margin: 0 auto;
+    max-height: 80%;
+    max-width: 80%;
+    min-width: 30rem;
+    overflow: scroll;
+    position: fixed;
+      top: 10%;
+      left: 50%;
+    transform: translateX( -50% );
+    z-index: 20;
+  }
+
+  .modal > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .dismiss-modal {
+    background-color: #ccc;
+    border: none;
+    border-radius: 9999px;
+    font-size: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    margin: 0;
+    padding: .2rem;
+    position: absolute;
+      top: 3rem;
+      right: 3rem;
+    width: 3rem;
+  }
+
+    .dismiss-modal svg {
+      position: absolute;
+        top: 50%;
+        left: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    .dismiss-modal polygon {
+      fill: White;
+    }
+
+  .dismiss-modal:hover,
+  .dismiss-modal:focus {
+    background-color: #ddd;
+  }
+
+    .dismiss-modal:hover polygon,
+    .dismiss-modal:focus polygon {
+      fill: White;
+    }
+
+  .dismiss-modal:active {
+    background-color: #bbb;
+  }
+
+    .dismiss-modal:active polygon {
+      fill: Snow;
+    }
+
 
   /* Nav Menus */
 
@@ -711,7 +786,7 @@ a.button:active {
 .card {
   box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .25rem .25rem 1.5rem rgba( 0, 0, 0, .1 );
   margin-bottom: 1.5em !important;
-  padding: 3em !important;
+  padding: 3rem !important;
 }
 
 .clearfix {

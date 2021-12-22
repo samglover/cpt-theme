@@ -101,6 +101,26 @@ function site_appearance_init() {
   register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_url' );
 
   add_settings_field(
+    'cpt_sites_primary_menu_cta_style',
+    '<label for="cpt_sites_primary_menu_cta_style">' . __( 'Header CTA Style', 'cpt-theme' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_primary_menu_cta_style',
+    'cpt-theme-appearance',
+    'header',
+  );
+
+  register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_style' );
+
+  add_settings_field(
+    'cpt_sites_primary_menu_cta_code',
+    '<label for="cpt_sites_primary_menu_cta_code">' . __( 'Header CTA Code', 'cpt-theme' ) . '</label>',
+    __NAMESPACE__ . '\cpt_sites_primary_menu_cta_code',
+    'cpt-theme-appearance',
+    'header',
+  );
+
+  register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_code' );
+
+  add_settings_field(
     'cpt_sites_show_secondary_menu',
     '<label for="cpt_sites_show_secondary_menu">' . __( 'Secondary Menu (Below Header)', 'cpt-theme' ) . '</label>',
     __NAMESPACE__ . '\cpt_sites_show_secondary_menu',
@@ -307,6 +327,29 @@ function header() {
 
   function cpt_sites_primary_menu_cta_url() {
     echo '<input name="cpt_sites_primary_menu_cta_url" class="regular-text" type="url" value="' . get_option( 'cpt_sites_primary_menu_cta_url' ) . '">';
+    echo '<p class="description">' . __( 'Even if you select the Modal option below, it is a good idea to have a backup URL.', 'cpt-theme' ) . '</p>';
+  }
+
+  function cpt_sites_primary_menu_cta_style() {
+
+    $style = get_option( 'cpt_sites_primary_menu_cta_style' );
+
+    ?>
+
+      <select name="cpt_sites_primary_menu_cta_style">
+        <option value="normal" <?php selected( $style, 'normal' ); ?>>Normal</option>
+        <option value="modal" <?php selected( $style, 'modal' ); ?>>Modal (Pop-Up)</option>
+      </select>
+
+    <?php
+
+    echo '<p class="description">' . __( 'Normal: Clicking the button will take the visitor to the URL above. ', 'cpt-theme' ) . '<br />' . __( 'Modal: Clicking the button will show a modal (pop-up) that displays the shortcode or embed code below.', 'cpt-theme' ) . '</p>';
+
+  }
+
+  function cpt_sites_primary_menu_cta_code() {
+    echo '<textarea name="cpt_sites_primary_menu_cta_code" class="regular-text" rows="5">' . get_option( 'cpt_sites_primary_menu_cta_code' ) . '</textarea>';
+    echo '<p class="description">' . __( 'Paste a shortcode or embed code here.', 'cpt-theme' ) . '</p>';
   }
 
   function cpt_sites_show_secondary_menu() {
