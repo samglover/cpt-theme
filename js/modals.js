@@ -15,17 +15,21 @@ function showModal( ID ) {
 
 function closeModal( ID ) {
 
-  let opacity     = 0;
   let intervalID;
+  let opacity;
   let modal       = [
     document.querySelector( '#' + ID + ' .modal' ),
     document.querySelector( '#' + ID + ' .modal-screen' ),
   ];
+  let increment   = [
+    Number( window.getComputedStyle( modal[ 0 ] ).getPropertyValue( 'opacity' ) ) / 10,
+    Number( window.getComputedStyle( modal[ 1 ] ).getPropertyValue( 'opacity' ) ) / 10,
+  ];
   let done        = modal;
 
-  intervalID = setInterval( fade, 20 );
+  intervalID = setInterval( fadeOut, 20 );
 
-  function fade() {
+  function fadeOut() {
 
     modal.forEach( function( e, i ) {
 
@@ -35,7 +39,7 @@ function closeModal( ID ) {
 
         if ( opacity > 0 ) {
 
-          opacity = opacity - 0.1;
+          opacity = opacity - increment[ i ];
           e.style.opacity = opacity;
 
         } else {
