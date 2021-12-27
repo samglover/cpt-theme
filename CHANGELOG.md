@@ -9,6 +9,9 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 -Modal call to action that can display shortcodes and embed codes.
 -Modal dismiss button (fades out modals).
 
+### Changed
+-Fix header menu so items align to the right and don't stretch to fill the container along either axis.
+
 ## [1.0] - 2021-12-10
 
 ### Added

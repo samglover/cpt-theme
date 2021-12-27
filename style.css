@@ -357,6 +357,7 @@ a.button:active {
     border-color: var( --header-cta-text-color );
     color: var( --header-cta-text-color );
     margin: 0;
+    width: max-content;
   }
 
   .modal-screen {
@@ -529,13 +530,13 @@ a.button:active {
 
   #primary-menu {
     align-self: center;
+    justify-self: end;
   }
 
   #primary-menu .menu {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    float: right;
   }
 
   #primary-menu .menu > .menu-item {
