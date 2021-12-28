@@ -73,3 +73,7 @@
     line-height: 1.1;
     margin: 0;
   }
+
+#cpt-theme-options h2 {
+  font-size: 23px;
+}

@@ -4,6 +4,7 @@ namespace CPT_Theme\Theme_Setup;
 
 function theme_setup() {
 
+  add_theme_support( 'align-full' );
   add_theme_support( 'custom-logo', [ 'height' => 480, 'width'  => 720, 'flex-width' => true ] );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'responsive-embeds' );
@@ -32,6 +33,7 @@ function default_options() {
     'cpt_sites_primary_menu_cta_text_color'   => 'White',
     'cpt_sites_primary_menu_cta_button_color' => 'Coral',
     'cpt_sites_primary_menu_cta_text'         => 'Contact Us',
+    'cpt_sites_primary_menu_cta_style'        => 'normal',
 
     // Fonts
     'cpt_sites_headings'                      => 'Josefin Sans',
@@ -89,6 +91,7 @@ function register_stylesheets_scripts() {
 	wp_enqueue_style( 'stylesheet', CPT_THEME_DIR_URI . '/style.css', '', filemtime( CPT_THEME_DIR_PATH . '/style.css' ) );
 
 	wp_enqueue_script( 'menus-js', CPT_THEME_DIR_URI . '/js/menus.js', '', '', true );
+  wp_enqueue_script( 'modals-js', CPT_THEME_DIR_URI . '/js/modals.js', '', '', true );
 
 }
 
@@ -98,6 +101,8 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_stylesheets_scripts
 function register_admin_stylesheets_scripts() {
 
   wp_enqueue_style( 'admin-css', CPT_THEME_DIR_URI . '/css/admin.css' );
+
+  wp_enqueue_script( 'admin-js', CPT_THEME_DIR_URI . '/js/admin.js', '', '', true );
 
   // Color Picker
   wp_enqueue_style( 'wp-color-picker' );
