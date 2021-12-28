@@ -5,11 +5,11 @@
  * collapses the overflow into a new sub-menu.
  */
 
-const Header        = document.querySelector( '#header' );
-const LogoWidth     = document.querySelector( '#logo-title' ).scrollWidth;
-const Menu          = document.querySelector( '#primary-menu ul.menu' );
-const MenuMaxWidth  = Menu ? Menu.scrollWidth : 0;
-const CTAWidth      = document.querySelector( '#header-cta' ) ? document.querySelector( '#header-cta' ).scrollWidth : 0;
+const Header    = document.querySelector( '#header' );
+const LogoWidth = document.querySelector( '#logo-title' ).scrollWidth;
+const Menu      = document.querySelector( '#primary-menu ul.menu' );
+const CTAWidth  = document.querySelector( '#header-cta' ) ? document.querySelector( '#header-cta' ).scrollWidth : 0;
+const GridGap   = 20;
 
 const CollapsedMenuParent = document.createElement( 'li' );
       CollapsedMenuParent.classList.add( 'menu-item', 'menu-item-has-children', 'collapsed-menu' );
@@ -27,7 +27,8 @@ function primaryMenuCollapser() {
     resetMenu();
   }
 
-  if ( getSpaceAvailable() <= MenuMaxWidth + 1 + 20 + CTAWidth ) { // 1 is a cheap "round-up," and 20 is for the grid gap.
+  if ( getSpaceAvailable() <= ( Menu ? Menu.scrollWidth : 0 ) + 1 + GridGap + CTAWidth ) {
+    // 1 is a cheap "round-up" in case there is a fractional pixel.
     collapseMenu();
   }
 
@@ -41,9 +42,9 @@ function primaryMenuCollapser() {
     let headerWidth   = Header.offsetWidth - headerPadding;
 
     if ( stackedHeader ) {
-      return headerWidth - 20;
+      return headerWidth - GridGap;
     } else {
-      return headerWidth - LogoWidth - 20;
+      return headerWidth - LogoWidth - GridGap;
     }
   }
 
@@ -90,7 +91,7 @@ function primaryMenuCollapser() {
     }
 
     function getMenuWidth() {
-      return stackedHeader ? Menu.offsetWidth + CTAWidth + 20 : menuContainer.scrollWidth;
+      return stackedHeader ? Menu.offsetWidth + CTAWidth + GridGap : menuContainer.scrollWidth;
     }
   }
 
