@@ -1,120 +1,105 @@
-/** Menu Collapser
+/**
+ * Menu Collapser
  *
  * If the menu overflows the width of the menu container, this function
  * collapses the overflow into a new sub-menu.
  */
+
+const Header        = document.querySelector( '#header' );
+const LogoWidth     = document.querySelector( '#logo-title' ).scrollWidth;
+const Menu          = document.querySelector( '#primary-menu ul.menu' );
+const MenuMaxWidth  = Menu ? Menu.scrollWidth : 0;
+const CTAWidth      = document.querySelector( '#header-cta' ) ? document.querySelector( '#header-cta' ).scrollWidth : 0;
+
+const CollapsedMenuParent = document.createElement( 'li' );
+      CollapsedMenuParent.classList.add( 'menu-item', 'menu-item-has-children', 'collapsed-menu' );
+      CollapsedMenuParent.insertAdjacentHTML( 'afterbegin', '<a>&bull;&bull;&bull;</a>' );
+
+const CollapsedMenu       = document.createElement( 'ul' );
+      CollapsedMenu.classList.add( 'sub-menu' );
+
+CollapsedMenuParent.appendChild( CollapsedMenu );
+
 function primaryMenuCollapser() {
+  let stackedHeader = false;
 
-  let primaryMenuContainer      = document.querySelector( '#primary-menu' );
-  let primaryMenuContainerWidth = primaryMenuContainer.offsetWidth;
-  let primaryMenu               = document.querySelector( '#primary-menu ul.menu' );
-  let primaryMenuWidth          = primaryMenu.offsetWidth;
-  let collapsedMenuParent       = document.querySelector( '#primary-menu .collapsed-menu' );
-  let collapsedMenu             = document.querySelector( '#primary-menu .collapsed-menu > .sub-menu' );
-  let stackedHeader             = false;
-
-  // Reconstructs the menu if the menu container is larger than the menu.
-  if ( primaryMenuContainerWidth > primaryMenuWidth && collapsedMenuParent ) {
-    reconstructPrimaryMenu();
+  if ( getSpaceAvailable() > Menu.offsetWidth ) {
+    resetMenu();
   }
 
-  // Resets widths.
-  primaryMenuContainerWidth = primaryMenuContainer.offsetWidth;
-  primaryMenuWidth          = primaryMenu.offsetWidth;
-
-  // Collapses the menu if the menu container is the same width as (or smaller
-  // than) the menu.
-  if ( primaryMenuContainerWidth <= primaryMenuWidth ) {
-    collapsePrimaryMenu();
+  if ( getSpaceAvailable() <= MenuMaxWidth + 1 + 20 + CTAWidth ) { // 1 is a cheap "round-up," and 20 is for the grid gap.
+    collapseMenu();
   }
 
-  let headerWidth = document.querySelector( '#header' ).scrollWidth;
+  if ( getSpaceAvailable() < Menu.scrollWidth + CTAWidth ) {
+    stackHeader();
+  }
 
-  if ( headerWidth > window.outerWidth ) {
+  function getSpaceAvailable() {
+    let headerStyle   = window.getComputedStyle( Header );
+    let headerPadding = parseFloat( headerStyle.paddingLeft ) + parseFloat( headerStyle.paddingRight )
+    let headerWidth   = Header.offsetWidth - headerPadding;
 
-    let primaryMenuItems = document.querySelectorAll( '#primary-menu ul.menu > li:not( .collapsed-menu )' );
-
-    if ( primaryMenuItems.length == 0 ) {
-
-      document.querySelector( 'body' ).classList.add( 'stacked-header' );
-
-      stackedHeader = true;
-
-      reconstructPrimaryMenu()
-      collapsePrimaryMenu();
-
+    if ( stackedHeader ) {
+      return headerWidth - 20;
+    } else {
+      return headerWidth - LogoWidth - 20;
     }
-
   }
 
-  function reconstructPrimaryMenu() {
-
+  function resetMenu() {
+    // Removes the #stacked-header body class if the header should no longer be stacked.
     if ( ! stackedHeader ) {
       document.querySelector( 'body' ).classList.remove( 'stacked-header' );
     }
 
-    let primaryMenuItems      = document.querySelectorAll( '#primary-menu ul.menu > li:not( .collapsed-menu )' );
-    let collapsedMenuItems    = document.querySelectorAll( '#primary-menu .collapsed-menu > .sub-menu > li' );
+    let primaryMenuItems    = document.querySelectorAll( '#primary-menu ul.menu > li:not( .collapsed-menu )' );
+    let collapsedMenuItems  = CollapsedMenu.querySelectorAll( 'li:not( .sub-menu .sub-menu li )' );
 
     collapsedMenuItems.forEach( function( e ) {
+      let menuItem = CollapsedMenu.removeChild( e );
 
-      let menuItem = collapsedMenu.removeChild( e );
-
-      primaryMenu.appendChild( menuItem );
+      Menu.appendChild( menuItem );
 
       collapsedMenuItems = document.querySelectorAll( '#primary-menu .collapsed-menu > .sub-menu > li' );
-
     });
 
-    primaryMenu.removeChild( collapsedMenuParent );
-
+    if ( Menu.contains( CollapsedMenuParent ) ) {
+      Menu.removeChild( CollapsedMenuParent );
+    }
   }
 
-  function collapsePrimaryMenu() {
-
-    collapsedMenuParent = document.querySelector( '#primary-menu .collapsed-menu' );
-
-    // First, checks to see if the submenu already exists in order to prevent
-    // multiple menus, since the function runs whenever the window is resized.
-    if ( ! collapsedMenuParent ) {
-
-      // Creates the .collapsed-menu menu item.
-      let container = document.createElement( 'li' );
-
-      container.classList.add( 'menu-item', 'menu-item-has-children', 'collapsed-menu' );
-      container.insertAdjacentHTML( 'afterbegin', '<a>&bull;&bull;&bull;</a>' );
-      primaryMenu.appendChild( container );
-
-      collapsedMenuParent = document.querySelector( '#primary-menu .collapsed-menu' );
-
-      // Creates the .collapsed-menu submenu.
-      let subMenu = document.createElement( 'ul' );
-
-      subMenu.classList.add( 'sub-menu' );
-      collapsedMenuParent.appendChild( subMenu );
-
-      collapsedMenu = document.querySelector( '#primary-menu .collapsed-menu > .sub-menu' );
-
+  function collapseMenu() {
+    // Checks to see if the submenu already exists in order to prevent multiple
+    // menus, since the function runs whenever the window is resized.
+    if ( ! Menu.contains( CollapsedMenuParent ) ) {
+      Menu.appendChild( CollapsedMenuParent );
     }
 
+    let menuContainer       = document.querySelector( '#menu-cta' );
     let primaryMenuItems    = document.querySelectorAll( '#primary-menu ul.menu > li:not( .collapsed-menu )' );
-    let numPrimaryMenuItems = primaryMenuItems.length - 1;
+    let numPrimaryMenuItems = primaryMenuItems.length - 1; // Adjusts the counter to node keys, which start at 0.
 
-    while ( primaryMenuContainerWidth <= primaryMenuWidth && numPrimaryMenuItems >= 0 ) {
+    while ( getSpaceAvailable() <= getMenuWidth() && numPrimaryMenuItems >= 0 ) {
+      let menuItem        = Menu.removeChild( primaryMenuItems.item( numPrimaryMenuItems ) );
+      collapsedMenuItems  = document.querySelectorAll( '#primary-menu .collapsed-menu > .sub-menu > li' )
 
-      let menuItem            = primaryMenu.removeChild( primaryMenuItems.item( numPrimaryMenuItems ) );
-      let collapsedMenuItems  = document.querySelectorAll( '#primary-menu .collapsed-menu > .sub-menu > li' )
-
-      collapsedMenu.insertBefore( menuItem, collapsedMenuItems.item( 0 ) );
-
-      // Resets widths.
-      primaryMenuContainerWidth = primaryMenuContainer.offsetWidth;
-      primaryMenuWidth          = primaryMenu.offsetWidth;
+      CollapsedMenu.insertBefore( menuItem, collapsedMenuItems.item( 0 ) );
 
       numPrimaryMenuItems--;
-
     }
 
+    function getMenuWidth() {
+      return stackedHeader ? Menu.offsetWidth + CTAWidth + 20 : menuContainer.scrollWidth;
+    }
+  }
+
+  function stackHeader() {
+    document.querySelector( 'body' ).classList.add( 'stacked-header' );
+    stackedHeader = true;
+
+    resetMenu();
+    collapseMenu();
   }
 
 }

@@ -11,6 +11,8 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 -Fix header menu so items align to the right and don't stretch to fill the container along either axis.
+-Fix the header collapse script to accommodate the above fix.
+-Menu collapser script clarified and consolidated.
 
 ## [1.0] - 2021-12-10
 

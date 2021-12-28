@@ -298,10 +298,6 @@ a.button:active {
   position: relative;
 }
 
-  .stacked-header #header {
-    display: block;
-  }
-
   #logo-title,
   #menu-cta {
     display: grid;
@@ -314,7 +310,8 @@ a.button:active {
 
   #header.show-primary-menu.show-header-cta #menu-cta {
     grid-gap: 2rem;
-    grid-template-columns: minmax( min-content, auto ) max-content ;
+    grid-template-columns: minmax( min-content, auto ) max-content;
+    justify-self: end;
   }
 
   .site-logo {
@@ -508,6 +505,10 @@ a.button:active {
     margin-bottom: .25em;
   }
 
+    .sub-menu > .menu-item a {
+      display: inline-block;
+    }
+
   .sub-menu > .menu-item:last-child {
     margin-bottom: 0;
   }
@@ -543,24 +544,28 @@ a.button:active {
     margin-bottom: 0;
   }
 
-  .stacked-header #primary-menu .menu {
-    float: none;
+  .stacked-header #header {
+    display: block;
   }
 
-  .stacked-header #primary-menu .menu > .menu-item {
-    position: static;
-  }
+    .stacked-header #primary-menu {
+      justify-self: start;
+    }
 
-  .stacked-header #primary-menu .menu > .menu-item-has-children:hover > .sub-menu,
-  .stacked-header #primary-menu .menu > .menu-item-has-children:focus > .sub-menu {
-    border-left: 0;
-    border-right: 0;
-    box-sizing: border-box;
-      right: unset;
-      left: 0;
-    transform: unset;
-    width: 100%;
-  }
+    .stacked-header #primary-menu .menu > .menu-item {
+      position: static;
+    }
+
+    .stacked-header #primary-menu .menu > .menu-item-has-children:hover > .sub-menu,
+    .stacked-header #primary-menu .menu > .menu-item-has-children:focus > .sub-menu {
+      border-left: 0;
+      border-right: 0;
+      box-sizing: border-box;
+        right: unset;
+        left: 0;
+      transform: unset;
+      width: 100%;
+    }
 
   #secondary-menu {
     background-color: rgba( 0, 0, 0, .1 );
