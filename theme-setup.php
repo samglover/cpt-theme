@@ -4,6 +4,7 @@ namespace CPT_Theme\Theme_Setup;
 
 function theme_setup() {
 
+  add_theme_support( 'align-full' );
   add_theme_support( 'custom-logo', [ 'height' => 480, 'width'  => 720, 'flex-width' => true ] );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'responsive-embeds' );
