@@ -77,7 +77,7 @@ function primaryMenuCollapser() {
       Menu.appendChild( CollapsedMenuParent );
     }
 
-    let menuContainer       = document.querySelector( '#menu-cta' );
+    let menuContainer       = document.querySelector( '#menu-container' );
     let primaryMenuItems    = document.querySelectorAll( '#primary-menu ul.menu > li:not( .collapsed-menu )' );
     let numPrimaryMenuItems = primaryMenuItems.length - 1; // Adjusts the counter to node keys, which start at 0.
 

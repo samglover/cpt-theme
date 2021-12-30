@@ -62,7 +62,7 @@
 
     </div>
 
-    <div id="menu-cta">
+    <div id="menu-container">
 
       <?php
 

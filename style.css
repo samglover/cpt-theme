@@ -299,7 +299,7 @@ a.button:active {
 }
 
   #logo-title,
-  #menu-cta {
+  #menu-container {
     display: grid;
   }
 
@@ -308,7 +308,7 @@ a.button:active {
     grid-template-columns: repeat( 2, max-content );
   }
 
-  #header.show-primary-menu.show-header-cta #menu-cta {
+  #header.show-primary-menu.show-header-cta #menu-container {
     grid-gap: 2rem;
     grid-template-columns: minmax( min-content, auto ) max-content;
     justify-self: end;

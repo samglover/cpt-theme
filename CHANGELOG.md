@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [1.1] - 2021-12-28
+## 1.1 - 2021-12-28
 
 ### Added
 -Modal call to action that can display shortcodes and embed codes.
@@ -15,7 +15,8 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 -Fix the header collapse script to accommodate the above fix.
 -Menu collapser script clarified and consolidated.
 
-## [1.0] - 2021-12-10
+
+## 1.0 - 2021-12-10
 
 ### Added
 -Everything
