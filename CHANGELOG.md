@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 1.1.1 - 2022-01-03
+
+### Changed
+-Align first menu item in the secondary menu with the left side so that it doesn't run off the screen.
+-Remove bottom margin from menu items.
+
+
 ## 1.1 - 2021-12-28
 
 ### Added

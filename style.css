@@ -1,7 +1,7 @@
 /*------------------------------
 Theme Name:   CPT Theme
 Description:  A base Client Power Tools theme.
-Version:      1.1
+Version:      1.1.1
 Author:       Sam Glover
 Author URI:   https://samglover.net
 Text Domain:  cpt-theme
@@ -445,7 +445,7 @@ a.button:active {
 
   .menu > .menu-item {
     display: inline-block;
-    margin-right: 1em;
+    margin: 0 1em 0 0;
     position: relative;
   }
 
@@ -572,6 +572,12 @@ a.button:active {
     font-size: 90%;
     margin-bottom: 4rem;
     padding: 1rem 2rem;
+  }
+
+  #secondary-menu .menu > .menu-item-has-children:first-child > .sub-menu {
+    position: absolute;
+      left: 0;
+    transform: unset;
   }
 
   #breadcrumbs {
