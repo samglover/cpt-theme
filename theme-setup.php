@@ -87,11 +87,11 @@ add_action( 'widgets_init', __NAMESPACE__ . '\register_widget_areas' );
 
 function register_stylesheets_scripts() {
 
-  wp_enqueue_style( 'normalize-css', CPT_THEME_DIR_URI . '/css/normalize.css' );
+  wp_enqueue_style( 'normalize', CPT_THEME_DIR_URI . '/css/normalize.css' );
 	wp_enqueue_style( 'stylesheet', CPT_THEME_DIR_URI . '/style.css', '', filemtime( CPT_THEME_DIR_PATH . '/style.css' ) );
 
-	wp_enqueue_script( 'menus-js', CPT_THEME_DIR_URI . '/js/menus.js', '', '', true );
-  wp_enqueue_script( 'modals-js', CPT_THEME_DIR_URI . '/js/modals.js', '', '', true );
+	wp_enqueue_script( 'menus', CPT_THEME_DIR_URI . '/js/menus.js', '', '', true );
+  wp_enqueue_script( 'modals', CPT_THEME_DIR_URI . '/js/modals.js', '', '', true );
 
 }
 
@@ -100,9 +100,9 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_stylesheets_scripts
 
 function register_admin_stylesheets_scripts() {
 
-  wp_enqueue_style( 'admin-css', CPT_THEME_DIR_URI . '/css/admin.css' );
+  wp_enqueue_style( 'admin', CPT_THEME_DIR_URI . '/css/admin.css' );
 
-  wp_enqueue_script( 'admin-js', CPT_THEME_DIR_URI . '/js/admin.js', '', '', true );
+  wp_enqueue_script( 'admin', CPT_THEME_DIR_URI . '/js/admin.js', '', '', true );
 
   // Color Picker
   wp_enqueue_style( 'wp-color-picker' );
