@@ -65,19 +65,28 @@
   width: max-content;
 }
 
-.modal {
+.modal-container {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  width: 100vw;
+}
+
+.modal.card {
   background-color: Snow;
   box-sizing: border-box;
-  display: none;
-  margin: 0 auto;
-  max-height: 80%;
-  max-width: 80%;
-  min-width: 30rem;
+  height: min-content;
+  max-height: 90vh;
+  max-width: 80vw;
+  min-width: 33rem;
   overflow: scroll;
-  position: fixed;
-    top: 10%;
-    left: 50%;
-  transform: translateX( -50% );
+  position: relative;
+    top: 10vh;
   z-index: 20;
 
   & > *:last-child {
@@ -95,8 +104,8 @@
   margin: 0;
   padding: .2rem;
   position: absolute;
-    top: 3rem;
-    right: 3rem;
+    top: 1rem;
+    right: 1rem;
   width: 3rem;
 
   &:hover,
@@ -110,22 +119,20 @@
 
   svg {
     fill: White;
-    position: absolute;
-      top: 50%;
-      left: 50%;
-    transform: translate(-50%,-50%);
   }
 }
 
 .modal-screen {
   background-color: Black;
   display: none;
+  height: 100vh;
   opacity: .75;
-  position: fixed;
+  position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+  width: 100vw;
   z-index: 10;
 }
 

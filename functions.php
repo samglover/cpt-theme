@@ -61,7 +61,7 @@ add_action( 'wp_head', __NAMESPACE__ . '\css_variables' );
  * Header Classes
  */
 function header_class() {
-  $classes = array();
+  $classes = [];
 
   if ( get_theme_mod( 'custom_logo' ) ) {
     $classes[] = 'has-custom-logo';
