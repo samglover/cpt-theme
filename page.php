@@ -2,6 +2,8 @@
 
 <?php get_header(); ?>
 
-<?php get_template_part( 'template-parts/loop', 'page' ); ?>
+  <div id="content-container">
+    <?php get_template_part( 'template-parts/loop', 'page' ); ?>
+  </div><!--#content-container-->
 
 <?php get_footer(); ?>
