@@ -1,0 +1,90 @@
+/**
+ * Forms
+ */
+
+label {
+  display: block;
+  font-size: var( --font-size-small );
+  margin: 0 0 .1em 0;
+}
+
+input,
+select,
+textarea {
+  border: .1rem solid var( --menu-border-color );
+  box-sizing: border-box;
+  font-weight: normal;
+  line-height: 1.5;
+  margin: 0 0 1em 0;
+  padding: .5rem 1rem;
+  -webkit-appearance: none;
+}
+
+input:not( .button ),
+select,
+textarea {
+  width: 100%;
+}
+
+
+/**
+ * Buttons
+ */
+
+button,
+.button,
+a.button,
+a.button:visited {
+  background-color: inherit;
+  border: .2rem solid var( --link-color );
+  border-radius: 9999px;
+  color: var( --link-color );
+  cursor: pointer;
+  font-family: var( --heading-font );
+  font-weight: normal;
+  line-height: 1.5;
+  margin: 1em 0;
+  padding: .75rem 2.5rem;
+  text-decoration: none;
+  transition: background-color .2s, box-shadow .2s;
+  -webkit-appearance: none;
+}
+
+.wp-block-button .wp-block-button__link {
+  transition: box-shadow .2s;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus,
+a.button:hover,
+a.button:focus {
+  border-color: var( --link-color-hover );
+  box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .5rem .5rem 1.5rem rgba( 0, 0, 0, .25 );
+  color: var( --link-color-hover );
+  text-decoration: none;
+}
+
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus {
+  box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .5rem .5rem 1.5rem rgba( 0, 0, 0, .25 );
+  text-decoration: none;
+}
+
+button:active,
+.button:active,
+a.button:active {
+  box-shadow: unset;
+  outline: none;
+}
+
+.wp-block-button .wp-block-button__link:active {
+  box-shadow: unset;
+}
+
+.wp-block-search .wp-block-search__button {
+  border-width: .2rem;
+  margin-top: unset;
+  padding: .75rem 2.5rem;
+}

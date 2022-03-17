@@ -1,9 +1,7 @@
 <?php namespace CPT_Theme\Template_Parts; ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
   <main id="content" <?php post_class(); ?>>
-
     <?php if ( ! is_front_page() ) { ?>
       <h1 class="headline"><?php the_title(); ?></h1>
     <?php } ?>
@@ -18,7 +16,5 @@
     <?php } ?>
 
     <?php wp_link_pages(); ?>
-
   </main>
-
 <?php endwhile; endif; ?>

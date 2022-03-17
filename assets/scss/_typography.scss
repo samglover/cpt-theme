@@ -1,0 +1,141 @@
+body {
+  background-color: Snow;
+  color: var( --text-color );
+  font-family: var( --body-font );
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+a,
+a:visited {
+  color: var( --link-color );
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var( --link-color-hover );
+  text-decoration: underline;
+}
+
+:target:before {
+  content: '';
+  display: block;
+  height: 1em;
+  margin-top: -1em;
+}
+
+#title {
+  display: block;
+  font-family: var( --heading-font );
+  font-size: 3.516rem;
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+
+  a {
+    color: var( --text-color );
+    display: block;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+}
+
+#tagline {
+  color: var( --text-color-light );
+  display: block;
+  font-family: var( --heading-font );
+  font-weight: normal;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var( --heading-color );
+  font-family: var( --heading-font );
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 1em 0 .5em 0;
+}
+
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 4.395rem;
+}
+
+h2 {
+  font-size: 3.516rem;
+}
+
+h3 {
+  font-size: 2.813rem;
+}
+
+h4 {
+  font-size: 2.25rem;
+}
+
+h5 {
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 1.44rem;
+  text-transform: uppercase;
+}
+
+blockquote,
+dd,
+ol,
+p,
+pre,
+ul {
+  line-height: 1.5;
+  margin: 0 0 1em 0;
+}
+
+blockquote,
+dd,
+ol,
+ul {
+  padding-left: 2em;
+}
+
+li {
+  &:not( :last-child ) {
+    margin-bottom: .5em;
+  }
+
+  &:first-child:not( .menu-item ) {
+    margin-top: .5em;
+  }
+}
+
+blockquote {
+  border-left: .3rem solid var( --menu-border-color );
+}
+
+cite {
+  color: var( --text-color-light );
+}
+
+code,
+pre {
+  font-family: monospace;
+}
+
+small {
+  font-size: var( --font-size-small );
+}

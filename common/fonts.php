@@ -6,7 +6,6 @@ namespace CPT_Theme\Inc;
  * Google Fonts.
  */
 function get_google_fonts_arr() {
-
   $fonts = [
     [
       'name'    => 'Bitter',
@@ -64,64 +63,49 @@ function get_google_fonts_arr() {
       'name'    => 'Source Serif Pro',
       'params'  => 'Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700',
     ],
-
   ];
-
   return $fonts;
-
 }
 
 function get_font_params( $name ) {
-
   if ( ! $name ) { return; }
 
   $fonts = get_google_fonts_arr();
 
   foreach ( $fonts as $font ) {
-
     if ( $name == $font[ 'name' ] ) {
       return $font[ 'params' ];
       continue;
     }
-
   }
-
 }
 
 function google_fonts_head() {
-
   ob_start();
-
     ?>
-
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <style>
-
         :root {
           --heading-font: <?php echo get_option( 'cpt_sites_headings' ); ?>;
           --body-font: <?php echo get_option( 'cpt_sites_body' ); ?>;
         }
-
       </style>
-
     <?php
-
   echo ob_get_clean();
-
 }
 
 add_action( 'wp_head', __NAMESPACE__ . '\google_fonts_head' );
+add_action( 'admin_head', __NAMESPACE__ . '\google_fonts_head' );
 
 
 function enqueue_google_fonts() {
-
 	wp_enqueue_style( 'body-font', 'https://fonts.googleapis.com/css2?family=' . get_font_params( get_option( 'cpt_sites_body' ) ) . '&display=swap' );
 
   if ( get_option( 'cpt_sites_body' ) != get_option( 'cpt_sites_headings' ) ) {
   	wp_enqueue_style( 'heading-font', 'https://fonts.googleapis.com/css2?family=' . get_font_params( get_option( 'cpt_sites_headings' ) ) . '&display=swap' );
   }
-
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_google_fonts' );
+add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_google_fonts' );

@@ -21,6 +21,8 @@ const CollapsedMenu       = document.createElement( 'ul' );
 CollapsedMenuParent.appendChild( CollapsedMenu );
 
 function primaryMenuCollapser() {
+  if ( ! Menu ) { return; }
+
   let stackedHeader = false;
 
   if ( getSpaceAvailable() > Menu.offsetWidth ) {

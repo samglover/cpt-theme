@@ -212,7 +212,7 @@ function site_appearance() {
       <div id="cpt-theme-options" class="wrap">
 
         <div id="cpt-theme-header">
-          <img src="<?php echo CPT_THEME_DIR_URI; ?>/admin/images/cpt-logo.svg" height="auto" width="100%" />
+          <?php echo file_get_contents( CPT_THEME_DIR_URI . '/assets/images/cpt-logo.svg' ); ?>
           <div>
             <h1><?php _e( 'Customize Your Site\'s Appearance', 'cpt-theme' ); ?></h1>
             <p><?php _e( 'Client Power Tools Theme', 'cpt-theme' ); ?></p>
