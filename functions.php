@@ -131,21 +131,24 @@ function breadcrumbs() {
       }
     }
 
-    if ( is_singular( 'post' ) ) {
+    if ( is_singular() ) {
       $categories         = get_the_terms( $post_id, 'category' );
-      $category_id        = $categories[ 0 ]->term_id;
-      $category_url       = get_term_link( $category_id );
-      $category_title     = $categories[ 0 ]->name;
-      $breadcrumbs[]      = '<span class="breadcrumb"><a href="' . $category_url . '">' . $category_title . '</a></span>';
-      $category_parent    = $categories[ 0 ]->parent;
 
-      while ( $category_parent ) {
-        $category         = get_term( $category_parent );
-        $category_id      = $category->term_id;
-        $category_url     = get_term_link( $category_id );
-        $category_title   = $category->name;
-        $breadcrumbs[]    = '<span class="breadcrumb"><a href="' . $category_url . '">' . $category_title . '</a></span>';
-        $category_parent  = $category->parent;
+      while ( $categories ) {
+        $category_id        = $categories[ 0 ]->term_id;
+        $category_url       = get_term_link( $category_id );
+        $category_title     = $categories[ 0 ]->name;
+        $breadcrumbs[]      = '<span class="breadcrumb"><a href="' . $category_url . '">' . $category_title . '</a></span>';
+        $category_parent    = $categories[ 0 ]->parent;
+
+        while ( $category_parent ) {
+          $category         = get_term( $category_parent );
+          $category_id      = $category->term_id;
+          $category_url     = get_term_link( $category_id );
+          $category_title   = $category->name;
+          $breadcrumbs[]    = '<span class="breadcrumb"><a href="' . $category_url . '">' . $category_title . '</a></span>';
+          $category_parent  = $category->parent;
+        }
       }
     }
   } elseif ( is_archive() ) {
