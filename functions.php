@@ -132,7 +132,7 @@ function breadcrumbs() {
     }
 
     if ( is_singular() ) {
-      $categories         = get_the_terms( $post_id, 'category' );
+      $categories = get_the_terms( $post_id, 'category' );
 
       while ( $categories ) {
         $category_id        = $categories[ 0 ]->term_id;
@@ -151,8 +151,10 @@ function breadcrumbs() {
         }
       }
     }
-  } elseif ( is_archive() ) {
-    $breadcrumbs[] = '<span class="breadcrumb last-breadcrumb">' . single_term_title( '', FALSE ) . '</span>';
+  } elseif ( is_post_type_archive() ) {
+    $breadcrumbs[] = '<span class="breadcrumb last-breadcrumb">' . post_type_archive_title( '', false ) . '</span>';
+  } elseif ( is_tax() ) {
+    $breadcrumbs[] = '<span class="breadcrumb last-breadcrumb">' . single_term_title( '', false ) . '</span>';
   }
 
   $breadcrumbs[]  = '<span class="breadcrumb home-breadcrumb"><a href="' . home_url() . '">Home</a></span>';
