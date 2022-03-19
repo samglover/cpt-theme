@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <?php wp_head(); ?>
 </head>
@@ -12,7 +12,7 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <?php
-    if ( get_theme_mod( 'custom_logo' ) ) {
+    if ( get_theme_mod('custom_logo') ) {
       $header_class = ' class="has-custom-logo"';
     } else {
       $header_class = '';
@@ -45,7 +45,7 @@
     </div>
     <div id="menu-container">
       <?php
-        if ( get_option( 'cpt_sites_show_primary_menu' ) ) {
+        if ( get_option('cpt_sites_show_primary_menu') ) {
           wp_nav_menu([
             'theme_location'  => 'primary',
             'container_id'    => 'primary-menu',
@@ -53,14 +53,14 @@
           ]);
         }
 
-        if ( get_option( 'cpt_sites_show_primary_menu_cta' ) ) {
-          if ( get_option( 'cpt_sites_primary_menu_cta_style' ) == 'modal' ) {
-            $style = ' onclick="showModal( \'cta-modal\' )"';
+        if ( get_option('cpt_sites_show_primary_menu_cta') ) {
+          if ( get_option('cpt_sites_primary_menu_cta_style') == 'modal' ) {
+            $style = ' onclick="showModal(\'cta-modal\')"';
           } else {
             $style = '';
           }
-          echo '<a id="header-cta" class="button"' . $style . ' href="' . get_option( 'cpt_sites_primary_menu_cta_url' ) . '">';
-            echo get_option( 'cpt_sites_primary_menu_cta_text' );
+          echo '<a id="header-cta" class="button"' . $style . ' href="' . get_option('cpt_sites_primary_menu_cta_url') . '">';
+            echo get_option('cpt_sites_primary_menu_cta_text');
           echo '</a>';
         }
       ?>
