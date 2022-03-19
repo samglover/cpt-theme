@@ -7,6 +7,9 @@
     <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
     <?php the_content(); ?>
     <div class="clearfix"></div>
+    <?php if ( comments_open() || get_comments_number() ) {
+  		comments_template();
+  	} ?>
     <?php wp_link_pages(); ?>
   </main>
 <?php endwhile; endif; ?>

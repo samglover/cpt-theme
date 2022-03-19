@@ -1,0 +1,52 @@
+.commentlist {
+  list-style: none;
+  padding: 0;
+
+  .comment {
+    display: block;
+    margin: 1em 0;
+    padding: 1em 0;
+
+    .reply {
+      font-size: var(--font-size-small);
+    }
+  }
+
+  .comment-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: .5em;
+
+    .avatar {
+      margin-right: .5em;
+    }
+
+    & > *:not(:first-child):not(:last-child)::after {
+      content: "\00a0";
+    }
+  }
+
+  .comment-metadata {
+    font-size: var(--font-size-small);
+    margin-bottom: 1em;
+  }
+
+  .children {
+    border-left: 1px solid var(--menu-border-color);
+    list-style: none;
+    margin: 1em 0;
+    padding-left: 1em;
+  }
+}
+
+.comment-respond {
+  .logged-in-as {
+    font-size: var(--font-size-small);
+  }
+
+  .form-submit {
+    input[type="submit"] {
+      margin-top: 0;
+    }
+  }
+}
