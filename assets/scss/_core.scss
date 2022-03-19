@@ -124,10 +124,7 @@ img {
 .post-byline {
   color: var( --text-color-light );
   font-size: var( --font-size-small );
-}
-
-.single .post-byline {
-  margin-top: 0;
+  margin: 1em 0;
 }
 
 .pagination,
