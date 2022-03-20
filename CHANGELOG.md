@@ -14,6 +14,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Configure for NPM and SASS.
 - Prevent Jost from loading if the Client Power Tools plugin is active.
 - Restructured the layout elements.
+- Recalculate the type scale.
 
 
 ## 1.1.1 - 2022-01-18
