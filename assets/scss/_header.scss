@@ -1,12 +1,12 @@
 #header {
   background-color: rgba( 0, 0, 0, .2 );
   background: radial-gradient( circle, rgba( 0, 0, 0, .2 ) 0%, rgba( 0, 0, 0, .1 ) 100%);
-  box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .25rem .25rem 1.5rem rgba( 0, 0, 0, .1 );
+  box-shadow: $box-shadow;
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: calc(2 * $tenpx);
   grid-template-columns: max-content minmax( min-content, auto );
   margin: 0;
-  padding: 1rem 2rem;
+  padding: $tenpx calc(2 * $tenpx);
   position: relative;
 
   #logo-title,
@@ -23,14 +23,14 @@
 
   &.has-custom-logo.show-site-title {
     #logo-title {
-      grid-gap: 1rem;
+      grid-gap: $tenpx;
       grid-template-columns: repeat( 2, max-content );
     }
   }
 
   &.show-primary-menu.show-header-cta {
     #menu-container {
-      grid-gap: 2rem;
+      grid-gap: calc(2 * $tenpx);
       grid-template-columns: minmax( min-content, auto ) max-content;
       justify-self: end;
     }
@@ -68,26 +68,32 @@
 .modal-container {
   display: none;
   height: 100vh;
-  justify-content: center;
+  place-content: center;
   position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
   width: 100vw;
+  z-index: 100;
 }
 
 .modal.card {
-  background-color: Snow;
+  background-color: White;
+  box-shadow:
+    0 0 0 1px #ddd,
+    1px 1px 3px rgba( 0, 0, 0, 0.2 )
+  ;
   box-sizing: border-box;
-  height: min-content;
+  margin: 3px;
+  min-width: 330px;
   max-height: 90vh;
-  max-width: 80vw;
-  min-width: 33rem;
+  max-width: 30vw;
   overflow: scroll;
+  padding: 2em;
   position: relative;
-    top: 10vh;
-  z-index: 20;
+  z-index: 100;
+
 
   & > *:last-child {
     margin-bottom: 0;
@@ -95,26 +101,37 @@
 }
 
 .dismiss-modal {
+  align-items: center;
   background-color: #ccc;
-  border: none;
-  border-radius: 9999px;
-  font-size: 3rem;
-  height: 3rem;
-  line-height: 3rem;
+  border: 1px solid #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  height: 30px;
+  justify-content: center;
+  line-height: 1;
   margin: 0;
-  padding: .2rem;
+  padding: 3px;
+  place-items: center;
   position: absolute;
-    top: 1rem;
-    right: 1rem;
-  width: 3rem;
+    top: 15px;
+    right: 15px;
+  text-decoration: none;
+  width: 30px;
 
   &:hover,
   &:focus {
     background-color: #ddd;
+    border-color: #ccc;
+    box-shadow: 1px 1px 3px rgba( 0, 0, 0, 0.4 );
+    text-decoration: none;
   }
 
   &:active {
     background-color: #bbb;
+    border-color: #bbb;
+    box-shadow: none;
+    text-decoration: none;
   }
 
   svg {
@@ -123,17 +140,16 @@
 }
 
 .modal-screen {
-  background-color: Black;
+  background-color: rgb( 0, 0, 0, .4 );
   display: none;
   height: 100vh;
-  opacity: .75;
-  position: absolute;
-    top: 0;
+  position: fixed;
+    left: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    top: 0;
   width: 100vw;
-  z-index: 10;
+  z-index: 90;
 }
 
 /* Nav Menus */
@@ -189,9 +205,9 @@
 .menu > .menu-item-has-children > .sub-menu {
   background-color: WhiteSmoke;
   border: 1px solid var( --menu-border-color );
-  box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .25rem .25rem 1.5rem rgba( 0, 0, 0, .1 );
+  box-shadow: $box-shadow;
   display: none;
-  padding: 1rem 2rem;
+  padding: $tenpx calc(2 * $tenpx);
   position: absolute;
     left: 50%;
   transform: translateX( -50% );
@@ -223,7 +239,7 @@
   color: var( --menu-border-color );
   display: block;
   list-style-type: disc;
-  margin: 0 0 0 2rem;
+  margin: 0 0 0 calc(2 * $tenpx);
   padding: 0;
   position: unset;
 }
@@ -273,8 +289,8 @@
 #secondary-menu {
   background-color: rgba( 0, 0, 0, .1 );
   font-size: 90%;
-  margin-bottom: 4rem;
-  padding: 1rem 2rem;
+  margin-bottom: calc(4 * $tenpx);
+  padding: $tenpx calc(2 * $tenpx);
 }
 
 #secondary-menu .menu > .menu-item-has-children:first-child > .sub-menu {
@@ -286,10 +302,10 @@
 #breadcrumbs {
   color: var( --text-color-light );
   font-family: var( --heading-font );
-  font-size: var( --font-size-small );
-  margin: 4rem auto;
-  padding: 1rem 2rem;
-  max-width: 110rem;
+  font-size: $x-small;
+  margin: calc(4 * $tenpx) auto;
+  padding: $tenpx calc(2 * $tenpx);
+  max-width: $max-width;
 }
 
 .last-breadcrumb {

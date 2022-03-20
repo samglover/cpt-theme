@@ -15,9 +15,9 @@
 }
 
 .card {
-  box-shadow: .1rem .1rem .5rem rgba( 0, 0, 0, .25 ), .25rem .25rem 1.5rem rgba( 0, 0, 0, .1 );
+  box-shadow: $box-shadow;
   margin-bottom: 1.5em !important;
-  padding: 3rem !important;
+  padding: calc(3 * $tenpx) !important;
 }
 
 .clearfix {

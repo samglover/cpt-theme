@@ -2,6 +2,7 @@
 
 namespace CPT_Theme\Admin;
 use CPT_Theme\Inc;
+use CPT_Theme\Common;
 
 function cpt_sites_submenu_pages() {
 
@@ -395,32 +396,20 @@ function fonts() {
 }
 
   function font_select( $name ) {
-
     if ( ! $name ) { return; }
 
-    $fonts = Inc\get_google_fonts_arr();
-
+    $fonts = Common\get_google_fonts_arr();
     ob_start();
-
       echo '<select name="' . $name . '">';
-
-          foreach( $fonts as $font ) {
-
-            $selected = '';
-
-            if ( $font[ 'name' ] == get_option( $name ) ) {
-              $selected = ' selected';
-            }
-
-            echo '<option value="' . $font[ 'name' ] . '"' . $selected . '>' . $font[ 'name' ] . '</option>';
-
+        foreach( $fonts as $font ) {
+          $selected = '';
+          if ( $font[ 'name' ] == get_option( $name ) ) {
+            $selected = ' selected';
           }
-
+          echo '<option value="' . $font[ 'name' ] . '"' . $selected . '>' . $font[ 'name' ] . '</option>';
+        }
       echo '</select>';
-
     echo ob_get_clean();
-
-
   }
 
   function cpt_sites_headings() {

@@ -1,8 +1,31 @@
+$tenpx: 0.625rem;
+
+$max-width: calc(110 * $tenpx);
+
+$box-shadow:
+  calc(.1 * $tenpx) calc(.1 * $tenpx) calc(.5 * $tenpx) rgba( 0, 0, 0, .25 ),
+  calc(.25 * $tenpx) calc(.25 * $tenpx) calc(1.5 * $tenpx) rgba( 0, 0, 0, .1 )
+;
+
+// Font Sizes
+$x-small: .8rem;    // 12.80px
+$small: 1rem;       // 16.00px
+$normal: 1.25rem;   // 20.00px
+$medium: 1.563rem;  // 25.00px
+$large: 1.953rem;   // 31.25px
+$x-large: 2.441rem; // 39.06px
+$xxl: 3.052rem;     // 48.83px
+$huge: 3.815rem;    // 61.04px
+
+// Line Height
+$line-height-small: 1.15;
+$line-height-normal: 1.5;
+
 :root {
   --heading-color: #333333;
   --menu-text-color: DarkSlateGray;
   --menu-border-color: LightSlateGray;
   --text-color: #111111;
   --text-color-light: SlateGray;
-  --font-size-small: 1.44rem;
+  --font-size-small: $x-small;
 }
