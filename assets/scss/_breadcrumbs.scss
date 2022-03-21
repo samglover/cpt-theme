@@ -1,0 +1,13 @@
+#breadcrumbs {
+  color: var( --text-color-light );
+  font-family: var( --heading-font );
+  font-size: $x-small;
+  margin: calc(4 * $tenpx) auto;
+  padding: $tenpx calc(2 * $tenpx);
+  max-width: $max-width;
+}
+
+.last-breadcrumb {
+  color: var( --text-color );
+  font-weight: bold;
+}

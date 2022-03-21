@@ -1,9 +1,5 @@
 <?php
 
-namespace CPT_Theme\Admin;
-use CPT_Theme\Inc;
-use CPT_Theme\Common;
-
 function cpt_sites_submenu_pages() {
 
   // TODO: Check to make sure the parent admin page exists.
@@ -14,29 +10,29 @@ function cpt_sites_submenu_pages() {
     __( 'CPT Theme Options', 'cpt-theme' ),
     'manage_options',
     'cpt-theme-appearance',
-    __NAMESPACE__ . '\site_appearance',
+    'site_appearance',
   );
 
 }
 
-add_action( 'admin_menu', __NAMESPACE__ . '\cpt_sites_submenu_pages' );
+add_action( 'admin_menu', 'cpt_sites_submenu_pages' );
 
 
 function site_appearance_init() {
 
   add_settings_section(
-    'header',
+    'cpt-sites-header',
     __( 'Header', 'cpt-theme' ),
-    __NAMESPACE__ . '\header',
+    'cpt_sites_header',
     'cpt-theme-appearance',
   );
 
   add_settings_field(
     'cpt_sites_show_site_title',
     '<label for="cpt_sites_show_site_title">' . __( 'Site Title', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_show_site_title',
+    'cpt_sites_show_site_title',
     'cpt-theme-appearance',
-    'header',
+    'cpt-sites-header',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_show_site_title' );
@@ -44,9 +40,9 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_show_primary_menu',
     '<label for="cpt_sites_show_primary_menu">' . __( 'Primary Menu (in Header)', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_show_primary_menu',
+    'cpt_sites_show_primary_menu',
     'cpt-theme-appearance',
-    'header',
+    'cpt-sites-header',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_show_primary_menu' );
@@ -54,9 +50,9 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_show_primary_menu_cta',
     '<label for="cpt_sites_show_primary_menu_cta">' . __( 'Header CTA', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_show_primary_menu_cta',
+    'cpt_sites_show_primary_menu_cta',
     'cpt-theme-appearance',
-    'header',
+    'cpt-sites-header',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_show_primary_menu_cta' );
@@ -64,9 +60,9 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_primary_menu_cta_text',
     '<label for="cpt_sites_primary_menu_cta_text">' . __( 'Header CTA Text', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_primary_menu_cta_text',
+    'cpt_sites_primary_menu_cta_text',
     'cpt-theme-appearance',
-    'header',
+    'cpt-sites-header',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_text' );
@@ -74,9 +70,9 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_primary_menu_cta_text_color',
     '<label for="cpt_sites_primary_menu_cta_text_color">' . __( 'Header CTA Text Color', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_primary_menu_cta_text_color',
+    'cpt_sites_primary_menu_cta_text_color',
     'cpt-theme-appearance',
-    'header',
+    'cpt-sites-header',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_text_color' );
@@ -84,9 +80,9 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_primary_menu_cta_button_color',
     '<label for="cpt_sites_primary_menu_cta_button_color">' . __( 'Header CTA Button Color', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_primary_menu_cta_button_color',
+    'cpt_sites_primary_menu_cta_button_color',
     'cpt-theme-appearance',
-    'header',
+    'cpt-sites-header',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_button_color' );
@@ -94,9 +90,9 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_primary_menu_cta_url',
     '<label for="cpt_sites_primary_menu_cta_url">' . __( 'Header CTA URL', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_primary_menu_cta_url',
+    'cpt_sites_primary_menu_cta_url',
     'cpt-theme-appearance',
-    'header',
+    'cpt-sites-header',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_url' );
@@ -104,9 +100,9 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_primary_menu_cta_style',
     '<label for="cpt_sites_primary_menu_cta_style">' . __( 'Header CTA Style', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_primary_menu_cta_style',
+    'cpt_sites_primary_menu_cta_style',
     'cpt-theme-appearance',
-    'header',
+    'cpt-sites-header',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_style' );
@@ -114,9 +110,9 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_primary_menu_cta_code',
     '<label for="cpt_sites_primary_menu_cta_code">' . __( 'Header CTA Code', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_primary_menu_cta_code',
+    'cpt_sites_primary_menu_cta_code',
     'cpt-theme-appearance',
-    'header',
+    'cpt-sites-header',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_code' );
@@ -124,9 +120,9 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_show_secondary_menu',
     '<label for="cpt_sites_show_secondary_menu">' . __( 'Secondary Menu (Below Header)', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_show_secondary_menu',
+    'cpt_sites_show_secondary_menu',
     'cpt-theme-appearance',
-    'header',
+    'cpt-sites-header',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_show_secondary_menu' );
@@ -134,7 +130,7 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_show_breadcrumbs',
     '<label for="cpt_sites_show_breadcrumbs">' . __( 'Breadcrumbs', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_show_breadcrumbs',
+    'cpt_sites_show_breadcrumbs',
     'cpt-theme-appearance',
     'header',
   );
@@ -143,18 +139,18 @@ function site_appearance_init() {
 
 
   add_settings_section(
-    'fonts',
+    'cpt-sites-fonts',
     __( 'Fonts', 'cpt-theme' ),
-    __NAMESPACE__ . '\fonts',
+    'cpt_sites_fonts',
     'cpt-theme-appearance',
   );
 
   add_settings_field(
     'cpt_sites_headings',
     '<label for="cpt_sites_headings">' . __( 'Headings', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_headings',
+    'cpt_sites_headings',
     'cpt-theme-appearance',
-    'fonts',
+    'cpt-sites-fonts',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_headings' );
@@ -162,9 +158,9 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_body',
     '<label for="cpt_sites_body">' . __( 'Body', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_body',
+    'cpt_sites_body',
     'cpt-theme-appearance',
-    'fonts',
+    'cpt-sites-fonts',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_body' );
@@ -172,9 +168,9 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_link_color',
     '<label for="cpt_sites_link_color">' . __( 'Link Color', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_link_color',
+    'cpt_sites_link_color',
     'cpt-theme-appearance',
-    'fonts',
+    'cpt-sites-fonts',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_link_color' );
@@ -182,9 +178,9 @@ function site_appearance_init() {
   add_settings_field(
     'cpt_sites_link_color_hover',
     '<label for="cpt_sites_link_color_hover">' . __( 'Link Hover Color', 'cpt-theme' ) . '</label>',
-    __NAMESPACE__ . '\cpt_sites_link_color_hover',
+    'cpt_sites_link_color_hover',
     'cpt-theme-appearance',
-    'fonts',
+    'cpt-sites-fonts',
   );
 
   register_setting( 'cpt-theme', 'cpt_sites_link_color_hover' );
@@ -194,7 +190,7 @@ function site_appearance_init() {
 
 }
 
-add_action( 'admin_init', __NAMESPACE__ . '\site_appearance_init' );
+add_action( 'admin_init', 'site_appearance_init' );
 
 
 function site_appearance() {
@@ -213,7 +209,7 @@ function site_appearance() {
       <div id="cpt-theme-options" class="wrap">
 
         <div id="cpt-theme-header">
-          <?php echo file_get_contents( CPT_THEME_DIR_URI . '/assets/images/cpt-logo.svg' ); ?>
+          <?php echo file_get_contents( CPT_THEME_DIR_URI . 'assets/images/cpt-logo.svg' ); ?>
           <div>
             <h1><?php _e( 'Customize Your Site\'s Appearance', 'cpt-theme' ); ?></h1>
             <p><?php _e( 'Client Power Tools Theme', 'cpt-theme' ); ?></p>
@@ -235,7 +231,7 @@ function site_appearance() {
 
 }
 
-function header() {
+function cpt_sites_header() {
 }
 
   function cpt_sites_show_site_title() {
@@ -248,25 +244,6 @@ function header() {
             <label for="cpt_sites_show_site_title">
               <input name="cpt_sites_show_site_title" id="cpt_sites_show_site_title" type="checkbox" value="1" <?php checked( get_option( 'cpt_sites_show_site_title' ) ); ?>>
               <?php _e( 'Show the site title in the header.', 'cpt-theme' ); ?>
-            </label>
-          </fieldset>
-
-        <?php
-
-      echo ob_get_clean();
-
-  }
-
-  function cpt_sites_show_site_tagline() {
-
-    ob_start();
-
-        ?>
-
-          <fieldset>
-            <label for="cpt_sites_show_site_tagline">
-              <input name="cpt_sites_show_site_tagline" id="cpt_sites_show_site_tagline" type="checkbox" value="1" <?php checked( get_option( 'cpt_sites_show_site_tagline' ) ); ?>>
-              <?php _e( 'Show the site tagline in the header.', 'cpt-theme' ); ?>
             </label>
           </fieldset>
 
@@ -392,13 +369,13 @@ function header() {
   }
 
 
-function fonts() {
+function cpt_sites_fonts() {
 }
 
   function font_select( $name ) {
     if ( ! $name ) { return; }
 
-    $fonts = Common\get_google_fonts_arr();
+    $fonts = get_google_fonts_arr();
     ob_start();
       echo '<select name="' . $name . '">';
         foreach( $fonts as $font ) {

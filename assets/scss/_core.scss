@@ -1,5 +1,4 @@
 html {
-  font-family: sans-serif;
   line-height: 1;
 }
 
@@ -10,35 +9,13 @@ body {
 
 
 /**
- * Images
- */
-
-img {
-  height: auto;
-  max-width: 100%;
-}
-
-.wp-caption {
-  height: auto;
-  max-width: 100%;
-}
-
-
-
-/**
  * Content
  */
 
-#content-container {
+.site-content {
   margin: calc(4 * $tenpx) auto calc(6 * $tenpx) auto;
   max-width: $max-width;
   padding: 0 calc(2 * $tenpx);
-
-  &.has-sidebar {
-    display: grid;
-    grid-gap: calc(4 * $tenpx);
-    grid-template-columns: 2fr 1fr;
-  }
 
   @media ( max-width: $max-width ) {
     display: block;
@@ -48,39 +25,6 @@ img {
 #content {
   & > *:first-child {
     margin-top: 0;
-  }
-}
-
-#sidebar {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  & > *:first-child h1,
-  & > *:first-child h2,
-  & > *:first-child h3,
-  & > *:first-child h4,
-  & > *:first-child h5,
-  & > *:first-child h6 {
-    margin-top: 0;
-
-    @media ( max-width: $max-width ) {
-      margin-top: revert;
-    }
-  }
-
-  @media ( max-width: $max-width ) {
-    display: grid;
-    grid-gap: calc(4 * $tenpx);
-    grid-template-columns: repeat( 3, 1fr );
-  }
-
-  @media ( max-width: 900px ) {
-    grid-template-columns: repeat( 2, 1fr );
-  }
-
-  @media ( max-width: 600px ) {
-    grid-template-columns: 1fr;
   }
 }
 

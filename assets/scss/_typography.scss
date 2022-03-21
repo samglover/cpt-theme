@@ -16,6 +16,7 @@ a:hover,
 a:focus {
   color: var(--link-color-hover);
   text-decoration: underline;
+  text-decoration-color: var(--text-color-light);
 }
 
 :target:before {
@@ -23,40 +24,6 @@ a:focus {
   display: block;
   height: 1em;
   margin-top: -1em;
-}
-
-#title {
-  display: block;
-  font-family: var( --heading-font );
-  font-size: $x-large;
-  font-weight: bold;
-  line-height: $line-height-small;
-  margin: 0;
-  padding: 0;
-
-  a {
-    color: var( --text-color );
-    display: block;
-    font-size: inherit;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      opacity: .75;
-    }
-  }
-}
-
-#tagline {
-  color: var( --text-color-light );
-  display: block;
-  font-family: var( --heading-font );
-  font-weight: normal;
-  line-height: 1.1;
-  margin: 0;
-  padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {

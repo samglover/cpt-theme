@@ -1,7 +1,5 @@
 <?php
 
-namespace CPT_Theme\Common;
-
 /**
  * Google Fonts.
  */
@@ -95,8 +93,8 @@ function google_fonts_head() {
   echo ob_get_clean();
 }
 
-add_action( 'wp_head', __NAMESPACE__ . '\google_fonts_head' );
-add_action( 'admin_head', __NAMESPACE__ . '\google_fonts_head' );
+add_action( 'wp_head', 'google_fonts_head' );
+add_action( 'admin_head', 'google_fonts_head' );
 
 
 function enqueue_google_fonts() {
@@ -107,5 +105,5 @@ function enqueue_google_fonts() {
   }
 }
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_google_fonts' );
-add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_google_fonts' );
+add_action( 'wp_enqueue_scripts', 'enqueue_google_fonts' );
+add_action( 'admin_enqueue_scripts', 'enqueue_google_fonts' );

@@ -1,22 +1,20 @@
 <?php
 
-namespace CPT_Theme;
-
 /**
  * Constants
  */
-define( 'CPT_THEME_DIR_PATH', get_template_directory() );
-define( 'CPT_THEME_DIR_URI', get_template_directory_uri() );
+define( 'CPT_THEME_DIR_PATH', trailingslashit( get_template_directory() ) );
+define( 'CPT_THEME_DIR_URI', trailingslashit( get_template_directory_uri() ) );
 
 
 /**
  * Theme Files
  */
-require_once( CPT_THEME_DIR_PATH . '/theme-setup.php' );
-require_once( CPT_THEME_DIR_PATH . '/common/fonts.php' );
+require_once( CPT_THEME_DIR_PATH . 'theme-setup.php' );
+require_once( CPT_THEME_DIR_PATH . 'common/fonts.php' );
 
 if ( is_admin() ) {
-  require_once( CPT_THEME_DIR_PATH . '/admin/options.php' );
+  require_once( CPT_THEME_DIR_PATH . 'admin/options.php' );
 }
 
 function customizer_options( $wp_customize ) {
@@ -33,7 +31,7 @@ function customizer_options( $wp_customize ) {
   ]);
 }
 
-add_action( 'customize_register', __NAMESPACE__ . '\customizer_options' );
+add_action( 'customize_register', 'customizer_options' );
 
 
 /**
@@ -54,45 +52,7 @@ function css_variables() {
   echo ob_get_clean();
 }
 
-add_action( 'wp_head', __NAMESPACE__ . '\css_variables' );
-
-
-/**
- * Header Classes
- */
-function header_class() {
-  $classes = [];
-
-  if ( get_theme_mod( 'custom_logo' ) ) {
-    $classes[] = 'has-custom-logo';
-  }
-
-  if ( get_option( 'cpt_sites_show_site_title' ) ) {
-    $classes[] = 'show-site-title';
-  }
-
-  if ( get_option( 'cpt_sites_show_site_tagline' ) ) {
-    $classes[] = 'show-site-tagline';
-  }
-
-  if ( get_option( 'cpt_sites_show_primary_menu' ) ) {
-    $classes[] = 'show-primary-menu';
-  }
-
-  if ( get_option( 'cpt_sites_show_primary_menu_cta' ) ) {
-    $classes[] = 'show-header-cta';
-  }
-
-  if ( get_option( 'cpt_sites_show_secondary_menu' ) ) {
-    $classes[] = 'show-secondary-menu';
-  }
-
-  if ( ! empty( $classes ) ) {
-    echo ' class="' . implode( ' ', $classes ) . '"';
-  } else {
-    return;
-  }
-}
+add_action( 'wp_head', 'css_variables' );
 
 
 /**
@@ -105,7 +65,7 @@ function dismiss_modal( $modal_ID = null ) {
   ob_start();
     ?>
       <button class="dismiss-modal" onclick="closeModal( <?php echo '\'' . $modal_ID . '\''; ?> )">
-        <?php echo file_get_contents( CPT_THEME_DIR_URI . '/assets/images/close.svg' ); ?>
+        <?php echo file_get_contents( CPT_THEME_DIR_URI . 'assets/images/close.svg' ); ?>
       </button>
     <?php
   echo ob_get_clean();
@@ -180,7 +140,7 @@ function breadcrumbs() {
 
   ob_start();
     ?>
-      <nav id="breadcrumbs" class="small">
+      <nav id="breadcrumbs" class="small breadcrumbs">
         <?php echo implode( ' / ', $breadcrumbs ); ?>
       </nav>
     <?php

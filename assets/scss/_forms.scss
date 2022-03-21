@@ -42,6 +42,7 @@ input[type="submit"] {
   color: var( --link-color );
   cursor: pointer;
   font-family: var( --heading-font );
+  font-size: $small;
   font-weight: normal;
   line-height: $line-height-normal;
   margin: 1em 0;

@@ -1,5 +1,3 @@
-<?php namespace CPT_Theme; ?>
-
 <?php get_header(); ?>
 
   <div id="content-container">
