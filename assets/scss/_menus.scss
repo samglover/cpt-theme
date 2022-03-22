@@ -112,6 +112,10 @@
       left: 50%;
     }
   }
+
+  .collapsed-menu > i {
+    cursor: pointer;
+  }
 }
 
 #secondary-menu {

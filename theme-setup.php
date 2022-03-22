@@ -90,7 +90,7 @@ function register_stylesheets_scripts() {
 		wp_enqueue_script('comment-reply');
 	}
 
-	wp_enqueue_script( 'menus', CPT_THEME_DIR_URI . 'assets/js/menus.js', '', '', true );
+	// wp_enqueue_script( 'menus', CPT_THEME_DIR_URI . 'assets/js/menus.js', '', '', true );
   wp_enqueue_script( 'modals', CPT_THEME_DIR_URI . 'assets/js/modals.js', '', '', true );
 }
 

@@ -397,6 +397,9 @@ img {
   font-size: 1rem;
   left: 50%;
 }
+#primary-menu .collapsed-menu > i {
+  cursor: pointer;
+}
 
 #secondary-menu {
   background-color: rgba(0, 0, 0, 0.1);
