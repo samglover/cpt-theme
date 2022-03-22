@@ -21,6 +21,12 @@ $huge: 3.815rem;    // 61.04px
 $line-height-small: 1.15;
 $line-height-normal: 1.5;
 
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
 :root {
   --heading-color: #333333;
   --menu-text-color: DarkSlateGray;

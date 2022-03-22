@@ -85,9 +85,12 @@
   }
 }
 
+.primary-menu-container {
+  display: grid;
+}
+
 .show-header-cta {
   .primary-menu-container {
-    display: grid;
     grid-gap: calc(2 * $tenpx);
     grid-template-columns: minmax(0, 1fr) max-content;
   }

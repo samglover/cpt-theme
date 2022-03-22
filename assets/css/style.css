@@ -240,6 +240,12 @@ img {
   padding: 0.625rem 1.25rem;
   position: relative;
 }
+@media (max-width: 768px) {
+  .site-header-primary-nav {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+}
 .site-header-primary-nav.has-custom-logo .site-branding {
   align-items: center;
   display: grid;
@@ -376,8 +382,11 @@ img {
   display: list-item;
 }
 
-.show-header-cta .primary-menu-container {
+.primary-menu-container {
   display: grid;
+}
+
+.show-header-cta .primary-menu-container {
   grid-gap: 1.25rem;
   grid-template-columns: minmax(0, 1fr) max-content;
 }

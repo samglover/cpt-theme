@@ -9,6 +9,11 @@
   padding: $tenpx calc(2 * $tenpx);
   position: relative;
 
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
   &.has-custom-logo {
     .site-branding {
       align-items: center;
