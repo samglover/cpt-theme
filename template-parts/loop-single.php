@@ -12,6 +12,6 @@
     ?>
   </div>
   <footer class="entry-footer">
-    <p class="post-byline">By <?php the_author(); ?>. Last updated on <?php the_modified_date( 'F jS, Y' ); ?>.</p>
+    <p class="entry-byline">By <?php the_author(); ?>. Last updated on <?php the_modified_date( 'F jS, Y' ); ?>.</p>
   </footer>
 </article>

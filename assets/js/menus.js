@@ -6,9 +6,9 @@
  */
 const Menu = document.querySelector('#primary-menu > ul.menu')
 
-let i = 1;
-console.log(i);
-i++;
+// let i = 1;
+// console.log(i);
+// i++;
 
 // Creates the collapsed menu item.
 const CollapsedMenu = document.createElement('li');
@@ -20,7 +20,7 @@ CollapsedMenu.appendChild(CollapsedSubMenu);
 
 function primaryMenuCollapser() {
   if ( ! Menu ) { return; }
-  if ( getSpaceAvailable() > getSpaceNeeded() ) { resetMenu(); }
+  // if ( getSpaceAvailable() > getSpaceNeeded() ) { resetMenu(); }
   if ( getSpaceAvailable() <= getSpaceNeeded() ) { collapseMenu(); }
 }
 

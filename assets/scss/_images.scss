@@ -7,3 +7,9 @@ img {
   height: auto;
   max-width: 100%;
 }
+
+.single {
+  .wp-post-image {
+    margin-bottom: calc(2 * $tenpx);
+  }
+}
