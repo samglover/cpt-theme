@@ -169,6 +169,17 @@
     flex-direction: row;
     flex-wrap: nowrap;
     gap: calc(2 * $tenpx);
+
+    & > .menu-item-has-children:hover > .sub-menu,
+    & > .menu-item-has-children:focus > .sub-menu,
+    .collapsed-menu:hover > .sub-menu,
+    .collapsed-menu:focus > .sub-menu {
+      @media (max-width: $breakpoint-sm) {
+          right: calc(-2 * $tenpx);
+        transform: revert;
+        width: 100vw;
+      }
+    }
   }
 
   & > .menu-item-has-children {
@@ -176,6 +187,10 @@
     &:focus > .sub-menu {
       left: 50%;
     }
+  }
+
+  .sub-menu {
+    box-sizing: border-box;
   }
 
   .collapsed-menu {
