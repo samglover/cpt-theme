@@ -4,11 +4,8 @@
  * If the menu overflows the width of the menu container, this function
  * collapses the overflow into a new sub-menu.
  */
-const Menu = document.querySelector('#primary-menu > ul.menu')
-
-// let i = 1;
-// console.log(i);
-// i++;
+const MenuContainer = document.querySelector('#primary-menu');
+const Menu = document.querySelector('#primary-menu > ul.menu');
 
 // Creates the collapsed menu item.
 const CollapsedMenu = document.createElement('li');
@@ -19,18 +16,15 @@ const CollapsedSubMenu = document.createElement('ul');
 CollapsedMenu.appendChild(CollapsedSubMenu);
 
 function primaryMenuCollapser() {
-  if ( ! Menu ) { return; }
-  // if ( getSpaceAvailable() > getSpaceNeeded() ) { resetMenu(); }
-  if ( getSpaceAvailable() <= getSpaceNeeded() ) { collapseMenu(); }
+  if ( !Menu ) { return; }
+  if ( MenuContainer.scrollWidth > Menu.scrollWidth + nextItemWidth() ) { resetMenu(); }
+  if ( MenuContainer.scrollWidth <= Menu.scrollWidth ) { collapseMenu(); }
 }
 
-function getSpaceAvailable() {
-  return document.querySelector('#primary-menu').offsetWidth;
-}
-
-function getSpaceNeeded() {
-  let nextItemWidth = CollapsedSubMenu.querySelector('li:first-of-type > a') ? CollapsedSubMenu.querySelector('li:first-of-type > a').scrollWidth : 0;
-  return Menu.scrollWidth + nextItemWidth + 1;
+function nextItemWidth() {
+  let nextItem = CollapsedMenu.querySelector('li:first-of-type > a');
+  let gap = CollapsedMenu.querySelector('li:first-of-type > a') == CollapsedMenu.querySelector('li:last-of-type > a') ? 0 : 20;
+  return nextItem ? nextItem.scrollWidth + gap : 0;
 }
 
 function resetMenu() {
@@ -49,7 +43,7 @@ function resetMenu() {
 function collapseMenu() {
   // Checks to see if the submenu already exists in order to prevent multiple
   // menus, since the function runs whenever the window is resized.
-  if ( ! Menu.contains(CollapsedMenu) ) {
+  if ( !Menu.contains(CollapsedMenu) ) {
     Menu.appendChild(CollapsedMenu);
   }
 
@@ -57,12 +51,12 @@ function collapseMenu() {
   let collapsedMenuItems  = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
 
   primaryMenuItems.forEach( function() {
-    if ( getSpaceAvailable() <= getSpaceNeeded() ) {
+    if ( MenuContainer.scrollWidth <= Menu.scrollWidth ) {
       let lastItem = primaryMenuItems.length - 1;
       CollapsedSubMenu.insertBefore(primaryMenuItems.item(lastItem), collapsedMenuItems.item(0));
     }
   });
 }
 
-primaryMenuCollapser();
-// window.onresize = primaryMenuCollapser;
+window.onload = primaryMenuCollapser;
+window.onresize = primaryMenuCollapser;

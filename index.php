@@ -3,7 +3,7 @@
 <header class="page-header">
   <h1 class="headline">
     <?php
-      if ( is_home() && ! is_front_page() && ! empty(single_post_title('', false)) ) {
+      if ( is_home() && !is_front_page() && !empty(single_post_title('', false)) ) {
         single_post_title();
       } elseif ( is_archive() ) {
         the_archive_title();

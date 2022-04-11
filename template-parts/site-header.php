@@ -63,7 +63,7 @@
   </div><!--.site-header-primary-->
   <nav class="secondary-menu-container">
     <?php
-      if ( get_option( 'cpt_sites_show_secondary_menu' ) ) {
+      if ( get_option('cpt_sites_show_secondary_menu') ) {
         wp_nav_menu([
           'theme_location'  => 'secondary',
           'container_id'    => 'secondary-menu',
@@ -73,7 +73,7 @@
     ?>
   </nav>
   <?php
-    if ( get_option( 'cpt_sites_show_breadcrumbs' ) ) {
+    if ( get_option('cpt_sites_show_breadcrumbs') ) {
       breadcrumbs();
     }
   ?>

@@ -179,13 +179,21 @@
   & > .menu-item-has-children {
     &:hover > .sub-menu,
     &:focus > .sub-menu {
-      font-size: $small;
       left: 50%;
     }
   }
 
-  .collapsed-menu > i {
-    cursor: pointer;
+  .collapsed-menu {
+    & > i {
+      cursor: pointer;
+    }
+
+    &:hover > .sub-menu,
+    &:focus > .sub-menu {
+      right: 0;
+      left: revert;
+      transform: revert;
+    }
   }
 }
 
