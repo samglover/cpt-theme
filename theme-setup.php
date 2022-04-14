@@ -106,8 +106,6 @@ function register_admin_stylesheets_scripts() {
   }
   wp_enqueue_style('admin', CPT_THEME_DIR_URI . 'assets/css/admin.css');
 
-  wp_enqueue_script('admin', CPT_THEME_DIR_URI . 'assets/js/admin.js', '', '', true);
-
   // Color Picker
   wp_enqueue_style('wp-color-picker');
   wp_enqueue_script('color-picker', CPT_THEME_DIR_URI . 'includes/color-picker.js', ['wp-color-picker'], '', true);
