@@ -10,7 +10,6 @@
 
   $site_title_classes = 'site-title-container';
   $site_title_classes .= get_option('cpt_sites_show_site_title') ? '' : ' screen-reader-text';
-
 ?>
 
 <header class="<?php echo esc_attr($header_classes); ?>">
