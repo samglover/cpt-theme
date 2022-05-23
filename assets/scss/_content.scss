@@ -1,3 +1,12 @@
+:root {
+  --heading-color: #333333;
+  --menu-text-color: DarkSlateGray;
+  --menu-border-color: LightSlateGray;
+  --text-color: #111111;
+  --text-color-light: SlateGray;
+  --font-size-small: $x-small;
+}
+
 body {
   line-height: 1;
   margin: 0;
