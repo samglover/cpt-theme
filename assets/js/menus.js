@@ -50,12 +50,12 @@ function collapseMenu() {
   let primaryMenuItems    = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
   let collapsedMenuItems  = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
 
-  primaryMenuItems.forEach( function() {
+  for (let i = primaryMenuItems.length; i > 0; i--) {
     if ( MenuContainer.scrollWidth <= Menu.scrollWidth ) {
-      let lastItem = primaryMenuItems.length - 1;
+      let lastItem = i - 1;
       CollapsedSubMenu.insertBefore(primaryMenuItems.item(lastItem), collapsedMenuItems.item(0));
     }
-  });
+  }
 }
 
 window.onload = primaryMenuCollapser;
