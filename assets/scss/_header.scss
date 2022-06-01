@@ -7,7 +7,7 @@
   box-shadow: $box-shadow;
   display: grid;
   grid-gap: calc(2 * $tenpx);
-  grid-template-columns: minmax(auto, max-content) minmax(1em, 1fr);
+  grid-template-columns: minmax(auto, max-content) minmax(min-content, 1fr);
   margin: 0;
   padding: $tenpx calc(2 * $tenpx);
   position: relative;
