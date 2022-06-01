@@ -1,16 +1,21 @@
-<?php namespace CPT_Theme\Template_Parts; ?>
-
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-  <main id="content" <?php post_class(); ?>>
-    <?php if ( ! is_front_page() ) { ?>
-      <h1 class="headline"><?php the_title(); ?></h1>
+<article id="content" <?php post_class(); ?>>
+  <header class="entry-header">
+    <?php
+      if ( !is_front_page() ) {
+        the_title('<h1 class="entry-title">', '</h1>');
+      }
+      if ( has_post_thumbnail() ) { the_post_thumbnail(); }
+    ?>
+  </header>
+  <div class="entry-content">
+    <?php
+      the_content();
+      wp_link_pages();
+    ?>
+  </div>
+  <footer class="entry-footer">
+    <?php if ( !is_front_page() ) { ?>
+      <p class="entry-byline">By <?php the_author(); ?>. Last updated on <?php the_modified_date('F jS, Y'); ?>.</p>
     <?php } ?>
-    <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
-    <?php the_content(); ?>
-    <div class="clearfix"></div>
-    <?php if ( ! is_front_page() ) { ?>
-      <p class="post-byline">By <?php the_author(); ?>. Last updated on <?php the_modified_date( 'F jS, Y' ); ?>.</p>
-    <?php } ?>
-    <?php wp_link_pages(); ?>
-  </main>
-<?php endwhile; endif; ?>
+  </footer>
+</article>

@@ -1,0 +1,86 @@
+.modal-container {
+  display: none;
+  height: 100vh;
+  place-content: center;
+  position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  width: 100vw;
+  z-index: 100;
+}
+
+.modal.card {
+  background-color: White;
+  box-shadow:
+    0 0 0 1px #ddd,
+    1px 1px 3px rgba( 0, 0, 0, 0.2 )
+  ;
+  box-sizing: border-box;
+  margin: 3px;
+  min-width: 330px;
+  max-height: 90vh;
+  max-width: 30vw;
+  overflow: scroll;
+  padding: 2em;
+  position: relative;
+  z-index: 100;
+
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.dismiss-modal {
+  align-items: center;
+  background-color: #ccc;
+  border: 1px solid #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  height: 30px;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  padding: 3px;
+  place-items: center;
+  position: absolute;
+    top: 15px;
+    right: 15px;
+  text-decoration: none;
+  width: 30px;
+
+  &:hover,
+  &:focus {
+    background-color: #ddd;
+    border-color: #ccc;
+    box-shadow: 1px 1px 3px rgba( 0, 0, 0, 0.4 );
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: #bbb;
+    border-color: #bbb;
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  svg {
+    fill: White;
+  }
+}
+
+.modal-screen {
+  background-color: rgb( 0, 0, 0, .4 );
+  display: none;
+  height: 100vh;
+  position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  width: 100vw;
+  z-index: 90;
+}

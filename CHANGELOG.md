@@ -1,8 +1,26 @@
-# Changelog for samglover.net
+# Changelog for the Client Power Tools WordPress Theme
 
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+
+## 2.1 - 2022-05-31
+
+### Fixed
+- Fixed menu collapser function.
+
+
+## 2.0 - 2022-03-20
+
+**WARNING: This update probably breaks child themes based on version 1.x because lots of tags and styles have changed. Do not update the Client Power Tools Theme on a live site.**
+
+### Changed
+- Removed namespaces and references.
+- Added trailingslashit() to constants and changed every reference to them.
+- Restructured the header and updated it with semantic tags. Updated styles to match.
+
+### Removed
+- Removed the sidebar page template.
 
 ## 1.2 - 2022-03-17
 

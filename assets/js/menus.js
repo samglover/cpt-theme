@@ -4,108 +4,59 @@
  * If the menu overflows the width of the menu container, this function
  * collapses the overflow into a new sub-menu.
  */
+const MenuContainer = document.querySelector('#primary-menu');
+const Menu = document.querySelector('#primary-menu > ul.menu');
 
-const Header    = document.querySelector( '#header' );
-const LogoWidth = document.querySelector( '#logo-title' ).scrollWidth;
-const Menu      = document.querySelector( '#primary-menu ul.menu' );
-const CTAWidth  = document.querySelector( '#header-cta' ) ? document.querySelector( '#header-cta' ).scrollWidth : 0;
-const GridGap   = 20;
-
-const CollapsedMenuParent = document.createElement( 'li' );
-      CollapsedMenuParent.classList.add( 'menu-item', 'menu-item-has-children', 'collapsed-menu' );
-      CollapsedMenuParent.insertAdjacentHTML( 'afterbegin', '<a>&bull;&bull;&bull;</a>' );
-
-const CollapsedMenu       = document.createElement( 'ul' );
-      CollapsedMenu.classList.add( 'sub-menu' );
-
-CollapsedMenuParent.appendChild( CollapsedMenu );
+// Creates the collapsed menu item.
+const CollapsedMenu = document.createElement('li');
+      CollapsedMenu.classList.add('menu-item', 'menu-item-has-children', 'collapsed-menu');
+      CollapsedMenu.insertAdjacentHTML('afterbegin', '<i>&bull;&bull;&bull;</i>');
+const CollapsedSubMenu = document.createElement('ul');
+      CollapsedSubMenu.classList.add('sub-menu');
+CollapsedMenu.appendChild(CollapsedSubMenu);
 
 function primaryMenuCollapser() {
-  if ( ! Menu ) { return; }
-
-  let stackedHeader = false;
-
-  if ( getSpaceAvailable() > Menu.offsetWidth ) {
-    resetMenu();
-  }
-
-  if ( getSpaceAvailable() <= ( Menu ? Menu.scrollWidth : 0 ) + 1 + GridGap + CTAWidth ) {
-    // 1 is a cheap "round-up" in case there is a fractional pixel.
-    collapseMenu();
-  }
-
-  if ( getSpaceAvailable() < Menu.scrollWidth + CTAWidth ) {
-    stackHeader();
-  }
-
-  function getSpaceAvailable() {
-    let headerStyle   = window.getComputedStyle( Header );
-    let headerPadding = parseFloat( headerStyle.paddingLeft ) + parseFloat( headerStyle.paddingRight )
-    let headerWidth   = Header.offsetWidth - headerPadding;
-
-    if ( stackedHeader ) {
-      return headerWidth - GridGap;
-    } else {
-      return headerWidth - LogoWidth - GridGap;
-    }
-  }
-
-  function resetMenu() {
-    // Removes the #stacked-header body class if the header should no longer be stacked.
-    if ( ! stackedHeader ) {
-      document.querySelector( 'body' ).classList.remove( 'stacked-header' );
-    }
-
-    let primaryMenuItems    = document.querySelectorAll( '#primary-menu ul.menu > li:not( .collapsed-menu )' );
-    let collapsedMenuItems  = CollapsedMenu.querySelectorAll( 'li:not( .sub-menu .sub-menu li )' );
-
-    collapsedMenuItems.forEach( function( e ) {
-      let menuItem = CollapsedMenu.removeChild( e );
-
-      Menu.appendChild( menuItem );
-
-      collapsedMenuItems = document.querySelectorAll( '#primary-menu .collapsed-menu > .sub-menu > li' );
-    });
-
-    if ( Menu.contains( CollapsedMenuParent ) ) {
-      Menu.removeChild( CollapsedMenuParent );
-    }
-  }
-
-  function collapseMenu() {
-    // Checks to see if the submenu already exists in order to prevent multiple
-    // menus, since the function runs whenever the window is resized.
-    if ( ! Menu.contains( CollapsedMenuParent ) ) {
-      Menu.appendChild( CollapsedMenuParent );
-    }
-
-    let menuContainer       = document.querySelector( '#menu-container' );
-    let primaryMenuItems    = document.querySelectorAll( '#primary-menu ul.menu > li:not( .collapsed-menu )' );
-    let numPrimaryMenuItems = primaryMenuItems.length - 1; // Adjusts the counter to node keys, which start at 0.
-
-    while ( getSpaceAvailable() <= getMenuWidth() && numPrimaryMenuItems >= 0 ) {
-      let menuItem        = Menu.removeChild( primaryMenuItems.item( numPrimaryMenuItems ) );
-      collapsedMenuItems  = document.querySelectorAll( '#primary-menu .collapsed-menu > .sub-menu > li' )
-
-      CollapsedMenu.insertBefore( menuItem, collapsedMenuItems.item( 0 ) );
-
-      numPrimaryMenuItems--;
-    }
-
-    function getMenuWidth() {
-      return stackedHeader ? Menu.offsetWidth + CTAWidth + GridGap : menuContainer.scrollWidth;
-    }
-  }
-
-  function stackHeader() {
-    document.querySelector( 'body' ).classList.add( 'stacked-header' );
-    stackedHeader = true;
-
-    resetMenu();
-    collapseMenu();
-  }
-
+  if ( !Menu ) { return; }
+  if ( MenuContainer.scrollWidth > Menu.scrollWidth + nextItemWidth() ) { resetMenu(); }
+  if ( MenuContainer.scrollWidth <= Menu.scrollWidth ) { collapseMenu(); }
 }
 
-primaryMenuCollapser();
+function nextItemWidth() {
+  let nextItem = CollapsedMenu.querySelector('li:first-of-type > a');
+  let gap = CollapsedMenu.querySelector('li:first-of-type > a') == CollapsedMenu.querySelector('li:last-of-type > a') ? 0 : 20;
+  return nextItem ? nextItem.scrollWidth + gap : 0;
+}
+
+function resetMenu() {
+  let primaryMenuItems    = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
+  let collapsedMenuItems  = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
+
+  collapsedMenuItems.forEach( function(element) {
+    Menu.appendChild(element);
+  });
+
+  if ( Menu.contains(CollapsedMenu) ) {
+    Menu.removeChild(CollapsedMenu);
+  }
+}
+
+function collapseMenu() {
+  // Checks to see if the submenu already exists in order to prevent multiple
+  // menus, since the function runs whenever the window is resized.
+  if ( !Menu.contains(CollapsedMenu) ) {
+    Menu.appendChild(CollapsedMenu);
+  }
+
+  let primaryMenuItems    = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
+  let collapsedMenuItems  = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
+
+  for (let i = 0; i < primaryMenuItems.length; i++) {
+    if ( MenuContainer.scrollWidth <= Menu.scrollWidth ) {
+      let lastItem = i;
+      CollapsedSubMenu.insertBefore(primaryMenuItems.item(lastItem), collapsedMenuItems.item(0));
+    }
+  }
+}
+
+window.onload = primaryMenuCollapser;
 window.onresize = primaryMenuCollapser;
