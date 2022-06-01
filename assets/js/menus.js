@@ -50,9 +50,9 @@ function collapseMenu() {
   let primaryMenuItems    = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
   let collapsedMenuItems  = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
 
-  for (let i = primaryMenuItems.length; i > 0; i--) {
+  for (let i = 0; i < primaryMenuItems.length; i++) {
     if ( MenuContainer.scrollWidth <= Menu.scrollWidth ) {
-      let lastItem = i - 1;
+      let lastItem = i;
       CollapsedSubMenu.insertBefore(primaryMenuItems.item(lastItem), collapsedMenuItems.item(0));
     }
   }
