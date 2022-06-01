@@ -52,7 +52,7 @@ function collapseMenu() {
 
   for (let i = 0; i < primaryMenuItems.length; i++) {
     if ( MenuContainer.scrollWidth <= Menu.scrollWidth ) {
-      let lastItem = i;
+      let lastItem = primaryMenuItems.length - 1;
       CollapsedSubMenu.insertBefore(primaryMenuItems.item(lastItem), collapsedMenuItems.item(0));
     }
   }
