@@ -60,20 +60,27 @@ body {
 .pagination,
 .post-nav-links {
   font-family: var(--heading-font);
-  font-variant-numeric: lining-nums;
+  font-variant-numeric: lining-nums tabular-nums;
+  margin: 1em 0;
 }
 
 .nav-links {
   * {
-    display: inline-block;
+    display: inline-grid;
+    place-content: center;
   }
 
-  *:not( :last-child ) {
-    margin-right: .25em;
-  }
-
-  *:not( .dots ) {
+  *:not(.dots) {
     border-radius: 9999px;
+  }
+
+  *:not(.prev):not(.next) {
+    padding: calc(.75 * $tenpx);
+    min-width: 1em;
+  }
+
+  .prev,
+  .next {
     padding: calc(.75 * $tenpx) calc(2.5 * $tenpx);
   }
 
