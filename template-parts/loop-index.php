@@ -5,6 +5,7 @@
   </header>
   <div class="entry-content entry-excerpt">
     <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
+    <div class="clearfix"></div>
   </div>
   <footer class="entry-footer">
     <p class="entry-byline">By <?php the_author(); ?> on <?php echo get_the_date('F jS, Y'); ?></p>

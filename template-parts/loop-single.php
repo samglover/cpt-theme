@@ -6,12 +6,11 @@
     ?>
   </header>
   <div class="entry-content">
-    <?php
-      the_content();
-      wp_link_pages();
-    ?>
+    <?php the_content(); ?>
+    <div class="clearfix"></div>
   </div>
   <footer class="entry-footer">
+    <?php wp_link_pages(); ?>
     <p class="entry-byline">By <?php the_author(); ?>. Last updated on <?php the_modified_date('F jS, Y'); ?>.</p>
   </footer>
 </article>
