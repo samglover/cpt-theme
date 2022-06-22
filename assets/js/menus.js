@@ -17,8 +17,8 @@ CollapsedMenu.appendChild(CollapsedSubMenu);
 
 function primaryMenuCollapser() {
   if ( !Menu ) { return; }
-  if ( MenuContainer.scrollWidth > Menu.scrollWidth + nextItemWidth() ) { resetMenu(); }
-  if ( MenuContainer.scrollWidth <= Menu.scrollWidth ) { collapseMenu(); }
+  if ( MenuContainer.offsetWidth > Menu.scrollWidth + nextItemWidth() ) { resetMenu(); }
+  if ( MenuContainer.offsetWidth <= Menu.scrollWidth ) { collapseMenu(); }
 }
 
 function nextItemWidth() {
@@ -51,7 +51,7 @@ function collapseMenu() {
   let collapsedMenuItems  = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
 
   for (let i = 0; i < primaryMenuItems.length; i++) {
-    if ( MenuContainer.scrollWidth <= Menu.scrollWidth ) {
+    if ( MenuContainer.offsetWidth <= Menu.scrollWidth ) {
       let lastItem = primaryMenuItems.length - 1;
       CollapsedSubMenu.insertBefore(primaryMenuItems.item(lastItem), collapsedMenuItems.item(0));
     }
