@@ -12,6 +12,10 @@
   padding: $tenpx calc(2 * $tenpx);
   position: relative;
 
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 100%;
+  }
+
   &.has-custom-logo {
     .site-branding {
       align-items: center;
@@ -104,12 +108,12 @@
   & > .menu-item-has-children {
     &  > .sub-menu {
       background-color: WhiteSmoke;
-      border: 1px solid var( --menu-border-color );
+      border: 1px solid var(--menu-border-color);
       box-shadow: $box-shadow;
       padding: $tenpx calc(2 * $tenpx);
       position: absolute;
         left: -9999px;
-      transform: translateX( -50% );
+      transform: translateX(-50%);
       z-index: 10;
     }
 
@@ -168,43 +172,47 @@
   place-self: center stretch;
   place-items: center end;
 
+  @media (max-width: $breakpoint-sm) {
+    place-items: center start;
+  }
+
   .menu {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     gap: calc(2 * $tenpx);
 
-    & > .menu-item-has-children:hover > .sub-menu,
-    & > .menu-item-has-children:focus > .sub-menu,
-    .collapsed-menu:hover > .sub-menu,
-    .collapsed-menu:focus > .sub-menu {
+    & > .menu-item-has-children,
+    .collapsed-menu {
       @media (max-width: $breakpoint-sm) {
-        right: calc(-2 * $tenpx);
-        transform: revert;
-        width: 100vw;
+        position: revert;
+      }
+
+      &:hover > .sub-menu,
+      &:focus > .sub-menu {
+        left: 50%;
+
+        @media (max-width: $breakpoint-sm) {
+          left: 0;
+          transform: revert;
+          width: 100vw;
+        }
       }
     }
-  }
 
-  & > .menu-item-has-children {
-    &:hover > .sub-menu,
-    &:focus > .sub-menu {
-      left: 50%;
-    }
-  }
+    .collapsed-menu {
+      & > i {
+        cursor: pointer;
+        font-weight: bold;
+        letter-spacing: .15em;
+      }
 
-  .collapsed-menu {
-    & > i {
-      cursor: pointer;
-      font-weight: bold;
-      letter-spacing: .15em;
-    }
-
-    &:hover > .sub-menu,
-    &:focus > .sub-menu {
-      right: 0;
-      left: revert;
-      transform: revert;
+      &:hover > .sub-menu,
+      &:focus > .sub-menu {
+        right: 0;
+        left: revert;
+        transform: revert;
+      }
     }
   }
 }
