@@ -48,15 +48,18 @@ function collapseMenu() {
   }
 
   let primaryMenuItems    = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
-  let collapsedMenuItems  = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
 
-  for (let i = 0; i < primaryMenuItems.length; i++) {
+  for (let i = primaryMenuItems.length - 1; i >= 0; i--) {
     if ( MenuContainer.offsetWidth <= Menu.scrollWidth ) {
-      let lastItem = primaryMenuItems.length - 1;
-      CollapsedSubMenu.insertBefore(primaryMenuItems.item(lastItem), collapsedMenuItems.item(0));
+      let collapsedMenuItems  = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
+      CollapsedSubMenu.insertBefore(primaryMenuItems.item(i), collapsedMenuItems.item(0));
     }
   }
 }
 
+// Loads the collapse function immediately, then again on page load in case the
+// dimensions have changed (due to fonts, for example). Then loads it again if
+// the window is resized.
+primaryMenuCollapser();
 window.onload = primaryMenuCollapser;
 window.onresize = primaryMenuCollapser;

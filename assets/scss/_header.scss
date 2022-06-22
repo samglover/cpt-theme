@@ -98,7 +98,7 @@
   }
 
   .menu-item-has-children > a::after {
-    content: '\02009\0002B';
+    content: '\02009\0002B'; // " +"
   }
 
   & > .menu-item-has-children {
@@ -179,7 +179,7 @@
     .collapsed-menu:hover > .sub-menu,
     .collapsed-menu:focus > .sub-menu {
       @media (max-width: $breakpoint-sm) {
-          right: calc(-2 * $tenpx);
+        right: calc(-2 * $tenpx);
         transform: revert;
         width: 100vw;
       }
@@ -191,10 +191,6 @@
     &:focus > .sub-menu {
       left: 50%;
     }
-  }
-
-  .sub-menu {
-    box-sizing: border-box;
   }
 
   .collapsed-menu {

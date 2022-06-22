@@ -7,6 +7,12 @@
   --font-size-small: $x-small;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   line-height: 1;
   margin: 0;

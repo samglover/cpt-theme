@@ -9,6 +9,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 - Changed add_theme_support('align-full') to add_theme_support('align-wide').
 - Changed menu container measurement from scrollWidth to offsetWidth in menus.js.
+- Fix primaryMenuCollapser() so it actually collapses the menu on load.
 
 ## 2.1.2 - 2022-06-03
 
