@@ -60,7 +60,7 @@ add_action('wp_head', 'css_variables');
  *
  * @param string $modal_ID ID of the modal container to close.
  */
-function dismiss_modal( $modal_ID = null ) {
+function dismiss_modal($modal_ID = null) {
   if ( !$modal_ID ) { return; }
   ob_start();
     ?>
@@ -70,6 +70,22 @@ function dismiss_modal( $modal_ID = null ) {
     <?php
   echo ob_get_clean();
 }
+
+
+function collapsed_menu_item($items, $args) {
+  if ( !get_option('cpt_sites_show_primary_menu') || $args->theme_location != 'primary' ) { return $items; }
+  ob_start();
+    ?>
+      <li id="collapsed-menu" class="menu-item menu-item-has-children collapsed-menu">
+        <a href="#">&bull;&bull;&bull;</a>
+        <ul class="sub-menu"></ul>
+      </li>
+    <?php
+  $items .= ob_get_clean();
+  return $items;
+}
+
+add_filter('wp_nav_menu_items', 'collapsed_menu_item', 10, 2);
 
 
 function breadcrumbs() {
