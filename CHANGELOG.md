@@ -18,6 +18,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Changed menu container measurement from scrollWidth to offsetWidth in menus.js.
 - Fix primaryMenuCollapser() so it actually collapses the menu on load.
 
+
 ## 2.1.2 - 2022-06-03
 
 ### Changed
@@ -45,6 +46,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Removed
 - Removed the sidebar page template.
+
 
 ## 1.2 - 2022-03-17
 

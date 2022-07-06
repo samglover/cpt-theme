@@ -1,20 +1,14 @@
+const MenuContainer     = document.querySelector('#primary-menu');
+const Menu              = document.querySelector('#primary-menu > .menu');
+const CollapsedMenu     = document.querySelector('#collapsed-menu');
+const CollapsedSubMenu  = document.querySelector('#collapsed-menu > .sub-menu');
+
 /**
  * Menu Collapser
  *
  * If the menu overflows the width of the menu container, this function
  * collapses the overflow into a new sub-menu.
  */
-const MenuContainer = document.querySelector('#primary-menu');
-const Menu = document.querySelector('#primary-menu > ul.menu');
-
-// Creates the collapsed menu item.
-const CollapsedMenu = document.createElement('li');
-      CollapsedMenu.classList.add('menu-item', 'menu-item-has-children', 'collapsed-menu');
-      CollapsedMenu.insertAdjacentHTML('afterbegin', '<i>&bull;&bull;&bull;</i>');
-const CollapsedSubMenu = document.createElement('ul');
-      CollapsedSubMenu.classList.add('sub-menu');
-CollapsedMenu.appendChild(CollapsedSubMenu);
-
 function primaryMenuCollapser() {
   if ( !Menu ) { return; }
   if ( MenuContainer.offsetWidth > Menu.scrollWidth + nextItemWidth() ) { resetMenu(); }
@@ -28,30 +22,24 @@ function nextItemWidth() {
 }
 
 function resetMenu() {
-  let primaryMenuItems    = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
-  let collapsedMenuItems  = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
+  let primaryMenuItems = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
+  let collapsedMenuItems = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
 
   collapsedMenuItems.forEach( function(element) {
-    Menu.appendChild(element);
+    Menu.insertBefore(element, CollapsedMenu);
   });
 
-  if ( Menu.contains(CollapsedMenu) ) {
-    Menu.removeChild(CollapsedMenu);
-  }
+  CollapsedMenu.style.display = "none";
 }
 
 function collapseMenu() {
-  // Checks to see if the submenu already exists in order to prevent multiple
-  // menus, since the function runs whenever the window is resized.
-  if ( !Menu.contains(CollapsedMenu) ) {
-    Menu.appendChild(CollapsedMenu);
-  }
+  CollapsedMenu.style.display = "revert";
 
-  let primaryMenuItems    = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
+  let primaryMenuItems = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
 
   for (let i = primaryMenuItems.length - 1; i >= 0; i--) {
     if ( MenuContainer.offsetWidth <= Menu.scrollWidth ) {
-      let collapsedMenuItems  = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
+      let collapsedMenuItems = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
       CollapsedSubMenu.insertBefore(primaryMenuItems.item(i), collapsedMenuItems.item(0));
     }
   }
@@ -63,3 +51,30 @@ function collapseMenu() {
 primaryMenuCollapser();
 window.onload = primaryMenuCollapser;
 window.onresize = primaryMenuCollapser;
+
+let dropDownMenus = Menu.querySelectorAll('.menu-item-has-children');
+
+dropDownMenus.forEach( function(element) {
+  element.addEventListener('click', toggleSubMenu);
+});
+
+function toggleSubMenu() {
+  event.stopPropagation();
+  if ( this.classList.contains('open') ) {
+    this.classList.remove('open');
+  } else {
+    closeOtherSubMenus(this);
+    this.classList.add('open');
+    document.addEventListener('click', closeOtherSubMenus);
+  }
+}
+
+function closeOtherSubMenus(subMenu = null) {
+  let openSubMenus = Menu.querySelectorAll('.menu-item-has-children.open');
+  openSubMenus.forEach( function(element) {
+    if ( subMenu !== null && element != subMenu ) {
+      element.classList.remove('open');
+    }
+  });
+  document.removeEventListener('click', closeOtherSubMenus);
+}
