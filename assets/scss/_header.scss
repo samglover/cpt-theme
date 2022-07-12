@@ -102,7 +102,7 @@
     }
   }
 
-  .menu-item-has-children:not(.collapsed-menu) {
+  .menu-item-has-children:not(.collapsed-menu):not(.collapsed-menu .menu-item-has-children) {
       & > a::after {
         content: '\0002B'; // "+"
         display: inline-block;
