@@ -78,8 +78,7 @@ ol,
 p,
 pre,
 ul {
-  line-height: $line-height-normal;
-  margin: 0 0 1em 0;
+  margin: 1em 0 1em 0;
 }
 
 blockquote,
@@ -87,6 +86,13 @@ dd,
 ol,
 ul {
   padding-left: 2em;
+}
+
+dd,
+li,
+p,
+pre {
+  line-height: $line-height-normal;
 }
 
 li {
@@ -101,6 +107,10 @@ li {
 
 blockquote {
   border-left: 2px solid var( --menu-border-color );
+
+  & > *:not(cite) {
+    line-height: $line-height-normal;
+  }
 }
 
 cite {
