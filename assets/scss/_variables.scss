@@ -21,6 +21,14 @@ $huge: 3.815rem;    // 61.04px
 $line-height-small: 1.15;
 $line-height-normal: 1.5;
 
+// Spacing
+$spacing-xs: calc(.75 * $tenpx);
+$spacing-sm: $tenpx;
+$spacing-regular: calc(2 * $tenpx);
+$spacing-md: calc(3 * $tenpx);
+$spacing-lg: calc(4 * $tenpx);
+$spacing-xl: calc(6 * $tenpx);
+
 // Breakpoints
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;

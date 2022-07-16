@@ -6,10 +6,10 @@
   background: radial-gradient(circle, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .1) 100%);
   box-shadow: $box-shadow;
   display: grid;
-  grid-gap: calc(2 * $tenpx);
+  grid-gap: $spacing-regular;
   grid-template-columns: minmax(auto, max-content) minmax(min-content, 1fr);
   margin: 0;
-  padding: $tenpx calc(2 * $tenpx);
+  padding: $spacing-sm $spacing-regular;
   position: relative;
 
   @media (max-width: $breakpoint-sm) {
@@ -20,7 +20,7 @@
     .site-branding {
       align-items: center;
       display: grid;
-      grid-gap: calc(2 * $tenpx);
+      grid-gap: $spacing-regular;
       grid-template-columns: repeat(2, max-content);
     }
   }
@@ -128,7 +128,7 @@
       box-shadow: $box-shadow;
       display: none;
       font-size: $small;
-      padding: $tenpx calc(2 * $tenpx);
+      padding: $spacing-sm $spacing-regular;
       position: absolute;
         left: 50%;
       z-index: 10;
@@ -171,7 +171,7 @@
 
   .sub-menu {
     list-style-type: disc;
-    margin-left: calc(2 * $tenpx);
+    margin-left: $spacing-regular;
     padding: 0;
 
     .menu-item {
@@ -191,7 +191,7 @@
 
 .show-header-cta {
   .primary-menu-container {
-    grid-gap: calc(2 * $tenpx);
+    grid-gap: $spacing-regular;
     grid-template-columns: minmax(0, 1fr) max-content;
   }
 }
@@ -208,7 +208,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: calc(2 * $tenpx);
+    gap: $spacing-regular;
 
     .collapsed-menu {
       & > a {
@@ -229,13 +229,13 @@
 #secondary-menu {
   background-color: rgba(0, 0, 0, .1);
   font-size: $small;
-  margin-bottom: calc(4 * $tenpx);
-  padding: $tenpx calc(2 * $tenpx);
+  margin-bottom: $spacing-md;
+  padding: $spacing-sm $spacing-regular;
 
   .menu {
     display: flex;
     flex-wrap: wrap;
-    gap: $tenpx calc(2 * $tenpx);
+    gap: $spacing-sm $spacing-regular;
 
     & > .menu-item-has-children:first-child > .sub-menu {
       position: absolute;
@@ -270,8 +270,8 @@
   color: var(--text-color-light);
   font-family: var(--heading-font);
   font-size: $x-small;
-  margin: calc(4 * $tenpx) auto;
-  padding: $tenpx calc(2 * $tenpx);
+  margin: $spacing-lg auto;
+  padding: $spacing-sm $spacing-regular;
   max-width: $max-width;
 
   .last-breadcrumb {

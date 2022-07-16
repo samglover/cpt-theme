@@ -88,5 +88,5 @@ input[type="submit"]:active {
 .wp-block-search .wp-block-search__button {
   border-width: 2px;
   margin-top: unset;
-  padding: calc(.75 * $tenpx) calc(2.5 * $tenpx);
+  padding: $spacing-xs calc(2.5 * $tenpx);
 }

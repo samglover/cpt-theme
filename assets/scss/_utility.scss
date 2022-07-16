@@ -33,7 +33,7 @@
 .card {
   box-shadow: $box-shadow;
   margin-bottom: 1.5em !important;
-  padding: calc(3 * $tenpx) !important;
+  padding: $spacing-md !important;
 }
 
 .clearfix {

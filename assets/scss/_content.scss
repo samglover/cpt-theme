@@ -23,9 +23,9 @@ body {
  * Content
  */
 .site-content {
-  margin: calc(4 * $tenpx) auto calc(6 * $tenpx) auto;
+  margin: $spacing-lg auto $spacing-xl auto;
   max-width: $max-width;
-  padding: 0 calc(2 * $tenpx);
+  padding: 0 $spacing-regular;
 
   @media (max-width: $max-width) {
     display: block;
@@ -39,7 +39,7 @@ body {
 }
 
 .post {
-  margin-bottom: calc(6 * $tenpx);
+  margin-bottom: $spacing-xl;
 }
 
 .single {
@@ -60,7 +60,7 @@ body {
 .entry-byline {
   color: var(--text-color-light);
   font-size: $small;
-  margin: calc(2 * $tenpx) 0;
+  margin: $spacing-regular 0;
 }
 
 .pagination,
@@ -81,13 +81,13 @@ body {
   }
 
   *:not(.prev):not(.next) {
-    padding: calc(.75 * $tenpx);
+    padding: $spacing-xs;
     min-width: 1em;
   }
 
   .prev,
   .next {
-    padding: calc(.75 * $tenpx) calc(2.5 * $tenpx);
+    padding: $spacing-xs calc(2.5 * $tenpx);
   }
 
   .current {
@@ -97,7 +97,7 @@ body {
   }
 
   .dots {
-    padding: calc(.75 * $tenpx) 0;
+    padding: $spacing-xs 0;
   }
 
   a,

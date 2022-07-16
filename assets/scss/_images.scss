@@ -10,6 +10,6 @@ img {
 
 .single {
   .wp-post-image {
-    margin-bottom: calc(2 * $tenpx);
+    margin-bottom: $spacing-regular;
   }
 }
