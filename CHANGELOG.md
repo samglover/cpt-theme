@@ -6,10 +6,17 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## 2.2.1 - 2022-07-12
 
+### Added
+- theme.json.
+
+
 ### Changed
 - Adjust block element line heights. (Exclude cite from blockquote line height.)
 - Remove + from collapsed menu items with children.
 - Added and implemented spacing variables.
+
+### Fixed
+- All drop-down menus are now animated.
 
 
 ## 2.2 - 2022-07-06

@@ -52,9 +52,13 @@ primaryMenuCollapser();
 window.onload = primaryMenuCollapser;
 window.onresize = primaryMenuCollapser;
 
-let dropDownMenus = Menu.querySelectorAll('.menu-item-has-children');
 
-dropDownMenus.forEach( function(element) {
+/**
+ * Drop-Down Menus
+ */
+let dropDownMenus = document.querySelectorAll('.menu-item-has-children');
+
+dropDownMenus.forEach(function(element) {
   element.addEventListener('click', toggleSubMenu);
 });
 
@@ -70,7 +74,7 @@ function toggleSubMenu() {
 }
 
 function closeOtherSubMenus(subMenu = null) {
-  let openSubMenus = Menu.querySelectorAll('.menu-item-has-children.open');
+  let openSubMenus = document.querySelectorAll('.menu-item-has-children.open');
   openSubMenus.forEach( function(element) {
     if ( subMenu !== null && element != subMenu ) {
       element.classList.remove('open');

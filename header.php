@@ -9,10 +9,10 @@
 
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
+  <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'cpt-theme'); ?></a>
   <?php get_template_part('template-parts/site-header'); ?>
 
   <div id="page-content" class="site">
-    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'cpt-theme'); ?></a>
     <div id="content" class="site-content">
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main">

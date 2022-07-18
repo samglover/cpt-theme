@@ -2,8 +2,7 @@
  * Site Title & Branding
  */
 .site-header-primary-nav {
-  background-color: rgba(0, 0, 0, .2);
-  background: radial-gradient(circle, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .1) 100%);
+  background-color: var(--primary-color);
   box-shadow: $box-shadow;
   display: grid;
   grid-gap: $spacing-regular;
@@ -227,7 +226,7 @@
 }
 
 #secondary-menu {
-  background-color: rgba(0, 0, 0, .1);
+  background-color: var(--secondary-color);
   font-size: $small;
   margin-bottom: $spacing-md;
   padding: $spacing-sm $spacing-regular;

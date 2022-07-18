@@ -42,6 +42,9 @@ function css_variables() {
     ?>
       <style>
         :root {
+          --primary-color: <?php echo get_option('cpt_sites_primary_color'); ?>;
+          --secondary-color: <?php echo get_option('cpt_sites_secondary_color'); ?>;
+          --page-color: <?php echo get_option('cpt_sites_page_color'); ?>;
           --header-cta-text-color: <?php echo get_option('cpt_sites_primary_menu_cta_text_color'); ?>;
           --header-cta-button-color: <?php echo get_option('cpt_sites_primary_menu_cta_button_color'); ?>;
           --link-color: <?php echo get_option('cpt_sites_link_color'); ?>;

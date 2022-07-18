@@ -7,7 +7,6 @@ function theme_setup() {
     'width'  => 720,
     'flex-width' => true
   ]);
-  add_theme_support('editor-styles');
   add_theme_support('html5', [
     'caption',
     'comment-form',
@@ -24,7 +23,7 @@ function theme_setup() {
 
   add_image_size('tiny', 0, 90);
 
-  add_editor_style(CPT_THEME_DIR_URI . 'assets/css/editor-styles.css');
+  add_editor_style(CPT_THEME_DIR_URI . 'assets/css/editor-style.css');
 
   register_nav_menu('primary', __('Primary Menu (In Header)', 'cpt-theme'));
   register_nav_menu('secondary', __('Secondary Menu (Below Header)', 'cpt-theme'));
@@ -48,6 +47,9 @@ function default_options() {
     'cpt_sites_headings'                      => 'Josefin Sans',
     'cpt_sites_body'                          => 'Source Serif Pro',
     // Colors
+    'cpt_sites_primary_color'                 => 'SkyBlue',
+    'cpt_sites_secondary_color'               => 'MediumTurquoise',
+    'cpt_sites_page_color'                    => 'Snow',
     'cpt_sites_link_color'                    => 'SlateBlue',
     'cpt_sites_link_color_hover'              => 'DarkSlateBlue',
   ];
@@ -99,11 +101,7 @@ add_action('wp_enqueue_scripts', 'register_stylesheets_scripts');
 
 
 function register_admin_stylesheets_scripts() {
-  // Enqueue the Jost font unless the Client Power Tools plugin is installed, in
-  // which case it is already enqueued by the plugin.
-  if ( !is_plugin_active('client-power-tools/client-power-tools.php') ) {
-    wp_enqueue_style('jost', CPT_THEME_DIR_URI . 'assets/css/jost.css');
-  }
+  wp_enqueue_style('jost', CPT_THEME_DIR_URI . 'assets/css/jost.css');
   wp_enqueue_style('admin', CPT_THEME_DIR_URI . 'assets/css/admin.css');
 
   // Color Picker

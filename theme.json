@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "defaultPalette": false,
+      "palette": [
+        {
+          "name": "Black",
+          "slug": "black",
+          "color": "#000000"
+        },
+        {
+          "name": "White",
+          "slug": "white",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Primary",
+          "slug": "primary",
+          "color": "var(--primary-color)"
+        },
+        {
+          "name": "Secondary",
+          "slug": "secondary",
+          "color": "var(--secondary-color)"
+        },
+        {
+          "name": "Page Color",
+          "slug": "page-color",
+          "color": "var(--page-color)"
+        }
+      ]
+    },
+    "layout": {
+			"contentSize": "1100px"
+		}
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--body-font)"
+    },
+    "blocks": {
+      "core/site-title": {
+        "typography": {
+          "fontFamily": "var(--heading-font)"
+        }
+      },
+      "core/heading": {
+        "typography": {
+          "fontFamily": "var(--heading-font)"
+        }
+      },
+      "core/buttons": {
+        "typography": {
+          "fontFamily": "var(--heading-font)"
+        }
+      },
+      "core/query-pagination-numbers": {
+        "typography": {
+          "fontFamily": "var(--heading-font)"
+        }
+      },
+      "core/comments-pagination": {
+        "typography": {
+          "fontFamily": "var(--heading-font)"
+        }
+      }
+    }
+  }
+}

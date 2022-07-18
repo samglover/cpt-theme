@@ -3,9 +3,8 @@ html {
 }
 
 body {
-  background-color: Snow;
+  background-color: var(--page-color);
   color: var(--text-color);
-  font-family: var(--body-font);
   font-size: $normal;
   line-height: $line-height-normal;
 }
@@ -32,7 +31,6 @@ a:focus {
 
 h1, h2, h3, h4, h5, h6 {
   color: var( --heading-color );
-  font-family: var( --heading-font );
   font-weight: bold;
   line-height: $line-height-small;
   margin: 1em 0 .5em 0;
