@@ -2,13 +2,6 @@ html {
   font-family: sans-serif;
 }
 
-body {
-  background-color: var(--page-color);
-  color: var(--text-color);
-  font-size: $normal;
-  line-height: $line-height-normal;
-}
-
 a,
 a:visited {
   color: var(--link-color);
@@ -39,7 +32,7 @@ ol,
 p,
 pre,
 ul {
-  margin: 1em 0 1em 0;
+  margin: 1em 0;
 }
 
 blockquote,
