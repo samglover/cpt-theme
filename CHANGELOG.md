@@ -16,7 +16,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added and implemented spacing variables.
 
 ### Fixed
-- All drop-down menus are now animated.
+- All drop-down menus are now animated. (As opposed to just the primary menu.)
 
 
 ## 2.2 - 2022-07-06
