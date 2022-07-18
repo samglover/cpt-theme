@@ -1,11 +1,13 @@
 .alignwide,
 .wp-block-gallery.alignwide {
- 	margin: 1em calc(-11 * $tenpx);
+ 	margin-right: calc(-11 * $tenpx);
+  margin-left: calc(-11 * $tenpx);
  	max-width: calc(100% + (22 * $tenpx));
  	width: calc(100% + (22 * $tenpx));
 
   @media (max-width: calc($max-width + (22 * $tenpx))) {
-    margin: 1em calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
    	max-width: 100vw;
    	width: 100vw;
   }
@@ -41,7 +43,10 @@
 }
 
 .gradient {
-  background: radial-gradient( circle, rgba( 0, 0, 0, .1 ) 0%, rgba( 256, 256, 256, .1 ) 150%);
+  background:
+    radial-gradient(circle, rgba(0, 0, 0, .1) 0%,
+    rgba(256, 256, 256, .1) 150%)
+  ;
 }
 
 .hide {

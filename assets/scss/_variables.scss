@@ -18,8 +18,8 @@ $xxl: var(--wp--custom--typography--font-size--xxl);
 $huge: var(--wp--custom--typography--font-size--huge);
 
 // Line Height
-$line-height-small: 1.15;
-$line-height-normal: 1.5;
+$line-height-small: var(--wp--custom--typography--line-height--small);
+$line-height-normal: var(--wp--custom--typography--line-height--normal);
 
 // Spacing
 $spacing-xs: calc(.75 * $tenpx);

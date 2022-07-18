@@ -1,7 +1,6 @@
 <?php
 
 function theme_setup() {
-  add_theme_support('align-wide');
   add_theme_support('custom-logo', [
     'height' => 480,
     'width'  => 720,
