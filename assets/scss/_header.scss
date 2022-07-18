@@ -101,9 +101,12 @@
     }
   }
 
-  .menu-item-has-children > a {
+  .menu-item-has-children {
     cursor: pointer;
-    pointer-events: none;
+    
+    & > a {
+      pointer-events: none;
+    }
   }
 
   .menu-item-has-children:not(.collapsed-menu):not(.collapsed-menu .menu-item-has-children) {

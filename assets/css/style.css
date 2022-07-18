@@ -320,8 +320,10 @@ body {
     position: relative;
   }
 }
-.menu .menu-item-has-children > a {
+.menu .menu-item-has-children {
   cursor: pointer;
+}
+.menu .menu-item-has-children > a {
   pointer-events: none;
 }
 .menu .menu-item-has-children:not(.collapsed-menu):not(.collapsed-menu .menu-item-has-children) > a::after {
