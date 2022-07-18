@@ -31,44 +31,7 @@ a:focus {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--heading-color);
-  font-weight: bold;
-  line-height: 1.15;
-  margin: 1em 0 0.5em 0;
-}
-
-.card h1,
-.card h2,
-.card h3,
-.card h4,
-.card h5,
-.card h6 {
-  margin-top: 0;
-}
-
-h1 {
-  font-size: var(--wp--custom--typography--font-size--xxl);
-}
-
-h2 {
-  font-size: var(--wp--preset--font-size--x-large);
-}
-
-h3 {
-  font-size: var(--wp--preset--font-size--large);
-}
-
-h4 {
-  font-size: var(--wp--preset--font-size--medium);
-}
-
-h5 {
-  text-transform: uppercase;
-}
-
-h6 {
-  font-size: var(--wp--preset--font-size--small);
-  text-transform: uppercase;
+  margin-bottom: 0.5em;
 }
 
 blockquote,

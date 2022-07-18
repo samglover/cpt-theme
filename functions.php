@@ -3,8 +3,8 @@
 /**
  * Constants
  */
-define( 'CPT_THEME_DIR_PATH', trailingslashit(get_template_directory()) );
-define( 'CPT_THEME_DIR_URI', trailingslashit(get_template_directory_uri()) );
+define('CPT_THEME_DIR_PATH', trailingslashit(get_template_directory()));
+define('CPT_THEME_DIR_URI', trailingslashit(get_template_directory_uri()));
 
 
 /**
@@ -17,7 +17,7 @@ if ( is_admin() ) {
   require_once(CPT_THEME_DIR_PATH . 'admin/options.php');
 }
 
-function customizer_options( $wp_customize ) {
+function customizer_options($wp_customize) {
   $wp_customize->add_setting('cpt_sites_show_site_title', [
     'capability'  => 'edit_theme_options',
     'default'     => true,
@@ -56,6 +56,7 @@ function css_variables() {
 }
 
 add_action('wp_head', 'css_variables');
+add_action('admin_head', 'css_variables');
 
 
 /**
