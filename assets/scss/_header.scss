@@ -101,6 +101,11 @@
     }
   }
 
+  .menu-item-has-children > a {
+    cursor: pointer;
+    pointer-events: none;
+  }
+
   .menu-item-has-children:not(.collapsed-menu):not(.collapsed-menu .menu-item-has-children) {
       & > a::after {
         content: '\0002B'; // "+"
