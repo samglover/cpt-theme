@@ -90,7 +90,6 @@
     "blocks": {
       "core/button": {
         "border": {
-          "color": "var(--link-color)",
   				"radius": "9999px",
           "style": "solid",
           "width": "2px"
