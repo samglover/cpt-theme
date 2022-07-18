@@ -50,17 +50,7 @@
           "fontFamily": "var(--heading-font)"
         }
       },
-      "core/buttons": {
-        "typography": {
-          "fontFamily": "var(--heading-font)"
-        }
-      },
-      "core/query-pagination-numbers": {
-        "typography": {
-          "fontFamily": "var(--heading-font)"
-        }
-      },
-      "core/comments-pagination": {
+      "core/button": {
         "typography": {
           "fontFamily": "var(--heading-font)"
         }
