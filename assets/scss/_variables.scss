@@ -8,14 +8,14 @@ $box-shadow:
 ;
 
 // Font Sizes
-$x-small: .8rem;    // 12.80px
-$small: 1rem;       // 16.00px
-$normal: 1.25rem;   // 20.00px
-$medium: 1.563rem;  // 25.00px
-$large: 1.953rem;   // 31.25px
-$x-large: 2.441rem; // 39.06px
-$xxl: 3.052rem;     // 48.83px
-$huge: 3.815rem;    // 61.04px
+$x-small: var(--wp--custom--typography--font-size--x-small);
+$small: var(--wp--preset--font-size--small);
+$normal: var(--wp--custom--typography--font-size--normal);
+$medium: var(--wp--preset--font-size--medium);
+$large: var(--wp--preset--font-size--large);
+$x-large: var(--wp--preset--font-size--x-large);
+$xxl: var(--wp--custom--typography--font-size--xxl);
+$huge: var(--wp--custom--typography--font-size--huge);
 
 // Line Height
 $line-height-small: 1.15;
