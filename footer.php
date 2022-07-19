@@ -8,12 +8,12 @@
     </footer>
   </div><!-- #page -->
 
-  <?php wp_footer(); ?>
-
   <?php if ( !empty(get_option('cpt_sites_primary_menu_cta_code')) ) { ?>
     <div id="cta-modal" class="modal-container">
       <div class="modal card">
-        <?php dismiss_modal('cta-modal'); ?>
+        <button class="dismiss-modal">
+          <?php echo file_get_contents(CPT_THEME_DIR_URI . 'assets/images/close.svg'); ?>
+        </button>
         <?php
           $cta_code = get_option('cpt_sites_primary_menu_cta_code');
           $cta_code = wptexturize($cta_code);
@@ -26,6 +26,8 @@
       <div class="modal-screen"></div>
     </div>
   <?php } ?>
+
+  <?php wp_footer(); ?>
 
 </body>
 </html>

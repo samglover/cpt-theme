@@ -25,6 +25,8 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 - Reworked the menu so that hover actions work better across touch devices. Plus, animations!
 - Simplify the menu collapser function so it is showing/hiding the collapsed menu items instead of adding and removing it.
+- Simplify the call-to-action modal Javascript.
+- Move CSS animations to their own file.
 
 
 ## 2.1.3 - 2022-06-19

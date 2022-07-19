@@ -4,27 +4,42 @@
   place-content: center;
   position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
   width: 100vw;
   z-index: 100;
+
+  &.visible {
+    display: grid;
+
+    .modal {
+      animation: pulse  150ms ease-in-out forwards;
+    }
+
+    .modal,
+    .modal-screen {
+      display: block;
+    }
+  }
 }
 
 .modal.card {
-  background-color: White;
+  background-color: var(--page-color);
   box-shadow:
     0 0 0 1px #ddd,
-    1px 1px 3px rgba( 0, 0, 0, 0.2 )
+    1px 1px 3px rgba(0, 0, 0, 0.2)
   ;
+  display: none;
   margin: 3px;
   min-width: 330px;
   max-height: 90vh;
   max-width: 30vw;
-  padding: 2em;
   position: relative;
   z-index: 100;
 
+  & > *:nth-child(2) {
+    margin-top: 0;
+    padding-right: $large;
+  }
 
   & > *:last-child {
     margin-bottom: 0;
@@ -35,10 +50,10 @@
   align-items: center;
   background-color: #ccc;
   border: 1px solid #bbb;
-  border-radius: 50%;
+  border-radius: 9999px;
   cursor: pointer;
   display: grid;
-  height: 30px;
+  height: $large;
   justify-content: center;
   line-height: 1;
   margin: 0;
@@ -48,13 +63,13 @@
     top: 15px;
     right: 15px;
   text-decoration: none;
-  width: 30px;
+  width: $large;
 
   &:hover,
   &:focus {
     background-color: #ddd;
     border-color: #ccc;
-    box-shadow: 1px 1px 3px rgba( 0, 0, 0, 0.4 );
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     text-decoration: none;
   }
 
@@ -71,14 +86,10 @@
 }
 
 .modal-screen {
-  background-color: rgb( 0, 0, 0, .4 );
+  background-color: rgb(0, 0, 0, .4);
   display: none;
   height: 100vh;
   position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
   width: 100vw;
   z-index: 90;
 }

@@ -325,13 +325,13 @@ function cpt_sites_header() {
     ?>
 
       <select name="cpt_sites_primary_menu_cta_style">
-        <option value="normal" <?php selected( $style, 'normal'); ?>>Normal</option>
-        <option value="modal" <?php selected( $style, 'modal'); ?>>Modal (Pop-Up)</option>
+        <option value="link" <?php selected( $style, 'link'); ?>>Link</option>
+        <option value="modal" <?php selected( $style, 'modal'); ?>>Modal</option>
       </select>
 
     <?php
 
-    echo '<p class="description">' . __('Normal: Clicking the button will take the visitor to the URL above. ', 'cpt-theme') . '<br />' . __('Modal: Clicking the button will show a modal (pop-up) that displays the shortcode or embed code below.', 'cpt-theme') . '</p>';
+    echo '<p class="description">' . __('Link: Clicking the button will take the visitor to the URL above. ', 'cpt-theme') . '<br />' . __('Modal: Clicking the button will show a modal (pop-up) that displays the shortcode or embed code below.', 'cpt-theme') . '</p>';
 
   }
 

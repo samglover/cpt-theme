@@ -64,6 +64,7 @@ dropDownMenus.forEach(function(element) {
 
 function toggleSubMenu() {
   event.stopPropagation();
+  
   if ( this.classList.contains('open') ) {
     this.classList.remove('open');
   } else {

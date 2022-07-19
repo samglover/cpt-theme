@@ -59,25 +59,8 @@ add_action('wp_head', 'css_variables');
 add_action('admin_head', 'css_variables');
 
 
-/**
- * Modal Dismiss Button
- *
- * @param string $modal_ID ID of the modal container to close.
- */
-function dismiss_modal($modal_ID = null) {
-  if ( !$modal_ID ) { return; }
-  ob_start();
-    ?>
-      <button class="dismiss-modal" onclick="closeModal(<?php echo '\'' . $modal_ID . '\''; ?>)">
-        <?php echo file_get_contents(CPT_THEME_DIR_URI . 'assets/images/close.svg'); ?>
-      </button>
-    <?php
-  echo ob_get_clean();
-}
-
-
 function collapsed_menu_item($items, $args) {
-  if ( !get_option('cpt_sites_show_primary_menu') || $args->theme_location != 'primary' ) { return $items; }
+  if ( !get_option('cpt_sites_show_primary_menu') || $args->theme_location != 'primary' ) return $items;
   ob_start();
     ?>
       <li id="collapsed-menu" class="menu-item menu-item-has-children collapsed-menu">
@@ -93,7 +76,7 @@ add_filter('wp_nav_menu_items', 'collapsed_menu_item', 10, 2);
 
 
 function breadcrumbs() {
-  if ( is_front_page() ) { return; }
+  if ( is_front_page() ) return;
 
   // Gets the last breadcrumb first (we'll flip the order as the last step).
   ob_start();
