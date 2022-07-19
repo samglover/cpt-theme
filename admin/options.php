@@ -17,6 +17,14 @@ add_action('admin_menu', 'cpt_sites_submenu_pages');
 
 
 function site_appearance_init() {
+  // Colors
+  add_settings_section(
+    'cpt-sites-colors',
+    __('Colors', 'cpt-theme'),
+    'cpt_sites_colors',
+    'cpt-theme-appearance',
+  );
+
   add_settings_section(
     'cpt-sites-header',
     __('Header', 'cpt-theme'),
@@ -29,7 +37,7 @@ function site_appearance_init() {
     '<label for="cpt_sites_primary_color">' . __('Primary Color', 'cpt-theme') . '</label>',
     'cpt_sites_primary_color',
     'cpt-theme-appearance',
-    'cpt-sites-header',
+    'cpt-sites-colors',
   );
 
   register_setting('cpt-theme', 'cpt_sites_primary_color');
@@ -39,7 +47,7 @@ function site_appearance_init() {
     '<label for="cpt_sites_secondary_color">' . __('Secondary Color', 'cpt-theme') . '</label>',
     'cpt_sites_secondary_color',
     'cpt-theme-appearance',
-    'cpt-sites-header',
+    'cpt-sites-colors',
   );
 
   register_setting('cpt-theme', 'cpt_sites_secondary_color');
@@ -49,11 +57,12 @@ function site_appearance_init() {
     '<label for="cpt_sites_page_color">' . __('Page Color', 'cpt-theme') . '</label>',
     'cpt_sites_page_color',
     'cpt-theme-appearance',
-    'cpt-sites-header',
+    'cpt-sites-colors',
   );
 
   register_setting('cpt-theme', 'cpt_sites_page_color');
 
+  // Header
   add_settings_field(
     'cpt_sites_show_site_title',
     '<label for="cpt_sites_show_site_title">' . __('Site Title', 'cpt-theme') . '</label>',
@@ -164,7 +173,7 @@ function site_appearance_init() {
 
   register_setting('cpt-theme', 'cpt_sites_show_breadcrumbs');
 
-
+  // Fonts
   add_settings_section(
     'cpt-sites-fonts',
     __('Fonts', 'cpt-theme'),
@@ -247,6 +256,21 @@ function site_appearance() {
   echo ob_get_clean();
 }
 
+function cpt_sites_colors() {
+}
+
+  function cpt_sites_primary_color() {
+    echo '<input name="cpt_sites_primary_color" class="color-field" type="text" value="' . get_option('cpt_sites_primary_color') . '">';
+  }
+
+  function cpt_sites_secondary_color() {
+    echo '<input name="cpt_sites_secondary_color" class="color-field" type="text" value="' . get_option('cpt_sites_secondary_color') . '">';
+  }
+
+  function cpt_sites_page_color() {
+    echo '<input name="cpt_sites_page_color" class="color-field" type="text" value="' . get_option('cpt_sites_page_color') . '">';
+  }
+
 function cpt_sites_header() {
 }
 
@@ -289,18 +313,6 @@ function cpt_sites_header() {
     echo ob_get_clean();
   }
 
-  function cpt_sites_primary_color() {
-    echo '<input name="cpt_sites_primary_color" class="color-field" type="text" required aria-required="true" value="' . get_option('cpt_sites_primary_color') . '">';
-  }
-
-  function cpt_sites_secondary_color() {
-    echo '<input name="cpt_sites_secondary_color" class="color-field" type="text" required aria-required="true" value="' . get_option('cpt_sites_secondary_color') . '">';
-  }
-
-  function cpt_sites_page_color() {
-    echo '<input name="cpt_sites_page_color" class="color-field" type="text" required aria-required="true" value="' . get_option('cpt_sites_page_color') . '">';
-  }
-
   function cpt_sites_primary_menu_cta_text() {
     echo '<input name="cpt_sites_primary_menu_cta_text" class="regular-text" type="text" value="' . get_option('cpt_sites_primary_menu_cta_text') . '">';
   }
@@ -319,20 +331,16 @@ function cpt_sites_header() {
   }
 
   function cpt_sites_primary_menu_cta_style() {
-
     $style = get_option('cpt_sites_primary_menu_cta_style');
 
     ?>
-
       <select name="cpt_sites_primary_menu_cta_style">
-        <option value="link" <?php selected( $style, 'link'); ?>>Link</option>
-        <option value="modal" <?php selected( $style, 'modal'); ?>>Modal</option>
+        <option value="link" <?php selected($style, 'link'); ?>>Link</option>
+        <option value="modal" <?php selected($style, 'modal'); ?>>Modal</option>
       </select>
-
     <?php
 
     echo '<p class="description">' . __('Link: Clicking the button will take the visitor to the URL above. ', 'cpt-theme') . '<br />' . __('Modal: Clicking the button will show a modal (pop-up) that displays the shortcode or embed code below.', 'cpt-theme') . '</p>';
-
   }
 
   function cpt_sites_primary_menu_cta_code() {

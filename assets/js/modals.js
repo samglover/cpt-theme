@@ -1,6 +1,6 @@
-const ctaButton = document.getElementById('header-cta');
-const ctaModal = document.getElementById('cta-modal');
-const ctaDismiss = ctaModal.querySelector('.dismiss-modal');
+const ctaButton   = document.getElementById('header-cta');
+const ctaModal    = document.getElementById('cta-modal');
+const ctaDismiss  = ctaModal.querySelector('.dismiss-modal');
 
 ctaButton.addEventListener('click', toggleModal);
 

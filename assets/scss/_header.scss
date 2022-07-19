@@ -124,13 +124,12 @@
 
   & > .menu-item-has-children {
     &.open > .sub-menu {
-      animation: growDown 150ms ease-in-out forwards;
       display: block;
-      transform-origin: top;
     }
 
     &  > .sub-menu {
-      background-color: WhiteSmoke;
+      animation: growDown_centered 150ms ease-in-out forwards;
+      background-color: var(--page-color);
       border: 1px solid var(--menu-border-color);
       box-shadow: $box-shadow;
       display: none;
@@ -138,14 +137,18 @@
       padding: $spacing-sm $spacing-regular;
       position: absolute;
         left: 50%;
+      transform: translateX(-50%);
+      transform-origin: top;
       z-index: 10;
 
       @media (max-width: $breakpoint-sm) {
+        animation: growDown_fullWidth 150ms ease-in-out forwards;
         border-left: none;
         border-right: none;
           left: 0;
         margin: 0 calc(50% - 50vw);
        	max-width: 100vw;
+        transform: translateX(0);
         width: 100vw;
       }
     }
