@@ -93,6 +93,9 @@ li:first-child:not(.menu-item) {
 blockquote {
   border-left: 2px solid var(--menu-border-color);
 }
+blockquote > * {
+  font-size: revert;
+}
 blockquote > *:not(cite) {
   line-height: var(--wp--custom--typography--line-height--normal);
 }

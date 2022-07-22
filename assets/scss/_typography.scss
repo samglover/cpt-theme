@@ -62,6 +62,10 @@ li {
 blockquote {
   border-left: 2px solid var( --menu-border-color );
 
+  & > * {
+    font-size: revert;
+  }
+
   & > *:not(cite) {
     line-height: $line-height-normal;
   }
