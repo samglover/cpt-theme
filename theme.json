@@ -7,12 +7,17 @@
         {
           "name": "Black",
           "slug": "black",
-          "color": "var(--wp--preset--color--black)"
+          "color": "Black"
         },
         {
           "name": "White",
           "slug": "white",
-          "color": "var(--wp--preset--color--white)"
+          "color": "White"
+        },
+        {
+          "name": "Gray Wash",
+          "slug": "gray-wash",
+          "color": "rgba(0, 0, 0, .1)"
         },
         {
           "name": "Primary",
@@ -23,6 +28,11 @@
           "name": "Secondary",
           "slug": "secondary",
           "color": "var(--secondary-color)"
+        },
+        {
+          "name": "Highlight",
+          "slug": "highlight",
+          "color": "rgba(255, 255, 0, .5)"
         },
         {
           "name": "Page Color",
@@ -92,15 +102,6 @@
     },
     "blocks": {
       "core/button": {
-        "border": {
-  				"radius": "9999px",
-          "style": "solid",
-          "width": "2px"
-  			},
-        "color": {
-          "background": "var(--wp--preset--color--white)",
-					"text": "var(--link-color)"
-        },
         "spacing": {
 					"padding": ".25em 1em"
 				},
