@@ -142,7 +142,7 @@
       z-index: 10;
 
       @media (max-width: $breakpoint-sm) {
-        animation: growDown_fullWidth 150ms ease-in-out forwards;
+        animation: growDown 150ms ease-in-out forwards;
         border-left: none;
         border-right: none;
           left: 0;
@@ -236,9 +236,9 @@
     gap: $spacing-sm $spacing-regular;
 
     & > .menu-item-has-children:first-child > .sub-menu {
+      animation: growDown 150ms ease-in-out forwards;
       position: absolute;
         left: 0;
-      transform: unset;
     }
   }
 }
