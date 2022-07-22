@@ -1,0 +1,14 @@
+@media print {
+  .site-header-primary-nav {
+    box-shadow: none;
+  }
+
+  nav,
+  #footer-widgets {
+    display: none !important;
+  }
+
+  footer {
+    margin-top: 1em;
+  }
+}

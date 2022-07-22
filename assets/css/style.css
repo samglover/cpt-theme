@@ -771,4 +771,19 @@ input[type=submit]:active {
   width: 1px;
 }
 
+@media print {
+  .site-header-primary-nav {
+    box-shadow: none;
+  }
+
+  nav,
+#footer-widgets {
+    display: none !important;
+  }
+
+  footer {
+    margin-top: 1em;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
