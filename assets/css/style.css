@@ -290,6 +290,9 @@ body {
 .site-logo {
   display: block;
 }
+.site-logo img {
+  display: block;
+}
 
 .site-title {
   display: block;
