@@ -10,3 +10,11 @@
   margin: 0;
   padding: 0;
 }
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: $small;
+  gap: 1em;
+  justify-content: space-between;
+}

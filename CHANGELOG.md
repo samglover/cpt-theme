@@ -7,6 +7,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 - theme.json now contains colors, fonts, and more.
+- Developer credit in the footer.
 
 ### Fixed
 - All drop-down menus are now animated. (As opposed to just the primary menu.)

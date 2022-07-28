@@ -4,7 +4,10 @@
 
     <footer id="footer">
       <ul id="footer-widgets"><?php dynamic_sidebar('footer-widgets'); ?></ul>
-      <p class="copyright"><small>The original content within this website is &copy; <?php echo date('Y') ?>.</small></p>
+      <p class="footer-meta">
+        <span class="copyright">The original content within this website is &copy; <?php echo date('Y') ?>.</a></span>
+        <span class="developer"><a href="https://samglover.net">Website design and development by Sam Glover.</a></span>
+      </p>
     </footer>
   </div><!-- #page -->
 
