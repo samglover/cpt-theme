@@ -84,8 +84,8 @@ function google_fonts_head() {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
       :root {
-        --heading-font: <?php echo esc_url(get_option('cpt_sites_headings')); ?>;
-        --body-font: <?php echo esc_url(get_option('cpt_sites_body')); ?>;
+        --heading-font: <?php echo strip_tags(get_option('cpt_sites_headings')); ?>;
+        --body-font: <?php echo strip_tags(get_option('cpt_sites_body')); ?>;
       }
     </style>
   <?php
