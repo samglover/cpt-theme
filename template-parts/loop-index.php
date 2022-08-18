@@ -4,7 +4,7 @@
     <?php if ( has_post_thumbnail() ) { the_post_thumbnail('medium'); } ?>
   </header>
   <div class="entry-content entry-excerpt">
-    <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
+    <p class="excerpt"><?php echo wp_kses(get_the_excerpt(), 'post'); ?></p>
     <div class="clearfix"></div>
   </div>
   <footer class="entry-footer">

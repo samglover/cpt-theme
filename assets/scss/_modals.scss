@@ -49,6 +49,10 @@
 .dismiss-modal {
   align-items: center;
   background-color: #ccc;
+  background-image: url("../images/close.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: calc(100% - 6px) calc(100% - 6px);
   border: 1px solid #bbb;
   border-radius: 9999px;
   cursor: pointer;

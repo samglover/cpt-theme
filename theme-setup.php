@@ -58,7 +58,6 @@ function default_options() {
       update_option($key, $val);
     }
   }
-
 }
 
 add_action('after_switch_theme', 'default_options');

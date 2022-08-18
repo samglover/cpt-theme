@@ -38,21 +38,19 @@ add_action('customize_register', 'customizer_options');
  * CSS Variables
  */
 function css_variables() {
-  ob_start();
-    ?>
-      <style>
-        :root {
-          --primary-color: <?php echo get_option('cpt_sites_primary_color'); ?>;
-          --secondary-color: <?php echo get_option('cpt_sites_secondary_color'); ?>;
-          --page-color: <?php echo get_option('cpt_sites_page_color'); ?>;
-          --header-cta-text-color: <?php echo get_option('cpt_sites_primary_menu_cta_text_color'); ?>;
-          --header-cta-button-color: <?php echo get_option('cpt_sites_primary_menu_cta_button_color'); ?>;
-          --link-color: <?php echo get_option('cpt_sites_link_color'); ?>;
-          --link-color-hover: <?php echo get_option('cpt_sites_link_color_hover'); ?>;
-        }
-      </style>
-    <?php
-  echo ob_get_clean();
+  ?>
+    <style>
+      :root {
+        --primary-color: <?php echo esc_attr(get_option('cpt_sites_primary_color')); ?>;
+        --secondary-color: <?php echo esc_attr(get_option('cpt_sites_secondary_color')); ?>;
+        --page-color: <?php echo esc_attr(get_option('cpt_sites_page_color')); ?>;
+        --header-cta-text-color: <?php echo esc_attr(get_option('cpt_sites_primary_menu_cta_text_color')); ?>;
+        --header-cta-button-color: <?php echo esc_attr(get_option('cpt_sites_primary_menu_cta_button_color')); ?>;
+        --link-color: <?php echo esc_attr(get_option('cpt_sites_link_color')); ?>;
+        --link-color-hover: <?php echo esc_attr(get_option('cpt_sites_link_color_hover')); ?>;
+      }
+    </style>
+  <?php
 }
 
 add_action('wp_head', 'css_variables');
@@ -69,7 +67,7 @@ function collapsed_menu_item($items, $args) {
       </li>
     <?php
   $items .= ob_get_clean();
-  return $items;
+  return wp_kses_post($items);
 }
 
 add_filter('wp_nav_menu_items', 'collapsed_menu_item', 10, 2);
@@ -134,18 +132,16 @@ function breadcrumbs() {
 
     foreach ( $ancestors as $term_id ) {
       $term_obj = get_term($term_id);
-      $breadcrumbs[] = '<span class="breadcrumb"><a href="' . get_term_link($term_obj->term_id) . '">' . esc_html($term_obj->name) . '</a></span>';
+      $breadcrumbs[] = '<span class="breadcrumb"><a href="' . get_term_link($term_obj->term_id) . '">' . $term_obj->name . '</a></span>';
     }
   }
 
-  $breadcrumbs[]  = '<span class="breadcrumb home-breadcrumb"><a href="' . home_url() . '">Home</a></span>';
+  $breadcrumbs[]  = '<span class="breadcrumb home-breadcrumb"><a href="' .  esc_url(home_url()) . '">Home</a></span>';
   $breadcrumbs    = array_reverse($breadcrumbs);
 
-  ob_start();
-    ?>
-      <nav id="breadcrumbs" class="small breadcrumbs">
-        <?php echo implode(' / ', $breadcrumbs); ?>
-      </nav>
-    <?php
-  echo ob_get_clean();
+  ?>
+    <nav id="breadcrumbs" class="small breadcrumbs">
+      <?php echo implode(' / ', wp_kses($breadcrumbs, 'post')); ?>
+    </nav>
+  <?php
 }

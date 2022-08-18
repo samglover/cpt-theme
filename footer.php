@@ -5,7 +5,7 @@
     <footer id="footer">
       <ul id="footer-widgets"><?php dynamic_sidebar('footer-widgets'); ?></ul>
       <p class="footer-meta">
-        <span class="copyright">The original content within this website is &copy; <?php echo date('Y') ?>.</a></span>
+        <span class="copyright">The original content within this website is &copy; <?php echo esc_html(date('Y')) ?>.</a></span>
         <span class="developer"><a href="https://samglover.net">Website design and development by Sam Glover.</a></span>
       </p>
     </footer>
@@ -14,16 +14,14 @@
   <?php if ( !empty(get_option('cpt_sites_primary_menu_cta_code')) ) { ?>
     <div id="cta-modal" class="modal-container">
       <div class="modal card">
-        <button class="dismiss-modal">
-          <?php echo file_get_contents(CPT_THEME_DIR_URI . 'assets/images/close.svg'); ?>
-        </button>
+        <button class="dismiss-modal"></button>
         <?php
           $cta_code = get_option('cpt_sites_primary_menu_cta_code');
           $cta_code = wptexturize($cta_code);
           $cta_code = wpautop($cta_code);
           $cta_code = shortcode_unautop($cta_code);
           $cta_code = do_shortcode($cta_code);
-          echo $cta_code;
+          echo wp_kses_post($cta_code);
         ?>
       </div>
       <div class="modal-screen"></div>

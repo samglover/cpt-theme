@@ -65,13 +65,13 @@ function get_google_fonts_arr() {
   return $fonts;
 }
 
-function get_font_params( $name ) {
-  if ( !$name ) { return; }
+function get_font_params($name) {
+  if (!$name) return;
 
   $fonts = get_google_fonts_arr();
 
-  foreach ( $fonts as $font ) {
-    if ( $name == $font['name'] ) {
+  foreach ($fonts as $font) {
+    if ($name == $font['name']) {
       return $font['params'];
       continue;
     }
@@ -79,18 +79,16 @@ function get_font_params( $name ) {
 }
 
 function google_fonts_head() {
-  ob_start();
-    ?>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <style>
-        :root {
-          --heading-font: <?php echo get_option('cpt_sites_headings'); ?>;
-          --body-font: <?php echo get_option('cpt_sites_body'); ?>;
-        }
-      </style>
-    <?php
-  echo ob_get_clean();
+  ?>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      :root {
+        --heading-font: <?php echo esc_url(get_option('cpt_sites_headings')); ?>;
+        --body-font: <?php echo esc_url(get_option('cpt_sites_body')); ?>;
+      }
+    </style>
+  <?php
 }
 
 add_action('wp_head', 'google_fonts_head');
