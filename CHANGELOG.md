@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.3.1
+
+### Changed
+- Changed add_submenu_page() to add_theme_page().
+- Removed trailing commas in function calls in /admin/options.php.
+- Removed output buffering in /admin/options.php.
+- Escaped output throughout.
+- Change inline SVG elements to HTML elements with background images.
+
+
 ## 2.3
 
 ### Added
