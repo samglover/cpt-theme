@@ -141,7 +141,7 @@ function breadcrumbs() {
 
   ?>
     <nav id="breadcrumbs" class="small breadcrumbs">
-      <?php echo implode(' / ', wp_kses($breadcrumbs, 'post')); ?>
+      <?php echo wp_kses_post(implode(' / ', ($breadcrumbs))); ?>
     </nav>
   <?php
 }
