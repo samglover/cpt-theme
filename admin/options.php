@@ -337,7 +337,7 @@ function cpt_sites_header() {
 
   function cpt_sites_primary_menu_cta_code() {
     echo '<textarea name="cpt_sites_primary_menu_cta_code" class="regular-text" rows="5">' . esc_html(get_option('cpt_sites_primary_menu_cta_code')) . '</textarea>';
-    echo '<p class="description">' . esc_html__('Paste a shortcode or embed code here.', 'cpt-theme') . '</p>';
+    echo '<p class="description">' . esc_html__('Paste a shortcode or embed code here. HTML is allowed.', 'cpt-theme') . '</p>';
   }
 
   function cpt_sites_show_secondary_menu() {

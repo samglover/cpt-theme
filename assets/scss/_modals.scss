@@ -31,9 +31,11 @@
   display: none;
   margin: 3px;
   min-width: 330px;
-  max-height: 90vh;
+  max-height: 80%;
   max-width: 30vw;
+  overflow: scroll;
   position: relative;
+    top: 10%;
   z-index: 100;
 
   & > *:nth-child(2) {

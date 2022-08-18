@@ -21,7 +21,7 @@
           $cta_code = wpautop($cta_code);
           $cta_code = shortcode_unautop($cta_code);
           $cta_code = do_shortcode($cta_code);
-          echo wp_kses_post($cta_code);
+          echo $cta_code;
         ?>
       </div>
       <div class="modal-screen"></div>
