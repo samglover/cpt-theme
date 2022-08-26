@@ -1,11 +1,16 @@
 $tenpx: 0.625rem;
 
 $max-width: calc(110 * $tenpx);
+$content-size: calc(110 * $tenpx);
+$wide-size: calc(132 * $tenpx);
 
 $box-shadow:
   calc(.1 * $tenpx) calc(.1 * $tenpx) calc(.5 * $tenpx) rgba(0, 0, 0, .25),
   calc(.25 * $tenpx) calc(.25 * $tenpx) calc(1.5 * $tenpx) rgba(0, 0, 0, .1)
 ;
+
+// Colors
+$page-color: var(--page-color);
 
 // Font Sizes
 $x-small: var(--wp--custom--typography--font-size--x-small);

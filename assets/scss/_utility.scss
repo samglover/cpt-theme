@@ -1,37 +1,3 @@
-.alignwide,
-.wp-block-gallery.alignwide {
- 	margin-right: calc(-11 * $tenpx);
-  margin-left: calc(-11 * $tenpx);
- 	max-width: calc(100% + (22 * $tenpx));
- 	width: calc(100% + (22 * $tenpx));
-
-  @media (max-width: calc($max-width + (22 * $tenpx))) {
-    margin-right: calc(50% - 50vw);
-    margin-left: calc(50% - 50vw);
-   	max-width: 100vw;
-   	width: 100vw;
-  }
-}
-
-.alignfull,
-.wp-block-gallery.alignfull {
- 	margin: 1em calc(50% - 50vw);
- 	max-width: 100vw;
- 	width: 100vw;
-}
-
-.alignright,
-.wp-block-gallery.alignright {
-  float: right;
-  margin-left: 1em;
-}
-
-.alignleft,
-.wp-block-gallery.alignleft {
-  float: left;
-  margin-right: 1em;
-}
-
 .card {
   box-shadow: $box-shadow;
   margin-bottom: 1.5em !important;

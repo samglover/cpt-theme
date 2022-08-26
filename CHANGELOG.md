@@ -3,7 +3,23 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## 2.3.1
+## 2.3.2 - 2022-08-26
+
+### Added
+- CPT_THEME_VERSION constant.
+
+### Changed
+- Moved stylesheet and script registration to functions.php.
+- Custom block styles are now loaded on both the front and back end.
+- Improvements to custom block styles.
+- Rename styles and scripts to avoid conflicts.
+- Links in the content now have a light underline for clarity.
+
+### Removed
+- Editor stylesheet removed.
+
+
+## 2.3.1 - 2022-08-18
 
 ### Changed
 - Changed add_submenu_page() to add_theme_page().
@@ -13,7 +29,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Change inline SVG elements to HTML elements with background images.
 
 
-## 2.3
+## 2.3 - 2022-07-23
 
 ### Added
 - theme.json now contains colors, fonts, and more.

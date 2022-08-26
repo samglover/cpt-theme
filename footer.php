@@ -2,7 +2,7 @@
       </div><!-- #primary -->
     </div><!-- #content -->
 
-    <footer id="footer">
+    <footer id="footer" class="site-footer">
       <ul id="footer-widgets"><?php dynamic_sidebar('footer-widgets'); ?></ul>
       <p class="footer-meta">
         <span class="copyright">The original content within this website is &copy; <?php echo esc_html(date('Y')) ?>.</a></span>

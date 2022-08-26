@@ -1,18 +1,8 @@
+// These style properties are only for the front-end. Block and element styles
+// should be declared in theme.json, _blocks.scss, or _elements.scss.
+
 html {
   font-family: sans-serif;
-}
-
-a,
-a:visited {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  color: var(--link-color-hover);
-  text-decoration: underline;
-  text-decoration-color: var(--text-color-light);
 }
 
 :target:before {
@@ -20,64 +10,6 @@ a:focus {
   display: block;
   height: 1em;
   margin-top: -1em;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5em;
-}
-
-blockquote,
-dd,
-ol,
-p,
-pre,
-ul {
-  margin: 1em 0;
-}
-
-blockquote,
-dd,
-ol,
-ul {
-  padding-left: 2em;
-}
-
-dd,
-li,
-p,
-pre {
-  line-height: $line-height-normal;
-}
-
-li {
-  &:not( :last-child ) {
-    margin-bottom: .5em;
-  }
-
-  &:first-child:not( .menu-item ) {
-    margin-top: .5em;
-  }
-}
-
-blockquote {
-  border-left: 2px solid var( --menu-border-color );
-
-  & > * {
-    font-size: revert;
-  }
-
-  & > *:not(cite) {
-    line-height: $line-height-normal;
-  }
-}
-
-cite {
-  color: var( --text-color-light );
-}
-
-code,
-pre {
-  font-family: monospace;
 }
 
 small {
