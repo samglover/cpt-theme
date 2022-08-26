@@ -14,6 +14,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Improvements to custom block styles.
 - Rename styles and scripts to avoid conflicts.
 - Links in the content now have a light underline for clarity.
+- Restyle menu items with children in the collapsed menu.
 
 ### Removed
 - Editor stylesheet removed.
