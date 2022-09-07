@@ -5,6 +5,12 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: var(--link-color-hover);
+  text-decoration: underline;
+  text-decoration-color: var(--text-color-light);
+}
+
 .entry-content,
 .editor-styles-wrapper,
 .site-footer {
@@ -12,49 +18,43 @@ a {
     text-decoration: underline;
     text-decoration-color: rgba(106, 90, 205, .25);
   }
-}
 
-a:hover {
-  color: var(--link-color-hover);
-  text-decoration: underline;
-  text-decoration-color: var(--text-color-light);
-}
-
-dd,
-ol,
-pre,
-ul {
-  margin-bottom: 1em;
-}
-
-dd,
-ol,
-ul {
-  padding-left: 2em;
-}
-
-dd,
-li,
-pre {
-  line-height: $line-height-normal;
-}
-
-li {
-  &:not(:last-child) {
-    margin-bottom: .5em;
+  dd,
+  ol,
+  pre,
+  ul {
+    margin-bottom: 1em;
   }
 
-  &:first-child:not(.menu-item) {
-    margin-top: .5em;
+  dd,
+  ol,
+  ul {
+    padding-left: 2em;
   }
-}
 
-cite {
-  color: var(--text-color-light);
-  line-height: $line-height-small;
-}
+  dd,
+  li,
+  pre {
+    line-height: $line-height-normal;
+  }
 
-code,
-pre {
-  font-family: monospace;
+  li {
+    &:not(:last-child) {
+      margin-bottom: .5em;
+    }
+
+    &:first-child {
+      margin-top: .5em;
+    }
+  }
+
+  cite {
+    color: var(--text-color-light);
+    line-height: $line-height-small;
+  }
+
+  code,
+  pre {
+    font-family: monospace;
+  }
 }
