@@ -39,7 +39,7 @@
   margin-right: 1em;
 }
 
-.has-background:not(.wp-block-button__link) {
+.has-background {
   margin-top: 1em;
   margin-bottom: 1em;
   padding-top: $spacing-md;
@@ -83,6 +83,7 @@
   .wp-block-button__link {
     font-size: $normal;
     padding: $spacing-sm $spacing-regular;
+    text-decoration: none;
   }
 }
 

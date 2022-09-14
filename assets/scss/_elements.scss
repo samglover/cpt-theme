@@ -14,7 +14,7 @@ a:hover {
 .entry-content,
 .editor-styles-wrapper,
 .site-footer {
-  a:not(.wp-block-button__link) {
+  a {
     text-decoration: underline;
     text-decoration-color: rgba(106, 90, 205, .25);
   }
