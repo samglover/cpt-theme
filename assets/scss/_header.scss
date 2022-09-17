@@ -161,11 +161,8 @@
 
 .sub-menu > .menu-item {
   display: block;
-  margin-bottom: .25em;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  margin-top: .5em;
+  margin-bottom: .5em;
 
   a {
     display: inline-block;
@@ -178,10 +175,8 @@
 
     .menu-item {
       display: list-item;
-
-      &:first-child {
-        margin-top: .25em;
-      }
+      margin-top: .5em;
+      margin-bottom: .5em;
     }
   }
 }
@@ -227,6 +222,7 @@
 
       .sub-menu .menu-item-has-children > a {
         font-size: $x-small;
+        margin-top: .75em;
         opacity: .5;
         text-transform: uppercase;
       }
