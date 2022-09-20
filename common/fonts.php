@@ -68,7 +68,7 @@ function get_google_fonts_arr() {
 function get_font_params($name) {
   if (!$name) return;
 
-  $fonts = get_google_fonts_arr();
+  $fonts = apply_filters('google_fonts', get_google_fonts_arr());
 
   foreach ($fonts as $font) {
     if ($name == $font['name']) {
