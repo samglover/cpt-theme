@@ -62,13 +62,13 @@ function get_google_fonts_arr() {
       'params'  => 'Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700',
     ],
   ];
-  return $fonts;
+  return apply_filters('google_fonts', $fonts);
 }
 
 function get_font_params($name) {
   if (!$name) return;
 
-  $fonts = apply_filters('google_fonts', get_google_fonts_arr());
+  $fonts = get_google_fonts_arr();
 
   foreach ($fonts as $font) {
     if ($name == $font['name']) {

@@ -369,7 +369,7 @@ function cpt_sites_fonts() {
   function font_select($name) {
     if (!$name) {return;}
 
-    $fonts = apply_filters('google_fonts', get_google_fonts_arr());
+    $fonts = get_google_fonts_arr();
     echo '<select name="' . esc_attr($name) . '">';
       foreach($fonts as $font) {
         $selected = '';
