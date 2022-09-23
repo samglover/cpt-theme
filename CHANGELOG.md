@@ -10,6 +10,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changed
 - Adjusted menu item spacing.
+- Prevented double-loading stylesheet components.
 
 
 ## 2.3.2 - 2022-08-26
