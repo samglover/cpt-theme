@@ -43,19 +43,6 @@ html {
   margin-top: -1em;
 }
 
-small {
-  font-size: var(--wp--custom--typography--font-size--x-small);
-}
-
-:root {
-  --heading-color: #333333;
-  --menu-text-color: DarkSlateGray;
-  --menu-border-color: LightSlateGray;
-  --text-color: #111111;
-  --text-color-light: SlateGray;
-  --font-size-small: $font-size-x-small;
-}
-
 *,
 *::before,
 *::after {
@@ -85,22 +72,21 @@ body {
 }
 
 .single .entry-title a {
-  color: var(--heading-color);
   text-decoration: none;
 }
-.single .entry-title a:hover {
-  color: var(--link-color-hover);
+.single .entry-title a:not(:hover) {
+  color: var(--wp--preset--color--headings);
 }
 
 .entry-byline {
-  color: var(--text-color-light);
+  color: var(--wp--preset--color--light-text);
   font-size: var(--wp--preset--font-size--small);
   margin: 1.25rem 0;
 }
 
 .pagination,
 .post-nav-links {
-  font-family: var(--heading-font);
+  font-family: var(--wp--preset--color--headings);
   font-variant-numeric: lining-nums tabular-nums;
   margin: 1em 0;
 }
@@ -121,21 +107,21 @@ body {
   padding: 0.46875rem 1.5625rem;
 }
 .nav-links .current {
-  background-color: var(--text-color-light);
-  border: 2px solid var(--text-color-light);
+  background-color: var(--wp--preset--color--light-text);
+  border: 2px solid var(--wp--preset--color--light-text);
   color: White;
 }
 .nav-links .dots {
   padding: 0.46875rem 0;
 }
 .nav-links a {
-  border: 2px solid var(--link-color);
+  border: 2px solid var(--wp--preset--color--links);
   transition: background-color 0.2s, box-shadow 0.2s;
 }
 .nav-links a:hover {
-  border-color: var(--link-color-hover);
+  border-color: var(--wp--preset--color--links-hover);
   box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
-  color: var(--link-color-hover);
+  color: var(--wp--preset--color--links-hover);
   text-decoration: none;
 }
 
@@ -210,79 +196,6 @@ body {
   margin-top: 0;
 }
 
-a {
-  color: var(--link-color);
-  text-decoration: underline;
-  text-decoration-color: var(--wp--preset--color--gray-wash);
-}
-
-a:hover {
-  color: var(--link-color-hover);
-  text-decoration: underline;
-  text-decoration-color: currentColor;
-}
-
-.entry-content dd,
-.entry-content ol,
-.entry-content pre,
-.entry-content ul,
-.editor-styles-wrapper dd,
-.editor-styles-wrapper ol,
-.editor-styles-wrapper pre,
-.editor-styles-wrapper ul,
-.site-footer dd,
-.site-footer ol,
-.site-footer pre,
-.site-footer ul {
-  margin-bottom: 1em;
-}
-.entry-content dd,
-.entry-content ol,
-.entry-content ul,
-.editor-styles-wrapper dd,
-.editor-styles-wrapper ol,
-.editor-styles-wrapper ul,
-.site-footer dd,
-.site-footer ol,
-.site-footer ul {
-  padding-left: 2em;
-}
-.entry-content dd,
-.entry-content li,
-.entry-content pre,
-.editor-styles-wrapper dd,
-.editor-styles-wrapper li,
-.editor-styles-wrapper pre,
-.site-footer dd,
-.site-footer li,
-.site-footer pre {
-  line-height: var(--wp--custom--typography--line-height--normal);
-}
-.entry-content li:not(:last-child),
-.editor-styles-wrapper li:not(:last-child),
-.site-footer li:not(:last-child) {
-  margin-bottom: 0.5em;
-}
-.entry-content li:first-child,
-.editor-styles-wrapper li:first-child,
-.site-footer li:first-child {
-  margin-top: 0.5em;
-}
-.entry-content cite,
-.editor-styles-wrapper cite,
-.site-footer cite {
-  color: var(--text-color-light);
-  line-height: var(--wp--custom--typography--line-height--small);
-}
-.entry-content code,
-.entry-content pre,
-.editor-styles-wrapper code,
-.editor-styles-wrapper pre,
-.site-footer code,
-.site-footer pre {
-  font-family: monospace;
-}
-
 .site-header.has-custom-logo .site-branding {
   align-items: center;
   display: grid;
@@ -345,9 +258,9 @@ a:hover {
 }
 
 .site-description {
-  color: var(--text-color-light);
+  color: var(--wp--preset--color--light-text);
   display: block;
-  font-family: var(--heading-font);
+  font-family: var(--wp--preset--color--headings);
   font-weight: normal;
   line-height: 1.1;
   margin: 0 0 0.1em 0;
@@ -364,11 +277,11 @@ a:hover {
 }
 .site-header .menu a {
   display: block;
-  font-family: var(--heading-font);
+  font-family: var(--wp--preset--color--headings);
   white-space: nowrap;
 }
 .site-header .menu a:not(:hover) {
-  color: var(--menu-text-color);
+  color: DarkSlateGray;
 }
 @media (min-width: 576px) {
   .site-header .menu > .menu-item {
@@ -393,7 +306,7 @@ a:hover {
 .site-header .menu > .menu-item-has-children > .sub-menu {
   animation: growDown_centered 150ms ease-in-out forwards;
   background-color: var(--page-color);
-  border: 1px solid var(--menu-border-color);
+  border: 1px solid LightSlateGray;
   box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
   display: none;
   font-size: var(--wp--preset--font-size--small);
@@ -465,7 +378,7 @@ a:hover {
 #primary-menu .menu .collapsed-menu .sub-menu .menu-item-has-children > a {
   font-size: var(--wp--custom--typography--font-size--x-small);
   margin-top: 0.75em;
-  opacity: var(--wp--preset--color--gray-wash);
+  opacity: var(--wp--preset--color--light-text);
   text-transform: uppercase;
 }
 #primary-menu .menu .collapsed-menu .sub-menu .sub-menu {
@@ -506,15 +419,15 @@ a:hover {
  * Breadcrumbs
  */
 #breadcrumbs {
-  color: var(--wp--preset--color--gray-wash);
-  font-family: var(--heading-font);
+  color: var(--wp--preset--color--light-text);
+  font-family: var(--wp--preset--color--headings);
   font-size: var(--wp--preset--font-size--small);
   margin: 2.5rem auto;
   padding: 0.625rem 1.25rem;
   max-width: 68.75rem;
 }
 #breadcrumbs .last-breadcrumb {
-  color: var(--text-color);
+  color: var(--wp--preset--color--body);
   font-weight: bold;
 }
 
@@ -573,7 +486,7 @@ label {
 input,
 select,
 textarea {
-  border: 1px solid var(--menu-border-color);
+  border: 1px solid LightSlateGray;
   font-weight: normal;
   line-height: var(--wp--custom--typography--line-height--small);
   margin: 0 0 1em 0;
@@ -585,11 +498,11 @@ button,
 a.button,
 input[type=submit] {
   background-color: inherit;
-  border: 2px solid var(--link-color);
+  border: 2px solid var(--wp--preset--color--links);
   border-radius: 9999px;
-  color: var(--link-color);
+  color: var(--wp--preset--color--links);
   cursor: pointer;
-  font-family: var(--heading-font);
+  font-family: var(--wp--preset--color--headings);
   font-size: var(--wp--preset--font-size--small);
   font-weight: normal;
   line-height: var(--wp--custom--typography--line-height--normal);
@@ -603,9 +516,9 @@ button:hover,
 .button:hover,
 a.button:hover,
 input[type=submit]:hover {
-  border-color: var(--link-color-hover);
+  border-color: var(--wp--preset--color--links-hover);
   box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
-  color: var(--link-color-hover);
+  color: var(--wp--preset--color--links-hover);
   text-decoration: none;
 }
 

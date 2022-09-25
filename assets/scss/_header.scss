@@ -67,9 +67,9 @@
 }
 
 .site-description {
-  color: var(--text-color-light);
+  color: $light-text;
   display: block;
-  font-family: var(--heading-font);
+  font-family: $headings;
   font-weight: normal;
   line-height: 1.1;
   margin: 0 0 .1em 0;
@@ -88,11 +88,11 @@
 
     a {
       display: block;
-      font-family: var(--heading-font);
+      font-family: $headings;
       white-space: nowrap;
 
       &:not(:hover) {
-        color: var(--menu-text-color);
+        color: $menu-text;
       }
     }
 
@@ -127,7 +127,7 @@
       & > .sub-menu {
         animation: growDown_centered 150ms ease-in-out forwards;
         background-color: var(--page-color);
-        border: $menu-border;
+        border: $border;
         box-shadow: $box-shadow;
         display: none;
         font-size: $font-size-small;
@@ -259,14 +259,14 @@
  */
 #breadcrumbs {
   color: $light-text;
-  font-family: var(--heading-font);
+  font-family: $headings;
   font-size: $font-size-small;
   margin: $spacing-lg auto;
   padding: $spacing-sm $spacing-regular;
   max-width: $max-width;
 
   .last-breadcrumb {
-    color: var(--text-color);
+    color: $body-text;
     font-weight: bold;
   }
 }

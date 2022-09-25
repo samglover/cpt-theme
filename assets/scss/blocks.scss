@@ -1,4 +1,7 @@
+// These block styles are not yet available (or stable) in theme.json.
+
 @import 'variables';
+@import 'elements';
 
 .alignwide {
  	margin-right: calc(-11 * $tenpx);
@@ -34,7 +37,6 @@
 }
 
 .wp-block-button__link {
-  text-decoration: none;
   transition: box-shadow .1s;
 
   &:hover {
@@ -44,15 +46,17 @@
 }
 
 .wp-block-quote {
-  & > * {
-    font-size: revert;
-  }
-
   & > :first-child {
     margin-top: 0;
   }
 
   & > :last-child {
     margin-bottom: 0;
+  }
+
+  cite {
+    color: $light-text;
+    font-size: 80%;
+    line-height: $line-height-small;
   }
 }

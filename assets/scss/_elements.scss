@@ -1,15 +1,22 @@
-// These style properties are not yet available (or stable) in theme.json.
+// These element styles are not yet available (or stable) in theme.json.
 
 a {
-  color: var(--link-color);
-  text-decoration: underline;
   text-decoration-color: $gray-wash;
+
+  &:hover {
+    color: $link-hover;
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+  }
 }
 
-a:hover {
-  color: var(--link-color-hover);
-  text-decoration: underline;
-  text-decoration-color: currentColor;
+code,
+pre {
+  font-family: monospace;
+}
+
+small {
+  font-size: $font-size-x-small;
 }
 
 .entry-content,
@@ -42,15 +49,5 @@ a:hover {
     &:first-child {
       margin-top: .5em;
     }
-  }
-
-  cite {
-    color: var(--text-color-light);
-    line-height: $line-height-small;
-  }
-
-  code,
-  pre {
-    font-family: monospace;
   }
 }

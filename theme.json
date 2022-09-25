@@ -1,7 +1,15 @@
 {
   "version": 2,
   "settings": {
+    "border": false,
     "color": {
+      "custom": true,
+      "customDuotone": true,
+      "customGradient": true,
+      "link": true,
+      "text": true,
+      "background": true,
+      "defaultGradients": true,
       "defaultPalette": false,
       "palette": [
         {
@@ -15,11 +23,6 @@
           "color": "White"
         },
         {
-          "name": "Gray Wash",
-          "slug": "gray-wash",
-          "color": "rgba(0, 0, 0, .1)"
-        },
-        {
           "name": "Primary",
           "slug": "primary",
           "color": "var(--primary-color)"
@@ -30,21 +33,53 @@
           "color": "var(--secondary-color)"
         },
         {
-          "name": "Highlight",
-          "slug": "highlight",
-          "color": "rgba(255, 255, 0, .5)"
+          "name": "Body",
+          "slug": "body",
+          "color": "#111111"
+        },
+        {
+          "name": "Headings",
+          "slug": "headings",
+          "color": "#333333"
         },
         {
           "name": "Light Text",
           "slug": "light-text",
-          "color": "DarkSlateGray"
+          "color": "SlateGray"
+        },
+        {
+          "name": "Links",
+          "slug": "links",
+          "color": "var(--link-color)"
+        },
+        {
+          "name": "Links: Hover",
+          "slug": "links-hover",
+          "color": "var(--link-color-hover)"
+        },
+        {
+          "name": "Call to Action",
+          "slug": "call-to-action",
+          "color": "var(--header-cta-button-color)"
         },
         {
           "name": "Page Color",
           "slug": "page-color",
           "color": "var(--page-color)"
+        },
+        {
+          "name": "Gray Wash",
+          "slug": "gray-wash",
+          "color": "rgba(0, 0, 0, .1)"
+        },
+        {
+          "name": "Highlight",
+          "slug": "highlight",
+          "color": "rgba(255, 255, 0, .5)"
         }
-      ]
+      ],
+      "duotone": [],
+      "gradients": []
     },
     "custom": {
       "typography": {
@@ -61,16 +96,27 @@
       }
     },
     "spacing": {
-			"units": [
-				"px",
-				"em",
-        "rem"
-			]
+      "margin": true,
+      "padding": true,
+      "blockGap": null,
+      "spacingScale": {
+        "operator": "*",
+        "increment": 1.5,
+        "steps": 7,
+        "mediumStep": 1.25,
+        "unit": "rem"
+      },
+			"units": ["em"]
 		},
     "typography": {
       "customFontSize": false,
-			"dropCap": false,
-      "letterSpacing": false,
+      "lineHeight": false,
+      "dropCap": false,
+      "fontStyle": false,
+      "fontWeight": false,
+      "letterSpacing": true,
+      "textDecoration": false,
+      "textTransform": true,
       "fontSizes": [
 				{
 					"size": "1rem",
@@ -107,6 +153,12 @@
     },
     "blocks": {
       "core/button": {
+        "border": {
+          "radius": "9999px",
+          "color": "currentColor",
+          "style": "solid",
+          "width": "2px"
+        },
         "spacing": {
 					"padding": ".25em 1em"
 				},
@@ -123,7 +175,7 @@
       },
       "core/heading": {
         "color": {
-          "text": "var(--heading-color)"
+          "text": "$headings"
         },
         "spacing": {
           "margin": {
@@ -137,13 +189,12 @@
       },
       "core/paragraph": {
         "typography": {
-          "fontSize": "var(--wp--custom--typography--font-size--normal)",
           "lineHeight": "var(--wp--custom--typography--line-height--normal)"
         }
       },
       "core/site-title": {
         "color": {
-          "text": "var(--heading-color)"
+          "text": "$headings"
         },
         "typography": {
           "fontFamily": "var(--heading-font)"
@@ -188,7 +239,15 @@
 					"fontWeight": "normal",
           "textTransform": "uppercase"
 				}
-			}
+			},
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--links)"
+        },
+        "typography": {
+          "textDecoration": "underline"
+				}
+      }
 		}
   }
 }
