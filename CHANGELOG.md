@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.3.4 - 2022-09-24
+
+### Added
+- Added .site-header-primary-nav__inner, .site-header-secondary-nav__inner, .site-content__inner, and .site-footer__inner elements to make it easier to adjust the layout.
+
+### Changed
+- Rename style and script functions in functions.php.
+- Move breadcrumbs to their own file.
+
+### Removed
+- Removed non-essential :visited and :focus declarations.
+- Removed block styles.
+
+### Fixed
+- Fixed modal dismiss-button site and color.
+
+
 ## 2.3.3 - 2022-09-20
 
 ### Added

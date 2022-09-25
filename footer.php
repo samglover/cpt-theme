@@ -1,17 +1,19 @@
-        </main><!-- #main -->
+        </main>
       </div><!-- #primary -->
     </div><!-- #content -->
 
     <footer id="footer" class="site-footer">
-      <ul id="footer-widgets"><?php dynamic_sidebar('footer-widgets'); ?></ul>
-      <p class="footer-meta">
-        <span class="copyright">The original content within this website is &copy; <?php echo esc_html(date('Y')) ?>.</a></span>
-        <span class="developer"><a href="https://samglover.net">Website design and development by Sam Glover.</a></span>
-      </p>
+      <div class="site-footer__inner">
+        <ul id="footer-widgets"><?php dynamic_sidebar('footer-widgets'); ?></ul>
+        <p class="footer-meta">
+          <span class="copyright">The original content within this website is &copy; <?php echo esc_html(date('Y')) ?>.</a></span>
+          <span class="developer"><a href="https://samglover.net">Website design and development by Sam Glover.</a></span>
+        </p>
+      </div>
     </footer>
   </div><!-- #page -->
 
-  <?php if ( !empty(get_option('cpt_sites_primary_menu_cta_code')) ) { ?>
+  <?php if (get_option('cpt_sites_show_primary_menu_cta') && get_option('cpt_sites_primary_menu_cta_style') == 'modal') { ?>
     <div id="cta-modal" class="modal-container">
       <div class="modal card">
         <button class="dismiss-modal"></button>

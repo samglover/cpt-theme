@@ -1,0 +1,43 @@
+#cpt-theme-options {
+  font-family: Jost;
+  font-variant-ligatures: common-ligatures;
+
+  h2 {
+    font-size: 23px;
+  }
+}
+
+#cpt-theme-header {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 120px 1fr;
+  margin-bottom: 15px;
+
+  * {
+    align-self: center;
+  }
+
+  .cpt-logo {
+    background-image: url("../images/cpt-logo.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1.1;
+    padding-top: 0;
+  }
+
+  p {
+    color: gray;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin: 0;
+  }
+}

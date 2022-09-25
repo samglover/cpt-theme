@@ -14,5 +14,5 @@
   <div id="page-content" class="site">
     <?php get_template_part('template-parts/site-header'); ?>
     <div id="content" class="site-content">
-		<div id="primary" class="content-area">
+		<div id="primary" class="content-area site-content__inner">
 			<main id="main" class="site-main">

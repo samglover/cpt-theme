@@ -2,23 +2,19 @@
 
 a {
   color: var(--link-color);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: $gray-wash;
 }
 
 a:hover {
   color: var(--link-color-hover);
   text-decoration: underline;
-  text-decoration-color: var(--text-color-light);
+  text-decoration-color: currentColor;
 }
 
 .entry-content,
 .editor-styles-wrapper,
 .site-footer {
-  a {
-    text-decoration: underline;
-    text-decoration-color: rgba(106, 90, 205, .25);
-  }
-
   dd,
   ol,
   pre,

@@ -7,7 +7,7 @@ form {
 
 label {
   display: block;
-  font-size: $x-small;
+  font-size: $font-size-x-small;
   margin: 0 0 .1em 0;
 }
 
@@ -24,7 +24,6 @@ textarea {
 button,
 .button,
 a.button,
-a.button:visited,
 input[type="submit"] {
   background-color: inherit;
   border: 2px solid var(--link-color);
@@ -32,7 +31,7 @@ input[type="submit"] {
   color: var(--link-color);
   cursor: pointer;
   font-family: var(--heading-font);
-  font-size: $small;
+  font-size: $font-size-small;
   font-weight: normal;
   line-height: $line-height-normal;
   padding: .25em 1em;
@@ -41,35 +40,13 @@ input[type="submit"] {
   -webkit-appearance: none;
 }
 
-.wp-block-button {
-  &.is-style-squared {
-    .wp-block-button__link {
-      border-radius: revert;
-    }
-  }
-
-  .wp-block-button__link {
-    transition: box-shadow .2s;
-  }
-}
-
 button:hover,
-button:focus,
 .button:hover,
-.button:focus,
 a.button:hover,
-a.button:focus,
-input[type="submit"]:hover,
-input[type="submit"]:focus {
+input[type="submit"]:hover {
   border-color: var(--link-color-hover);
   box-shadow: $box-shadow;
   color: var(--link-color-hover);
-  text-decoration: none;
-}
-
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-button .wp-block-button__link:focus {
-  box-shadow: $box-shadow;
   text-decoration: none;
 }
 
@@ -79,14 +56,4 @@ a.button:active,
 input[type="submit"]:active {
   box-shadow: unset;
   outline: none;
-}
-
-.wp-block-button .wp-block-button__link:active {
-  box-shadow: unset;
-}
-
-.wp-block-search .wp-block-search__button {
-  border-width: 2px;
-  margin-top: unset;
-  padding: $spacing-xs calc(2.5 * $tenpx);
 }

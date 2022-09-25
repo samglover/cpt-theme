@@ -8,7 +8,7 @@
     padding: 1em 0;
 
     .reply {
-      font-size: $small;
+      font-size: $font-size-small;
     }
   }
 
@@ -27,7 +27,7 @@
   }
 
   .comment-metadata {
-    font-size: $x-small;
+    font-size: $font-size-x-small;
     margin-bottom: 1em;
   }
 
@@ -41,7 +41,7 @@
 
 .comment-respond {
   .logged-in-as {
-    font-size: $x-small;
+    font-size: $font-size-x-small;
   }
 
   .form-submit {

@@ -20,6 +20,8 @@ function theme_setup() {
 	add_theme_support('title-tag');
 	add_theme_support('wp-block-styles');
 
+  add_post_type_support('page', 'excerpt');
+
   add_image_size('tiny', 0, 90);
 
   register_nav_menu('primary', __('Primary Menu (In Header)', 'cpt-theme'));

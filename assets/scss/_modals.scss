@@ -40,7 +40,7 @@
 
   & > *:nth-child(2) {
     margin-top: 0;
-    padding-right: $large;
+    padding-right: $font-size-large;
   }
 
   & > *:last-child {
@@ -49,30 +49,25 @@
 }
 
 .dismiss-modal {
-  align-items: center;
   background-color: #ccc;
   background-image: url("../images/close.svg");
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: calc(100% - 6px) calc(100% - 6px);
+  background-size: 50%;
   border: 1px solid #bbb;
   border-radius: 9999px;
   cursor: pointer;
-  display: grid;
-  height: $large;
-  justify-content: center;
+  height: $font-size-large;
   line-height: 1;
   margin: 0;
   padding: 3px;
-  place-items: center;
   position: absolute;
     top: 15px;
     right: 15px;
   text-decoration: none;
-  width: $large;
+  width: $font-size-large;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: #ddd;
     border-color: #ccc;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);

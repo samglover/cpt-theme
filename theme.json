@@ -35,6 +35,11 @@
           "color": "rgba(255, 255, 0, .5)"
         },
         {
+          "name": "Light Text",
+          "slug": "light-text",
+          "color": "DarkSlateGray"
+        },
+        {
           "name": "Page Color",
           "slug": "page-color",
           "color": "var(--page-color)"
@@ -106,7 +111,9 @@
 					"padding": ".25em 1em"
 				},
         "typography": {
-          "fontFamily": "var(--heading-font)"
+          "fontFamily": "var(--heading-font)",
+          "fontSize": "var(--wp--preset--font-size--small))",
+          "textTransform": "uppercase"
         }
       },
       "core/categories": {

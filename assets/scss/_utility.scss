@@ -1,3 +1,13 @@
+.alignright {
+  float: right;
+  margin-left: 1em;
+}
+
+.alignleft {
+  float: left;
+  margin-right: 1em;
+}
+
 .card {
   box-shadow: $box-shadow;
   margin-bottom: 1.5em !important;
