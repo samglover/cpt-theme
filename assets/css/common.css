@@ -5,69 +5,18 @@ a:hover {
   color: var(--wp--preset--color--links-hover);
 }
 
-small {
-  font-size: var(--wp--custom--typography--font-size--x-small);
-}
-
-.entry-content dd,
-.entry-content ol,
-.entry-content pre,
-.entry-content ul,
-.editor-styles-wrapper dd,
-.editor-styles-wrapper ol,
-.editor-styles-wrapper pre,
-.editor-styles-wrapper ul,
-.site-footer dd,
-.site-footer ol,
-.site-footer pre,
-.site-footer ul {
-  margin-bottom: 1em;
-}
-.entry-content dd,
-.entry-content ol,
-.entry-content ul,
-.editor-styles-wrapper dd,
-.editor-styles-wrapper ol,
-.editor-styles-wrapper ul,
-.site-footer dd,
-.site-footer ol,
-.site-footer ul {
-  padding-left: 2em;
-}
-.entry-content dd,
-.entry-content li,
-.entry-content pre,
-.editor-styles-wrapper dd,
-.editor-styles-wrapper li,
-.editor-styles-wrapper pre,
-.site-footer dd,
-.site-footer li,
-.site-footer pre {
-  line-height: var(--wp--custom--typography--line-height--normal);
-}
-.entry-content li:not(:last-child),
-.editor-styles-wrapper li:not(:last-child),
-.site-footer li:not(:last-child) {
-  margin-bottom: 0.5em;
-}
-.entry-content li:first-child,
-.editor-styles-wrapper li:first-child,
-.site-footer li:first-child {
-  margin-top: 0.5em;
-}
-
 .alignwide {
-  margin-right: -6.875rem;
-  margin-left: -6.875rem;
-  max-width: calc(100% + 13.75rem);
-  width: calc(100% + 13.75rem);
+  margin: 3em -6.875rem;
+  max-width: 82.5rem;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 82.5rem;
 }
 @media (max-width: 82.5rem) {
   .alignwide {
     margin-right: calc(50% - 50vw);
     margin-left: calc(50% - 50vw);
     max-width: 100vw;
-    width: 100vw;
   }
 }
 
@@ -75,10 +24,6 @@ small {
   margin: 3em calc(50% - 50vw);
   max-width: 100vw;
   width: 100vw;
-}
-.alignfull.has-background {
-  padding-right: 1.25rem;
-  padding-left: 1.25rem;
 }
 .alignfull.wp-block-group > * {
   margin-right: auto;
@@ -91,15 +36,8 @@ small {
 }
 .wp-block-button__link:hover {
   box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
-  text-decoration: none;
 }
 
-.wp-block-quote > :first-child {
-  margin-top: 0;
-}
-.wp-block-quote > :last-child {
-  margin-bottom: 0;
-}
 .wp-block-quote cite {
   color: var(--wp--preset--color--light-text);
   font-size: 80%;

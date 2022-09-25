@@ -86,12 +86,15 @@
     margin: 0;
     padding: 0;
 
-    a {
-      display: block;
-      font-family: $headings;
-      white-space: nowrap;
+    .menu-item {
+      a {
+        display: block;
+        font-family: $headings;
+        text-decoration: none;
+        white-space: nowrap;
+      }
 
-      &:not(:hover) {
+      &:not(:hover) a {
         color: $menu-text;
       }
     }
@@ -161,6 +164,15 @@
       display: block;
       margin-top: .5em;
       margin-bottom: .5em;
+
+      a {
+        text-decoration: revert;
+        text-decoration-color: $gray-wash;
+
+        &:hover {
+          text-decoration-color: currentColor;
+        }
+      }
     }
 
     .sub-menu {

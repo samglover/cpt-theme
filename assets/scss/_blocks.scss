@@ -1,15 +1,16 @@
 // These block styles are not yet available (or stable) in theme.json.
-.alignwide {
- 	margin-right: calc(-11 * $tenpx);
-  margin-left: calc(-11 * $tenpx);
- 	max-width: calc(100% + (22 * $tenpx));
- 	width: calc(100% + (22 * $tenpx));
 
-  @media (max-width: calc($max-width + (22 * $tenpx))) {
+.alignwide {
+ 	margin: 3em calc(-11 * $tenpx);
+ 	max-width: $wide-size;
+  padding-left: 1em;
+  padding-right: 1em;
+ 	width: $wide-size;
+
+  @media (max-width: $wide-size) {
     margin-right: calc(50% - 50vw);
     margin-left: calc(50% - 50vw);
    	max-width: 100vw;
-   	width: 100vw;
   }
 }
 
@@ -17,11 +18,6 @@
  	margin: 3em calc(50% - 50vw);
  	max-width: 100vw;
  	width: 100vw;
-
-  &.has-background {
-    padding-right: $spacing-regular;
-    padding-left: $spacing-regular;
-  }
 
   &.wp-block-group {
     & > * {
@@ -37,19 +33,10 @@
 
   &:hover {
     box-shadow: $box-shadow;
-    text-decoration: none;
   }
 }
 
 .wp-block-quote {
-  & > :first-child {
-    margin-top: 0;
-  }
-
-  & > :last-child {
-    margin-bottom: 0;
-  }
-
   cite {
     color: $light-text;
     font-size: 80%;

@@ -63,8 +63,8 @@
           "color": "var(--header-cta-button-color)"
         },
         {
-          "name": "Page Color",
-          "slug": "page-color",
+          "name": "Page",
+          "slug": "page",
           "color": "var(--page-color)"
         },
         {
@@ -98,7 +98,7 @@
     "spacing": {
       "margin": true,
       "padding": true,
-      "blockGap": null,
+      "blockGap": false,
       "spacingScale": {
         "operator": "*",
         "increment": 1.5,
@@ -143,8 +143,8 @@
   },
   "styles": {
     "color": {
-      "background": "var(--page-color)",
-      "text": "var(--body-color)"
+      "background": "var(--wp--preset--color--page)",
+      "text": "var(--wp--preset--color--body)"
     },
     "typography": {
       "fontFamily": "var(--body-font)",
@@ -164,8 +164,14 @@
 				},
         "typography": {
           "fontFamily": "var(--heading-font)",
-          "fontSize": "var(--wp--preset--font-size--small))",
+          "fontSize": "var(--wp--preset--font-size--small)",
+          "textDecoration": "none",
           "textTransform": "uppercase"
+        }
+      },
+      "core/code": {
+        "typography": {
+          "lineHeight": "var(--wp--custom--typography--line-height--normal)"
         }
       },
       "core/categories": {
@@ -175,7 +181,7 @@
       },
       "core/heading": {
         "color": {
-          "text": "$headings"
+          "text": "var(--wp--preset--color--headings)"
         },
         "spacing": {
           "margin": {
@@ -185,6 +191,16 @@
         "typography": {
           "fontFamily": "var(--heading-font)",
           "lineHeight": "var(--wp--custom--typography--line-height--small)"
+        }
+      },
+      "core/list": {
+        "spacing": {
+          "padding": {
+            "left": "2em"
+          }
+        },
+        "typography": {
+          "lineHeight": "var(--wp--custom--typography--line-height--normal)"
         }
       },
       "core/paragraph": {
@@ -235,7 +251,7 @@
 			},
 			"h6": {
 				"typography": {
-          "fontSize": "var(--wp--preset--font-size--small))",
+          "fontSize": "var(--wp--preset--font-size--small)",
 					"fontWeight": "normal",
           "textTransform": "uppercase"
 				}
