@@ -1,18 +1,13 @@
 // These element styles are not yet available (or stable) in theme.json.
 
 a {
-  text-decoration-color: $gray-wash;
+  &:not(:hover) {
+    text-decoration-color: $gray-wash;
+  }
 
   &:hover {
     color: $link-hover;
-    text-decoration: underline;
-    text-decoration-color: currentColor;
   }
-}
-
-code,
-pre {
-  font-family: monospace;
 }
 
 small {

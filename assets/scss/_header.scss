@@ -222,14 +222,22 @@
   }
 }
 
-#secondary-menu {
+.site-header-secondary-nav {
   background-color: var(--secondary-color);
-  font-size: $font-size-small;
   margin-bottom: $spacing-md;
+}
 
+.site-header-secondary-nav__inner {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $max-width;
+}
+
+#secondary-menu {
   .menu {
     display: flex;
     flex-wrap: wrap;
+    font-size: $font-size-small;
     gap: $spacing-sm $spacing-regular;
     margin-right: auto;
     margin-left: auto;

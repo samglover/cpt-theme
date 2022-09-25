@@ -386,14 +386,21 @@ body {
   margin-left: 0;
 }
 
-#secondary-menu {
+.site-header-secondary-nav {
   background-color: var(--secondary-color);
-  font-size: var(--wp--preset--font-size--small);
   margin-bottom: 1.875rem;
 }
+
+.site-header-secondary-nav__inner {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 68.75rem;
+}
+
 #secondary-menu .menu {
   display: flex;
   flex-wrap: wrap;
+  font-size: var(--wp--preset--font-size--small);
   gap: 0.625rem 1.25rem;
   margin-right: auto;
   margin-left: auto;

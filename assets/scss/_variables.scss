@@ -1,7 +1,7 @@
 $tenpx: 0.625rem;
 
 $max-width: calc(110 * $tenpx);
-$content-size: calc(110 * $tenpx);
+$content-size: $max-width;
 $wide-size: calc(132 * $tenpx);
 
 $border: 1px solid LightSlateGray;
