@@ -165,8 +165,7 @@
         "typography": {
           "fontFamily": "var(--heading-font)",
           "fontSize": "var(--wp--preset--font-size--small)",
-          "textDecoration": "none",
-          "textTransform": "uppercase"
+          "textDecoration": "none"
         }
       },
       "core/code": {

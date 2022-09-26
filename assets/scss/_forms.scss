@@ -1,59 +1,33 @@
-form {
-  fieldset {
-    border: none;
-    padding: 0;
-  }
-}
-
-label {
-  display: block;
-  font-size: $font-size-x-small;
-  margin: 0 0 .1em 0;
-}
-
 input,
 select,
 textarea {
   border: $border;
   font-weight: normal;
-  line-height: $line-height-small;
-  margin: 0 0 1em 0;
   padding: .25em .5em;
 }
 
 button,
 .button,
-a.button,
 input[type="submit"] {
-  background-color: inherit;
-  border: 2px solid $link;
+  border: 2px solid currentColor;
   border-radius: 9999px;
-  color: $link;
   cursor: pointer;
   font-family: $headings;
-  font-size: $font-size-small;
-  font-weight: normal;
-  line-height: $line-height-normal;
   padding: .25em 1em;
   text-decoration: none;
-  transition: background-color .2s, box-shadow .2s;
+  transition: box-shadow .2s;
   -webkit-appearance: none;
 }
 
 button:hover,
 .button:hover,
-a.button:hover,
 input[type="submit"]:hover {
-  border-color: $link-hover;
   box-shadow: $box-shadow;
-  color: $link-hover;
   text-decoration: none;
 }
 
 button:active,
 .button:active,
-a.button:active,
 input[type="submit"]:active {
   box-shadow: unset;
-  outline: none;
 }

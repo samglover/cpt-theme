@@ -1,4 +1,6 @@
 .site-header {
+  box-shadow: $box-shadow;
+
   &.has-custom-logo {
     .site-branding {
       align-items: center;
@@ -14,7 +16,6 @@
  */
 .site-header-primary-nav {
   background-color: var(--primary-color);
-  box-shadow: $box-shadow;
   width: 100%;
 
   a,
@@ -266,11 +267,19 @@
 #header-cta {
   animation: pulse 1s ease-in-out .5s 1 running;
   background-color: var(--header-cta-button-color);
-  border-color: var(--header-cta-text-color);
+  border: 2px solid currentColor;
+  border-radius: 9999px;
   color: var(--header-cta-text-color);
   font-size: $font-size-normal;
+  line-height: $line-height-normal;
   margin: 0;
+  padding: .25em 1em;
+  transition: box-shadow .2s;
   width: max-content;
+
+  &:hover {
+    box-shadow: $box-shadow;
+  }
 }
 
 

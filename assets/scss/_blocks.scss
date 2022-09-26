@@ -29,11 +29,15 @@
 }
 
 .wp-block-button__link {
-  transition: box-shadow .1s;
+  transition: box-shadow .2s;
 
   &:hover {
     box-shadow: $box-shadow;
   }
+}
+
+.wp-block-latest-comments {
+  padding-left: 0;
 }
 
 .wp-block-quote {
