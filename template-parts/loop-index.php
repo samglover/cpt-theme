@@ -1,5 +1,9 @@
 <article id="post-<?php echo get_the_ID(); ?>" <?php post_class(); ?>>
-  <?php if (has_post_thumbnail()) the_post_thumbnail('medium'); ?>
+  <?php if (has_post_thumbnail()) { ?>
+    <a class="wp-post-image__container" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
+      <?php the_post_thumbnail('medium'); ?>
+    </a>
+  <?php } ?>
   <div>
     <header class="entry-header">
       <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>

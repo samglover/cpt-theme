@@ -5,6 +5,7 @@ $content-size: $max-width;
 $wide-size: calc(132 * $tenpx);
 
 $border: 1px solid LightSlateGray;
+$button-border: 2px solid currentColor;
 $box-shadow:
   calc(.1 * $tenpx) calc(.1 * $tenpx) calc(.5 * $tenpx) rgba(0, 0, 0, .25),
   calc(.25 * $tenpx) calc(.25 * $tenpx) calc(1.5 * $tenpx) rgba(0, 0, 0, .1)

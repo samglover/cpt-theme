@@ -1,3 +1,4 @@
+// Page Layout
 *,
 *::before,
 *::after {
@@ -10,9 +11,6 @@ body {
   padding: 0;
 }
 
-/**
- * Content
- */
 .site-content__inner {
   margin: $spacing-lg auto $spacing-xl auto;
   max-width: $max-width;
@@ -23,91 +21,80 @@ body {
   }
 }
 
+.page,
 .post {
   margin-bottom: $spacing-xl;
 }
 
-.single {
-  .entry-title {
-    a {
-      text-decoration: none;
 
-      &:not(:hover) {
-        color: $headings;
-      }
-    }
-  }
-}
-
+// Byline
 .entry-byline {
   color: $light-text;
   font-size: $font-size-small;
-  margin: $spacing-regular 0;
+  margin: 1em 0;
 }
 
+
+// Page Navigation
 .pagination,
 .post-nav-links {
   font-family: $headings;
   font-variant-numeric: lining-nums tabular-nums;
-  margin: 1em 0;
+  margin: $spacing-regular 0;
 }
 
 .nav-links {
   * {
     display: inline-grid;
+    height: 2em;
+    min-width: 2em;
     place-content: center;
   }
 
   *:not(.dots) {
+    border: $button-border;
     border-radius: 9999px;
-  }
-
-  *:not(.prev):not(.next) {
     padding: $spacing-xs;
-    min-width: 1em;
-  }
-
-  .prev,
-  .next {
-    padding: $spacing-xs calc(2.5 * $tenpx);
-  }
-
-  .current {
-    background-color: $light-text;
-    border: 2px solid $light-text;
-    color: White;
   }
 
   .dots {
     padding: $spacing-xs 0;
   }
 
-  a   {
-    border: 2px solid $link;
-    transition: background-color .2s, box-shadow .2s;
+  .prev,
+  .next {
+    padding: $spacing-xs 1em;;
   }
 
-  a:hover {
-    border-color: $link-hover;
-    box-shadow: $box-shadow;
-    color: $link-hover;
+  .current {
+    background-color: $gray-wash;
+  }
+
+  a {
+    color: currentColor;
     text-decoration: none;
+    transition: box-shadow .2s;
+
+    &:hover {
+      text-decoration: none;
+
+      &:not(:active) {
+        box-shadow: $box-shadow;
+      }
+    }
   }
 }
 
 
 /**
- * Index
+ * Blog & Archives
  */
-.blog {
+.blog,
+.archive,
+.search {
   .post {
     .post-title {
-      font-size: $font-size-medium;
       margin-top: 0;
-    }
-
-    .excerpt {
-      font-size: $font-size-small;
     }
 
     .entry-byline {
@@ -120,13 +107,16 @@ body {
       grid-gap: $spacing-regular;
       grid-template-columns: 40% 1fr;
 
+      .wp-post-image {
+        height: auto;
+        width: 100%;
+      }
+
       @media (max-width: $breakpoint-sm) {
         display: block;
 
         .wp-post-image {
-          height: auto;
           margin-bottom: $spacing-regular;
-          width: 100%;
         }
       }
     }

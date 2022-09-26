@@ -7,7 +7,7 @@ get_header();
       the_post();
       get_template_part('template-parts/loop-page');
     }
-    if (comments_open() || get_comments_number()) {
+    if (comments_open() && get_comments_number()) {
   		comments_template();
   	}
   } else {

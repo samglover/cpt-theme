@@ -23,21 +23,19 @@
 }
 
 .modal.card {
-  background-color: var(--page-color);
-  box-shadow:
-    0 0 0 1px #ddd,
-    1px 1px 3px rgba(0, 0, 0, 0.2)
-  ;
+  background-color: $page-color;
   display: none;
   margin: 3px;
+  min-height: 30vh;
   min-width: 330px;
-  max-height: 80%;
+  max-height: 80vh;
   max-width: 30vw;
   overflow: scroll;
   position: relative;
     top: 10%;
   z-index: 100;
 
+  // Prevents the first line from overwriting the dismiss button.
   & > *:nth-child(2) {
     margin-top: 0;
     padding-right: $font-size-large;
@@ -49,12 +47,12 @@
 }
 
 .dismiss-modal {
-  background-color: #ccc;
+  background-color: LightGray;
   background-image: url("../images/close.svg");
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
-  border: 1px solid #bbb;
+  border: $border;
   border-radius: 9999px;
   cursor: pointer;
   height: $font-size-large;
@@ -68,21 +66,7 @@
   width: $font-size-large;
 
   &:hover {
-    background-color: #ddd;
-    border-color: #ccc;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     text-decoration: none;
-  }
-
-  &:active {
-    background-color: #bbb;
-    border-color: #bbb;
-    box-shadow: none;
-    text-decoration: none;
-  }
-
-  svg {
-    fill: White;
   }
 }
 

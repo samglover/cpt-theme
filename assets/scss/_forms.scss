@@ -1,7 +1,12 @@
+label {
+  display: block;
+}
+
 input,
 select,
 textarea {
   border: $border;
+  border-radius: 0;
   font-weight: normal;
   padding: .25em .5em;
 }
@@ -9,25 +14,21 @@ textarea {
 button,
 .button,
 input[type="submit"] {
-  border: 2px solid currentColor;
+  border: $button-border;
   border-radius: 9999px;
+  color: DarkSlateGray;
   cursor: pointer;
   font-family: $headings;
   padding: .25em 1em;
   text-decoration: none;
   transition: box-shadow .2s;
   -webkit-appearance: none;
-}
 
-button:hover,
-.button:hover,
-input[type="submit"]:hover {
-  box-shadow: $box-shadow;
-  text-decoration: none;
-}
+  &:hover {
+    text-decoration: none;
 
-button:active,
-.button:active,
-input[type="submit"]:active {
-  box-shadow: unset;
+    &:not(:active) {
+      box-shadow: $box-shadow;
+    }
+  }
 }

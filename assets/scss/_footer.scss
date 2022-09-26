@@ -1,6 +1,6 @@
 .site-footer {
-  background-color: rgba( 0, 0, 0, .1 );
-  margin: 4em 0 0 0;
+  background-color: rgba(0, 0, 0, .1);
+  margin-top: $spacing-xl;
 
   .developer {
     opacity: .5;
@@ -15,7 +15,7 @@
   margin-right: auto;
   margin-left: auto;
   max-width: $max-width;
-  padding: 1em;
+  padding: $spacing-lg 1em;
 }
 
 #footer-widgets {

@@ -278,7 +278,11 @@
   width: max-content;
 
   &:hover {
-    box-shadow: $box-shadow;
+    text-decoration: none;
+
+    &:not(:active) {
+      box-shadow: $box-shadow;
+    }
   }
 }
 
