@@ -1,8 +1,8 @@
 $tenpx: 0.625rem;
 
-$max-width: calc(110 * $tenpx);
-$content-size: $max-width;
-$wide-size: calc(132 * $tenpx);
+$max-width: calc(132 * $tenpx);
+$content-width: calc(110 * $tenpx);
+$wide-width: $max-width;
 
 $border: 1px solid LightSlateGray;
 $button-border: 2px solid currentColor;

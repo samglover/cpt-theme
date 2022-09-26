@@ -13,7 +13,7 @@ body {
 
 .site-content__inner {
   margin: $spacing-lg auto $spacing-xl auto;
-  max-width: $max-width;
+  max-width: $content-width;
   padding: 0 $spacing-regular;
 
   & > *:first-child {
