@@ -92,7 +92,8 @@ body {
 .blog,
 .archive,
 .search {
-  .post {
+  .post,
+  .page {
     .post-title {
       margin-top: 0;
     }
@@ -107,17 +108,13 @@ body {
       grid-gap: $spacing-regular;
       grid-template-columns: 40% 1fr;
 
+      @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 1fr;
+      }
+
       .wp-post-image {
         height: auto;
         width: 100%;
-      }
-
-      @media (max-width: $breakpoint-sm) {
-        display: block;
-
-        .wp-post-image {
-          margin-bottom: $spacing-regular;
-        }
       }
     }
   }
