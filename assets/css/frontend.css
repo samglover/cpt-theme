@@ -399,6 +399,7 @@ body {
   font-size: var(--wp--custom--typography--font-size--x-small);
   margin-top: 0.75em;
   opacity: var(--wp--preset--color--light-text);
+  text-decoration: none;
   text-transform: uppercase;
 }
 #primary-menu .menu .collapsed-menu .sub-menu .sub-menu {
