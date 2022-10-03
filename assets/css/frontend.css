@@ -442,7 +442,6 @@ body {
   font-size: var(--wp--custom--typography--font-size--normal);
   line-height: var(--wp--custom--typography--line-height--normal);
   margin: 0;
-  padding: 0.25em 1em;
   transition: box-shadow 0.2s;
   width: max-content;
 }

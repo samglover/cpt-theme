@@ -13,6 +13,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Moved around a bunch of stylesheets.
 - Updated SCSS variables.
 - Move breadcrumbs code to its own file.
+- Increase button padding.
 
 ### Removed
 - Removed non-essential :visited and :focus declarations.

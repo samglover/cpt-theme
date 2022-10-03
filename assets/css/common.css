@@ -71,6 +71,7 @@ a:hover {
 }
 
 .wp-block-button__link {
+  font-size: inherit;
   transition: box-shadow 0.2s;
 }
 .wp-block-button__link:hover {
@@ -122,7 +123,7 @@ input[type=submit] {
   color: DarkSlateGray;
   cursor: pointer;
   font-family: var(--wp--preset--color--headings);
-  padding: 0.25em 1em;
+  padding: 0.5em 1em;
   text-decoration: none;
   transition: box-shadow 0.2s;
   -webkit-appearance: none;

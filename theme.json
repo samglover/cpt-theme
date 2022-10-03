@@ -160,11 +160,10 @@
           "width": "2px"
         },
         "spacing": {
-					"padding": ".25em 1em"
+					"padding": ".5em 1em"
 				},
         "typography": {
           "fontFamily": "var(--heading-font)",
-          "fontSize": "var(--wp--preset--font-size--small)",
           "textDecoration": "none"
         }
       },
@@ -189,6 +188,7 @@
         },
         "typography": {
           "fontFamily": "var(--heading-font)",
+          "fontSize": "var(--wp--custom--typography--font-size--normal)",
           "lineHeight": "var(--wp--custom--typography--line-height--small)"
         }
       },
