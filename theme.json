@@ -188,7 +188,6 @@
         },
         "typography": {
           "fontFamily": "var(--heading-font)",
-          "fontSize": "var(--wp--custom--typography--font-size--normal)",
           "lineHeight": "var(--wp--custom--typography--line-height--small)"
         }
       },
