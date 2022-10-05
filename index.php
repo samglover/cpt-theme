@@ -8,13 +8,21 @@
       } elseif (is_archive()) {
         the_archive_title();
       } elseif (is_search()) {
-        echo 'Search Results for' . esc_html(get_search_query());
+        echo 'Search Results for ' . esc_html(get_search_query());
       }
     ?>
   </h1>
   <?php
     if (is_search()) {
-      get_search_form();
+      ?>
+        <form role="search" method="get" action="http://robots.local/" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search">
+          <label for="wp-block-search__input-1" class="wp-block-search__label screen-reader-text">Search</label>
+          <div class="wp-block-search__inside-wrapper ">
+            <input type="search" id="wp-block-search__input-1" class="wp-block-search__input " name="s" value="<?php echo esc_attr(get_search_query()); ?>" placeholder="" required="">
+            <button type="submit" class="wp-block-search__button  ">Search</button>
+          </div>
+        </form>
+      <?php
     }
   ?>
 </header>
