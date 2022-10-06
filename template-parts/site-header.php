@@ -63,5 +63,5 @@
     ?>
     </nav>
   <?php } ?>
-  <?php if (get_option('cpt_sites_show_breadcrumbs')) breadcrumbs(); ?>
 </header>
+<?php if (get_option('cpt_sites_show_breadcrumbs')) breadcrumbs(); ?>
