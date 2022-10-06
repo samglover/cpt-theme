@@ -51,17 +51,17 @@
       <?php } ?>
     </div>
   </div>
-  <nav class="secondary-menu-container site-header-secondary-nav">
+  <?php if (get_option('cpt_sites_show_secondary_menu')) { ?>
+    <nav class="secondary-menu-container site-header-secondary-nav">
     <?php
-      if (get_option('cpt_sites_show_secondary_menu')) {
-        wp_nav_menu([
-          'container_class' => 'site-header-secondary-nav__inner',
-          'container_id'    => 'secondary-menu',
-          'fallback_cb'     => false,
-          'theme_location'  => 'secondary',
-        ]);
-      }
+      wp_nav_menu([
+        'container_class' => 'site-header-secondary-nav__inner',
+        'container_id'    => 'secondary-menu',
+        'fallback_cb'     => false,
+        'theme_location'  => 'secondary',
+      ]);
     ?>
-  </nav>
+    </nav>
+  <?php } ?>
   <?php if (get_option('cpt_sites_show_breadcrumbs')) breadcrumbs(); ?>
 </header>

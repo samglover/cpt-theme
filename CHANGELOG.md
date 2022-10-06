@@ -7,7 +7,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 - Updated search form in page templates.
-
+- Don't show the secondary menu container if the secondary menu isn't on.
 
 ## 2.3.4 - 2022-09-26
 
