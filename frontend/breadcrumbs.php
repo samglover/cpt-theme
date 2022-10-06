@@ -63,6 +63,11 @@ function breadcrumbs() {
     }
   }
 
+  if (get_option('show_on_front') == 'page') {
+    $blog_page_id = get_option('page_for_posts');
+    $breadcrumbs[] = '<span class="breadcrumb"><a href="' . get_permalink($blog_page_id) . '">' . get_the_title($blog_page_id) . '</a></span>';
+  }
+
   $breadcrumbs[]  = '<span class="breadcrumb home-breadcrumb"><a href="' .  esc_url(home_url()) . '">Home</a></span>';
   $breadcrumbs    = array_reverse($breadcrumbs);
 
