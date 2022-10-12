@@ -43,12 +43,6 @@ html {
   margin-top: -1em;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
   line-height: 1;
   margin: 0;
@@ -57,7 +51,7 @@ body {
 
 .site-content__inner {
   margin: 2.5rem auto 3.75rem auto;
-  max-width: 68.75rem;
+  max-width: var(--wp--custom--layout--content-width);
   padding: 0 1.25rem;
 }
 .site-content__inner > *:first-child {
@@ -237,7 +231,7 @@ body {
   grid-gap: 1.25rem;
   grid-template-columns: minmax(auto, max-content) minmax(min-content, 1fr);
   margin: 0 auto;
-  max-width: 82.5rem;
+  max-width: var(--wp--custom--layout--max-width);
   padding: 0.625rem 1.25rem;
   position: relative;
 }
@@ -419,7 +413,7 @@ body {
 .site-header-secondary-nav__inner {
   margin-right: auto;
   margin-left: auto;
-  max-width: 82.5rem;
+  max-width: var(--wp--custom--layout--max-width);
 }
 
 #secondary-menu .menu {
@@ -465,7 +459,7 @@ body {
   font-size: var(--wp--preset--font-size--small);
   margin: 2.5rem auto;
   padding: 0.625rem 1.25rem;
-  max-width: 82.5rem;
+  max-width: var(--wp--custom--layout--max-width);
 }
 #breadcrumbs .last-breadcrumb {
   color: var(--wp--preset--color--body);
@@ -486,7 +480,7 @@ body {
 .site-footer__inner {
   margin-right: auto;
   margin-left: auto;
-  max-width: 82.5rem;
+  max-width: var(--wp--custom--layout--max-width);
   padding: 2.5rem 1em;
 }
 

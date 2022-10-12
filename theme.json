@@ -82,6 +82,10 @@
       "gradients": []
     },
     "custom": {
+      "layout": {
+        "contentWidth": "1100px",
+        "maxWidth": "1320px"
+      },
       "typography": {
         "font-size": {
           "x-small": ".8rem",
