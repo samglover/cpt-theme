@@ -30,8 +30,10 @@
 }
 
 .alignwide {
-  margin: 3em -12.5%;
-  width: 125%;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  margin-left: -55px;
+  width: calc(1210px - 2em);
 
   // If making var(--wp--custom--layout--content-width) *larger* than
   // $breakpoint-xl (1200px), you'll want to change this media query, as well.
