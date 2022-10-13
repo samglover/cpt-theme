@@ -50,6 +50,12 @@
   max-width: calc(var(--wp--custom--layout--content-width) - 2.5rem);
 }
 
+.grid-cols-2,
+.grid-cols-3,
+.grid-cols-4 {
+  margin-bottom: 1.25rem;
+}
+
 .clearfix {
   clear: both;
 }
