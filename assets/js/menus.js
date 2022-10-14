@@ -10,9 +10,9 @@ const CollapsedSubMenu  = document.querySelector('#collapsed-menu > .sub-menu');
  * collapses the overflow into a new sub-menu.
  */
 function primaryMenuCollapser() {
-  if ( !Menu ) { return; }
-  if ( MenuContainer.offsetWidth > Menu.scrollWidth + nextItemWidth() ) { resetMenu(); }
-  if ( MenuContainer.offsetWidth <= Menu.scrollWidth ) { collapseMenu(); }
+  if (!Menu) { return; }
+  if (MenuContainer.offsetWidth > Menu.scrollWidth + nextItemWidth()) { resetMenu(); }
+  if (MenuContainer.offsetWidth <= Menu.scrollWidth) { collapseMenu(); }
 }
 
 function nextItemWidth() {
@@ -25,7 +25,7 @@ function resetMenu() {
   let primaryMenuItems = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
   let collapsedMenuItems = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
 
-  collapsedMenuItems.forEach( function(element) {
+  collapsedMenuItems.forEach(function(element) {
     Menu.insertBefore(element, CollapsedMenu);
   });
 
@@ -38,7 +38,7 @@ function collapseMenu() {
   let primaryMenuItems = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
 
   for (let i = primaryMenuItems.length - 1; i >= 0; i--) {
-    if ( MenuContainer.offsetWidth <= Menu.scrollWidth ) {
+    if (MenuContainer.offsetWidth <= Menu.scrollWidth) {
       let collapsedMenuItems = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
       CollapsedSubMenu.insertBefore(primaryMenuItems.item(i), collapsedMenuItems.item(0));
     }
@@ -64,8 +64,8 @@ dropDownMenus.forEach(function(element) {
 
 function toggleSubMenu() {
   event.stopPropagation();
-  
-  if ( this.classList.contains('open') ) {
+
+  if (this.classList.contains('open')) {
     this.classList.remove('open');
   } else {
     closeOtherSubMenus(this);
@@ -76,8 +76,8 @@ function toggleSubMenu() {
 
 function closeOtherSubMenus(subMenu = null) {
   let openSubMenus = document.querySelectorAll('.menu-item-has-children.open');
-  openSubMenus.forEach( function(element) {
-    if ( subMenu !== null && element != subMenu ) {
+  openSubMenus.forEach(function(element) {
+    if (subMenu !== null && element != subMenu) {
       element.classList.remove('open');
     }
   });

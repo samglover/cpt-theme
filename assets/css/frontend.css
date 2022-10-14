@@ -153,15 +153,6 @@ body {
     grid-template-columns: 1fr;
   }
 }
-.blog .post.has-post-thumbnail .wp-post-image,
-.blog .page.has-post-thumbnail .wp-post-image,
-.archive .post.has-post-thumbnail .wp-post-image,
-.archive .page.has-post-thumbnail .wp-post-image,
-.search .post.has-post-thumbnail .wp-post-image,
-.search .page.has-post-thumbnail .wp-post-image {
-  height: auto;
-  width: 100%;
-}
 
 .commentlist {
   list-style: none;
@@ -506,6 +497,8 @@ img {
 
 .wp-post-image {
   display: block;
+  height: auto;
+  width: 100%;
 }
 
 .modal-container {

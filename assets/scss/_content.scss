@@ -108,11 +108,6 @@ body {
       @media (max-width: $breakpoint-sm) {
         grid-template-columns: 1fr;
       }
-
-      .wp-post-image {
-        height: auto;
-        width: 100%;
-      }
     }
   }
 }
