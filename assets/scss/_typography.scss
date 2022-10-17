@@ -4,10 +4,3 @@
 html {
   font-family: sans-serif;
 }
-
-:target:before {
-  content: '';
-  display: block;
-  height: 1em;
-  margin-top: -1em;
-}

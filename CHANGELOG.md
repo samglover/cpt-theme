@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+
+## 2.3.7 - 2022-10-16
+
+### Changed
+- Page numberings in breadcrumbs.
+- Style page numbering for singular posts.
+- Re-organize stylesheets.
+
+### Fixed
+- Breadcrumbs for the blog no longer show / Blog / Blog.
+
+
 ## 2.3.6 - 2022-10-16
 
 ### Changed

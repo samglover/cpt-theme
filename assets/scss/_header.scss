@@ -11,9 +11,7 @@
   }
 }
 
-/**
- * Site Title & Branding
- */
+// Site Title & Branding
 .site-header-primary-nav {
   background-color: var(--primary-color);
   width: 100%;
@@ -78,9 +76,7 @@
 }
 
 
-/**
- * Header Menus & CTA
- */
+// Header Menus & CTA
 .site-header {
   .menu {
     list-style: none;
@@ -287,9 +283,7 @@
 }
 
 
-/**
- * Breadcrumbs
- */
+// Breadcrumbs
 #breadcrumbs {
   color: $light-text;
   font-family: $headings;

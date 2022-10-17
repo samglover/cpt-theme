@@ -1,10 +1,14 @@
 @import 'variables';
 @import 'animations';
+@import 'layout';
 @import 'typography';
-@import 'content';
-@import 'comments';
+
 @import 'header';
+@import 'content';
+@import 'pagination';
+@import 'comments';
 @import 'footer';
+
 @import 'images';
 @import 'modals';
 @import 'print';

@@ -1,22 +1,32 @@
 <?php
 
 function breadcrumbs() {
-  if (is_front_page())return;
+  if (is_front_page()) return;
 
-  // Gets the last breadcrumb first (we'll flip the order as the last step).
+  // if (is_singular('post') && get_option('show_on_front') == 'page') {
+  //   $blog_page_id = get_option('page_for_posts');
+  //   $breadcrumbs[] = '<span class="breadcrumb"><a href="' . get_permalink($blog_page_id) . '">' . get_the_title($blog_page_id) . '</a></span>';
+  // }
+
+  // Gets the last breadcrumb (the current page) first (we'll flip the order as
+  // the last step).
   ob_start();
     echo '<span class="breadcrumb last-breadcrumb">';
-      if (!empty(single_post_title('', false))){
+      if (is_home()) {
+        echo get_the_title(get_option('page_for_posts'));
+      } elseif (is_singular()) {
         single_post_title();
-      } elseif (is_archive()){
+      } elseif (is_archive()) {
         the_archive_title();
-      } elseif (is_search()){
-        echo 'Search';
-      } elseif (is_404()){
+      } elseif (is_search()) {
+        echo __('Search Results for', 'cpt-theme') . ' "' . esc_html(get_search_query()) . '"';
+      } elseif (is_404()) {
         echo '404 Not Found';
       }
-    echo '</span>';
 
+      if (is_singular() && get_query_var('page')) echo ' (Page ' . get_query_var('page') . ')';
+      if ((is_home() || is_archive() || is_search()) && is_paged()) echo ' (Page ' . get_query_var('paged') . ')';
+    echo '</span>';
   $breadcrumbs[] = ob_get_clean();
 
   // Gets breadcrumbs for singular posts. Parents for hierarchical post types
@@ -61,11 +71,6 @@ function breadcrumbs() {
       $term_obj = get_term($term_id);
       $breadcrumbs[] = '<span class="breadcrumb"><a href="' . get_term_link($term_obj->term_id) . '">' . $term_obj->name . '</a></span>';
     }
-  }
-
-  if (get_option('show_on_front') == 'page') {
-    $blog_page_id = get_option('page_for_posts');
-    $breadcrumbs[] = '<span class="breadcrumb"><a href="' . get_permalink($blog_page_id) . '">' . get_the_title($blog_page_id) . '</a></span>';
   }
 
   $breadcrumbs[]  = '<span class="breadcrumb home-breadcrumb"><a href="' .  esc_url(home_url()) . '">Home</a></span>';

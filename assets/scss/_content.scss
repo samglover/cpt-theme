@@ -1,9 +1,3 @@
-body {
-  line-height: 1;
-  margin: 0;
-  padding: 0;
-}
-
 .site-content__inner {
   margin: $spacing-lg auto $spacing-xl auto;
   max-width: $content-width;
@@ -14,13 +8,8 @@ body {
   }
 }
 
-.page,
-.post {
+.site-main > * {
   margin-bottom: $spacing-xl;
-}
-
-.page-header {
-  margin-bottom: 1em;
 }
 
 
@@ -32,65 +21,11 @@ body {
 }
 
 
-// Page Navigation
-.pagination,
-.post-nav-links {
-  font-family: $headings;
-  font-variant-numeric: lining-nums tabular-nums;
-  margin: $spacing-regular 0;
-}
-
-.nav-links {
-  * {
-    display: inline-grid;
-    height: 2em;
-    min-width: 2em;
-    place-content: center;
-  }
-
-  *:not(.dots) {
-    border: $button-border;
-    border-radius: 9999px;
-    padding: $spacing-xs;
-  }
-
-  .dots {
-    padding: $spacing-xs 0;
-  }
-
-  .prev,
-  .next {
-    padding: $spacing-xs 1em;;
-  }
-
-  .current {
-    background-color: $gray-wash;
-  }
-
-  a {
-    color: currentColor;
-    text-decoration: none;
-    transition: box-shadow .2s;
-
-    &:hover {
-      text-decoration: none;
-
-      &:not(:active) {
-        box-shadow: $box-shadow;
-      }
-    }
-  }
-}
-
-
-/**
- * Blog & Archives
- */
+// Blog & Post Archives
 .blog,
 .archive,
 .search {
-  .post,
-  .page {
+  article {
     .post-title {
       margin-top: 0;
     }
