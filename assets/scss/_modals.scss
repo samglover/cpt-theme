@@ -26,14 +26,15 @@
   background-color: $page-color;
   display: none;
   margin: 3px;
-  min-height: 30vh;
   min-width: 330px;
-  max-height: 80vh;
-  max-width: 30vw;
+  max-height: 90vh;
+  max-width: 33.3333vw;
   overflow: scroll;
-  position: relative;
-    top: 10%;
   z-index: 100;
+
+  @media (max-width: $breakpoint-sm) {
+    max-width: 90vw;
+  }
 
   // Prevents the first line from overwriting the dismiss button.
   & > *:nth-child(2) {

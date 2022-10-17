@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.3.6 - 2022-10-16
+
+### Changed
+- Adjusted CTA modal sizing.
+
+
 ## 2.3.5 - 2022-10-05
 
 ### Changed

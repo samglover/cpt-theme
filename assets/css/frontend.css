@@ -526,14 +526,16 @@ img {
   background-color: var(--wp--preset--color--page);
   display: none;
   margin: 3px;
-  min-height: 30vh;
   min-width: 330px;
-  max-height: 80vh;
-  max-width: 30vw;
+  max-height: 90vh;
+  max-width: 33.3333vw;
   overflow: scroll;
-  position: relative;
-  top: 10%;
   z-index: 100;
+}
+@media (max-width: 576px) {
+  .modal.card {
+    max-width: 90vw;
+  }
 }
 .modal.card > *:nth-child(2) {
   margin-top: 0;
