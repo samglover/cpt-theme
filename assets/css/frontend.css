@@ -77,7 +77,7 @@ html {
   grid-gap: 1.25rem;
   grid-template-columns: minmax(auto, max-content) minmax(min-content, 1fr);
   margin: 0 auto;
-  max-width: var(--wp--custom--layout--max-width);
+  max-width: var(--wp--custom--layout--wide-size);
   padding: 0.625rem 1.25rem;
   position: relative;
 }
@@ -237,7 +237,7 @@ html {
   letter-spacing: 0.15em;
 }
 #primary-menu .menu .collapsed-menu .sub-menu .menu-item-has-children > a {
-  font-size: var(--wp--custom--typography--font-size--x-small);
+  font-size: var(--wp--preset--font-size--x-small);
   margin-top: 0.75em;
   opacity: var(--wp--preset--color--light-text);
   text-decoration: none;
@@ -256,7 +256,7 @@ html {
 .site-header-secondary-nav__inner {
   margin-right: auto;
   margin-left: auto;
-  max-width: var(--wp--custom--layout--max-width);
+  max-width: var(--wp--custom--layout--wide-size);
 }
 
 #secondary-menu .menu {
@@ -280,7 +280,6 @@ html {
   border: 2px solid currentColor;
   border-radius: 9999px;
   color: var(--header-cta-text-color);
-  font-size: var(--wp--custom--typography--font-size--normal);
   line-height: var(--wp--custom--typography--line-height--normal);
   margin: 0;
   transition: box-shadow 0.2s;
@@ -299,7 +298,7 @@ html {
   font-size: var(--wp--preset--font-size--small);
   margin: 2.5rem auto;
   padding: 0.625rem 1.25rem;
-  max-width: var(--wp--custom--layout--max-width);
+  max-width: var(--wp--custom--layout--wide-size);
 }
 #breadcrumbs .last-breadcrumb {
   color: var(--wp--preset--color--body);
@@ -308,7 +307,7 @@ html {
 
 .site-content__inner {
   margin: 2.5rem auto 3.75rem auto;
-  max-width: var(--wp--custom--layout--content-width);
+  max-width: var(--wp--custom--layout--content-size);
   padding: 0 1.25rem;
 }
 .site-content__inner > *:first-child {
@@ -437,7 +436,7 @@ html {
   content: " ";
 }
 .commentlist .comment-metadata {
-  font-size: var(--wp--custom--typography--font-size--x-small);
+  font-size: var(--wp--preset--font-size--x-small);
   margin-bottom: 1em;
 }
 .commentlist .children {
@@ -448,7 +447,7 @@ html {
 }
 
 .comment-respond .logged-in-as {
-  font-size: var(--wp--custom--typography--font-size--x-small);
+  font-size: var(--wp--preset--font-size--x-small);
 }
 .comment-respond .form-submit input[type=submit] {
   margin-top: 0;
@@ -468,7 +467,7 @@ html {
 .site-footer__inner {
   margin-right: auto;
   margin-left: auto;
-  max-width: var(--wp--custom--layout--max-width);
+  max-width: var(--wp--custom--layout--wide-size);
   padding: 2.5rem 1em;
 }
 

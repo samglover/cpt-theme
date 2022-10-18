@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## 2.3.8 - 2022-10-18
+
+### Changed
+- Enable blockGap in theme.json.
+- Move custom font sizes from settings to presets in theme.json.
+
+
 ## 2.3.7 - 2022-10-16
 
 ### Changed

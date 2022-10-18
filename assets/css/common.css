@@ -117,7 +117,7 @@ input[type=submit]:hover:not(:active) {
 .alignfull.wp-block-group > * {
   margin-right: auto;
   margin-left: auto;
-  max-width: calc(var(--wp--custom--layout--content-width) - 2.5rem);
+  max-width: calc(var(--wp--custom--layout--content-size) - 2.5rem);
 }
 
 .card {

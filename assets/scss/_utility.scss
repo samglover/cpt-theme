@@ -29,7 +29,7 @@
   margin-left: -55px;
   width: calc(1210px - 2em);
 
-  // If making var(--wp--custom--layout--content-width) *larger* than
+  // If making var(--wp--custom--layout--content-size) *larger* than
   // $breakpoint-xl (1200px), you'll want to change this media query, as well.
   @media (max-width: $breakpoint-xl) {
     margin-right: calc(50% - 50vw + 1em);
