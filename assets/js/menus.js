@@ -10,9 +10,9 @@ const CollapsedSubMenu  = document.querySelector('#collapsed-menu > .sub-menu');
  * collapses the overflow into a new sub-menu.
  */
 function primaryMenuCollapser() {
-  if (!Menu) { return; }
-  if (MenuContainer.offsetWidth > Menu.scrollWidth + nextItemWidth()) { resetMenu(); }
-  if (MenuContainer.offsetWidth <= Menu.scrollWidth) { collapseMenu(); }
+  if (!Menu) return;
+  if (MenuContainer.offsetWidth > Menu.scrollWidth + nextItemWidth()) resetMenu();
+  if (MenuContainer.offsetWidth <= Menu.scrollWidth) collapseMenu();
 }
 
 function nextItemWidth() {
