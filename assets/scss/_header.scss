@@ -9,6 +9,21 @@
       grid-template-columns: repeat(2, max-content);
     }
   }
+
+  &.sticky-nav {
+    &::before {
+      content: '';
+      display: block;
+      height: var(--header-spacer-height);
+    }
+
+    .site-header-primary-nav {
+      box-shadow: $box-shadow;
+      position: fixed;
+        top: 0;
+      z-index: 9999;
+    }
+  }
 }
 
 // Site Title & Branding

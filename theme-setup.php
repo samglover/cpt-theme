@@ -34,6 +34,7 @@ add_action('after_setup_theme', 'theme_setup');
 function default_options() {
   $default_options = [
     // Heading
+    'cpt_sites_sticky_header'                 => false,
 		'cpt_sites_show_site_title'               => true,
 		'cpt_sites_show_primary_menu'	            => true,
     'cpt_sites_show_secondary_menu'           => false,

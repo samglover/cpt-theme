@@ -1,25 +1,24 @@
-const adminBar = document.getElementById('wpadminbar');
-const adminBarHeight = adminBar ? adminBar.offsetHeight : 0;
-const root = document.querySelector(":root"); //grabbing the root element
+const adminBarHeight = document.getElementById('wpadminbar') ? document.getElementById('wpadminbar').offsetHeight : 0;
 const siteHeader = document.querySelector('.site-header');
 const primaryNav = document.querySelector('.site-header-primary-nav');
 const navHeight = primaryNav.offsetHeight;
 
-root.style.setProperty('--header-spacer-height', navHeight + 'px');
+document.querySelector(":root").style.setProperty('--header-spacer-height', navHeight + 'px');
 
 function stickyHeader() {
-  if (!document.querySelector('.site-header')) return;
   let windowPosition = window.scrollY + adminBarHeight;
+  let headerPosition = siteHeader.offsetTop + adminBarHeight;
 
-  // console.log(windowPosition);
-  // console.log(primaryNav.offsetTop);
+  console.log(windowPosition);
+  console.log(headerPosition);
 
-  if (windowPosition > siteHeader.offsetTop) {
+  if (windowPosition > headerPosition) {
     siteHeader.classList.add('sticky-nav');
+    if (adminBarHeight) primaryNav.style.top = adminBarHeight + 'px';
   }
 
-  if (windowPosition <= siteHeader.offsetTop) {
-    primaryNav.classList.remove('sticky-nav');
+  if (windowPosition <= headerPosition) {
+    siteHeader.classList.remove('sticky-nav');
   }
 }
 

@@ -64,6 +64,16 @@ function site_appearance_init() {
 
   // Header
   add_settings_field(
+    'cpt_sites_sticky_header',
+    '<label for="cpt_sites_sticky_header">' . esc_html__('Sticky Header', 'cpt-theme') . '</label>',
+    'cpt_sites_sticky_header',
+    'cpt-theme-appearance',
+    'cpt-sites-header'
+  );
+
+  register_setting('cpt-theme', 'cpt_sites_sticky_header');
+
+  add_settings_field(
     'cpt_sites_show_site_title',
     '<label for="cpt_sites_show_site_title">' . esc_html__('Site Title', 'cpt-theme') . '</label>',
     'cpt_sites_show_site_title',
@@ -271,6 +281,17 @@ function cpt_sites_colors() {
 
 function cpt_sites_header() {
 }
+
+  function cpt_sites_sticky_header() {
+    ?>
+      <fieldset>
+        <label for="cpt_sites_sticky_header">
+          <input name="cpt_sites_sticky_header" id="cpt_sites_sticky_header" type="checkbox" value="1" <?php checked(get_option('cpt_sites_sticky_header')); ?>>
+          <?php esc_html_e('Make the header "sticky" so it scrolls with the page. (Desktop only.)', 'cpt-theme'); ?>
+        </label>
+      </fieldset>
+    <?php
+  }
 
   function cpt_sites_show_site_title() {
     ?>
