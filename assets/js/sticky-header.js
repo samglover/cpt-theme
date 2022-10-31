@@ -9,9 +9,6 @@ function stickyHeader() {
   let windowPosition = window.scrollY + adminBarHeight;
   let headerPosition = siteHeader.offsetTop + adminBarHeight;
 
-  console.log(windowPosition);
-  console.log(headerPosition);
-
   if (windowPosition > headerPosition) {
     siteHeader.classList.add('sticky-nav');
     if (adminBarHeight) primaryNav.style.top = adminBarHeight + 'px';
