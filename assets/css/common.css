@@ -31,6 +31,7 @@ a:hover {
   padding: 0.25em 0.5em;
 }
 .wp-block-search .wp-block-search__button {
+  background-color: inherit;
   border: 2px solid currentColor;
   color: DarkSlateGray;
   margin-left: 0.25em;
