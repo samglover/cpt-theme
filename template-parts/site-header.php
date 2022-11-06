@@ -1,6 +1,7 @@
 <?php
   $header_classes = 'site-header';
   $header_classes .= get_theme_mod('custom_logo') ? ' has-custom-logo' : '';
+  $header_classes .= get_option('cpt_sites_show_preheader') ? ' show-preheader' : '';
   $header_classes .= get_option('cpt_sites_show_primary_menu') ? ' show-primary-menu' : '';
   $header_classes .= get_option('cpt_sites_show_primary_menu_cta') ? ' show-header-cta' : '';
 
@@ -16,6 +17,18 @@
 ?>
 
 <header class="<?php echo esc_attr($header_classes); ?>">
+  <?php if (get_option('cpt_sites_show_preheader')) { ?>
+    <div class="site-preheader">
+      <div class="site-preheader__inner">
+        <ul id="preheader-widgets">
+          <?php dynamic_sidebar('preheader-widgets'); ?>
+        </ul>
+      </div>
+    </div>
+  <?php } ?>
+  <?php if (get_option('cpt_sites_sticky_header')) { ?>
+    <div class="sticky-header-spacer" aria-hidden="true"></div>
+  <?php } ?>
   <div class="site-header-primary-nav">
     <div class="site-header-primary-nav__inner">
       <div class="site-branding">

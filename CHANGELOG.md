@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.3.10 - 2022-11-06
+
+### Added
+- Preheader.
+
 ## 2.3.9 - 2022-10-21
 
 ### Added
