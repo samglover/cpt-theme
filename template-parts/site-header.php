@@ -16,6 +16,15 @@
 ?>
 
 <header class="<?php echo esc_attr($header_classes); ?>">
+  <?php if (get_option('cpt_sites_show_preheader')) { ?>
+    <div class="site-preheader">
+      <div class="site-preheader__inner">
+        <ul id="preheader-widgets">
+          <?php dynamic_sidebar('preheader-widgets'); ?>
+        </ul>
+      </div>
+    </div>
+  <?php } ?>
   <div class="site-header-primary-nav">
     <div class="site-header-primary-nav__inner">
       <div class="site-branding">

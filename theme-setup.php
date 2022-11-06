@@ -69,6 +69,12 @@ add_action('after_switch_theme', 'default_options');
  */
 function register_widget_areas() {
   register_sidebar([
+    'id'            => 'preheader-widgets',
+    'name'          => __('Preheader Widget Area', 'cpt-theme'),
+    'description'   => __('Displayed above the main header.', 'cpt-theme'),
+  ]);
+
+  register_sidebar([
     'id'            => 'sidebar',
     'name'          => __('Sidebar Widget Area', 'cpt-theme'),
     'description'   => __('Displayed as a sidebar when using the Sidebar page template.', 'cpt-theme'),

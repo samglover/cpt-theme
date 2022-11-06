@@ -1,3 +1,28 @@
+.site-preheader {
+  background-color: var(--secondary-color);
+  
+  .site-preheader__inner {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    padding: $spacing-sm $spacing-regular;
+    margin: 0 auto;
+    max-width: $max-width;
+  }
+
+  #preheader-widgets {
+    line-height: $line-height-small;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .widget > * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
 .site-header {
   box-shadow: $box-shadow;
 

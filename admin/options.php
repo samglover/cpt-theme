@@ -74,6 +74,16 @@ function site_appearance_init() {
   register_setting('cpt-theme', 'cpt_sites_sticky_header');
 
   add_settings_field(
+    'cpt_sites_show_preheader',
+    '<label for="cpt_sites_show_preheader">' . esc_html__('Preheader', 'cpt-theme') . '</label>',
+    'cpt_sites_show_preheader',
+    'cpt-theme-appearance',
+    'cpt-sites-header'
+  );
+
+  register_setting('cpt-theme', 'cpt_sites_show_preheader');
+
+  add_settings_field(
     'cpt_sites_show_site_title',
     '<label for="cpt_sites_show_site_title">' . esc_html__('Site Title', 'cpt-theme') . '</label>',
     'cpt_sites_show_site_title',
@@ -288,6 +298,17 @@ function cpt_sites_header() {
         <label for="cpt_sites_sticky_header">
           <input name="cpt_sites_sticky_header" id="cpt_sites_sticky_header" type="checkbox" value="1" <?php checked(get_option('cpt_sites_sticky_header')); ?>>
           <?php esc_html_e('Make the header "sticky" so it scrolls with the page. (Desktop only.)', 'cpt-theme'); ?>
+        </label>
+      </fieldset>
+    <?php
+  }
+
+  function cpt_sites_show_preheader() {
+    ?>
+      <fieldset>
+        <label for="cpt_sites_show_preheader">
+          <input name="cpt_sites_show_preheader" id="cpt_sites_show_preheader" type="checkbox" value="1" <?php checked(get_option('cpt_sites_show_preheader')); ?>>
+          <?php esc_html_e('Show the preheader widget area.', 'cpt-theme'); ?>
         </label>
       </fieldset>
     <?php
