@@ -55,6 +55,8 @@ html {
 
 .site-preheader {
   background-color: var(--secondary-color);
+  position: relative;
+  top: 0;
 }
 .site-preheader .site-preheader__inner {
   display: flex;
@@ -77,6 +79,7 @@ html {
 
 .site-header {
   box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
+  scroll: none;
 }
 .site-header.has-custom-logo .site-branding {
   align-items: center;
@@ -84,8 +87,10 @@ html {
   grid-gap: 0.625rem;
   grid-template-columns: repeat(2, max-content);
 }
-.site-header.sticky-nav::before {
-  content: "";
+.site-header .sticky-header-spacer {
+  display: none;
+}
+.site-header.sticky-nav .sticky-header-spacer {
   display: block;
   height: var(--header-spacer-height);
 }
