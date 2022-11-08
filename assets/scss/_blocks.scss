@@ -5,6 +5,7 @@
   transition: box-shadow .2s;
 
   &:hover {
+    color: currentColor;
     text-decoration: none;
 
     &:not(:active) {

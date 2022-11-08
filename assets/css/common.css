@@ -10,6 +10,7 @@ a:hover {
   transition: box-shadow 0.2s;
 }
 .wp-block-button__link:hover {
+  color: currentColor;
   text-decoration: none;
 }
 .wp-block-button__link:hover:not(:active) {
