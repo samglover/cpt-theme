@@ -50,7 +50,7 @@
     .site-header-primary-nav {
       box-shadow: $box-shadow;
       position: fixed;
-        top: 0;
+        top: var(--wp-admin--admin-bar--height);
       z-index: 50;
     }
   }

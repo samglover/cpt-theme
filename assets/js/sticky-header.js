@@ -8,14 +8,14 @@ document.querySelector(":root").style.setProperty('--header-spacer-height', navH
 
 function stickyHeader() {
   let windowPosition = window.scrollY + adminBarHeight;
-  let headerPosition = siteHeader.offsetTop + adminBarHeight + preheaderHeight;
+  let primaryNavPosition = siteHeader.offsetTop + adminBarHeight + preheaderHeight;
 
-  if (windowPosition > headerPosition) {
+  if (windowPosition > primaryNavPosition) {
     siteHeader.classList.add('sticky-nav');
     if (adminBarHeight) primaryNav.style.top = adminBarHeight + 'px';
   }
 
-  if (windowPosition <= headerPosition) {
+  if (windowPosition <= primaryNavPosition) {
     siteHeader.classList.remove('sticky-nav');
   }
 }
