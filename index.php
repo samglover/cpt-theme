@@ -27,16 +27,18 @@
   ?>
 </header>
 
-<?php
-  if (have_posts()) {
-    while (have_posts()) {
-      the_post();
-      get_template_part('template-parts/loop-index');
-    }
-    the_posts_pagination();
-  } else {
-    echo '<p class="post">' . __('No posts match your query.', 'cpt-theme') . '</p>';
-  }
-?>
+<?php if (have_posts()) { ?>
+  <div class="posts">
+    <?php
+      while (have_posts()) {
+        the_post();
+        get_template_part('template-parts/loop-index');
+      }
+      the_posts_pagination();
+    ?>
+  </div>
+<?php } else { ?>
+  <p class="post"><?php _e('No posts match your query.', 'cpt-theme'); ?></p>
+<?php } ?>
 
 <?php get_footer(); ?>
