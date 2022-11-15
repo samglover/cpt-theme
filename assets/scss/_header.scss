@@ -52,6 +52,10 @@
       position: fixed;
         top: var(--wp-admin--admin-bar--height);
       z-index: 50;
+
+      @media (max-width: 600px) {
+        top: 0;
+      }
     }
   }
 }

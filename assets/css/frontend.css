@@ -99,6 +99,11 @@ html {
   top: var(--wp-admin--admin-bar--height);
   z-index: 50;
 }
+@media (max-width: 600px) {
+  .site-header.sticky-nav .site-header-primary-nav {
+    top: 0;
+  }
+}
 
 .site-header-primary-nav {
   background-color: var(--primary-color);

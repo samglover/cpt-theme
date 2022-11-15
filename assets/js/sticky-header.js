@@ -12,7 +12,7 @@ function stickyHeader() {
 
   if (windowPosition > primaryNavPosition) {
     siteHeader.classList.add('sticky-nav');
-    if (adminBarHeight) primaryNav.style.top = adminBarHeight + 'px';
+    // if (adminBarHeight) primaryNav.style.top = adminBarHeight + 'px';
   }
 
   if (windowPosition <= primaryNavPosition) {
