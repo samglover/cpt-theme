@@ -50,7 +50,6 @@
     .site-header-primary-nav {
       box-shadow: $box-shadow;
       position: fixed;
-        top: var(--wp-admin--admin-bar--height);
       z-index: 50;
 
       @media (max-width: 600px) {
@@ -63,6 +62,7 @@
 // Site Title & Branding
 .site-header-primary-nav {
   background-color: var(--primary-color);
+    top: 0;
   width: 100%;
 
   a,
