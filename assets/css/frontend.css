@@ -528,6 +528,43 @@ html {
   justify-content: space-between;
 }
 
+label {
+  display: block;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid LightSlateGray;
+  border-radius: 0;
+  font-weight: normal;
+  padding: 0.25em 0.5em;
+}
+
+button,
+.button,
+input[type=submit] {
+  border: 2px solid currentColor;
+  border-radius: 9999px;
+  color: DarkSlateGray;
+  cursor: pointer;
+  font-family: var(--wp--preset--color--headings);
+  padding: 0.5em 1em;
+  text-decoration: none;
+  transition: box-shadow 0.2s;
+  -webkit-appearance: none;
+}
+button:hover,
+.button:hover,
+input[type=submit]:hover {
+  text-decoration: none;
+}
+button:hover:not(:active),
+.button:hover:not(:active),
+input[type=submit]:hover:not(:active) {
+  box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
+}
+
 img {
   height: auto;
   max-width: 100%;
