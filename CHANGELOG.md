@@ -7,6 +7,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 - Set the line height for non-block buttons.
+- Restore pointer events to header menu items with children.
 
 
 ## 2.3.11 - 2022-11-18
