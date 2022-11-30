@@ -322,7 +322,6 @@ html {
   border: 2px solid currentColor;
   border-radius: 9999px;
   color: var(--header-cta-text-color);
-  line-height: var(--wp--custom--typography--line-height--normal);
   margin: 0;
   transition: box-shadow 0.2s;
   width: max-content;
@@ -549,6 +548,7 @@ input[type=submit] {
   color: DarkSlateGray;
   cursor: pointer;
   font-family: var(--wp--preset--color--headings);
+  line-height: var(--wp--custom--typography--line-height--small);
   padding: 0.5em 1em;
   text-decoration: none;
   transition: box-shadow 0.2s;
