@@ -500,6 +500,7 @@ html {
   border-radius: 9999px;
   display: inline-block;
   font-size: var(--wp--preset--font-size--x-small);
+  font-weight: normal;
   line-height: var(--wp--custom--typography--line-height--small);
   padding: 0.5em 1em;
   text-decoration: none;
