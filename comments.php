@@ -5,7 +5,7 @@
 
 <div id="comments">
   <?php if (have_comments()) : ?>
-    <h3 class="comments-title comments-title"><?php echo $comment_count . ' ' . _n('comment', 'comments', $comment_count, 'cpt-theme-crowd-counsel'); ?></h3>
+    <h3 class="comments-title comments-title"><?php echo $comment_count . ' ' . _n('Comment', 'Comments', $comment_count, 'cpt-theme'); ?></h3>
     <ol class="comments-list comments-list">
       <?php wp_list_comments([
         'callback' => 'comment',
@@ -27,9 +27,12 @@
     comment_form([
       'class_container'     => 'comment-respond',
       'class_form'          => 'comment-form',
+      'cancel_reply_before' => '',
+      'cancel_reply_link'   => __('Cancel Reply', 'cpt-theme'),
+      'cancel_reply_before' => '',
       'comment_field'       => $comment_field,
       'comment_notes_before' => '',
-      'logged_in_as'        => '<p class="logged-in-as">' . __('Logged in as', 'cpt-theme') . ' ' . get_comment_author() . '. <a href="' . wp_logout_url(get_permalink()) . '">' . __('Log out?', 'cpt-theme') . '</a></p>',
+      'logged_in_as'        => '<p class="logged-in-as">' . __('Logged in as', 'cpt-theme') . ' ' . get_currentuserinfo()->display_name . '. <a href="' . wp_logout_url(get_permalink()) . '">' . __('Log out?', 'cpt-theme') . '</a></p>',
     ]);
   ?>
 </div><!--#comments-->

@@ -5,10 +5,13 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## 2.3.12 - 2022-11-30
 
+### Added
+- Comment form and comment templates.
+
 ### Changed
 - Set the line height for non-block buttons.
 - Restore pointer events to header menu items with children.
-- Refine comment styling.
+- Refine comment templates and styling.
 
 
 ## 2.3.11 - 2022-11-18
