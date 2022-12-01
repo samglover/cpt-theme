@@ -1,4 +1,4 @@
-# Changelog for the Client Power Tools WordPress Theme
+`# Changelog for the Client Power Tools WordPress Theme
 
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
@@ -8,6 +8,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 - Set the line height for non-block buttons.
 - Restore pointer events to header menu items with children.
+- Refine comment styling.
 
 
 ## 2.3.11 - 2022-11-18

@@ -7,7 +7,9 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php $classes = get_option('show_avatars') ? 'show_avatars' : ''; ?>
+
+<body <?php body_class($classes); ?>>
   <?php wp_body_open(); ?>
   <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'cpt-theme'); ?></a>
 

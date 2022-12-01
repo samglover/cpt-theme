@@ -26,6 +26,7 @@ add_action('enqueue_block_assets', 'cpt_theme_block_assets');
 if (!is_admin()) {
   require_once(CPT_THEME_DIR_PATH . 'frontend/responsive-menu.php');
   require_once(CPT_THEME_DIR_PATH . 'frontend/breadcrumbs.php');
+  require_once(CPT_THEME_DIR_PATH . 'frontend/comment.php');
 }
 
 function cpt_theme_frontend_stylesheets_scripts() {

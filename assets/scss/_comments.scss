@@ -1,11 +1,10 @@
-.commentlist {
+.comments-list {
   list-style: none;
   padding: 0;
 
   .comment {
     display: block;
-    margin: 1em 0;
-    padding: 1em 0;
+    margin: 2em 0;
 
     .reply {
       font-size: $font-size-small;
@@ -13,12 +12,14 @@
   }
 
   .comment-author {
-    display: flex;
     align-items: center;
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: .5em;
 
     .avatar {
-      margin-right: .5em;
+      border-radius: 9999px;
+      margin-right: .25em;
     }
 
     & > *:not(.avatar):not(:last-child)::after {
@@ -26,9 +27,9 @@
     }
   }
 
-  .comment-metadata {
+  .comment-meta {
+    color: $light-text;
     font-size: $font-size-x-small;
-    margin-bottom: 1em;
   }
 
   .children {
@@ -39,14 +40,39 @@
   }
 }
 
+.comment-body {
+  font-size: $font-size-small;
+}
+
 .comment-respond {
   .logged-in-as {
     font-size: $font-size-x-small;
   }
 
+  .comment-form-cookies-consent {
+    label {
+      display: revert;
+    }
+  }
+
   .form-submit {
     input[type="submit"] {
       margin-top: 0;
+    }
+  }
+}
+
+.show_avatars {
+  .comment-content,
+  .comment-meta,
+  .comment-respond,
+  .reply {
+    padding-left: 36px;
+  }
+
+  .children {
+    .comment-respond {
+      padding-left: calc(1em + 36px);
     }
   }
 }

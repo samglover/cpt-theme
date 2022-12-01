@@ -1,0 +1,35 @@
+<?php
+  if (post_password_required()) return;
+  $comment_count = get_comment_count(get_the_ID())['approved'];
+?>
+
+<div id="comments">
+  <?php if (have_comments()) : ?>
+    <h3 class="comments-title comments-title"><?php echo $comment_count . ' ' . _n('comment', 'comments', $comment_count, 'cpt-theme-crowd-counsel'); ?></h3>
+    <ol class="comments-list comments-list">
+      <?php wp_list_comments([
+        'callback' => 'comment',
+        'style' => 'ol',
+      ]); ?>
+    </ol>
+    <?php the_comments_pagination(); ?>
+  <?php endif; ?>
+  <?php
+    ob_start();
+      ?>
+        <p class="comment-form comment-form">
+          <label for="comment">Comment <span class="required" aria-hidden="true">*</span></label>
+          <textarea id="comment" class="comment-field" name="comment" cols="45" rows="5" maxlength="65525" required=""></textarea>
+        </p>
+      <?php
+    $comment_field = ob_get_clean();
+
+    comment_form([
+      'class_container'     => 'comment-respond',
+      'class_form'          => 'comment-form',
+      'comment_field'       => $comment_field,
+      'comment_notes_before' => '',
+      'logged_in_as'        => '<p class="logged-in-as">' . __('Logged in as', 'cpt-theme') . ' ' . get_comment_author() . '. <a href="' . wp_logout_url(get_permalink()) . '">' . __('Log out?', 'cpt-theme') . '</a></p>',
+    ]);
+  ?>
+</div><!--#comments-->
