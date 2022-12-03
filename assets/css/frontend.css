@@ -589,6 +589,7 @@ textarea {
 button,
 .button,
 input[type=submit] {
+  background-color: inherit;
   border: 2px solid currentColor;
   border-radius: 9999px;
   color: DarkSlateGray;

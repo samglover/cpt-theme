@@ -8,6 +8,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 - Added a max width to form elements.
 - Added button class to comment form submit button.
+- Set default button background-color to inherit.
 
 
 ## 2.3.12 - 2022-11-30

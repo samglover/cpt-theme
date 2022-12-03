@@ -15,6 +15,7 @@ textarea {
 button,
 .button,
 input[type="submit"] {
+  background-color: inherit;
   border: $button-border;
   border-radius: 9999px;
   color: DarkSlateGray;
