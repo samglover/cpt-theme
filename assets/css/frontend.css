@@ -543,6 +543,10 @@ html {
   background-color: rgba(0, 0, 0, 0.1);
   margin-top: 3.75rem;
 }
+.site-footer h2,
+.site-footer h3 {
+  font-size: var(--wp--preset--font-size--large);
+}
 .site-footer .developer {
   opacity: 0.5;
 }
