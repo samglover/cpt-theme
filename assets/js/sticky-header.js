@@ -17,6 +17,7 @@ function stickyHeader() {
 
   if (windowPosition <= primaryNavPosition) {
     siteHeader.classList.remove('sticky-nav');
+    primaryNav.style.top = null;
   }
 }
 
