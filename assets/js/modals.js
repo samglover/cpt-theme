@@ -6,7 +6,7 @@ function handleCTAModal() {
 
   ctaButton.addEventListener('click', toggleModal);
 
-  function toggleModal() {
+  function toggleModal(event) {
     if (!ctaModal) return;
     event.preventDefault();
 
