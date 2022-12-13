@@ -5,6 +5,9 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## 2.3.15 - 2022-12-13
 
+### Added
+- Links pointing to `#cpt-cta` will also trigger the call-to-action modal.
+
 ### Fixed
 - Fixed a bug in the call-to-action modal that prevented the modal from being shown.
 
