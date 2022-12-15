@@ -79,6 +79,8 @@ html {
 
 .site-header {
   box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
 }
 .site-header.has-custom-logo .site-branding {
   align-items: center;
@@ -289,7 +291,6 @@ html {
 
 .site-header-secondary-nav {
   background-color: var(--secondary-color);
-  margin-bottom: 1.875rem;
 }
 
 .site-header-secondary-nav__inner {
@@ -334,7 +335,7 @@ html {
   color: var(--wp--preset--color--light-text);
   font-family: var(--wp--preset--color--headings);
   font-size: var(--wp--preset--font-size--small);
-  margin: 2.5rem auto;
+  margin: 1.25rem auto;
   padding: 0.625rem 1.25rem;
   max-width: var(--wp--custom--layout--wide-size);
 }
@@ -344,7 +345,7 @@ html {
 }
 
 .site-content__inner {
-  margin: 2.5rem auto 3.75rem auto;
+  margin: 0 auto 3.75rem auto;
   max-width: var(--wp--custom--layout--content-size);
   padding: 0 1.25rem;
 }
@@ -352,8 +353,26 @@ html {
   margin-top: 0;
 }
 
-.site-main > * {
-  margin-bottom: 3.75rem;
+.page-header {
+  margin-top: 3em;
+}
+.page-header.has-background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 0;
+  padding: 9em 1.25rem 3em 1.25rem;
+}
+.page-header.has-background-image > * {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: var(--wp--custom--layout--content-size);
+  width: calc(var(--wp--custom--layout--content-size) - 2.5rem);
+}
+.page-header.has-background-image .entry-title {
+  color: White;
+  font-size: var(--wp--preset--font-size--huge);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 25px Black;
 }
 
 .entry-byline {
@@ -362,6 +381,11 @@ html {
   margin: 1em 0;
 }
 
+.blog article,
+.archive article,
+.search article {
+  margin-bottom: 2.5rem;
+}
 .blog article .post-title,
 .archive article .post-title,
 .search article .post-title {
@@ -386,6 +410,11 @@ html {
 .search article.has-post-thumbnail {
     grid-template-columns: 1fr;
   }
+}
+
+.is-singular .entry-footer {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .post-nav-links-label {
@@ -532,10 +561,10 @@ html {
   margin-top: 0;
 }
 
-.show_avatars .comment-content,
-.show_avatars .comment-meta,
-.show_avatars .comment-respond,
-.show_avatars .reply {
+.show-avatars .comment-content,
+.show-avatars .comment-meta,
+.show-avatars .comment-respond,
+.show-avatars .reply {
   padding-left: 36px;
 }
 

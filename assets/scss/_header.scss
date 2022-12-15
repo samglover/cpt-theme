@@ -27,6 +27,8 @@
 
 .site-header {
   box-shadow: $box-shadow;
+  position: relative;
+  z-index: 10;
 
   &.has-custom-logo {
     .site-branding {
@@ -279,7 +281,6 @@
 
 .site-header-secondary-nav {
   background-color: var(--secondary-color);
-  margin-bottom: $spacing-md;
 }
 
 .site-header-secondary-nav__inner {
@@ -331,7 +332,7 @@
   color: $light-text;
   font-family: $headings;
   font-size: $font-size-small;
-  margin: $spacing-lg auto;
+  margin: $spacing-regular auto;
   padding: $spacing-sm $spacing-regular;
   max-width: $max-width;
 

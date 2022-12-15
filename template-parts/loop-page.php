@@ -1,7 +1,14 @@
 <article id="content" <?php post_class(); ?>>
-  <header class="entry-header">
+  <?php
+    $header_classes = 'page-header';
+    $header_style = '';
+    if (has_post_thumbnail()) {
+      $header_classes .= ' has-background-image alignfull';
+      $header_style = ' style="background-image: url('. wp_get_attachment_image_url(get_post_thumbnail_id(), 'full') .');"';
+    }
+  ?>
+  <header class="<?php echo $header_classes; ?>"<?php echo $header_style; ?>>
     <?php if (!is_front_page()) the_title('<h1 class="entry-title">', '</h1>'); ?>
-    <?php if (has_post_thumbnail()) the_post_thumbnail(); ?>
   </header>
   <div class="entry-content">
     <?php the_content(); ?>

@@ -7,7 +7,11 @@
   <?php wp_head(); ?>
 </head>
 
-<?php $classes = get_option('show_avatars') ? 'show_avatars' : ''; ?>
+<?php 
+  $classes = [];
+  if (get_option('show_avatars')) $classes[] = 'show-avatars';
+  if (is_singular()) $classes[] = 'is-singular';
+?>
 
 <body <?php body_class($classes); ?>>
   <?php wp_body_open(); ?>
