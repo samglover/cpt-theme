@@ -5,6 +5,14 @@ a:hover {
   color: var(--wp--preset--color--links-hover);
 }
 
+.wp-block-cover .has-lpe-dark-orange-background-color {
+  border-radius: 20px;
+}
+
+.wp-block-post-title {
+  font-size: var(--wp--preset--font-size--x-large);
+}
+
 .wp-block-button__link {
   font-size: inherit;
   transition: box-shadow 0.2s;

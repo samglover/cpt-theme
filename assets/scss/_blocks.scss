@@ -1,4 +1,13 @@
 // These block styles are not yet available (or stable) in theme.json.
+.wp-block-cover {
+  .has-lpe-dark-orange-background-color {
+    border-radius: 20px;
+  }
+}
+
+.wp-block-post-title {
+  font-size: $font-size-x-large;
+}
 
 .wp-block-button__link {
   font-size: inherit;

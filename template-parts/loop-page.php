@@ -1,5 +1,6 @@
 <article id="content" <?php post_class(); ?>>
   <?php
+    $blocks = parse_blocks($post->post_content);
     $header_classes = 'page-header';
     $header_style = '';
     if (has_post_thumbnail()) {
@@ -7,9 +8,11 @@
       $header_style = ' style="background-image: url('. wp_get_attachment_image_url(get_post_thumbnail_id(), 'full') .');"';
     }
   ?>
-  <header class="<?php echo $header_classes; ?>"<?php echo $header_style; ?>>
-    <?php if (!is_front_page()) the_title('<h1 class="entry-title">', '</h1>'); ?>
-  </header>
+  <?php if (!is_front_page() && $blocks[0]['blockName'] != 'core/cover') { ?>
+    <header class="<?php echo $header_classes; ?>"<?php echo $header_style; ?>>
+      <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+    </header>
+  <?php } ?>
   <div class="entry-content">
     <?php the_content(); ?>
     <div class="clearfix"></div>
