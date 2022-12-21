@@ -3,10 +3,11 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## 2.3.17 - 2022-12-19
+## 2.3.17 - 2022-12-21
 
 ### Added
 - Don't output the title on pages where the first block is a cover.
+- Show the read-more link as a small button.
 
 
 ## 2.3.16 - 2022-12-15

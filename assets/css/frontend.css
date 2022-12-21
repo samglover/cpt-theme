@@ -638,6 +638,7 @@ input[type=submit] {
   border-radius: 9999px;
   color: DarkSlateGray;
   cursor: pointer;
+  display: inline-block;
   font-family: var(--wp--preset--color--headings);
   line-height: var(--wp--custom--typography--line-height--small);
   padding: 0.5em 1em;
@@ -654,6 +655,10 @@ button:hover:not(:active),
 .button:hover:not(:active),
 input[type=submit]:hover:not(:active) {
   box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
+}
+
+.button-small {
+  font-size: var(--wp--preset--font-size--small);
 }
 
 img {

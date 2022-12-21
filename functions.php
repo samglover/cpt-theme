@@ -24,6 +24,7 @@ add_action('enqueue_block_assets', 'cpt_theme_block_assets');
 
 // Frontend
 if (!is_admin()) {
+  require_once(CPT_THEME_DIR_PATH . 'frontend/frontend.php');
   require_once(CPT_THEME_DIR_PATH . 'frontend/responsive-menu.php');
   require_once(CPT_THEME_DIR_PATH . 'frontend/breadcrumbs.php');
   require_once(CPT_THEME_DIR_PATH . 'frontend/comment.php');
