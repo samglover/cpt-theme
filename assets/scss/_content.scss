@@ -42,6 +42,20 @@
   margin: 1em 0;
 }
 
+.comment-count {
+  .comments-icon {
+    display: inline-block;
+    height: 1em;
+    position: relative;
+      top: .15em;
+    width: 1em;
+
+    svg {
+      fill: $light-text;
+    }
+  }
+}
+
 
 // Blog & Post Archives
 .blog,

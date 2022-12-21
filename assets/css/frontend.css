@@ -381,6 +381,17 @@ html {
   margin: 1em 0;
 }
 
+.comment-count .comments-icon {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  top: 0.15em;
+  width: 1em;
+}
+.comment-count .comments-icon svg {
+  fill: var(--wp--preset--color--light-text);
+}
+
 .blog article,
 .archive article,
 .search article {

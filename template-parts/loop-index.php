@@ -13,7 +13,8 @@
       <div class="clearfix"></div>
     </div>
     <footer class="entry-footer">
-      <p class="entry-byline">By <?php the_author(); ?> on <?php echo get_the_date('F jS, Y'); ?></p>
+      <?php $comment_count = get_comment_count(get_the_ID())['approved']; ?>
+      <p class="entry-byline">By <?php the_author(); ?> on <?php echo get_the_date('F jS, Y'); ?>..<?php if ($comment_count) echo ' <span class="comment-count"><i class="comments-icon">' . file_get_contents(CPT_THEME_DIR_PATH . 'assets/images/comment.svg') . '</i>&nbsp;' . $comment_count . '</span>'; ?></p>
     </footer>
   </div>
 </article>
