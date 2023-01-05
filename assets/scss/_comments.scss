@@ -7,7 +7,7 @@
     margin: 2em 0;
 
     .reply {
-      font-size: $font-size-small;
+      font-size: $font-size-sm;
 
       a {
         margin-top: 1em;
@@ -35,7 +35,7 @@
 
   .comment-meta {
     color: $light-text;
-    font-size: $font-size-x-small;
+    font-size: $font-size-xs;
   }
 
   .children {
@@ -47,7 +47,7 @@
 }
 
 .comment-body {
-  font-size: $font-size-small;
+  font-size: $font-size-sm;
 }
 
 .reply a,
@@ -56,9 +56,9 @@
   border-width: 1px;
   border-radius: 9999px;
   display: inline-block;
-  font-size: $font-size-x-small;
+  font-size: $font-size-xs;
   font-weight: normal;
-  line-height: $line-height-small;
+  line-height: $line-height-sm;
   padding: .5em 1em;
   text-decoration: none;
   transition: box-shadow .2s;
@@ -76,12 +76,12 @@
   .comment-reply-title {
     align-items: center;
     display: flex;
-    font-size: $font-size-medium;
+    font-size: $font-size-md;
     gap: .5em;
   }
 
   .logged-in-as {
-    font-size: $font-size-x-small;
+    font-size: $font-size-xs;
   }
 
   .comment-form-cookies-consent {

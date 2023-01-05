@@ -39,7 +39,7 @@
   // Prevents the first line from overwriting the dismiss button.
   & > *:nth-child(2) {
     margin-top: 0;
-    padding-right: $font-size-large;
+    padding-right: $font-size-lg;
   }
 
   & > *:last-child {
@@ -56,7 +56,7 @@
   border: $border;
   border-radius: 9999px;
   cursor: pointer;
-  height: $font-size-large;
+  height: $font-size-lg;
   line-height: 1;
   margin: 0;
   padding: 3px;
@@ -64,7 +64,7 @@
     top: 15px;
     right: 15px;
   text-decoration: none;
-  width: $font-size-large;
+  width: $font-size-lg;
 
   &:hover {
     text-decoration: none;

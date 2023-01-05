@@ -22,7 +22,7 @@ input[type="submit"] {
   cursor: pointer;
   display: inline-block;
   font-family: $headings;
-  line-height: $line-height-small;
+  line-height: $line-height-sm;
   padding: .5em 1em;
   text-decoration: none;
   transition: box-shadow .2s;
@@ -38,5 +38,5 @@ input[type="submit"] {
 }
 
 .button-small {
-  font-size: $font-size-small;
+  font-size: $font-size-sm;
 }

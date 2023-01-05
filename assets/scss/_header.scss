@@ -13,7 +13,7 @@
   }
 
   #preheader-widgets {
-    line-height: $line-height-small;
+    line-height: $line-height-sm;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -54,7 +54,7 @@
       position: fixed;
       z-index: 50;
 
-      @media (max-width: 600px) {
+      @media (max-width: $breakpoint-sm) {
         top: 0;
       }
     }
@@ -98,9 +98,9 @@
 .site-title {
   display: block;
   font-family: var(--heading-font );
-  font-size: $font-size-x-large;
+  font-size: $font-size-xl;
   font-weight: bold;
-  line-height: $line-height-small;
+  line-height: $line-height-sm;
   margin: 0 0 .1em 0;
   padding: 0;
 
@@ -121,7 +121,7 @@
   display: block;
   font-family: $headings;
   font-weight: normal;
-  line-height: 1.1;
+  line-height: $line-height-sm;
   margin: 0 0 .1em 0;
   padding: 0;
 }
@@ -177,7 +177,7 @@
         border: $border;
         box-shadow: $box-shadow;
         display: none;
-        font-size: $font-size-small;
+        font-size: $font-size-sm;
         padding: $spacing-sm $spacing-regular;
         position: absolute;
           left: 50%;
@@ -264,7 +264,7 @@
       }
 
       .sub-menu .menu-item-has-children > a {
-        font-size: $font-size-x-small;
+        font-size: $font-size-xs;
         margin-top: .75em;
         opacity: $light-text;
         text-decoration: none;
@@ -293,7 +293,7 @@
   .menu {
     display: flex;
     flex-wrap: wrap;
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
     gap: $spacing-sm $spacing-regular;
     margin-right: auto;
     margin-left: auto;
@@ -331,7 +331,7 @@
 #breadcrumbs {
   color: $light-text;
   font-family: $headings;
-  font-size: $font-size-small;
+  font-size: $font-size-sm;
   margin: $spacing-regular auto;
   padding: $spacing-sm $spacing-regular;
   max-width: $max-width;

@@ -4,7 +4,7 @@
 
   h2,
   h3 {
-    font-size: $font-size-large;
+    font-size: $font-size-lg;
   }
 
   .developer {
@@ -33,7 +33,7 @@
 .footer-meta {
   display: flex;
   flex-wrap: wrap;
-  font-size: $font-size-small;
+  font-size: $font-size-sm;
   gap: 1em;
   justify-content: space-between;
 }
