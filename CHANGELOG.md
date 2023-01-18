@@ -3,11 +3,18 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.3.19 - 2023-01-18
+
+### Changed
+- Drop-down menus now work without Javascript.
+
+
 ## 2.3.18 - 2023-01-05
 
 ### Changed
 - Renamed some SCSS variables for consistency.
 - Customized block gap, spacing sizes, and enable margins and padding in theme.json.
+
 
 ## 2.3.17 - 2022-12-21
 

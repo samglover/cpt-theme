@@ -1,0 +1,13 @@
+#breadcrumbs {
+  color: $light-text;
+  font-family: $headings;
+  font-size: $font-size-sm;
+  margin: $spacing-regular auto;
+  padding: $spacing-sm $spacing-regular;
+  max-width: $max-width;
+
+  .last-breadcrumb {
+    color: $body-text;
+    font-weight: bold;
+  }
+}
