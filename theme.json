@@ -227,9 +227,6 @@
         }
       },
       "core/heading": {
-        "color": {
-          "text": "var(--wp--preset--color--headings)"
-        },
         "spacing": {
           "margin": {
             "bottom": ".5em"
