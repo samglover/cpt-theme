@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+
+## 2.3.20 - 2023-01-25
+
+### Fixed
+- Extra check when parsing blocks.
+
+
 ## 2.3.19 - 2023-01-18
 
 ### Changed
