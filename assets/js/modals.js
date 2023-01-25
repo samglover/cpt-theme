@@ -1,7 +1,7 @@
 const ctaButton   = document.getElementById('header-cta');
 const ctaLinks    = document.querySelectorAll('a[href*="#cpt-cta"]');
 const ctaModal    = document.getElementById('cta-modal');
-const ctaDismiss  = ctaModal.querySelector('.dismiss-modal');
+const ctaDismiss  = ctaModal ? ctaModal.querySelector('.dismiss-modal') : null;
 
 if (ctaModal) ctaButton.addEventListener('click', toggleModal);
 if (ctaLinks) ctaLinks.forEach(element => element.addEventListener('click', toggleModal));
