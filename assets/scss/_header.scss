@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     padding: $spacing-sm $spacing-regular;
     margin: 0 auto;
-    max-width: $max-width;
+    max-width: $wide-size;
   }
 
   #preheader-widgets {
@@ -78,7 +78,7 @@
   grid-gap: $spacing-regular;
   grid-template-columns: minmax(auto, max-content) minmax(min-content, 1fr);
   margin: 0 auto;
-  max-width: $max-width;
+  max-width: $wide-size;
   padding: $spacing-sm $spacing-regular;
   position: relative;
 

@@ -1,7 +1,7 @@
 $tenpx: 0.625rem;
 
-$content-width: var(--wp--custom--layout--content-size);
-$max-width: var(--wp--custom--layout--wide-size);
+$content-size: var(--wp--custom--layout--content-size);
+$wide-size: var(--wp--custom--layout--wide-size);
 
 $border: 1px solid LightSlateGray;
 $button-border: 2px solid currentColor;

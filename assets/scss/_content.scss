@@ -1,6 +1,6 @@
 .site-content__inner {
   margin: 0 auto $spacing-xl auto;
-  max-width: $content-width;
+  max-width: $content-size;
   padding: 0 $spacing-regular;
 
   & > *:first-child {
@@ -21,8 +21,8 @@
     & > * {
       margin-right: auto;
       margin-left: auto;
-      max-width: $content-width;
-      width: calc($content-width - (2 * $spacing-regular));
+      max-width: $content-size;
+      width: calc($content-size - (2 * $spacing-regular));
     }
 
     .entry-title {
