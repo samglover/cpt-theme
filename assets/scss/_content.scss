@@ -1,4 +1,5 @@
 .site-content__inner {
+  box-sizing: content-box;
   margin: 0 auto $spacing-xl auto;
   max-width: $content-size;
   padding: 0 $spacing-regular;
