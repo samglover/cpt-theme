@@ -19,19 +19,16 @@ body {
   margin-top: -1em;
 }
 
-// Site Layout Elements
+// These are all the structural/layout components.
 .site-preheader__inner,
 .site-header-primary-nav__inner,
 .site-header-secondary-nav__inner,
 .site-content__inner,
 .site-footer__inner {
   box-sizing: content-box;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
-.site-preheader__inner,
-.site-header-secondary-nav__inner {
+.site-preheader__inner {
   padding: $spacing-xxs $spacing-sm;
 }
 
@@ -39,22 +36,18 @@ body {
   padding: $spacing-sm;
 }
 
+.site-header-secondary-nav__inner {
+  padding: $spacing-xxs $spacing-sm;
+}
+
 .site-content__inner {
-  margin: $spacing-sm auto $spacing-xl auto;
+  margin: 0 auto;
   max-width: $content-size;
   padding: 0 $spacing-sm;
 }
 
-.has-cover {
-  .site-content__inner {
-    margin-top: 0;
-  }
-
-  .entry-content {
-    .wp-block-cover:first-child {
-      margin-top: 0;
-    }
-  }
+.site-footer {
+  margin-top: $spacing-xxl;
 }
 
 .site-footer__inner {

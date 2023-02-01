@@ -7,15 +7,19 @@
   margin: 0;
   padding: 0;
 
-  .widget > * {
-    margin-top: 0;
-    margin-bottom: 0;
+  .widget {
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
 #preheader-widgets {
   align-items: center;
-  flex-direction: row-reverse;
   gap: $spacing-sm;
 }
 

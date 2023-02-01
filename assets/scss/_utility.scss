@@ -14,18 +14,14 @@
 }
 
 .alignwide {
-  margin-top: $spacing-md;
-  margin-bottom: $spacing-md;
-  max-width: calc(100vw - calc($spacing-sm * 2));
+  max-width: calc(100vw - $spacing-sm * 2);
   position: relative;
     left: 50%;
   transform: translateX(-50%);
-  width: calc($wide-size - calc($spacing-sm * 2));
+  width: $wide-size;
 }
 
 .alignfull {
-  margin-top: $spacing-md;
-  margin-bottom: $spacing-md;
   position: relative;
     left: 50%;
   transform: translateX(-50%);
