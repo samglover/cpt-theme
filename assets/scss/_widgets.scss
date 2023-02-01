@@ -1,0 +1,24 @@
+#preheader-widgets,
+#footer-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: $line-height-sm;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .widget > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+#preheader-widgets {
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: $spacing-sm;
+}
+
+#footer-widgets {
+  gap: $spacing-md;
+}

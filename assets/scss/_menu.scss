@@ -16,16 +16,18 @@
         color: $menu-text;
       }
     }
+    
+    .menu-item-has-children {
+      cursor: pointer;
 
-    & > .menu-item {
+      // Anchors the sub-menu when absolutely positioned.
       @media (min-width: $breakpoint-sm) {
         position: relative;
       }
     }
 
-    .menu-item-has-children {
-      cursor: pointer;
-
+    & > .menu-item-has-children {
+      // Inserts a + after menu items.
       &:not(.collapsed-menu):not(.collapsed-menu .menu-item-has-children) {
         & > a::after {
           content: '\0002B'; // "+"
@@ -33,14 +35,21 @@
           margin-left: .25em;
           transition: transform 150ms ease-in-out;
         }
+      }
 
-        &.open > a::after {
-          transform: rotate(45deg);
+      // Shows the sub-menu and rotates the + on hover.
+      &:hover {
+        & > a {
+          & + ul.sub-menu {
+            display: block;
+          }
+
+          &::after {
+            transform: rotate(45deg);
+          }
         }
       }
-    }
-
-    & > .menu-item-has-children {
+      
       & > .sub-menu {
         animation: growDown_centered 150ms ease-in-out forwards;
         background-color: var(--page-color);
@@ -48,12 +57,11 @@
         box-shadow: $box-shadow;
         display: none;
         font-size: $font-size-sm;
-        padding: $spacing-sm $spacing-regular;
+        padding: $spacing-xxs $spacing-sm;
         position: absolute;
           left: 50%;
         transform: translateX(-50%);
         transform-origin: top;
-        z-index: 100;
 
         @media (max-width: $breakpoint-sm) {
           animation: growDown 150ms ease-in-out forwards;
@@ -76,8 +84,8 @@
   .sub-menu {
     .menu-item {
       display: block;
-      margin-top: .5em;
-      margin-bottom: .5em;
+      margin-top: $spacing-xxs;
+      margin-bottom: $spacing-xxs;
 
       a {
         text-decoration: revert;
@@ -91,7 +99,7 @@
 
     .sub-menu {
       list-style-type: disc;
-      margin-left: $spacing-regular;
+      margin-left: $spacing-sm;
       padding: 0;
 
       .menu-item {
@@ -108,7 +116,7 @@
 
 .show-header-cta {
   .primary-menu-container {
-    grid-gap: $spacing-regular;
+    grid-gap: $spacing-sm;
     grid-template-columns: minmax(0, 1fr) max-content;
   }
 }
@@ -125,7 +133,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: $spacing-regular;
+    gap: $spacing-sm;
 
     .collapsed-menu {
       & > a {
@@ -172,45 +180,19 @@
   background-color: var(--secondary-color);
 }
 
-.site-header-secondary-nav__inner {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: $wide-size;
-}
-
 #secondary-menu {
   .menu {
     display: flex;
     flex-wrap: wrap;
     font-size: $font-size-sm;
-    gap: $spacing-sm $spacing-regular;
+    gap: $spacing-xxs $spacing-xs;
     margin-right: auto;
     margin-left: auto;
-    padding: $spacing-sm $spacing-regular;
 
     & > .menu-item-has-children:first-child > .sub-menu {
       animation: growDown 150ms ease-in-out forwards;
       position: absolute;
         left: 0;
-    }
-  }
-}
-
-.no-js {
-  .site-header {
-    .menu {
-      .menu-item-has-children {
-        & > a:hover,
-        & > a:focus {
-          & + ul.sub-menu {
-            display: block;
-          }
-
-          &::after {
-            transform: rotate(45deg);
-          }
-        }
-      }
     }
   }
 }

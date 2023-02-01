@@ -18,7 +18,12 @@
   <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'cpt-theme'); ?></a>
 
   <div id="page-content" class="site">
-    <?php get_template_part('template-parts/site-header'); ?>
-    <div id="content" class="site-content">
+    <?php 
+      get_template_part('template-parts/site-header');
+      $blocks = parse_blocks($post->post_content);
+      $content_classes = 'site-content';
+      if (count($blocks) > 0 && $blocks[0]['blockName'] == 'core/cover') $content_classes .= ' has-cover'; 
+    ?>
+    <div id="content" class="<?php echo $content_classes; ?>">
   		<div id="primary" class="content-area site-content__inner">
   			<main id="main" class="site-main">

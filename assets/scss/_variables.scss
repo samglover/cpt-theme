@@ -1,7 +1,7 @@
 $tenpx: 0.625rem;
 
-$content-size: var(--wp--custom--layout--content-size);
-$wide-size: var(--wp--custom--layout--wide-size);
+$content-size: var(--wp--style--global--content-size);
+$wide-size: var(--wp--style--global--wide-size);
 
 $border: 1px solid LightSlateGray;
 $button-border: 2px solid currentColor;
@@ -35,13 +35,13 @@ $line-height-sm: var(--wp--custom--typography--line-height--sm);
 $line-height-normal: var(--wp--custom--typography--line-height--normal);
 
 // Spacing
-$spacing-xs: var(--wp--preset--spacing--xs);
-$spacing-sm: var(--wp--preset--spacing--sm);
-$spacing-regular: var(--wp--preset--spacing--regular);
-$spacing-md: var(--wp--preset--spacing--md);
-$spacing-lg: var(--wp--preset--spacing--lg);
-$spacing-xl: var(--wp--preset--spacing--xl);
-$spacing-xxl: var(--wp--preset--spacing--xxl);
+$spacing-xxs: var(--wp--preset--spacing--20);
+$spacing-xs: var(--wp--preset--spacing--30);
+$spacing-sm: var(--wp--preset--spacing--40);
+$spacing-md: var(--wp--preset--spacing--50);
+$spacing-lg: var(--wp--preset--spacing--60);
+$spacing-xl: var(--wp--preset--spacing--70);
+$spacing-xxl: var(--wp--preset--spacing--80);
 
 // Breakpoints
 $breakpoint-sm: 576px;

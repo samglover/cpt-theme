@@ -1,1 +1,133 @@
-a:not(:hover){text-decoration-color:var(--wp--preset--color--gray-wash)}a:hover{color:var(--wp--preset--color--links-hover)}.wp-block-post-title{font-size:var(--wp--preset--font-size--xl)}.wp-block-button__link{font-size:inherit;transition:box-shadow .2s}.wp-block-button__link:hover{color:currentColor;text-decoration:none}.wp-block-button__link:hover:not(:active){box-shadow:.0625rem .0625rem .3125rem rgba(0,0,0,.25),.15625rem .15625rem .9375rem rgba(0,0,0,.1)}.wp-block-latest-comments{padding-left:0}.wp-block-quote cite{color:var(--wp--preset--color--light-text);font-size:80%;line-height:var(--wp--custom--typography--line-height--sm)}.wp-block-search .wp-block-search__input{border-radius:0;padding:.25em .5em}.wp-block-search .wp-block-search__button{background-color:inherit;border:2px solid currentColor;color:#2f4f4f;margin-left:.25em;padding:.25em 1em}.alignright{float:right;margin-left:var(--wp--preset--spacing--regular)}.alignleft{float:left;margin-right:var(--wp--preset--spacing--regular)}.aligncenter{margin-right:auto;margin-left:auto}.alignwide{margin-top:var(--wp--preset--spacing--md);margin-bottom:var(--wp--preset--spacing--md);max-width:calc(100vw - var(--wp--preset--spacing--regular)*2);position:relative;left:50%;transform:translateX(-50%);width:calc(var(--wp--custom--layout--wide-size) - var(--wp--preset--spacing--regular)*2)}.alignfull{margin-top:var(--wp--preset--spacing--md);margin-bottom:var(--wp--preset--spacing--md);position:relative;left:50%;transform:translateX(-50%);width:100vw}.card{background-color:var(--wp--preset--color--page);border:1px solid #789;box-shadow:.0625rem .0625rem .3125rem rgba(0,0,0,.25),.15625rem .15625rem .9375rem rgba(0,0,0,.1);padding:var(--wp--preset--spacing--md)}.clearfix{clear:both}.hide{display:none}.remove-bottom-margin{margin-bottom:0 !important}.remove-top-margin{margin-top:0 !important}.screen-reader-text{height:1px;overflow:hidden;position:absolute;left:-9999px;top:auto;width:1px}
+a:not(:hover) {
+  text-decoration-color: var(--wp--preset--color--gray-wash);
+}
+
+.wp-block-post-title {
+  font-size: var(--wp--preset--font-size--xl);
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+  padding: 0.5em 1em;
+}
+
+.wp-block-button__link {
+  transition: box-shadow 0.2s;
+}
+.wp-block-button__link:hover:not(:active) {
+  box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
+}
+
+.wp-block-latest-comments {
+  padding-left: 0;
+}
+
+.wp-block-quote cite {
+  color: var(--wp--preset--color--light-text);
+  font-size: 80%;
+  line-height: var(--wp--custom--typography--line-height--sm);
+}
+
+.wp-block-search .wp-block-search__input {
+  border-radius: 0;
+  padding: 0.25em 0.5em;
+}
+.wp-block-search .wp-block-search__button {
+  background-color: inherit;
+  border: 2px solid currentColor;
+  color: DarkSlateGray;
+  margin-left: 0.25em;
+  padding: 0.25em 1em;
+}
+
+#preheader-widgets,
+#footer-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: var(--wp--custom--typography--line-height--sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#preheader-widgets .widget > *,
+#footer-widgets .widget > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#preheader-widgets {
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: var(--wp--preset--spacing--40);
+}
+
+#footer-widgets {
+  gap: var(--wp--preset--spacing--50);
+}
+
+.alignright {
+  float: right;
+  margin-left: var(--wp--preset--spacing--40);
+}
+
+.alignleft {
+  float: left;
+  margin-right: var(--wp--preset--spacing--40);
+}
+
+.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.alignwide {
+  margin-top: var(--wp--preset--spacing--50);
+  margin-bottom: var(--wp--preset--spacing--50);
+  max-width: calc(100vw - var(--wp--preset--spacing--40) * 2);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(var(--wp--style--global--wide-size) - var(--wp--preset--spacing--40) * 2);
+}
+
+.alignfull {
+  margin-top: var(--wp--preset--spacing--50);
+  margin-bottom: var(--wp--preset--spacing--50);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+}
+
+.card {
+  background-color: var(--wp--preset--color--page);
+  border: 1px solid LightSlateGray;
+  box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
+  padding: var(--wp--preset--spacing--50);
+}
+
+.clearfix {
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+.remove-bottom-margin {
+  margin-bottom: 0 !important;
+}
+
+.remove-top-margin {
+  margin-top: 0 !important;
+}
+
+.screen-reader-text {
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+}
+
+/*# sourceMappingURL=common.css.map */

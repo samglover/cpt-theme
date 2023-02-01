@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## 2.4 - 2023-01-31
+
+### Changed
+- Removed Javascript from the menu and made it CSS-only.
+- Switched to using the global content-size and wide-size CSS variables.
+- Modified alignwide and alignfull layout styles.
+- Switched from using custom spacing sizes to a custom spacing scale.
+- Adjusted layout elements for greater compatibility.
+
+
 ## 2.3.20 - 2023-01-25
 
 ### Fixed

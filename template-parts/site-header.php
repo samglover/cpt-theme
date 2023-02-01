@@ -19,7 +19,7 @@
 <header class="<?php echo esc_attr($header_classes); ?>">
   <?php if (get_option('cpt_sites_show_preheader')) { ?>
     <div class="site-preheader">
-      <div class="site-preheader__inner">
+      <div class="site-preheader__inner alignwide">
         <ul id="preheader-widgets">
           <?php dynamic_sidebar('preheader-widgets'); ?>
         </ul>
@@ -30,7 +30,7 @@
     <div class="sticky-header-spacer" aria-hidden="true"></div>
   <?php } ?>
   <div class="site-header-primary-nav">
-    <div class="site-header-primary-nav__inner">
+    <div class="site-header-primary-nav__inner alignwide">
       <div class="site-branding">
         <?php if (get_theme_mod('custom_logo')) { ?>
           <a class="site-logo" href="<?php echo esc_url(home_url()); ?>">
@@ -68,7 +68,7 @@
     <nav class="secondary-menu-container site-header-secondary-nav">
     <?php
       wp_nav_menu([
-        'container_class' => 'site-header-secondary-nav__inner',
+        'container_class' => 'site-header-secondary-nav__inner alignwide',
         'container_id'    => 'secondary-menu',
         'fallback_cb'     => false,
         'theme_location'  => 'secondary',

@@ -1,34 +1,9 @@
 .site-preheader {
   background-color: var(--secondary-color);
-  position: relative;
-    top: 0;
-
-  .site-preheader__inner {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    padding: $spacing-sm $spacing-regular;
-    margin: 0 auto;
-    max-width: $wide-size;
-  }
-
-  #preheader-widgets {
-    line-height: $line-height-sm;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    .widget > * {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
 }
 
 .site-header {
   box-shadow: $box-shadow;
-  position: relative;
-  z-index: 10;
 
   &.has-custom-logo {
     .site-branding {
@@ -52,7 +27,6 @@
     .site-header-primary-nav {
       box-shadow: $box-shadow;
       position: fixed;
-      z-index: 50;
 
       @media (max-width: $breakpoint-sm) {
         top: 0;
@@ -65,7 +39,9 @@
 .site-header-primary-nav {
   background-color: var(--primary-color);
     top: 0;
+  position: relative;
   width: 100%;
+  z-index: 10;
 
   a,
   a:hover {
@@ -75,12 +51,8 @@
 
 .site-header-primary-nav__inner {
   display: grid;
-  grid-gap: $spacing-regular;
+  grid-gap: $spacing-sm;
   grid-template-columns: minmax(auto, max-content) minmax(min-content, 1fr);
-  margin: 0 auto;
-  max-width: $wide-size;
-  padding: $spacing-sm $spacing-regular;
-  position: relative;
 
   @media (max-width: $breakpoint-sm) {
     grid-template-columns: 100%;

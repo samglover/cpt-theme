@@ -6,7 +6,7 @@
   <?php } ?>
   <div>
     <header class="entry-header">
-      <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+      <h2 class="post-title wp-block-post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
     </header>
     <div class="entry-content entry-excerpt">
       <p class="excerpt"><?php echo wp_kses(get_the_excerpt(), 'post'); ?></p>

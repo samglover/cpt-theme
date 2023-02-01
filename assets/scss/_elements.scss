@@ -4,8 +4,4 @@ a {
   &:not(:hover) {
     text-decoration-color: $gray-wash;
   }
-
-  &:hover {
-    color: $link-hover;
-  }
 }

@@ -1,9 +1,9 @@
         </main>
-      </div><!-- #primary -->
-    </div><!-- #content -->
+      </div>
+    </div>
 
     <footer id="footer" class="site-footer">
-      <div class="site-footer__inner">
+      <div class="site-footer__inner alignwide">
         <ul id="footer-widgets"><?php dynamic_sidebar('footer-widgets'); ?></ul>
         <p class="footer-meta">
           <span class="copyright">The original content within this website is &copy; <?php echo esc_html(date('Y')) ?>.</a></span>
@@ -11,7 +11,7 @@
         </p>
       </div>
     </footer>
-  </div><!-- #page -->
+  </div>
 
   <?php if (get_option('cpt_sites_show_primary_menu_cta') && get_option('cpt_sites_primary_menu_cta_style') == 'modal') { ?>
     <div id="cta-modal" class="modal-container">

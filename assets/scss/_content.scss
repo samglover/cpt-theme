@@ -1,30 +1,12 @@
-.site-content__inner {
-  box-sizing: content-box;
-  margin: 0 auto $spacing-xl auto;
-  max-width: $content-size;
-  padding: 0 $spacing-regular;
-
-  & > *:first-child {
-    margin-top: 0;
-  }
-}
-
 .page-header {
-  margin-top: 3em;
+  margin-top: $spacing-md;
 
   &.has-background-image {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 0;
-    padding: 9em $spacing-regular 3em $spacing-regular;
-
-    & > * {
-      margin-right: auto;
-      margin-left: auto;
-      max-width: $content-size;
-      width: calc($content-size - (2 * $spacing-regular));
-    }
+    padding: $spacing-xxl $spacing-sm $spacing-md $spacing-sm;
 
     .entry-title {
       color: White;
@@ -76,7 +58,7 @@
     &.has-post-thumbnail {
       align-items: center;
       display: grid;
-      grid-gap: $spacing-regular;
+      grid-gap: $spacing-sm;
       grid-template-columns: 40% 1fr;
 
       @media (max-width: $breakpoint-sm) {

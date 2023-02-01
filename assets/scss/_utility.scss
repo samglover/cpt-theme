@@ -1,11 +1,11 @@
 .alignright {
   float: right;
-  margin-left: $spacing-regular;
+  margin-left: $spacing-sm;
 }
 
 .alignleft {
   float: left;
-  margin-right: $spacing-regular;
+  margin-right: $spacing-sm;
 }
 
 .aligncenter {
@@ -16,11 +16,11 @@
 .alignwide {
   margin-top: $spacing-md;
   margin-bottom: $spacing-md;
-  max-width: calc(100vw - calc($spacing-regular * 2));
+  max-width: calc(100vw - calc($spacing-sm * 2));
   position: relative;
     left: 50%;
   transform: translateX(-50%);
-  width: calc($wide-size - calc($spacing-regular * 2));
+  width: calc($wide-size - calc($spacing-sm * 2));
 }
 
 .alignfull {

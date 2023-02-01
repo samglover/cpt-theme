@@ -1,39 +1,21 @@
 .site-footer {
-  background-color: rgba(0, 0, 0, .1);
-  margin-top: $spacing-xl;
+  background-color: $gray-wash;
+  margin-top: $spacing-xxl;
 
   h2,
   h3 {
     font-size: $font-size-lg;
   }
 
-  .developer {
+  .developer:not(:hover) {
     opacity: .5;
-
-    &:hover {
-      opacity: revert;
-    }
   }
-}
-
-.site-footer__inner {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: $wide-size;
-  padding: $spacing-lg 1em;
-}
-
-#footer-widgets {
-  font-size: 90%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .footer-meta {
   display: flex;
   flex-wrap: wrap;
   font-size: $font-size-sm;
-  gap: 1em;
+  gap: $spacing-sm;
   justify-content: space-between;
 }

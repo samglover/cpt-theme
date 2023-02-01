@@ -1,6 +1,6 @@
 <article id="content" <?php post_class(); ?>>
   <header class="page-header">
-    <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+    <?php the_title('<h1 class="entry-title wp-block-post-title">', '</h1>'); ?>
     <?php if (has_post_thumbnail()) the_post_thumbnail(); ?>
   </header>
   <div class="entry-content">

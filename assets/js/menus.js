@@ -51,35 +51,3 @@ function collapseMenu() {
 primaryMenuCollapser();
 window.onload = primaryMenuCollapser;
 window.onresize = primaryMenuCollapser;
-
-
-/**
- * Drop-Down Menus
- */
-let dropDownMenus = document.querySelectorAll('.menu-item-has-children');
-
-dropDownMenus.forEach(function(element) {
-  element.addEventListener('click', toggleSubMenu);
-});
-
-function toggleSubMenu() {
-  event.stopPropagation();
-
-  if (this.classList.contains('open')) {
-    this.classList.remove('open');
-  } else {
-    closeOtherSubMenus(this);
-    this.classList.add('open');
-    document.addEventListener('click', closeOtherSubMenus);
-  }
-}
-
-function closeOtherSubMenus(subMenu = null) {
-  let openSubMenus = document.querySelectorAll('.menu-item-has-children.open');
-  openSubMenus.forEach(function(element) {
-    if (subMenu !== null && element != subMenu) {
-      element.classList.remove('open');
-    }
-  });
-  document.removeEventListener('click', closeOtherSubMenus);
-}

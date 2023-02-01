@@ -3,14 +3,19 @@
   font-size: $font-size-xl;
 }
 
+// https://github.com/WordPress/gutenberg/issues/34853
+.wp-block-button {
+  &.is-style-outline {
+    .wp-block-button__link {
+      padding: .5em 1em;
+    }
+  }
+}
+
 .wp-block-button__link {
-  font-size: inherit;
   transition: box-shadow .2s;
 
   &:hover {
-    color: currentColor;
-    text-decoration: none;
-
     &:not(:active) {
       box-shadow: $box-shadow;
     }

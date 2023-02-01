@@ -1,16 +1,16 @@
 .post-nav-links-label {
-  font-size: 80%;
+  font-size: $font-size-sm;
   font-weight: bold;
-  margin: 0 0 .5em 0;
+  margin: 0 0 $spacing-xxs 0;
   text-transform: uppercase;
 }
 
 .nav-links {
-  margin: $spacing-regular 0;
+  margin: $spacing-sm 0;
 }
 
 .post-nav-links {
-  margin: $spacing-sm 0 $spacing-regular 0;
+  margin: $spacing-xxs 0 $spacing-sm 0;
 }
 
 .nav-links,
@@ -28,7 +28,7 @@
   *:not(.dots) {
     border: $button-border;
     border-radius: 9999px;
-    padding: $spacing-xs;
+    padding: .5em;
   }
 
   .dots {

@@ -11,11 +11,52 @@ body {
   box-sizing: border-box;
 }
 
-
 // Fixes link targets so they aren't covered.
 :target:before {
   content: '';
   display: block;
   height: 1em;
   margin-top: -1em;
+}
+
+// Site Layout Elements
+.site-preheader__inner,
+.site-header-primary-nav__inner,
+.site-header-secondary-nav__inner,
+.site-content__inner,
+.site-footer__inner {
+  box-sizing: content-box;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.site-preheader__inner,
+.site-header-secondary-nav__inner {
+  padding: $spacing-xxs $spacing-sm;
+}
+
+.site-header-primary-nav__inner {
+  padding: $spacing-sm;
+}
+
+.site-content__inner {
+  margin: $spacing-sm auto $spacing-xl auto;
+  max-width: $content-size;
+  padding: 0 $spacing-sm;
+}
+
+.has-cover {
+  .site-content__inner {
+    margin-top: 0;
+  }
+
+  .entry-content {
+    .wp-block-cover:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.site-footer__inner {
+  padding: $spacing-lg $spacing-sm;
 }
