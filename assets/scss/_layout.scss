@@ -53,3 +53,34 @@ body {
 .site-footer__inner {
   padding: $spacing-lg $spacing-sm;
 }
+
+// Layout Classes
+.alignright {
+  float: right;
+  margin-left: $spacing-sm;
+}
+
+.alignleft {
+  float: left;
+  margin-right: $spacing-sm;
+}
+
+.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.alignwide {
+  max-width: calc(100vw - $spacing-sm * 2);
+  position: relative;
+    left: 50%;
+  transform: translateX(-50%);
+  width: $wide-size;
+}
+
+.alignfull {
+  position: relative;
+    left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+}

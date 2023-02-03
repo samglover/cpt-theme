@@ -83,6 +83,36 @@ body {
   padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--40);
 }
 
+.alignright {
+  float: right;
+  margin-left: var(--wp--preset--spacing--40);
+}
+
+.alignleft {
+  float: left;
+  margin-right: var(--wp--preset--spacing--40);
+}
+
+.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.alignwide {
+  max-width: calc(100vw - var(--wp--preset--spacing--40) * 2);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--wp--style--global--wide-size);
+}
+
+.alignfull {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+}
+
 html {
   font-family: sans-serif;
 }
@@ -222,7 +252,6 @@ html {
   left: 50%;
   transform: translateX(-50%);
   transform-origin: top;
-  z-index: 5;
 }
 @media (max-width: 576px) {
   .site-header .menu > .menu-item-has-children > .sub-menu {
@@ -273,6 +302,8 @@ html {
 #primary-menu {
   display: grid;
   place-items: center end;
+  position: relative;
+  z-index: 10;
 }
 @media (max-width: 576px) {
   #primary-menu {
@@ -322,6 +353,10 @@ html {
   background-color: var(--secondary-color);
 }
 
+#secondary-menu {
+  position: relative;
+  z-index: 5;
+}
 #secondary-menu .menu {
   display: flex;
   flex-wrap: wrap;
@@ -334,6 +369,7 @@ html {
   animation: growDown 150ms ease-in-out forwards;
   position: absolute;
   left: 0;
+  z-index: 5;
 }
 
 #breadcrumbs {
@@ -656,6 +692,38 @@ img {
   display: block;
   height: auto;
   width: 100%;
+}
+
+.card {
+  background-color: var(--wp--preset--color--page);
+  border: 1px solid LightSlateGray;
+  box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
+  padding: var(--wp--preset--spacing--50);
+}
+
+.clearfix {
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+.remove-bottom-margin {
+  margin-bottom: 0 !important;
+}
+
+.remove-top-margin {
+  margin-top: 0 !important;
+}
+
+.screen-reader-text {
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
 }
 
 .modal-container {

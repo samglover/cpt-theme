@@ -62,7 +62,6 @@
           left: 50%;
         transform: translateX(-50%);
         transform-origin: top;
-        z-index: 5;
 
         @media (max-width: $breakpoint-sm) {
           animation: growDown 150ms ease-in-out forwards;
@@ -125,6 +124,8 @@
 #primary-menu {
   display: grid;
   place-items: center end;
+  position: relative;
+  z-index: 10;
 
   @media (max-width: $breakpoint-sm) {
     place-items: center start;
@@ -182,6 +183,9 @@
 }
 
 #secondary-menu {
+  position: relative;
+  z-index: 5;
+
   .menu {
     display: flex;
     flex-wrap: wrap;
@@ -194,6 +198,7 @@
       animation: growDown 150ms ease-in-out forwards;
       position: absolute;
         left: 0;
+      z-index: 5;
     }
   }
 }
