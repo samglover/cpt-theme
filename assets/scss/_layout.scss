@@ -23,27 +23,39 @@ body {
 .site-preheader__inner,
 .site-header-primary-nav__inner,
 .site-header-secondary-nav__inner,
+.breadcrumbs,
 .site-content__inner,
 .site-footer__inner {
   box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacing-sm;
+  padding-right: $spacing-sm;
+  max-width: $wide-size;
 }
 
 .site-preheader__inner {
-  padding: $spacing-xxs $spacing-sm;
+  padding-top: $spacing-xxs;
+  padding-bottom: $spacing-xxs;
 }
 
 .site-header-primary-nav__inner {
-  padding: $spacing-sm;
+  padding-top: $spacing-sm;
+  padding-bottom: $spacing-sm;
 }
 
 .site-header-secondary-nav__inner {
-  padding: $spacing-xxs $spacing-sm;
+  padding-top: $spacing-xxs;
+  padding-bottom: $spacing-xxs;
+}
+
+.breadcrumbs {
+  padding-top: $spacing-sm;
+  padding-bottom: $spacing-sm;
 }
 
 .site-content__inner {
-  margin: 0 auto;
   max-width: $content-size;
-  padding: 0 $spacing-sm;
 }
 
 .site-footer {
@@ -51,7 +63,8 @@ body {
 }
 
 .site-footer__inner {
-  padding: $spacing-lg $spacing-sm;
+  padding-top: $spacing-lg;
+  padding-bottom: $spacing-lg;
 }
 
 // Layout Classes
@@ -71,6 +84,8 @@ body {
 }
 
 .alignwide {
+  margin-top: $spacing-sm;
+  margin-bottom: $spacing-sm;
   max-width: calc(100vw - $spacing-sm * 2);
   position: relative;
     left: 50%;
@@ -79,6 +94,8 @@ body {
 }
 
 .alignfull {
+  margin-top: $spacing-sm;
+  margin-bottom: $spacing-sm;
   position: relative;
     left: 50%;
   transform: translateX(-50%);

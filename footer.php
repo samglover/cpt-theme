@@ -3,7 +3,7 @@
     </div>
 
     <footer id="footer" class="site-footer">
-      <div class="site-footer__inner alignwide">
+      <div class="site-footer__inner">
         <ul id="footer-widgets"><?php dynamic_sidebar('footer-widgets'); ?></ul>
         <p class="footer-meta">
           <span class="copyright">The original content within this website is &copy; <?php echo esc_html(date('Y')) ?>.</a></span>

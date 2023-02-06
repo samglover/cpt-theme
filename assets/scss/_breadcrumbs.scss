@@ -1,10 +1,7 @@
-#breadcrumbs {
+.breadcrumbs {
   color: $light-text;
   font-family: $headings;
   font-size: $font-size-sm;
-  margin: $spacing-sm auto;
-  padding: $spacing-sm $spacing-sm;
-  max-width: $wide-size;
 
   .last-breadcrumb {
     color: $body-text;
