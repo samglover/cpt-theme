@@ -168,7 +168,8 @@
     "blocks": {
       "core/button": {
         "border": {
-          "radius": "9999px"
+          "radius": "9999px",
+          "width": "2px"
         },
         "spacing": {
 					"padding": ".5em 1em"

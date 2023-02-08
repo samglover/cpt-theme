@@ -10,6 +10,11 @@
       padding: .5em 1em;
     }
   }
+
+  &.has-xs-font-size > .wp-block-button__link,
+  &.has-sm-font-size > .wp-block-button__link {
+    border-width: 1.5px;
+  }
 }
 
 .wp-block-button__link {
