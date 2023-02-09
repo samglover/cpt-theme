@@ -4,7 +4,7 @@
       <?php the_post_thumbnail('medium'); ?>
     </a>
   <?php } ?>
-  <div>
+  <div class="title-excerpt-footer__container">
     <header class="entry-header">
       <h2 class="post-title wp-block-post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
     </header>

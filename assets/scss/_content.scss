@@ -1,5 +1,5 @@
 .page-header {
-  margin-top: $spacing-md;
+  margin-top: $spacing-lg;
 
   &.has-background-image {
     background-position: center;
@@ -19,10 +19,96 @@
   }
 }
 
+.post-title {
+  a {
+    &:not(:hover) {
+      color: $headings;
+    }
+  }
+}
+
 .entry-byline {
   color: $light-text;
   font-size: $font-size-sm;
-  margin: 1em 0;
+}
+
+.entry-footer {
+  margin-top: $spacing-lg;
+  margin-bottom: $spacing-lg;
+}
+
+.blog,
+.archive,
+.search {
+  article {
+    &:first-child {
+      margin-top: $spacing-lg;
+    }
+
+    &:where(:not(:first-child)) {
+      margin-top: $spacing-lg;
+    }
+  
+    &:where(:not(:last-child)) {
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  .post-title {
+    margin-top: 0;
+    margin-bottom: $spacing-xxs;
+  }
+
+  .excerpt {
+    margin-top: $spacing-xxs;
+    margin-bottom: $spacing-xxs;
+  }
+
+  .entry-footer {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .entry-byline {
+    margin-top: $spacing-xxs;
+    margin-bottom: 0;
+  }
+
+  .has-post-thumbnail {
+    align-items: center;
+    display: grid;
+    grid-gap: $spacing-md;
+    grid-template-columns: 40% 1fr;
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+      grid-gap: $spacing-sm;
+    }
+
+    .title-excerpt-footer__container {
+      padding-top: $spacing-lg;
+      padding-bottom: $spacing-lg;
+
+      @media (max-width: $breakpoint-sm) {
+        padding: 0;
+      }
+    }
+
+    .wp-post-image__container {
+      align-items: center;
+      align-self: stretch;
+      display: grid;
+      position: relative;
+    
+      &::after {
+        background-color: $gray-wash;
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+      }
+    }
+  }
 }
 
 .comment-count {
@@ -36,41 +122,5 @@
     svg {
       fill: $light-text;
     }
-  }
-}
-
-
-// Blog & Post Archives
-.blog,
-.archive,
-.search {
-  article {
-    margin-bottom: $spacing-lg;
-
-    .post-title {
-      margin-top: 0;
-    }
-
-    .entry-byline {
-      margin-bottom: 0;
-    }
-
-    &.has-post-thumbnail {
-      align-items: center;
-      display: grid;
-      grid-gap: $spacing-sm;
-      grid-template-columns: 40% 1fr;
-
-      @media (max-width: $breakpoint-sm) {
-        grid-template-columns: 1fr;
-      }
-    }
-  }
-}
-
-.is-singular {
-  .entry-footer {
-    margin-top: $spacing-lg;
-    margin-bottom: $spacing-lg;
   }
 }
