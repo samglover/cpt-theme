@@ -197,6 +197,7 @@
 
   .menu {
     font-size: $font-size-sm;
+    flex-wrap: wrap;
     gap: $spacing-xxs $spacing-xs;
 
     > .menu-item-has-children:first-child > .sub-menu {
