@@ -19,6 +19,10 @@ body {
   margin-top: -1em;
 }
 
+#page-content {
+  overflow: hidden;
+}
+
 // These are all the structural/layout components.
 .site-preheader__inner,
 .site-header-primary-nav__inner,
