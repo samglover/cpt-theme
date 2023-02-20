@@ -9,7 +9,7 @@
       "link": true,
       "text": true,
       "background": true,
-      "defaultGradients": false,
+      "defaultGradients": true,
       "defaultPalette": false,
       "palette": [
         {
