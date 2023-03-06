@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.4.6 - 2023-03-06
+
+### Changed
+- Removed the default X from search fields with text entered for Chrome and IE.
+
 
 ## 2.4.5 - 2023-02-14
 
