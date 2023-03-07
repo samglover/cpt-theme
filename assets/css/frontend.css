@@ -797,6 +797,15 @@ img {
   display: none;
 }
 
+:disabled,
+:disabled:hover,
+:disabled:focus,
+:disabled:active {
+  box-shadow: none !important;
+  cursor: default !important;
+  opacity: 0.5 !important;
+}
+
 .remove-bottom-margin {
   margin-bottom: 0 !important;
 }
