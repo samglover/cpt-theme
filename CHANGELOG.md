@@ -3,10 +3,17 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.4.8 - 2023-03-14
+
+### Changed
+- Moved the .has-cover class to the body tag.
+
+
 ## 2.4.7 - 2023-03-07
 
 ### Added
 - Added a global :default style.
+
 
 ## 2.4.6 - 2023-03-06
 
