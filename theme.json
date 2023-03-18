@@ -225,7 +225,7 @@
       },
       "core/site-title": {
         "color": {
-          "text": "$headings"
+          "text": "var(--wp--preset--color--headings)"
         },
         "typography": {
           "fontFamily": "var(--heading-font)"
