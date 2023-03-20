@@ -9,6 +9,10 @@ $box-shadow:
   calc(.1 * $tenpx) calc(.1 * $tenpx) calc(.5 * $tenpx) rgba(0, 0, 0, .25),
   calc(.25 * $tenpx) calc(.25 * $tenpx) calc(1.5 * $tenpx) rgba(0, 0, 0, .1)
 ;
+$text-shadow: 
+  1px 1px 0 rgba(0, 0, 0, 0.25),
+  0 0 25px Black
+;
 
 // Colors
 $body-text: var(--wp--preset--color--body);

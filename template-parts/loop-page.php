@@ -26,8 +26,5 @@
       'before'  => '<p class="post-nav-links-label">Pages</p><p class="post-nav-links">',
       'after'   => '</p>',
     ]); ?>
-    <?php if (!is_front_page()) { ?>
-      <p class="entry-byline">Last updated on <?php the_modified_date('F jS, Y'); ?>.</p>
-    <?php } ?>
   </footer>
 </article>

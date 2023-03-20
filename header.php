@@ -11,6 +11,7 @@
   $classes = [];
   if (get_option('show_avatars')) $classes[] = 'show-avatars';
   if (is_singular()) $classes[] = 'is-singular';
+  if (has_post_thumbnail()) $classes[] = 'has-featured-image';
 
   $blocks = parse_blocks($post->post_content);
   if (count($blocks) > 0 && $blocks[0]['blockName'] == 'core/cover') $classes[] = 'has-cover'; 

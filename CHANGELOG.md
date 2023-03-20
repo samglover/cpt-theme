@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.4.9 - 2023-03-18
+
+### Added
+- Add $text-shadow variable and add text shadows to cover block text.
+
+### Removed
+- Removed the page date.
+
+### Fixed
+- Fixed a CSS variable in theme.json.
+
+
 ## 2.4.8 - 2023-03-14
 
 ### Changed
