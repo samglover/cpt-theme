@@ -34,6 +34,7 @@
 }
 body {
   line-height: 1;
+  overflow-x: hidden;
 }
 
 *,
@@ -251,6 +252,7 @@ html {
 .site-header .menu .menu-item a:where(:not([href]):not([href=""]):not([href="#"])):hover {
   color: DarkSlateGray;
   cursor: default;
+  text-decoration: none !important;
 }
 .site-header .menu > .menu-item-has-children:not(.collapsed-menu):not(.collapsed-menu .site-header .menu > .menu-item-has-children) > a::after {
   content: "+";

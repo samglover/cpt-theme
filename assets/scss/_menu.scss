@@ -26,9 +26,11 @@
           &:hover {
             color: $menu-text;
             cursor: default;
+            text-decoration: none !important;
           }
         }
       }
+      
     }
 
     > .menu-item-has-children {
