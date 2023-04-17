@@ -9,9 +9,8 @@
     }
   ?>
   <?php if (
-    count($blocks) != 0 && 
-    !is_front_page() && 
-    $blocks[0]['blockName'] != 'core/cover'
+    !is_front_page() || 
+    ($blocks && $blocks[0]['blockName'] != 'core/cover')
   ) { ?>
     <header class="<?php echo $header_classes; ?>"<?php echo $header_style; ?>>
       <?php the_title('<h1 class="entry-title wp-block-post-title">', '</h1>'); ?>
