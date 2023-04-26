@@ -416,6 +416,7 @@ html {
 .page-header.has-background-image .entry-title {
   color: White;
   font-size: var(--wp--preset--font-size--huge);
+  line-height: var(--wp--custom--typography--line-height--sm);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 25px Black;
 }
 
