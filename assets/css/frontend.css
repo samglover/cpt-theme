@@ -420,6 +420,21 @@ html {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 25px Black;
 }
 
+.has-cover .page-header {
+  margin-top: 0;
+}
+.has-cover .page-header .entry-title {
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+}
+.has-cover .wp-block-cover:first-child {
+  margin-top: 0;
+}
+
 .post-title a:not(:hover) {
   color: var(--wp--preset--color--headings);
 }
