@@ -20,10 +20,15 @@
     <?php the_content(); ?>
     <div class="clearfix"></div>
   </div>
-  <footer class="entry-footer">
-    <?php wp_link_pages([
-      'before'  => '<p class="post-nav-links-label">Pages</p><p class="post-nav-links">',
-      'after'   => '</p>',
-    ]); ?>
-  </footer>
+  <?php 
+    global $numpages;
+    if ($numpages > 1) { 
+  ?>
+    <footer class="entry-footer">
+      <?php wp_link_pages([
+        'before'  => '<p class="post-nav-links-label">Pages</p><p class="post-nav-links">',
+        'after'   => '</p>',
+      ]); ?>
+    </footer>
+  <?php } ?>
 </article>
