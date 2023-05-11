@@ -77,6 +77,18 @@
           "slug": "highlight",
           "color": "rgba(255, 255, 0, .5)"
         }
+      ],
+      "gradients": [
+        {
+          "name": "Primary Gradient",
+          "slug": "cpt-primary",
+          "gradient": "linear-gradient(-135deg, var(--primary-color) -90%, #efefef 100%)"
+        },
+        {
+          "name": "Secondary Gradient",
+          "slug": "cpt-secondary",
+          "gradient": "linear-gradient(-135deg, var(--primary-color) -90%, #efefef 100%)"
+        }
       ]
     },
     "custom": {
