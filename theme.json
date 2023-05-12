@@ -132,6 +132,11 @@
 					"size": "1rem",
 					"slug": "sm"
 				},
+        {
+          "name": "Normal",
+					"size": "var(--wp--preset--font-size--normal)",
+					"slug": "normal"
+				},
 				{
           "name": "Medium",
 					"size": "1.563rem",
