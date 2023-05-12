@@ -89,8 +89,7 @@ body {
 }
 
 .alignwide {
-  margin-top: $spacing-sm;
-  margin-bottom: $spacing-sm;
+  margin: $spacing-sm auto;
   max-width: calc(100vw - $spacing-sm * 2);
   position: relative;
     left: 50%;
@@ -99,10 +98,13 @@ body {
 }
 
 .alignfull {
-  margin-top: $spacing-sm;
-  margin-bottom: $spacing-sm;
+  margin: $spacing-sm auto;
   position: relative;
     left: 50%;
   transform: translateX(-50%);
   width: 100vw;
+
+  > * {
+    max-width: calc(100vw - $spacing-sm * 2);
+  }
 }

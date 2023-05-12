@@ -117,8 +117,7 @@ body {
 }
 
 .alignwide {
-  margin-top: var(--wp--preset--spacing--40);
-  margin-bottom: var(--wp--preset--spacing--40);
+  margin: var(--wp--preset--spacing--40) auto;
   max-width: calc(100vw - var(--wp--preset--spacing--40) * 2);
   position: relative;
   left: 50%;
@@ -127,12 +126,14 @@ body {
 }
 
 .alignfull {
-  margin-top: var(--wp--preset--spacing--40);
-  margin-bottom: var(--wp--preset--spacing--40);
+  margin: var(--wp--preset--spacing--40) auto;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
+}
+.alignfull > * {
+  max-width: calc(100vw - var(--wp--preset--spacing--40) * 2);
 }
 
 html {
