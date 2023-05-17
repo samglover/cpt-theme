@@ -104,7 +104,7 @@ body {
   transform: translateX(-50%);
   width: 100vw;
 
-  > * {
+  > *:not(span):not(img) {
     max-width: calc(100vw - $spacing-sm * 2);
   }
 }

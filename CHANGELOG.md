@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.4.12 - 2023-05-17
+
+### Fixed
+- Excluded span and img tags from alignfull max width.
+
+
 ## 2.4.11 - 2023-05-12
 
 ### Changed
