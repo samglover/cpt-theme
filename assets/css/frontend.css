@@ -132,9 +132,6 @@ body {
   transform: translateX(-50%);
   width: 100vw;
 }
-.alignfull > *:not(span):not(img) {
-  max-width: calc(100vw - var(--wp--preset--spacing--40) * 2);
-}
 
 html {
   font-family: sans-serif;
