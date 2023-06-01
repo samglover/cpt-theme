@@ -3,10 +3,17 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.4.14 - 2023-06-01
+
+### Changed
+- Fixed font sizing.
+
+
 ## 2.4.13 - 2023-05-18
 
 ### Changed
 - Reverted right-left padding to blocks within .alignfull blocks (see 2.4.11).
+
 
 ## 2.4.12 - 2023-05-17
 

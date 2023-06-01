@@ -93,9 +93,6 @@
     },
     "custom": {
       "typography": {
-        "font-size": {
-          "normal": "1.25"
-        },
         "line-height": {
 					"sm": "1.15",
 					"normal": "1.5"
@@ -137,7 +134,7 @@
 				},
         {
           "name": "Normal",
-					"size": "var(--wp--custom--typography--font-size--normal)",
+					"size": "1.25rem",
 					"slug": "normal"
 				},
 				{
@@ -182,7 +179,7 @@
     },
     "typography": {
       "fontFamily": "var(--body-font)",
-      "fontSize": "1.25rem",
+      "fontSize": "var(--wp--preset--font-size--normal)",
       "lineHeight": "var(--wp--custom--typography--line-height--normal)"
     },
     "blocks": {
