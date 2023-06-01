@@ -3,7 +3,7 @@ a:not(:hover) {
 }
 
 .wp-block-post-title {
-  font-size: var(--wp--preset--font-size--xl);
+  font-size: var(--wp--preset--font-size--x-large);
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link {

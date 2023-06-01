@@ -93,6 +93,9 @@
     },
     "custom": {
       "typography": {
+        "font-size": {
+          "normal": "1.25"
+        },
         "line-height": {
 					"sm": "1.15",
 					"normal": "1.5"
@@ -134,7 +137,7 @@
 				},
         {
           "name": "Normal",
-					"size": "var(--wp--preset--font-size--normal)",
+					"size": "var(--wp--custom--typography--font-size--normal)",
 					"slug": "normal"
 				},
 				{
