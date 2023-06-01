@@ -104,3 +104,12 @@ body {
   transform: translateX(-50%);
   width: 100vw;
 }
+
+.alignwide,
+.alignfull {
+  .alignwide,
+  .alignfull {
+    position: unset;
+    transform: unset;
+  } 
+}

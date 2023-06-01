@@ -133,6 +133,14 @@ body {
   width: 100vw;
 }
 
+.alignwide .alignwide,
+.alignwide .alignfull,
+.alignfull .alignwide,
+.alignfull .alignfull {
+  position: unset;
+  transform: unset;
+}
+
 html {
   font-family: sans-serif;
 }

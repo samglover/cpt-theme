@@ -7,6 +7,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 - Fixed font sizing.
+- Fix nested block potitioning when set to alignwide or alignfull.
 
 
 ## 2.4.13 - 2023-05-18
