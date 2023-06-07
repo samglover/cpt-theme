@@ -5,7 +5,7 @@ function collapsed_menu_item($items, $args) {
   ob_start();
     ?>
       <li id="collapsed-menu" class="menu-item menu-item-has-children collapsed-menu">
-        <a href="#">&bull;&bull;&bull;</a>
+        <a href="#">|||</a>
         <ul class="sub-menu"></ul>
       </li>
     <?php

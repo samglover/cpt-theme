@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.4.15 - 2023-06-07
+
+### Changed
+- Move menu to the right of the call to action when wrapped under the site title/logo.
+- Change menu icon.
+
+
 ## 2.4.14 - 2023-06-01
 
 ### Changed

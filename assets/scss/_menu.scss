@@ -135,22 +135,17 @@
   z-index: 10;
 
   @media (max-width: $breakpoint-sm) {
+    order: 2;
     place-items: center start;
+    position: revert;
   }
 
   .menu {
-    .menu-item-has-children {
-      > .sub-menu {
-        @media (max-width: $breakpoint-sm) {
-          left: calc(-1 * $spacing-sm);
-        }
-      }
-    }
-
     .collapsed-menu {
       > a {
         font-weight: bold;
-        letter-spacing: .15em;
+        letter-spacing: .075em;
+        transform: rotate(90deg);
       }
 
       .sub-menu {

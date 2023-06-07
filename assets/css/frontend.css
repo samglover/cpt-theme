@@ -118,11 +118,9 @@ body {
 
 .alignwide {
   margin: var(--wp--preset--spacing--40) auto;
-  max-width: calc(100vw - var(--wp--preset--spacing--40) * 2);
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: var(--wp--style--global--wide-size);
 }
 
 .alignfull {
@@ -342,17 +340,15 @@ html {
 }
 @media (max-width: 576px) {
   #primary-menu {
+    order: 2;
     place-items: center start;
-  }
-}
-@media (max-width: 576px) {
-  #primary-menu .menu .menu-item-has-children > .sub-menu {
-    left: calc(-1 * var(--wp--preset--spacing--40));
+    position: revert;
   }
 }
 #primary-menu .menu .collapsed-menu > a {
   font-weight: bold;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.075em;
+  transform: rotate(90deg);
 }
 #primary-menu .menu .collapsed-menu .sub-menu .menu-item-has-children > a {
   font-size: var(--wp--preset--font-size--xs);
