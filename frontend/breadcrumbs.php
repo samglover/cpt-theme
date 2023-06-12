@@ -3,11 +3,6 @@
 function breadcrumbs() {
   if (is_front_page()) return;
 
-  // if (is_singular('post') && get_option('show_on_front') == 'page') {
-  //   $blog_page_id = get_option('page_for_posts');
-  //   $breadcrumbs[] = '<span class="breadcrumb"><a href="' . get_permalink($blog_page_id) . '">' . get_the_title($blog_page_id) . '</a></span>';
-  // }
-
   // Gets the last breadcrumb (the current page) first (we'll flip the order as
   // the last step).
   ob_start();
@@ -73,6 +68,10 @@ function breadcrumbs() {
     }
   }
 
+  if ((is_singular('post') || is_archive('post')) && get_option('show_on_front') == 'page') {
+    $blog_page_id = get_option('page_for_posts');
+    $breadcrumbs[] = '<span class="breadcrumb"><a href="' . get_permalink($blog_page_id) . '">' . get_the_title($blog_page_id) . '</a></span>';
+  }
   $breadcrumbs[]  = '<span class="breadcrumb home-breadcrumb"><a href="' .  esc_url(home_url()) . '">Home</a></span>';
   $breadcrumbs    = array_reverse($breadcrumbs);
 
