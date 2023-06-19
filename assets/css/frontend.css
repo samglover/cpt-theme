@@ -156,6 +156,11 @@ html {
   grid-gap: var(--wp--preset--spacing--40);
   grid-template-columns: repeat(2, max-content);
 }
+@media (max-width: 576px) {
+  .site-header.has-custom-logo .site-branding {
+    grid-template-columns: 100%;
+  }
+}
 .site-header .sticky-header-spacer {
   display: none;
 }

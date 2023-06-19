@@ -11,6 +11,10 @@
       display: grid;
       grid-gap: $spacing-sm;
       grid-template-columns: repeat(2, max-content);
+
+      @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 100%;
+      }
     }
   }
 
