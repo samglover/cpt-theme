@@ -1,15 +1,8 @@
 {
   "version": 2,
   "settings": {
-    "border": true,
+    "appearanceTools": true,
     "color": {
-      "custom": true,
-      "customDuotone": true,
-      "customGradient": true,
-      "link": true,
-      "text": true,
-      "background": true,
-      "defaultGradients": true,
       "defaultPalette": false,
       "palette": [
         {
@@ -91,19 +84,8 @@
         }
       ]
     },
-    "custom": {
-      "typography": {
-        "line-height": {
-					"sm": "1.15",
-					"normal": "1.5"
-				}
-      }
-    },
     "spacing": {
-      "blockGap": true,
       "customSpacingSize": true,
-      "margin": true,
-      "padding": true,
       "spacingScale": {
         "operator": "*",
 				"increment": 1.5,
@@ -114,51 +96,80 @@
 		},
     "typography": {
       "customFontSize": false,
-      "lineHeight": false,
       "dropCap": false,
-      "fontStyle": true,
-      "fontWeight": true,
+      "fluid": true,
       "letterSpacing": false,
       "textDecoration": false,
-      "textTransform": true,
       "fontSizes": [
         {
           "name": "XS",
+          "fluid": {
+            "min": ".64rem",
+            "max": ".8rem"
+          },
 					"size": ".8rem",
 					"slug": "xs"
 				},
 				{
           "name": "Small",
+          "fluid": {
+            "min": ".8rem",
+            "max": "1rem"
+          },
 					"size": "1rem",
 					"slug": "sm"
 				},
         {
           "name": "Normal",
+          "fluid": {
+            "min": "1rem",
+            "max": "1.25rem"
+          },
 					"size": "1.25rem",
 					"slug": "normal"
 				},
 				{
           "name": "Medium",
+          "fluid": {
+            "min": "1.25rem",
+            "max": "1.563rem"
+          },
 					"size": "1.563rem",
 					"slug": "md"
 				},
 				{
           "name": "Large",
+          "fluid": {
+            "min": "1.563rem",
+            "max": "1.953rem"
+          },
 					"size": "1.953rem",
 					"slug": "lg"
 				},
 				{
           "name": "XL",
+          "fluid": {
+            "min": "1.953rem",
+            "max": "2.441rem"
+          },
 					"size": "2.441rem",
 					"slug": "xl"
 				},
         {
           "name": "XXL",
+          "fluid": {
+            "min": "2.441rem",
+            "max": "3.052rem"
+          },
 					"size": "3.052rem",
 					"slug": "xxl"
 				},
         {
           "name": "Huge",
+          "fluid": {
+            "min": "3.052rem",
+            "max": "4.768rem"
+          },
 					"size": "3.815rem",
 					"slug": "huge"
 				}
@@ -167,7 +178,16 @@
     "layout": {
 			"contentSize": "1100px",
       "wideSize": "1320px"
-		}
+		},
+    "custom": {
+      "typography": {
+        "line-height": {
+					"sm": "1.15",
+					"normal": "1.5"
+				}
+      }
+    },
+    "useRootPaddingAwareAlignments": true
   },
   "styles": {
     "color": {
@@ -175,7 +195,13 @@
       "text": "var(--wp--preset--color--body)"
     },
     "spacing": {
-      "blockGap": "var(--wp--preset--spacing--40)"
+      "blockGap": "var(--wp--preset--spacing--40)",
+      "padding": {
+				"top": "var(--wp--preset--spacing--40)",
+				"right": "var(--wp--preset--spacing--40)",
+				"bottom": "var(--wp--preset--spacing--40)",
+				"left": "var(--wp--preset--spacing--40)"
+			}
     },
     "typography": {
       "fontFamily": "var(--body-font)",

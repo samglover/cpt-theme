@@ -5,16 +5,16 @@
     </a>
   <?php } ?>
   <div class="title-excerpt-footer__container">
-    <header class="entry-header">
-      <h2 class="post-title wp-block-post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+    <header class="entry-header has-global-padding is-layout-constrained">
+      <h2 class="post-title wp-block-post-title is-layout-constrained"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
     </header>
-    <div class="entry-content entry-excerpt">
+    <div class="entry-content entry-excerpt wp-block-post-content has-global-padding is-layout-constrained">
       <p class="excerpt"><?php echo wp_kses(get_the_excerpt(), 'post'); ?></p>
       <div class="clearfix"></div>
     </div>
-    <footer class="entry-footer">
+    <footer class="entry-footer has-global-padding is-layout-constrained">
       <?php $comment_count = get_comment_count(get_the_ID())['approved']; ?>
-      <p class="entry-byline">By <?php the_author(); ?> on <?php echo get_the_date('F jS, Y'); ?>.<?php if ($comment_count) echo ' <span class="comment-count"><i class="comments-icon">' . file_get_contents(CPT_THEME_DIR_PATH . 'assets/images/comment.svg') . '</i>&nbsp;' . $comment_count . '</span>'; ?></p>
+      <p class="entry-byline">By <?php the_author(); ?> on <?php echo get_the_date('F jS, Y'); ?>.<?php if ($comment_count) echo ' <span class="comment-count"><a href="' . get_the_permalink() . '#comments"><i class="comments-icon">' . file_get_contents(CPT_THEME_DIR_PATH . 'assets/images/comment.svg') . '</i>&nbsp;' . $comment_count . '</a></span>'; ?></p>
     </footer>
   </div>
 </article>

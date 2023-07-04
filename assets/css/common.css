@@ -2,10 +2,6 @@ a:not(:hover) {
   text-decoration-color: var(--wp--preset--color--gray-wash);
 }
 
-.wp-block-post-title {
-  font-size: var(--wp--preset--font-size--xl);
-}
-
 .wp-block-button.is-style-outline .wp-block-button__link {
   padding: 0.5em 1em;
 }

@@ -76,8 +76,10 @@ function breadcrumbs() {
   $breadcrumbs    = array_reverse($breadcrumbs);
 
   ?>
-    <nav id="breadcrumbs" class="small breadcrumbs">
-      <?php echo wp_kses_post(implode(' / ', ($breadcrumbs))); ?>
-    </nav>
+    <div class="breadcrumbs wp-block-group has-global-padding is-layout-constrained">
+      <nav class="breadcrumbs__inner wp-block-group alignwide">
+        <?php echo wp_kses_post(implode(' / ', ($breadcrumbs))); ?>
+      </nav>
+  </div>
   <?php
 }

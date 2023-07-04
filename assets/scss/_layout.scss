@@ -25,31 +25,17 @@ body {
 }
 
 // These are all the structural/layout components.
-.site-preheader__inner,
-.site-header-primary-nav__inner,
-.site-header-secondary-nav__inner,
-.breadcrumbs,
-.site-content__inner,
-.site-footer__inner {
-  box-sizing: content-box;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $spacing-sm;
-  padding-right: $spacing-sm;
-  max-width: $wide-size;
-}
-
-.site-preheader__inner {
+.site-preheader {
   padding-top: $spacing-xxs;
   padding-bottom: $spacing-xxs;
 }
 
-.site-header-primary-nav__inner {
+.site-header-primary-nav {
   padding-top: $spacing-sm;
   padding-bottom: $spacing-sm;
 }
 
-.site-header-secondary-nav__inner {
+.site-header-secondary-nav {
   padding-top: $spacing-xxs;
   padding-bottom: $spacing-xxs;
 }
@@ -59,55 +45,8 @@ body {
   padding-bottom: $spacing-sm;
 }
 
-.site-content__inner {
-  max-width: $content-size;
-}
-
 .site-footer {
   margin-top: $spacing-xxl;
-}
-
-.site-footer__inner {
   padding-top: $spacing-lg;
   padding-bottom: $spacing-lg;
-}
-
-// Layout Classes
-.alignright {
-  float: right;
-  margin-left: $spacing-sm;
-}
-
-.alignleft {
-  float: left;
-  margin-right: $spacing-sm;
-}
-
-.aligncenter {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.alignwide {
-  margin: $spacing-sm auto;
-  position: relative;
-    left: 50%;
-  transform: translateX(-50%);
-}
-
-.alignfull {
-  margin: $spacing-sm auto;
-  position: relative;
-    left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-}
-
-.alignwide,
-.alignfull {
-  .alignwide,
-  .alignfull {
-    position: unset;
-    transform: unset;
-  } 
 }

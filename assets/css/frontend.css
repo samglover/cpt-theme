@@ -54,31 +54,17 @@ body {
   overflow: hidden;
 }
 
-.site-preheader__inner,
-.site-header-primary-nav__inner,
-.site-header-secondary-nav__inner,
-.breadcrumbs,
-.site-content__inner,
-.site-footer__inner {
-  box-sizing: content-box;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--wp--preset--spacing--40);
-  padding-right: var(--wp--preset--spacing--40);
-  max-width: var(--wp--style--global--wide-size);
-}
-
-.site-preheader__inner {
+.site-preheader {
   padding-top: var(--wp--preset--spacing--20);
   padding-bottom: var(--wp--preset--spacing--20);
 }
 
-.site-header-primary-nav__inner {
+.site-header-primary-nav {
   padding-top: var(--wp--preset--spacing--40);
   padding-bottom: var(--wp--preset--spacing--40);
 }
 
-.site-header-secondary-nav__inner {
+.site-header-secondary-nav {
   padding-top: var(--wp--preset--spacing--20);
   padding-bottom: var(--wp--preset--spacing--20);
 }
@@ -88,55 +74,10 @@ body {
   padding-bottom: var(--wp--preset--spacing--40);
 }
 
-.site-content__inner {
-  max-width: var(--wp--style--global--content-size);
-}
-
 .site-footer {
   margin-top: var(--wp--preset--spacing--80);
-}
-
-.site-footer__inner {
   padding-top: var(--wp--preset--spacing--60);
   padding-bottom: var(--wp--preset--spacing--60);
-}
-
-.alignright {
-  float: right;
-  margin-left: var(--wp--preset--spacing--40);
-}
-
-.alignleft {
-  float: left;
-  margin-right: var(--wp--preset--spacing--40);
-}
-
-.aligncenter {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.alignwide {
-  margin: var(--wp--preset--spacing--40) auto;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.alignfull {
-  margin: var(--wp--preset--spacing--40) auto;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-}
-
-.alignwide .alignwide,
-.alignwide .alignfull,
-.alignfull .alignwide,
-.alignfull .alignfull {
-  position: unset;
-  transform: unset;
 }
 
 html {
@@ -415,6 +356,7 @@ html {
 
 .page-header {
   margin-top: var(--wp--preset--spacing--60);
+  margin-bottom: var(--wp--preset--spacing--40);
 }
 .page-header.has-background-image {
   background-position: center;
@@ -452,6 +394,10 @@ html {
 .entry-byline {
   color: var(--wp--preset--color--light-text);
   font-size: var(--wp--preset--font-size--sm);
+}
+
+.entry-content {
+  margin-bottom: var(--wp--preset--spacing--40);
 }
 
 .entry-footer {
@@ -508,8 +454,8 @@ html {
 }
 @media (max-width: 576px) {
   .blog .has-post-thumbnail,
-.archive .has-post-thumbnail,
-.search .has-post-thumbnail {
+  .archive .has-post-thumbnail,
+  .search .has-post-thumbnail {
     grid-template-columns: 1fr;
     grid-gap: var(--wp--preset--spacing--40);
   }
@@ -522,8 +468,8 @@ html {
 }
 @media (max-width: 576px) {
   .blog .has-post-thumbnail .title-excerpt-footer__container,
-.archive .has-post-thumbnail .title-excerpt-footer__container,
-.search .has-post-thumbnail .title-excerpt-footer__container {
+  .archive .has-post-thumbnail .title-excerpt-footer__container,
+  .search .has-post-thumbnail .title-excerpt-footer__container {
     padding: 0;
   }
 }
@@ -543,17 +489,6 @@ html {
   position: absolute;
   inset: 0;
   z-index: -1;
-}
-
-.comment-count .comments-icon {
-  display: inline-block;
-  height: 1em;
-  position: relative;
-  top: 0.15em;
-  width: 1em;
-}
-.comment-count .comments-icon svg {
-  fill: var(--wp--preset--color--light-text);
 }
 
 .post-nav-links-label {
@@ -616,6 +551,26 @@ html {
 .nav-links a:hover:not(:active),
 .post-nav-links a:hover:not(:active) {
   box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
+}
+
+.comment-count .comments-icon {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  top: 0.15em;
+  width: 1em;
+}
+.comment-count .comments-icon svg {
+  fill: var(--wp--preset--color--light-text);
+}
+.comment-count a {
+  text-decoration: none;
+}
+.comment-count a:hover {
+  text-decoration: none;
+}
+.comment-count a:hover svg {
+  fill: var(--wp--preset--color--links-hover);
 }
 
 .comments-list {
@@ -751,7 +706,7 @@ textarea {
   border-radius: 0;
   font-weight: normal;
   max-width: 100%;
-  padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--40);
+  padding: var(--wp--preset--spacing--20);
 }
 
 button,
@@ -931,12 +886,10 @@ img {
   .site-header-primary-nav {
     box-shadow: none;
   }
-
   nav,
-#footer-widgets {
+  #footer-widgets {
     display: none !important;
   }
-
   footer {
     margin-top: 1em;
   }

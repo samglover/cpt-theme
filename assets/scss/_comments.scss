@@ -1,3 +1,29 @@
+.comment-count {
+  .comments-icon {
+    display: inline-block;
+    height: 1em;
+    position: relative;
+      top: .15em;
+    width: 1em;
+
+    svg {
+      fill: $light-text;
+    }
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      
+      svg {
+        fill: $link-hover;
+      }
+    }
+  }
+}
+
 .comments-list {
   list-style: none;
   padding: 0;

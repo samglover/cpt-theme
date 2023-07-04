@@ -1,10 +1,10 @@
 <article id="content" <?php post_class(); ?>>
   <?php
     $blocks = parse_blocks($post->post_content);
-    $header_classes = 'page-header';
+    $header_classes = 'page-header has-global-padding is-layout-constrained';
     $header_style = '';
     if (has_post_thumbnail()) {
-      $header_classes .= ' has-background-image alignfull is-layout-constrained';
+      $header_classes .= ' has-background-image alignfull';
       $header_style = ' style="background-image: url('. wp_get_attachment_image_url(get_post_thumbnail_id(), 'full') .');"';
     }
   ?>
@@ -16,7 +16,7 @@
       <?php the_title('<h1 class="entry-title wp-block-post-title">', '</h1>'); ?>
     </header>
   <?php } ?>
-  <div class="entry-content">
+  <div class="entry-content wp-block-post-content has-global-padding is-layout-constrained">
     <?php the_content(); ?>
     <div class="clearfix"></div>
   </div>
@@ -24,7 +24,7 @@
     global $numpages;
     if ($numpages > 1) { 
   ?>
-    <footer class="entry-footer">
+    <footer class="entry-footer has-global-padding is-layout-constrained">
       <?php wp_link_pages([
         'before'  => '<p class="post-nav-links-label">Pages</p><p class="post-nav-links">',
         'after'   => '</p>',

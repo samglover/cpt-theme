@@ -3,7 +3,7 @@
   $comment_count = get_comment_count(get_the_ID())['approved'];
 ?>
 
-<div id="comments">
+<div id="comments" class="wp-block-group has-global-padding is-layout-constrained">
   <?php if (have_comments()) : ?>
     <h3 class="comments-title comments-title"><?php echo $comment_count . ' ' . _n('Comment', 'Comments', $comment_count, 'cpt-theme'); ?></h3>
     <ol class="comments-list comments-list">

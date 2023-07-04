@@ -2,7 +2,7 @@
       </div>
     </div>
 
-    <footer id="footer" class="site-footer">
+    <footer id="footer" class="site-footer wp-block-group alignfull has-global-padding is-layout-constrained">
       <div class="site-footer__inner">
         <ul id="footer-widgets"><?php dynamic_sidebar('footer-widgets'); ?></ul>
         <p class="footer-meta">

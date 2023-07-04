@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <?php if (!is_front_page()) { ?>
-  <header class="page-header">
-    <h1 class="headline">
+  <header class="page-header wp-block-group has-global-padding is-layout-constrained">
+    <h1 class="headline wp-block-post-title">
       <?php
         if (is_home() && !is_front_page() && single_post_title()) {
           single_post_title();
@@ -29,8 +29,8 @@
   </header>
 <?php } ?>
 
-<?php if (have_posts()) { ?>
-  <div class="posts">
+<div class="posts wp-block-query has-global-padding is-layout-constrained">
+  <?php if (have_posts()) { ?>
     <?php
       while (have_posts()) {
         the_post();
@@ -38,9 +38,9 @@
       }
       the_posts_pagination();
     ?>
-  </div>
-<?php } else { ?>
-  <p class="post"><?php _e('No posts match your query.', 'cpt-theme'); ?></p>
-<?php } ?>
+  <?php } else { ?>
+    <p><?php _e('No posts match your query.', 'cpt-theme'); ?></p>
+  <?php } ?>
+</div>
 
 <?php get_footer(); ?>

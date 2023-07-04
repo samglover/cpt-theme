@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## 2.4.17 - 2023-07-04
+
+### Changed
+- Enabled appearance tools in the block editor.
+- Updated font sizes to use fluid typography.
+- Eliminate theme.json properties that merely restate the defaults.
+- Restructure layout to use root padding aware alignment. This means all containers now use .has-global-padding and .is-layout-constrained.
+
+
 ## 2.4.16 - 2023-06-19
 
 ### Fixed
