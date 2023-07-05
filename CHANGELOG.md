@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## 2.4.18 - 2023-07-05
+
+### Changed
+- Removed unnecessary site content containers.
+- Further tweaks to make block spacing more predictable.
+
+
 ## 2.4.17 - 2023-07-04
 
 ### Changed

@@ -21,6 +21,13 @@ a:not(:hover) {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 25px Black;
 }
 
+.wp-block-cover.has-background,
+.wp-block-group.has-background {
+  margin-bottom: var(--wp--preset--spacing--60);
+  margin-top: var(--wp--preset--spacing--60);
+  padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--40);
+}
+
 .wp-block-latest-comments {
   padding-left: 0;
 }

@@ -31,6 +31,15 @@
   }
 }
 
+.wp-block-cover,
+.wp-block-group {
+  &.has-background {
+    margin-bottom: $spacing-lg;
+    margin-top: $spacing-lg;
+    padding: $spacing-lg $spacing-sm;
+  }
+}
+
 .wp-block-latest-comments {
   padding-left: 0;
 }

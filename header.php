@@ -21,8 +21,6 @@
   <?php wp_body_open(); ?>
   <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'cpt-theme'); ?></a>
 
-  <div id="page-content" class="site">
+  <div id="page-content" class="site wp-site-blocks">
     <?php get_template_part('template-parts/site-header'); ?>
-    <div id="content" class="site-content">
-  		<div id="primary" class="content-area site-content__inner">
-  			<main id="main" class="site-main">
+    <main id="main" class="site-main wp-block-group">
