@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## 2.4.19 - 2023-07-07
+
+### Changed
+- Removed top margin from .site-main.
+
+
 ## 2.4.18 - 2023-07-05
 
 ### Changed
