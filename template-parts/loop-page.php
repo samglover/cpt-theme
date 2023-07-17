@@ -1,5 +1,5 @@
 <article id="content" <?php post_class(); ?>>
-  <?php
+  <?php 
     $blocks = parse_blocks($post->post_content);
     $header_classes = 'page-header has-global-padding is-layout-constrained';
     $header_style = '';
