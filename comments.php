@@ -32,7 +32,7 @@
       'cancel_reply_before' => '',
       'comment_field'       => $comment_field,
       'comment_notes_before' => '',
-      'logged_in_as'        => '<p class="logged-in-as">' . __('Logged in as', 'cpt-theme') . ' ' . get_currentuserinfo()->display_name . '. <a href="' . wp_logout_url(get_permalink()) . '">' . __('Log out?', 'cpt-theme') . '</a></p>',
+      'logged_in_as'        => '<p class="logged-in-as">' . __('Logged in as', 'cpt-theme') . ' ' . wp_get_current_user()->display_name . '. <a href="' . wp_logout_url(get_permalink()) . '">' . __('Log out?', 'cpt-theme') . '</a></p>',
       'submit_button'       => '<input name="%1$s" type="submit" id="%2$s" class="button %3$s" value="%4$s" />',
     ]);
   ?>
