@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+
+## 2.4.22 - 2023-08-23
+
+### Added
+- site_logo_size filter.
+- core/post-title block styling in theme.json.
+
+
 ## 2.4.21 - 2023-07-28
 
 ### Fixed

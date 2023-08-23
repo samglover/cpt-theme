@@ -34,7 +34,7 @@
       <div class="site-branding">
         <?php if (get_theme_mod('custom_logo')) { ?>
           <a class="site-logo" href="<?php echo esc_url(home_url()); ?>">
-            <?php echo wp_get_attachment_image(get_theme_mod('custom_logo'), 'tiny', false, ['alt' => $site_title]); ?>
+            <?php echo wp_get_attachment_image(get_theme_mod('custom_logo'), apply_filters('site_logo_size', 'tiny'), false, ['alt' => $site_title]); ?>
           </a>
         <?php } ?>
         <div class="<?php echo esc_attr($site_title_classes); ?>">

@@ -266,6 +266,15 @@
           "lineHeight": "var(--wp--custom--typography--line-height--normal)"
         }
       },
+      "core/post-title": {
+        "color": {
+          "text": "var(--wp--preset--color--headings)"
+        },
+        "typography": {
+          "fontFamily": "var(--heading-font)",
+          "lineHeight": "var(--wp--custom--typography--line-height--sm)"
+        }
+      },
       "core/site-title": {
         "color": {
           "text": "var(--wp--preset--color--headings)"
