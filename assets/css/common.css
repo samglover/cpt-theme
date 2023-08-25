@@ -28,10 +28,6 @@ a:not(:hover) {
   padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--40);
 }
 
-.entry-content .wp-block-cover:first-child .wp-block-cover__inner-container {
-  padding-top: var(--header-height);
-}
-
 .wp-block-latest-comments {
   padding-left: 0;
 }
