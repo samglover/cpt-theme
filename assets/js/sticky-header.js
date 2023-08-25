@@ -2,6 +2,9 @@ const adminBarHeight = document.getElementById('wpadminbar') ? document.getEleme
 const preheaderHeight = document.querySelector('.site-preheader') ? document.querySelector('.site-preheader').offsetHeight : 0;
 const siteHeader = document.querySelector('.site-header');
 const primaryNav = document.querySelector('.site-header-primary-nav');
+const headerHeight = primaryNav.offsetHeight;
+
+document.querySelector(":root").style.setProperty('--header-height', headerHeight + 'px');
 
 function stickyHeader() {
   let windowPosition = window.scrollY + adminBarHeight;
