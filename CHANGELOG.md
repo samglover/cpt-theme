@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## 2.4.23 - 2023-08-25
+
+### Changed
+- Moved the script that adds a :root variable for the header height to /assets/js/header-height.js so it can be used for other things (like padding cover blocks so they stay out of the way of the header).
+
+
 ## 2.4.22 - 2023-08-23
 
 ### Added
