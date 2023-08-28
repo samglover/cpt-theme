@@ -79,30 +79,28 @@ function get_font_params($name) {
 }
 
 
+add_action('wp_enqueue_scripts', 'enqueue_google_fonts');
+add_action('admin_enqueue_scripts', 'enqueue_google_fonts');
 function enqueue_google_fonts() {
 	wp_enqueue_style('body-font', 'https://fonts.googleapis.com/css2?family=' . get_font_params(get_option('cpt_sites_body')) . '&display=swap');
 
-  if ( get_option('cpt_sites_body') !== get_option('cpt_sites_headings') ) {
+  if (get_option('cpt_sites_body') !== get_option('cpt_sites_headings')) {
   	wp_enqueue_style('heading-font', 'https://fonts.googleapis.com/css2?family=' . get_font_params(get_option('cpt_sites_headings')) . '&display=swap');
   }
 }
 
-add_action('wp_enqueue_scripts', 'enqueue_google_fonts');
-add_action('admin_enqueue_scripts', 'enqueue_google_fonts');
 
-
+add_action('wp_head', 'google_fonts_head');
+add_action('admin_head', 'google_fonts_head');
 function google_fonts_head() {
   ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
       :root {
-        --heading-font: <?php echo strip_tags(get_option('cpt_sites_headings')); ?>;
-        --body-font: <?php echo strip_tags(get_option('cpt_sites_body')); ?>;
+        --heading-font: '<?php echo strip_tags(get_option('cpt_sites_headings')); ?>';
+        --body-font: '<?php echo strip_tags(get_option('cpt_sites_body')); ?>';
       }
     </style>
   <?php
 }
-
-add_action('wp_head', 'google_fonts_head');
-add_action('admin_head', 'google_fonts_head');
