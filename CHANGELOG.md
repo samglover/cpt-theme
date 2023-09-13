@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## 2.4.24 - 2023-09-12
+
+### Changed
+- Restored some necessary styles for footer widgets.
+- Button hover color.
+
+
 ## 2.4.23 - 2023-08-25
 
 ### Changed

@@ -221,6 +221,11 @@
           "fontFamily": "var(--heading-font)",
           "lineHeight": "var(--wp--custom--typography--line-height--sm)",
           "textDecoration": "none"
+        },
+        ":hover": {
+          "color": {
+            "background": "var(--wp--preset--color--links-hover)"
+          }
         }
       },
       "core/categories": {

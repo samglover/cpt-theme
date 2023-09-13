@@ -694,6 +694,11 @@ html {
   opacity: 0.5;
 }
 
+#footer-widgets {
+  list-style: none;
+  padding-left: unset;
+}
+
 .footer-meta {
   display: flex;
   flex-wrap: wrap;
