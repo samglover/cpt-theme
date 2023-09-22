@@ -121,10 +121,6 @@
 				},
         {
           "name": "Normal",
-          "fluid": {
-            "min": "1rem",
-            "max": "1.25rem"
-          },
 					"size": "1.25rem",
 					"slug": "normal"
 				},

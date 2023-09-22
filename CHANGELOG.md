@@ -8,6 +8,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 - Added horizontal padding to .alignfull and .alignwide blocks with backgrounds.
+- Un-fluid the normal text size.
 
 
 ## 2.4.24 - 2023-09-12
