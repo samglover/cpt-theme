@@ -40,6 +40,14 @@
   }
 }
 
+.has-global-padding {
+  .alignfull.has-background,
+  .alignwide.has-background {
+    padding-right: $spacing-sm;
+    padding-left: $spacing-sm;
+  }
+}
+
 .wp-block-latest-comments {
   padding-left: 0;
 }

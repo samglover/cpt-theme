@@ -28,6 +28,12 @@ a:not(:hover) {
   padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--40);
 }
 
+.has-global-padding .alignfull.has-background,
+.has-global-padding .alignwide.has-background {
+  padding-right: var(--wp--preset--spacing--40);
+  padding-left: var(--wp--preset--spacing--40);
+}
+
 .wp-block-latest-comments {
   padding-left: 0;
 }
