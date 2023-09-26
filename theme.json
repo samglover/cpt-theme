@@ -258,6 +258,7 @@
 				},
         {
           "name": "Normal",
+          "fluid": false,
 					"size": "1.25rem",
 					"slug": "normal"
 				},
