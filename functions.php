@@ -13,7 +13,6 @@ define('CPT_THEME_VERSION', wp_get_theme()->get('Version'));
  */
 // Common
 require_once(CPT_THEME_DIR_PATH . 'theme-setup.php');
-require_once(CPT_THEME_DIR_PATH . 'common/fonts.php');
 
 function cpt_theme_block_assets() {
   wp_enqueue_style('cpt-theme-common', CPT_THEME_DIR_URI . 'assets/css/common.css', [], CPT_THEME_VERSION);

@@ -157,7 +157,6 @@ html {
 
 .site-title {
   display: block;
-  font-family: var(--heading-font);
   font-size: var(--wp--preset--font-size--xl);
   font-weight: bold;
   line-height: var(--wp--custom--typography--line-height--sm);

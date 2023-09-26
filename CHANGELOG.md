@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## 3.0
+
+### Changed
+- Due to the way WordPress now handles fonts, it is no longer practical to select a font on the theme options page. Instead, fonts must be downloaded and added to the theme using theme.json. This is less user-friendly but is necessary to maintain compatibility. (See https://fullsiteediting.com/lessons/theme-json-typography-font-styles/ for more information.)
+
+Steps to add a font in your child theme:
+
+  1. Download the font files in woff2 format. (The [Google Webfonts Helper](https://gwfh.mranftl.com/fonts) is especially useful for this.)
+  2. Add the font files to /assets/fonts/font-slug in your child theme folder. Don't forget the font license!
+  3. Copy settings.typography.fontFamilies and styles.typography.fontFamily frtom the parent theme.json to the child theme's theme.json.
+  4. Update the child theme's theme.json to use your font files.
+
+### Added
+- /fonts/albert-sans
+
+### Removed
+- /common/fonts.php, along with the google_fonts filter.
+
+
 ## 2.4.25 - 2023-09-22
 
 ### Changed
