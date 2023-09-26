@@ -231,7 +231,7 @@ html {
 }
 .site-header .menu > .menu-item-has-children > .sub-menu {
   animation: growDown_centered 150ms ease-in-out forwards;
-  background-color: var(--page-color);
+  background-color: var(--wp--preset--color--page);
   border: 1px solid LightSlateGray;
   box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.25), 0.15625rem 0.15625rem 0.9375rem rgba(0, 0, 0, 0.1);
   display: none;
