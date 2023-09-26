@@ -18,12 +18,27 @@
         {
           "name": "Primary",
           "slug": "primary",
-          "color": "var(--primary-color)"
+          "color": "SkyBlue"
         },
         {
           "name": "Secondary",
           "slug": "secondary",
-          "color": "var(--secondary-color)"
+          "color": "MediumTurquoise"
+        },
+        {
+          "name": "Page",
+          "slug": "page",
+          "color": "Snow"
+        },
+        {
+          "name": "Links",
+          "slug": "links",
+          "color": "SlateBlue"
+        },
+        {
+          "name": "Links: Hover",
+          "slug": "links-hover",
+          "color": "DarkSlateBlue"
         },
         {
           "name": "Body",
@@ -41,24 +56,9 @@
           "color": "SlateGray"
         },
         {
-          "name": "Links",
-          "slug": "links",
-          "color": "var(--link-color)"
-        },
-        {
-          "name": "Links: Hover",
-          "slug": "links-hover",
-          "color": "var(--link-color-hover)"
-        },
-        {
           "name": "Call to Action",
           "slug": "call-to-action",
           "color": "var(--header-cta-button-color)"
-        },
-        {
-          "name": "Page",
-          "slug": "page",
-          "color": "var(--page-color)"
         },
         {
           "name": "Gray Wash",

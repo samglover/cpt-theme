@@ -43,15 +43,8 @@ function default_options() {
     'cpt_sites_primary_menu_cta_button_color' => 'Coral',
     'cpt_sites_primary_menu_cta_text'         => 'Contact Us',
     'cpt_sites_primary_menu_cta_style'        => 'link',
-    // Fonts
-    'cpt_sites_headings'                      => 'Josefin Sans',
-    'cpt_sites_body'                          => 'Source Serif Pro',
-    // Colors
-    'cpt_sites_primary_color'                 => 'SkyBlue',
-    'cpt_sites_secondary_color'               => 'MediumTurquoise',
-    'cpt_sites_page_color'                    => 'Snow',
-    'cpt_sites_link_color'                    => 'SlateBlue',
-    'cpt_sites_link_color_hover'              => 'DarkSlateBlue',
+    // Fonts moved to theme.json in 3.0.
+    // Colors moved to theme.json in 3.0.
   ];
 
   foreach ($default_options as $key => $val){

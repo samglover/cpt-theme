@@ -16,11 +16,15 @@ Steps to add a font in your child theme:
   3. Copy settings.typography.fontFamilies and styles.typography.fontFamily frtom the parent theme.json to the child theme's theme.json.
   4. Update the child theme's theme.json to use your font files.
 
+- Colors are also now solely managed in theme.json.
+
 ### Added
 - /fonts/albert-sans
 
 ### Removed
 - /common/fonts.php, along with the google_fonts filter.
+- Font options.
+- Non-CTA color options (the CTA colors can stay in the theme options for now, at least).
 
 
 ## 2.4.25 - 2023-09-22

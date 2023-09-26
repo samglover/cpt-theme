@@ -17,50 +17,12 @@ add_action('admin_menu', 'cpt_sites_submenu_pages');
 
 
 function site_appearance_init() {
-  // Colors
-  add_settings_section(
-    'cpt-sites-colors',
-    esc_html__('Colors', 'cpt-theme'),
-    'cpt_sites_colors',
-    'cpt-theme-appearance'
-  );
-
   add_settings_section(
     'cpt-sites-header',
     esc_html__('Header', 'cpt-theme'),
     'cpt_sites_header',
     'cpt-theme-appearance'
   );
-
-  add_settings_field(
-    'cpt_sites_primary_color',
-    '<label for="cpt_sites_primary_color">' . esc_html__('Primary Color', 'cpt-theme') . '</label>',
-    'cpt_sites_primary_color',
-    'cpt-theme-appearance',
-    'cpt-sites-colors'
-  );
-
-  register_setting('cpt-theme', 'cpt_sites_primary_color');
-
-  add_settings_field(
-    'cpt_sites_secondary_color',
-    '<label for="cpt_sites_secondary_color">' . esc_html__('Secondary Color', 'cpt-theme') . '</label>',
-    'cpt_sites_secondary_color',
-    'cpt-theme-appearance',
-    'cpt-sites-colors'
-  );
-
-  register_setting('cpt-theme', 'cpt_sites_secondary_color');
-
-  add_settings_field(
-    'cpt_sites_page_color',
-    '<label for="cpt_sites_page_color">' . esc_html__('Page Color', 'cpt-theme') . '</label>',
-    'cpt_sites_page_color',
-    'cpt-theme-appearance',
-    'cpt-sites-colors'
-  );
-
-  register_setting('cpt-theme', 'cpt_sites_page_color');
 
   // Header
   add_settings_field(
@@ -192,56 +154,6 @@ function site_appearance_init() {
   );
 
   register_setting('cpt-theme', 'cpt_sites_show_breadcrumbs');
-
-  // Fonts
-  add_settings_section(
-    'cpt-sites-fonts',
-    esc_html__('Fonts', 'cpt-theme'),
-    'cpt_sites_fonts',
-    'cpt-theme-appearance'
-  );
-
-  add_settings_field(
-    'cpt_sites_headings',
-    '<label for="cpt_sites_headings">' . esc_html__('Headings', 'cpt-theme') . '</label>',
-    'cpt_sites_headings',
-    'cpt-theme-appearance',
-    'cpt-sites-fonts'
-  );
-
-  register_setting('cpt-theme', 'cpt_sites_headings');
-
-  add_settings_field(
-    'cpt_sites_body',
-    '<label for="cpt_sites_body">' . esc_html__('Body', 'cpt-theme') . '</label>',
-    'cpt_sites_body',
-    'cpt-theme-appearance',
-    'cpt-sites-fonts'
-  );
-
-  register_setting('cpt-theme', 'cpt_sites_body');
-
-  add_settings_field(
-    'cpt_sites_link_color',
-    '<label for="cpt_sites_link_color">' . esc_html__('Link Color', 'cpt-theme') . '</label>',
-    'cpt_sites_link_color',
-    'cpt-theme-appearance',
-    'cpt-sites-fonts'
-  );
-
-  register_setting('cpt-theme', 'cpt_sites_link_color');
-
-  add_settings_field(
-    'cpt_sites_link_color_hover',
-    '<label for="cpt_sites_link_color_hover">' . esc_html__('Link Hover Color', 'cpt-theme') . '</label>',
-    'cpt_sites_link_color_hover',
-    'cpt-theme-appearance',
-    'cpt-sites-fonts'
-  );
-
-  register_setting('cpt-theme', 'cpt_sites_link_color_hover');
-
-  // TODO: Add layout & style options. Cards (w/ _px spacing value), Shadows (big or small), Corners: Square, Rounded (w/ _px value), or Round.
 }
 
 add_action('admin_init', 'site_appearance_init');
@@ -274,20 +186,6 @@ function site_appearance() {
   <?php
 }
 
-function cpt_sites_colors() {
-}
-
-  function cpt_sites_primary_color() {
-    echo '<input name="cpt_sites_primary_color" class="color-field" type="text" value="' . esc_attr(get_option('cpt_sites_primary_color')) . '">';
-  }
-
-  function cpt_sites_secondary_color() {
-    echo '<input name="cpt_sites_secondary_color" class="color-field" type="text" value="' . esc_attr(get_option('cpt_sites_secondary_color')) . '">';
-  }
-
-  function cpt_sites_page_color() {
-    echo '<input name="cpt_sites_page_color" class="color-field" type="text" value="' . esc_attr(get_option('cpt_sites_page_color')) . '">';
-  }
 
 function cpt_sites_header() {
 }
@@ -402,39 +300,4 @@ function cpt_sites_header() {
         </label>
       </fieldset>
     <?php
-  }
-
-
-function cpt_sites_fonts() {
-}
-
-  function font_select($name) {
-    if (!$name) {return;}
-
-    $fonts = get_google_fonts_arr();
-    echo '<select name="' . esc_attr($name) . '">';
-      foreach($fonts as $font) {
-        $selected = '';
-        if ($font['name'] == esc_attr(get_option($name))) {
-          $selected = ' selected';
-        }
-        echo '<option value="' . esc_attr($font['name']) . '"' . esc_attr($selected) . '>' . esc_html($font['name']) . '</option>';
-      }
-    echo '</select>';
-  }
-
-  function cpt_sites_headings() {
-    font_select('cpt_sites_headings');
-  }
-
-  function  cpt_sites_body() {
-    font_select('cpt_sites_body');
-  }
-
-  function cpt_sites_link_color() {
-    echo '<input name="cpt_sites_link_color" class="color-field" type="text" required aria-required="true" value="' . esc_attr(get_option('cpt_sites_link_color')) . '">';
-  }
-
-  function cpt_sites_link_color_hover() {
-    echo '<input name="cpt_sites_link_color_hover" class="color-field" type="text" required aria-required="true" value="' . esc_attr(get_option('cpt_sites_link_color_hover')) . '">';
   }
