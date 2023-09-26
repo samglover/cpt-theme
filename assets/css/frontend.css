@@ -91,7 +91,7 @@ html {
 }
 
 .site-preheader {
-  background-color: var(--secondary-color);
+  background-color: var(--wp--preset--color--secondary);
 }
 
 .site-header {
@@ -330,7 +330,7 @@ html {
 }
 
 .secondary-menu-container {
-  background-color: var(--secondary-color);
+  background-color: var(--wp--preset--color--secondary);
 }
 
 #secondary-menu {
