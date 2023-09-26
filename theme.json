@@ -75,12 +75,12 @@
         {
           "name": "Primary Gradient",
           "slug": "cpt-primary",
-          "gradient": "linear-gradient(-135deg, var(--primary-color) -90%, #efefef 100%)"
+          "gradient": "linear-gradient(-135deg, var(--wp--preset--color--primary) -90%, #efefef 100%)"
         },
         {
           "name": "Secondary Gradient",
           "slug": "cpt-secondary",
-          "gradient": "linear-gradient(-135deg, var(--primary-color) -90%, #efefef 100%)"
+          "gradient": "linear-gradient(-135deg, var(--wp--preset--color--primary) -90%, #efefef 100%)"
         }
       ]
     },
