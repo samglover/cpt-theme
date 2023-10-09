@@ -1,6 +1,6 @@
     </main>
     <footer id="footer" class="site-footer wp-block-group alignfull has-global-padding is-layout-constrained">
-      <div class="site-footer__inner wp-block-group alignfull has-global-padding is-layout-constrained">
+      <div class="site-footer__inner wp-block-group has-global-padding is-layout-constrained">
         <ul id="footer-widgets" class="footer-widgets wp-block-group is-layout-flex"><?php dynamic_sidebar('footer-widgets'); ?></ul>
         <p class="footer-meta">
           <span class="copyright">The original content within this website is &copy; <?php echo esc_html(date('Y')) ?>.</a></span>
