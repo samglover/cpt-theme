@@ -28,6 +28,11 @@ a:not(:hover) {
   padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--40);
 }
 
+.wp-block-image.aligncenter, .wp-block-image.alignwide, .wp-block-image.alignfull {
+  margin-bottom: var(--wp--preset--spacing--60);
+  margin-top: var(--wp--preset--spacing--60);
+}
+
 .has-global-padding .alignfull.has-background,
 .has-global-padding .alignwide.has-background {
   padding-right: var(--wp--preset--spacing--40);

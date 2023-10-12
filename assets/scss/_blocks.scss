@@ -40,6 +40,15 @@
   }
 }
 
+.wp-block-image {
+  &.aligncenter,
+  &.alignwide,
+  &.alignfull {
+    margin-bottom: $spacing-lg;
+    margin-top: $spacing-lg;
+  }
+}
+
 .has-global-padding {
   .alignfull.has-background,
   .alignwide.has-background {
