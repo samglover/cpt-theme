@@ -12,6 +12,15 @@
       'before'  => '<p class="post-nav-links-label">Pages</p><p class="post-nav-links">',
       'after'   => '</p>',
     ]); ?>
-    <p class="entry-byline">By <?php the_author(); ?>. Last updated on <?php the_modified_date('F jS, Y'); ?>.</p>
+    <p class="entry-byline">By <?php the_author(); ?>.
+      <?php
+        $original_date = get_the_date('F jS, Y');
+        $modified_date = get_the_modified_date('F jS, Y');
+
+        echo ' ' . __('Originally published on', 'cpt-theme'). ' ' . $original_date . '.';
+
+        if (strtotime($modified_date) > strtotime($original_date)) echo ' ' . __('Last updated on', 'cpt-theme') . ' ' . $modified_date . '.';
+      ?>
+    </p>
   </footer>
 </article>

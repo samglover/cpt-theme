@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## 3.0.2
+
+### Changed
+- Single posts now show the date published and, if modified, the date the post was last modified.
+
+
 ## 3.0
 
 ### Changed
