@@ -17,9 +17,12 @@
         $original_date = get_the_date('F jS, Y');
         $modified_date = get_the_modified_date('F jS, Y');
 
-        echo ' ' . __('Originally published on', 'cpt-theme'). ' ' . $original_date . '.';
-
-        if (strtotime($modified_date) > strtotime($original_date)) echo ' ' . __('Last updated on', 'cpt-theme') . ' ' . $modified_date . '.';
+        if (strtotime($modified_date) > strtotime($original_date)) {
+          echo ' ' . __('Originally published on', 'cpt-theme'). ' ' . $original_date . '.';
+          echo ' ' . __('Last updated on', 'cpt-theme') . ' ' . $modified_date . '.';
+        } else {
+          echo ' ' . __('Published on', 'cpt-theme'). ' ' . $original_date . '.';
+        }
       ?>
     </p>
   </footer>
