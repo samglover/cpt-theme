@@ -698,16 +698,6 @@ html {
   list-style: none;
   padding-left: unset;
 }
-@media (min-width: 768px) {
-  #footer-widgets > * {
-    max-width: 33.3333%;
-  }
-}
-@media (min-width: 576px) {
-  #footer-widgets > * {
-    max-width: 50%;
-  }
-}
 
 .footer-meta {
   display: flex;

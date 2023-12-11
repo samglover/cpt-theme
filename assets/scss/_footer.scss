@@ -15,18 +15,6 @@
   align-items: start;
   list-style: none;
   padding-left: unset;
-
-  @media (min-width: $breakpoint-md) {
-    > * {
-      max-width: 33.3333%;
-    }
-  }
-
-  @media (min-width: $breakpoint-sm) {
-    > * {
-      max-width: 50%;
-    }
-  }
 }
 
 .footer-meta {
