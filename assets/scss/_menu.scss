@@ -40,12 +40,6 @@ body {
         &:where(:not([href]), [href=""], [href="#"]) {
           color: $menu-text;
           text-decoration: none;
-
-          &:hover:not(:active) {
-            color: $menu-text;
-            cursor: default;
-            text-decoration: none !important;
-          }
         }
       }
       
@@ -83,7 +77,8 @@ body {
         }
       }
 
-      // Inserts a + after top-level menu items.
+      // Inserts a + after top-level menu items (except for the collapsed menu and sub-menus 
+      // that have been collapsed into it.
       &:not(.collapsed-menu):not(.collapsed-menu &) {
         > a::after {
           content: '\0002B'; // "+"
@@ -95,6 +90,7 @@ body {
           width: .9em;
         }
 
+        // Prevents the x from taking on the link-hover color.
         &:hover:not(:active) {
           > a::after {
             color: $menu-text;
@@ -159,12 +155,19 @@ body {
           }
 
           > a {
+            color: $menu-text;
             font-size: $font-size-lg;
             font-weight: bold;
 
             &:not(:hover) {
               text-decoration: underline;
               text-decoration-color: $gray-wash;
+            }
+
+            &:hover {
+              color: $link-hover;
+              text-decoration: underline;
+              text-decoration-color: currentColor;
             }
 
             &::after {
@@ -284,6 +287,7 @@ body {
         display: inline-block;
         font-weight: bold;
         letter-spacing: .075em;
+        text-decoration: none;
         transform: rotate(90deg);
       }
 

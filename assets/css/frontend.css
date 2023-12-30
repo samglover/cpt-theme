@@ -231,11 +231,6 @@ body:not(.admin-bar) {
   color: DarkSlateGray;
   text-decoration: none;
 }
-.site-header .menu .menu-item a:where(:not([href]), [href=""], [href="#"]):hover:not(:active) {
-  color: DarkSlateGray;
-  cursor: default;
-  text-decoration: none !important;
-}
 .site-header .menu > .menu-item-has-children {
   position: relative;
 }
@@ -318,12 +313,18 @@ body:not(.admin-bar) {
     white-space: normal;
   }
   .site-header .menu > .menu-item-has-children.open > a {
+    color: DarkSlateGray;
     font-size: var(--wp--preset--font-size--lg);
     font-weight: bold;
   }
   .site-header .menu > .menu-item-has-children.open > a:not(:hover) {
     text-decoration: underline;
     text-decoration-color: var(--wp--preset--color--gray-wash);
+  }
+  .site-header .menu > .menu-item-has-children.open > a:hover {
+    color: var(--wp--preset--color--links-hover);
+    text-decoration: underline;
+    text-decoration-color: currentColor;
   }
   .site-header .menu > .menu-item-has-children.open > a::after {
     display: none !important;
@@ -423,6 +424,7 @@ body:not(.admin-bar) {
   display: inline-block;
   font-weight: bold;
   letter-spacing: 0.075em;
+  text-decoration: none;
   transform: rotate(90deg);
 }
 #primary-menu .menu .collapsed-menu .sub-menu .menu-item-has-children > a {
