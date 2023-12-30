@@ -1,0 +1,40 @@
+const menusWithChildren = document.querySelectorAll('.menu-item-has-children:not(.menu-item-has-children .menu-item-has-children)');
+const closeButton = document.createElement('div');
+      closeButton.classList.add('close-button');
+
+if (menusWithChildren) {
+  addEventListener('keyup', (event) => {
+    if (event.key === 'Escape') closeOpenMenus();
+  });
+  document.addEventListener('click', checkClick);
+  menusWithChildren.forEach(element => element.addEventListener('click', toggleMenu));
+}
+
+function toggleMenu(event) {
+  let clickedMenu = event.currentTarget;
+  if (clickedMenu.classList.contains('open')) {
+    closeOpenMenus(clickedMenu);
+  } else {
+    closeOpenMenus(clickedMenu);
+    clickedMenu.classList.add('open');
+    clickedMenu.prepend(closeButton);
+  }
+}
+
+function checkClick(event) {
+  if (
+    !event.target.closest('.menu-item-has-children') || 
+    event.target.classList.contains('close-button')
+  ) {
+    closeButton.remove();
+    closeOpenMenus();
+  }
+}
+
+function closeOpenMenus(clickedMenu) {
+  let openMenus = document.querySelectorAll('.menu-item-has-children.open');
+  if (!openMenus) return;
+  openMenus.forEach(function (element) {
+    if (element !== clickedMenu) element.classList.remove('open');
+  });
+}

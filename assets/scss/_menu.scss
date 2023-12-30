@@ -1,3 +1,25 @@
+body {
+  &:not(.logged-in) {
+    --wp-admin--admin-bar--height: 0;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    &:has(.menu-item-has-children.open) {
+      height: 100%;
+      overflow: hidden;
+
+      &::before {
+        background-color: rgb(0, 0, 0, .4);
+        content: '';
+        display: block;
+        inset: 0;
+        position: fixed;
+        z-index: 80;
+      }
+    }
+  }
+}
+
 .site-header {
   .menu {
     display: flex;
@@ -36,34 +58,50 @@
     }
 
     > .menu-item-has-children {
+      position: relative;
+
+      // Transparent overlay disables menu item links until the menu is opened.
+      &:not(.open)::before {
+        content: '';
+        cursor: pointer;
+        inset: 0;
+        position: absolute;  
+      }
+
+      // On desktop this is a transparent overlay for Javascript.
+      // On mobile this becomes an actual close button. (See below.)
+      .close-button {
+        cursor: pointer;
+        height: $font-size-sm;
+        position: absolute;  
+          top: 50%;
+          right: calc(-1 * (1lh - $font-size-sm) / 2);
+        transform: translateY(-50%);
+        width: $font-size-sm;
+        z-index: 90;
+
+        &:hover  {
+          & + a::after {
+            background-color: rgba(255, 255, 255, .25);
+            border-radius: 9999px;
+          }
+        }
+      }
+
       // Inserts a + after top-level menu items.
       &:not(.collapsed-menu):not(.collapsed-menu &) {
         > a::after {
           content: '\0002B'; // "+"
-          display: inline-block;
-          margin-left: .25em;
+          display: inline-grid;
+          height: .9em;
+          margin-left: .15em;
+          place-content: center;
           transition: transform 150ms ease-in-out;
+          width: .9em;
         }
       }
 
-      // Shows the sub-menu and rotates the + on hover.
-      &:hover {
-        > a {
-          + ul.sub-menu {
-            display: block;
-          }
-
-          &::after {
-            transform: rotate(45deg);
-          }
-        }
-      }
-
-      // Anchors the sub-menu when absolutely positioned at non-mobile widths.
-      @media (min-width: $breakpoint-sm) {
-        position: relative;
-      }
-      
+      // Default (desktop) dropdown menu styles.
       > .sub-menu {
         animation: growDown_centered 150ms ease-in-out forwards;
         background-color: var(--wp--preset--color--page);
@@ -76,15 +114,91 @@
           left: 50%;
         transform: translateX(-50%);
         transform-origin: top;
+        z-index: 100;
+      }
 
+      // Handles the dropdown menu functionality.
+      &.open {
+        // On desktop, shows the sub-menu and rotates the + on hover.
+        > a {
+          + ul.sub-menu {
+            display: block;
+          }
+
+          &::after {
+            transform: rotate(45deg);
+          }
+        }
+
+        // Mobile
         @media (max-width: $breakpoint-sm) {
-          animation: growDown 150ms ease-in-out forwards;
-          border-left: none;
-          border-right: none;
-            left: 0;
+          animation: growOut 150ms ease-in-out forwards;
+          background-color: var(--wp--preset--color--page);
+          border: $border;
+          box-shadow: $box-shadow;
+          height: calc(100vh - ($spacing-sm * 2) - var(--wp-admin--admin-bar--height));
           margin: 0;
-          transform: translateX(0);
-          width: 100vw;
+          padding: $spacing-sm $spacing-md;
+          position: fixed;
+            top: calc($spacing-sm + var(--wp-admin--admin-bar--height));
+            right: $spacing-sm;
+            bottom: $spacing-sm;
+            left: $spacing-sm;
+          transform-origin: top center;
+          width: calc(100vw - ($spacing-sm * 2));
+          z-index: 9999;
+
+          .menu-item {
+            font-size: $font-size-md;
+            text-wrap: pretty;
+
+            a {
+              text-wrap: pretty;
+            }
+          }
+
+          > a {
+            font-size: $font-size-lg;
+            font-weight: bold;
+
+            &:not(:hover) {
+              text-decoration: underline;
+              text-decoration-color: $gray-wash;
+            }
+
+            &::after {
+              display: none !important;
+            }
+          }
+
+          .close-button {
+            background-color: LightGray;
+            background-image: url("../images/close.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            border: $border;
+            border-radius: 9999px;
+            height: $font-size-lg;
+            line-height: 1;
+            margin: 0;
+            position: absolute;
+              right: $spacing-xxs;
+              top: $spacing-xxs;
+            transform: unset;
+            width: $font-size-lg;
+          }
+
+          > .sub-menu {
+            animation: unset;
+            background: none;
+            border: none;
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+            position: unset;
+            transform: unset;
+          }
         }
       }
     }
@@ -191,7 +305,6 @@
 }
 
 #secondary-menu {
-  position: relative;
   z-index: 5;
 
   .menu {

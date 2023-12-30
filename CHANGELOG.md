@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+
+## 3.0.4
+
+### Changed/Fixed
+- Previously the mobile menu would not work properly on some mobile devices (like Chrome for Android). Now it works properly. All hover states have been replaced by clicks to open and close.
+- At mobile widths dropdown menus now open as full-screen modals.
+- The escape key now closes dropdown menus. So do clicks outside the dropdown menus.
+
+
 ## 3.0.3
 
 ### Changed

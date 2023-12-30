@@ -25,7 +25,7 @@ function resetMenu() {
   let primaryMenuItems = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
   let collapsedMenuItems = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
 
-  collapsedMenuItems.forEach(function(element) {
+  collapsedMenuItems.forEach(function (element) {
     Menu.insertBefore(element, CollapsedMenu);
   });
 
