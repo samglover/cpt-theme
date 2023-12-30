@@ -284,6 +284,7 @@ body:not(.admin-bar) {
   left: 50%;
   transform: translateX(-50%);
   transform-origin: top;
+  z-index: 10;
 }
 .site-header .menu > .menu-item-has-children.open > a + ul.sub-menu {
   display: block;
