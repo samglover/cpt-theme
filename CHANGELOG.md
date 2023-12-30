@@ -7,6 +7,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## 3.0.4
 
 ### Changed/Fixed
+- Sticky menu no longer attempts to be sticky when the window width is 600px or less. This aligns with the width at which the WordPress admin bar is no longer position: fixed.
 - Previously the mobile menu would not work properly on some mobile devices (like Chrome for Android). Now it works properly. All hover states have been replaced by clicks to open and close.
 - At mobile widths dropdown menus now open as full-screen modals.
 - The escape key now closes dropdown menus. So do clicks outside the dropdown menus.

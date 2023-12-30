@@ -1,21 +1,14 @@
 body {
-  &:not(.logged-in) {
-    --wp-admin--admin-bar--height: 0;
+  // Sets the admin bar height variable to 0px when the admin bar is not present.
+  &:not(.admin-bar) {
+    --wp-admin--admin-bar--height: 0px;
   }
 
   @media (max-width: $breakpoint-sm) {
+    // Stops the page from scrolling behind dropdown menu modals on mobile.
     &:has(.menu-item-has-children.open) {
       height: 100%;
       overflow: hidden;
-
-      &::before {
-        background-color: rgb(0, 0, 0, .4);
-        content: '';
-        display: block;
-        inset: 0;
-        position: fixed;
-        z-index: 80;
-      }
     }
   }
 }
@@ -44,10 +37,11 @@ body {
         }
 
         // Covers <a> tags that go nowhere (the way I usually use them, anyway).
-        &:where(:not([href]):not([href=""]):not([href="#"])) {
+        &:where(:not([href]), [href=""], [href="#"]) {
+          color: $menu-text;
           text-decoration: none;
 
-          &:hover {
+          &:hover:not(:active) {
             color: $menu-text;
             cursor: default;
             text-decoration: none !important;
@@ -61,16 +55,17 @@ body {
       position: relative;
 
       // Transparent overlay disables menu item links until the menu is opened.
-      &:not(.open)::before {
+      &:not(.collapsed-menu):not(.open)::before {
         content: '';
         cursor: pointer;
         inset: 0;
-        position: absolute;  
+        position: absolute; 
+        z-index: 10; 
       }
 
       // On desktop this is a transparent overlay for Javascript.
       // On mobile this becomes an actual close button. (See below.)
-      .close-button {
+      .close-dropdown {
         cursor: pointer;
         height: $font-size-sm;
         position: absolute;  
@@ -78,7 +73,7 @@ body {
           right: calc(-1 * (1lh - $font-size-sm) / 2);
         transform: translateY(-50%);
         width: $font-size-sm;
-        z-index: 90;
+        z-index: 10;
 
         &:hover  {
           & + a::after {
@@ -99,6 +94,12 @@ body {
           transition: transform 150ms ease-in-out;
           width: .9em;
         }
+
+        &:hover:not(:active) {
+          > a::after {
+            color: $menu-text;
+          }
+        }
       }
 
       // Default (desktop) dropdown menu styles.
@@ -114,7 +115,6 @@ body {
           left: 50%;
         transform: translateX(-50%);
         transform-origin: top;
-        z-index: 100;
       }
 
       // Handles the dropdown menu functionality.
@@ -136,8 +136,9 @@ body {
           background-color: var(--wp--preset--color--page);
           border: $border;
           box-shadow: $box-shadow;
-          height: calc(100vh - ($spacing-sm * 2) - var(--wp-admin--admin-bar--height));
+          height: calc(100vh - $spacing-sm * 2 - var(--wp-admin--admin-bar--height));
           margin: 0;
+          overflow: auto;
           padding: $spacing-sm $spacing-md;
           position: fixed;
             top: calc($spacing-sm + var(--wp-admin--admin-bar--height));
@@ -146,14 +147,13 @@ body {
             left: $spacing-sm;
           transform-origin: top center;
           width: calc(100vw - ($spacing-sm * 2));
-          z-index: 9999;
+          z-index: 20;
 
           .menu-item {
             font-size: $font-size-md;
-            text-wrap: pretty;
 
             a {
-              text-wrap: pretty;
+              white-space: normal;
             }
           }
 
@@ -171,7 +171,7 @@ body {
             }
           }
 
-          .close-button {
+          .close-dropdown {
             background-color: LightGray;
             background-image: url("../images/close.svg");
             background-position: center;
@@ -186,7 +186,22 @@ body {
               right: $spacing-xxs;
               top: $spacing-xxs;
             transform: unset;
+            transition: box-shadow .2s;
             width: $font-size-lg;
+
+            &:hover:not(:active) {
+              box-shadow: $box-shadow;
+            }
+          }
+
+          & + .dropdown-screen {
+            background-color: rgb(0, 0, 0, .4);
+            display: block;
+            height: 100vh;
+            inset: 0;
+            position: fixed;
+            width: 100vw;
+            z-index: 10;
           }
 
           > .sub-menu {
@@ -246,7 +261,6 @@ body {
   display: grid;
   place-items: center end;
   position: relative;
-  z-index: 10;
 
   @media (max-width: $breakpoint-sm) {
     order: 2;
@@ -256,7 +270,17 @@ body {
 
   .menu {
     .collapsed-menu {
+      @media (min-width: $breakpoint-sm) {
+        .close-dropdown {
+          height: 100%;
+          inset: 0;
+          transform: unset;
+          width: 100%;
+        }
+      }
+
       > a {
+        display: inline-block;
         font-weight: bold;
         letter-spacing: .075em;
         transform: rotate(90deg);
@@ -305,17 +329,17 @@ body {
 }
 
 #secondary-menu {
-  z-index: 5;
-
   .menu {
     font-size: $font-size-sm;
     flex-wrap: wrap;
     gap: $spacing-xxs $spacing-xs;
 
-    > .menu-item-has-children:first-child > .sub-menu {
-      animation: growDown 150ms ease-in-out forwards;
-      position: absolute;
-        left: 0;
+    @media (min-width: $breakpoint-sm) {
+      > .menu-item-has-children:first-child > .sub-menu {
+        animation: growDown 150ms ease-in-out forwards;
+        position: absolute;
+          left: 0;
+      }
     }
   }
 }

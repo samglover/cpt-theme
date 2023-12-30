@@ -18,22 +18,24 @@
     }
   }
 
-  .sticky-header-spacer {
-    display: none;
-  }
-
-  &.sticky-nav {
+  @media (min-width: $breakpoint-sm) {
     .sticky-header-spacer {
-      display: block;
-      height: var(--header-height);
+      display: none;
     }
-
-    .site-header-primary-nav {
-      box-shadow: $box-shadow;
-      position: fixed;
-
-      @media (max-width: $breakpoint-sm) {
-        top: 0;
+  
+    &.sticky-nav {
+      .sticky-header-spacer {
+        display: block;
+        height: var(--header-height);
+      }
+  
+      .site-header-primary-nav {
+        box-shadow: $box-shadow;
+        position: fixed;
+  
+        @media (max-width: $breakpoint-sm) {
+          top: 0;
+        }
       }
     }
   }

@@ -7,6 +7,7 @@ const headerHeight = primaryNav.offsetHeight;
 document.querySelector(":root").style.setProperty('--header-height', headerHeight + 'px');
 
 function stickyHeader() {
+  if (window.innerWidth <= 600) return; // Width at which the admin bar is no longer position: fixed.
   let windowPosition = window.scrollY + adminBarHeight;
   let primaryNavPosition = siteHeader.offsetTop + adminBarHeight + preheaderHeight;
 

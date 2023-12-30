@@ -1,6 +1,8 @@
 const menusWithChildren = document.querySelectorAll('.menu-item-has-children:not(.menu-item-has-children .menu-item-has-children)');
-const closeButton = document.createElement('div');
-      closeButton.classList.add('close-button');
+const closeDropdown = document.createElement('div');
+      closeDropdown.classList.add('close-dropdown');
+const dropdownScreen = document.createElement('div');
+      dropdownScreen.classList.add('dropdown-screen');
 
 if (menusWithChildren) {
   addEventListener('keyup', (event) => {
@@ -17,16 +19,17 @@ function toggleMenu(event) {
   } else {
     closeOpenMenus(clickedMenu);
     clickedMenu.classList.add('open');
-    clickedMenu.prepend(closeButton);
+    clickedMenu.prepend(closeDropdown);
+    if (window.innerWidth <= 576) clickedMenu.after(dropdownScreen);
   }
 }
 
 function checkClick(event) {
   if (
     !event.target.closest('.menu-item-has-children') || 
-    event.target.classList.contains('close-button')
+    event.target.classList.contains('close-dropdown')
   ) {
-    closeButton.remove();
+    closeDropdown.remove();
     closeOpenMenus();
   }
 }
