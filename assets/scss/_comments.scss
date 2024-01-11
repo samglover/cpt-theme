@@ -78,24 +78,12 @@
 
 .reply a,
 #cancel-comment-reply-link {
-  border: $button-border;
-  border-width: 1px;
-  border-radius: $button-border-radius;
+  border-width: var(--wp--custom--border--width--buttons-xs);
+  color: $light-text;
   display: inline-block;
   font-size: $font-size-xs;
   font-weight: normal;
   line-height: $line-height-sm;
-  padding: .5em 1em;
-  text-decoration: none;
-  transition: box-shadow .2s;
-
-  &:hover {
-    box-shadow: $box-shadow;
-  }
-
-  &:not(:hover) {
-    color: $light-text;
-  }
 }
 
 .comment-respond {

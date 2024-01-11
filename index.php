@@ -20,7 +20,7 @@
             <label for="wp-block-search__input-1" class="wp-block-search__label screen-reader-text">Search</label>
             <div class="wp-block-search__inside-wrapper ">
               <input type="search" id="wp-block-search__input-1" class="wp-block-search__input " name="s" value="<?php echo esc_attr(get_search_query()); ?>" placeholder="" required="">
-              <button type="submit" class="wp-block-search__button  ">Search</button>
+              <button type="submit" class="wp-block-search__button wp-element-button">Search</button>
             </div>
           </form>
         <?php

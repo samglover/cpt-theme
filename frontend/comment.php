@@ -22,10 +22,23 @@ function comment($comment, $args, $depth) {
 
         <div class="reply">
           <?php comment_reply_link(array_merge($args, [
-            'depth' => $depth,
+            'class'     => 'comment-reply-link wp-element-button',
+            'depth'     => $depth,
             'max_depth' => 10,
           ])); ?>
         </div>
       </article><!-- .comment-body -->
   <?php
+}
+
+add_filter('comment_reply_link', 'cpt_theme_comment_reply_link_classes');
+function cpt_theme_comment_reply_link_classes($link_text) {
+	$link_text = str_replace("class='comment-reply-link'", "class='comment-reply-link wp-element-button'", $link_text);
+	return $link_text;
+}
+
+add_filter('cancel_comment_reply_link', 'cpt_theme_cancel_comment_reply_link_classes');
+function cpt_theme_cancel_comment_reply_link_classes($link_text) {
+	$link_text = str_replace("<a", "<a class='wp-element-button'", $link_text);
+	return $link_text;
 }

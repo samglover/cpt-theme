@@ -2,11 +2,11 @@ label {
   display: block;
 }
 
-input,
+input:not(.wp-element-button),
 select,
 textarea {
   border: $border;
-  border-radius: 0;
+  border-radius: $field-border-radius;
   font-weight: normal;
   max-width: 100%;
   padding: $spacing-xxs;
@@ -15,29 +15,16 @@ textarea {
 button,
 .button,
 input[type="submit"] {
-  background-color: inherit;
-  border: $button-border;
-  border-radius: $button-border-radius;
-  color: DarkSlateGray;
+  appearance: none;
+  -webkit-appearance: none;
   cursor: pointer;
   display: inline-block;
   font-family: $headings;
-  line-height: $line-height-sm;
-  padding: .5em 1em;
-  text-decoration: none;
   transition: box-shadow .2s;
-  -webkit-appearance: none;
-
-  &:hover {
-    text-decoration: none;
-
-    &:not(:active) {
-      box-shadow: $box-shadow;
-    }
-  }
 }
 
 .button-small {
+  border-width: var(--wp--custom--border--width--buttons-sm);
   font-size: $font-size-sm;
 }
 
@@ -53,5 +40,6 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
+  appearance: none;
   -webkit-appearance: none;
 }

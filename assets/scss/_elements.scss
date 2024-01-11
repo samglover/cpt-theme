@@ -1,7 +1,5 @@
 // These element styles are not yet available (or stable) in theme.json.
 
-a {
-  &:not(:hover) {
-    text-decoration-color: $gray-wash;
-  }
+.wp-element-button {
+  transition: box-shadow .2s;
 }

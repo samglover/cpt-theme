@@ -56,7 +56,7 @@
             }
           ?>
           <?php if ($show_cta) { ?>
-            <a id="header-cta" class="button" data-style="<?php echo esc_attr(get_option('cpt_sites_primary_menu_cta_style')); ?>" href="<?php echo esc_url(get_option('cpt_sites_primary_menu_cta_url')); ?>">
+            <a id="header-cta" class="button wp-element-button" data-style="<?php echo esc_attr(get_option('cpt_sites_primary_menu_cta_style')); ?>" href="<?php echo esc_url(get_option('cpt_sites_primary_menu_cta_url')); ?>">
               <?php echo wp_kses_post(get_option('cpt_sites_primary_menu_cta_text')); ?>
             </a>
           <?php } ?>

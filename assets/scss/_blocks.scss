@@ -2,84 +2,21 @@
 
 // https://github.com/WordPress/gutenberg/issues/34853
 .wp-block-button {
-  &.is-style-outline {
-    .wp-block-button__link {
-      padding: .5em 1em;
-    }
+  &.has-xs-font-size > .wp-block-button__link {
+    border-width: var(--wp--custom--border--width--buttons-xs);
   }
 
-  &.has-xs-font-size > .wp-block-button__link,
   &.has-sm-font-size > .wp-block-button__link {
-    border-width: 1.5px;
-  }
-}
-
-.wp-block-button__link {
-  transition: box-shadow .2s;
-
-  &:hover {
-    &:not(:active) {
-      box-shadow: $box-shadow;
-    }
-  }
-}
-
-.wp-block-cover {
-  h1, h2, h3, h4, h5, h6,
-  p {
-    text-shadow: $text-shadow;
+    border-width: var(--wp--custom--border--width--buttons-sm);
   }
 }
 
 .wp-block-cover,
 .wp-block-group {
   &.has-background {
-    margin-bottom: $spacing-lg;
     margin-top: $spacing-lg;
-    padding: $spacing-lg $spacing-sm;
-  }
-}
-
-.wp-block-image:not(.wp-block-group > .wp-block-image) {
-  &.aligncenter,
-  &.alignwide,
-  &.alignfull {
     margin-bottom: $spacing-lg;
-    margin-top: $spacing-lg;
-  }
-}
-
-.has-global-padding {
-  .alignfull.has-background,
-  .alignwide.has-background {
-    padding-right: $spacing-sm;
-    padding-left: $spacing-sm;
-  }
-}
-
-.wp-block-latest-comments {
-  padding-left: 0;
-}
-
-.wp-block-quote {
-  cite {
-    color: $light-text;
-    font-size: 80%;
-    line-height: $line-height-sm;
-  }
-}
-
-.wp-block-search {
-  .wp-block-search__input {
-    border-radius: 0;
-    padding: .25em .5em;
-  }
-
-  .wp-block-search__button {
-    background-color: inherit;
-    border: $button-border;
-    color: DarkSlateGray;
-    margin-left: .25em;
-    padding: .25em 1em;
+    padding-top: $spacing-lg;
+    padding-bottom: $spacing-lg;
   }
 }

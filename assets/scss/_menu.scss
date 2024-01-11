@@ -313,20 +313,7 @@ body {
 #header-cta {
   animation: pulse 1s ease-in-out .5s 1 running;
   background-color: var(--header-cta-button-color);
-  border: $button-border;
-  border-radius: $button-border-radius;
   color: var(--header-cta-text-color);
-  margin: 0;
-  transition: box-shadow .2s;
-  width: max-content;
-
-  &:hover {
-    text-decoration: none;
-
-    &:not(:active) {
-      box-shadow: $box-shadow;
-    }
-  }
 }
 
 .secondary-menu-container {

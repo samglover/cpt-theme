@@ -17,6 +17,7 @@ require_once(CPT_THEME_DIR_PATH . 'theme-setup.php');
 add_action('enqueue_block_assets', 'cpt_theme_block_assets');
 function cpt_theme_block_assets() {
   wp_enqueue_style('cpt-theme-common', CPT_THEME_DIR_URI . 'assets/css/common.css', [], CPT_THEME_VERSION);
+  wp_enqueue_script('cpt-theme-block-styles', CPT_THEME_DIR_URI . 'assets/js/block-styles.js', ['wp-blocks', 'wp-dom-ready'], CPT_THEME_VERSION, true);
 }
 
 
