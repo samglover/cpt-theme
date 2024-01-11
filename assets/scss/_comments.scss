@@ -80,7 +80,7 @@
 #cancel-comment-reply-link {
   border: $button-border;
   border-width: 1px;
-  border-radius: 9999px;
+  border-radius: $button-border-radius;
   display: inline-block;
   font-size: $font-size-xs;
   font-weight: normal;

@@ -313,8 +313,8 @@ body {
 #header-cta {
   animation: pulse 1s ease-in-out .5s 1 running;
   background-color: var(--header-cta-button-color);
-  border: 2px solid currentColor;
-  border-radius: 9999px;
+  border: $button-border;
+  border-radius: $button-border-radius;
   color: var(--header-cta-text-color);
   margin: 0;
   transition: box-shadow .2s;

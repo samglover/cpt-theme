@@ -27,7 +27,7 @@
 
   *:not(.dots) {
     border: $button-border;
-    border-radius: 9999px;
+    border-radius: $button-border-radius;
     padding: .5em;
   }
 

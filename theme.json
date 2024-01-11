@@ -84,6 +84,25 @@
         }
       ]
     },
+    "layout": {
+			"contentSize": "1100px",
+      "wideSize": "1320px"
+		},
+    "shadow": {
+      "defaultPresets": false,
+      "presets": [
+        {
+          "name": "Box Shadow",
+          "slug": "box-shadow",
+          "shadow": "1px 1px 5px rgba(0, 0, 0, .25), 2.5px 2.5px 15px rgba(0, 0, 0, .1)"
+        },
+        {
+          "name": "Text Shadow",
+          "slug": "text-shadow",
+          "shadow": "1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 25px Black"
+        }
+      ]
+    },
     "spacing": {
       "customSpacingSize": true,
       "spacingScale": {
@@ -309,11 +328,14 @@
 				}
 			]
     },
-    "layout": {
-			"contentSize": "1100px",
-      "wideSize": "1320px"
-		},
     "custom": {
+      "border": {
+        "normal": "1px solid LightSlateGray",
+        "buttons": "2px solid currentColor"
+      },
+      "border-radius": {
+        "buttons": "9999px"
+      },
       "typography": {
         "line-height": {
 					"sm": "1.15",

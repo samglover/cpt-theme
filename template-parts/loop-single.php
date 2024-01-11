@@ -12,16 +12,16 @@
       'before'  => '<p class="post-nav-links-label">Pages</p><p class="post-nav-links">',
       'after'   => '</p>',
     ]); ?>
-    <p class="entry-byline">By <?php the_author(); ?>.
+    <p class="entry-byline">
       <?php
+        printf(__('By %s.', 'cpt-theme'), get_the_author());
         $original_date = get_the_date('F jS, Y');
         $modified_date = get_the_modified_date('F jS, Y');
-
         if (strtotime($modified_date) > strtotime($original_date)) {
-          echo ' ' . __('Originally published on', 'cpt-theme'). ' ' . $original_date . '.';
-          echo ' ' . __('Last updated on', 'cpt-theme') . ' ' . $modified_date . '.';
+          printf(' ' . __('Originally published on %s.', 'cpt-theme'), $original_date);
+          printf(' ' . __('Last updated on %s.', 'cpt-theme'), $modified_date);
         } else {
-          echo ' ' . __('Published on', 'cpt-theme'). ' ' . $original_date . '.';
+          printf(' ' . __('Published on %s.', 'cpt-theme'), $original_date);
         }
       ?>
     </p>

@@ -21,6 +21,7 @@
     <div class="clearfix"></div>
   </div>
   <?php 
+    // Show the page footer only if the page is paginated.
     global $numpages;
     if ($numpages > 1) { 
   ?>
