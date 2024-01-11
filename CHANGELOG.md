@@ -9,7 +9,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Changed bylines from clunky echo statements to translation-friendly printf statements.
 - Moved box-shadow and text-shadow variables to theme.json settings.shadow so they are easier to update in a child theme.
 - Moved border styles to theme.json settings.custom so they are easier to update in a child theme.
-
+- Don't add top and bottom margins to image blocks inside of group blocks.
 
 ## 3.0.4
 
