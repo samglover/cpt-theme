@@ -112,8 +112,8 @@
     }
 
     .title-excerpt-footer__container {
-      padding-top: $spacing-lg;
-      padding-bottom: $spacing-lg;
+      padding-top: $spacing-sm;
+      padding-bottom: $spacing-sm;
 
       @media (max-width: $breakpoint-sm) {
         padding: 0;

@@ -582,8 +582,8 @@ body:not(.admin-bar) {
 .blog .has-post-thumbnail .title-excerpt-footer__container,
 .archive .has-post-thumbnail .title-excerpt-footer__container,
 .search .has-post-thumbnail .title-excerpt-footer__container {
-  padding-top: var(--wp--preset--spacing--60);
-  padding-bottom: var(--wp--preset--spacing--60);
+  padding-top: var(--wp--preset--spacing--40);
+  padding-bottom: var(--wp--preset--spacing--40);
 }
 @media (max-width: 576px) {
   .blog .has-post-thumbnail .title-excerpt-footer__container,
