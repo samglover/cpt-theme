@@ -122,9 +122,12 @@ body {
   box-shadow: none;
   cursor: pointer;
   height: $font-size-sm;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
   position: absolute;  
-  top: 50%;
-  right: calc(-1 * (1lh - $font-size-sm) / 2);
+    top: 50%;
+    right: calc(-1 * (1lh - $font-size-sm) / 2);
   transform: translateY(-50%);
   width: $font-size-sm;
   z-index: 10;
@@ -148,8 +151,6 @@ body {
     border: var(--wp--custom--border--normal);
     border-radius: var(--wp--custom--border--radius--buttons);
     height: $font-size-lg;
-    line-height: 1;
-    margin: 0;
     position: absolute;
       right: $spacing-xxs;
       top: $spacing-xxs;
@@ -189,7 +190,6 @@ body {
   inset: 0;
   position: fixed;
   width: 100vw;
-  z-index: 10;
 }
 
 .menu {
