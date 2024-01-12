@@ -10,24 +10,21 @@
     </footer>
   </div>
 
-  <?php if (get_option('cpt_sites_show_primary_menu_cta') && get_option('cpt_sites_primary_menu_cta_style') == 'modal') { ?>
-    <div id="cta-modal" class="modal-container">
-      <div class="modal card">
-        <button class="dismiss-modal"></button>
-        <?php
-          $cta_code = get_option('cpt_sites_primary_menu_cta_code');
-          $cta_code = wptexturize($cta_code);
-          $cta_code = wpautop($cta_code);
-          $cta_code = shortcode_unautop($cta_code);
-          $cta_code = do_shortcode($cta_code);
-          echo $cta_code;
-        ?>
-      </div>
-      <div class="modal-screen"></div>
+  <?php if (get_option('cpt_sites_primary_menu_cta_style') == 'modal') { ?>
+    <div id="cta-modal" class="modal card">
+      <button class="cta-modal-dismiss"></button>
+      <?php
+        $cta_code = get_option('cpt_sites_primary_menu_cta_code');
+        $cta_code = wptexturize($cta_code);
+        $cta_code = wpautop($cta_code);
+        $cta_code = shortcode_unautop($cta_code);
+        $cta_code = do_shortcode($cta_code);
+        echo $cta_code;
+      ?>
     </div>
+    <div id="cta-modal-screen"></div>
   <?php } ?>
 
   <?php wp_footer(); ?>
-
 </body>
 </html>

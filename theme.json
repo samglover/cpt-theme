@@ -471,12 +471,6 @@
         "typography": {
           "lineHeight": "var(--wp--custom--typography--line-height--sm)",
           "textDecoration": "none"
-        },
-        ":active": {
-          "shadow": "none"
-        },
-        ":hover": {
-          "shadow": "var(--wp--preset--shadow--box-shadow)"
         }
       },
 			"h1": {

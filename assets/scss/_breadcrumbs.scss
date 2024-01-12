@@ -1,8 +1,10 @@
 .breadcrumbs {
-  color: $light-text;
-  font-family: $headings;
   font-size: $font-size-sm;
   line-height: $line-height-normal;
+
+  a {
+    color: $light-text;
+  }
 
   .last-breadcrumb {
     color: $body-text;

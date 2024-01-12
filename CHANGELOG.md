@@ -3,11 +3,13 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+
 ## 3.0.6
 
 ### Changed
-- Remove the menu screen when no menu modal is open.
-- Update the mobile nav menu layout.
+- Remove the submenu screen when no submenu modal is open.
+- Lots of menu and modal stylesheet cleanup, refinement, and simplification.
+- The call-to-action modal and the submenus on mobile now function similarly, and can be dismissed by clicking outside the modal or using the escape key.
 
 
 ## 3.0.5

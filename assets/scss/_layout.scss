@@ -4,6 +4,11 @@
 body {
   line-height: 1;
   overflow-x: hidden;
+
+  // Sets the admin bar height variable to 0px when the admin bar is not present.
+  &:not(.admin-bar) {
+    --wp-admin--admin-bar--height: 0px;
+  }
 }
 
 *,

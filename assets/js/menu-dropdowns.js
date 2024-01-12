@@ -1,44 +1,54 @@
-const menusWithChildren = document.querySelectorAll('.menu-item-has-children:not(.menu-item-has-children .menu-item-has-children)');
-const closeDropdown = document.createElement('div');
-      closeDropdown.classList.add('close-dropdown');
-const dropdownScreen = document.createElement('div');
-      dropdownScreen.classList.add('dropdown-screen');
-
-if (menusWithChildren) {
+wp.domReady(() => {
+  const menusWithChildren = document.querySelectorAll('.menu-item-has-children:not(.menu-item-has-children .menu-item-has-children)');
+  if (!menusWithChildren) return;
+  
+  const submenuDismiss = document.createElement('button');
+        submenuDismiss.classList.add('submenu-dismiss');
+  const submenuScreen = document.createElement('div');
+        submenuScreen.classList.add('submenu-screen');
+  
   addEventListener('keyup', (event) => {
     if (event.key === 'Escape') closeOpenMenus();
   });
   document.addEventListener('click', checkClick);
   menusWithChildren.forEach(element => element.addEventListener('click', toggleMenu));
-}
-
-function toggleMenu(event) {
-  let clickedMenu = event.currentTarget;
-  if (clickedMenu.classList.contains('open')) {
-    closeOpenMenus(clickedMenu);
-    dropdownScreen.remove();
-  } else {
-    closeOpenMenus(clickedMenu);
-    clickedMenu.classList.add('open');
-    clickedMenu.prepend(closeDropdown);
-    if (window.innerWidth <= 576) clickedMenu.after(dropdownScreen);
+  
+  function toggleMenu(event) {
+    let clickedMenu = event.currentTarget;
+    if (clickedMenu.classList.contains('open')) {
+      closeOpenMenus(clickedMenu);
+    } else {
+      closeOpenMenus(clickedMenu);
+      clickedMenu.classList.add('open');
+      clickedMenu.prepend(submenuDismiss);
+      if (window.innerWidth <= 576) {
+        clickedMenu.after(submenuScreen);
+        clickedMenu.classList.add('card');
+      } else {
+        clickedMenu.querySelector('.sub-menu').classList.add('card');
+      }
+    }
   }
-}
-
-function checkClick(event) {
-  if (
-    !event.target.closest('.menu-item-has-children') || 
-    event.target.classList.contains('close-dropdown')
-  ) {
-    closeDropdown.remove();
-    closeOpenMenus();
+  
+  function checkClick(event) {
+    if (
+      !event.target.closest('.menu-item-has-children') || 
+      event.target.classList.contains('submenu-dismiss')
+    ) {
+      closeOpenMenus();
+    }
   }
-}
-
-function closeOpenMenus(clickedMenu) {
-  let openMenus = document.querySelectorAll('.menu-item-has-children.open');
-  if (!openMenus) return;
-  openMenus.forEach(function (element) {
-    if (element !== clickedMenu) element.classList.remove('open');
-  });
-}
+  
+  function closeOpenMenus(clickedMenu) {
+    let openMenus = document.querySelectorAll('.menu-item-has-children.open');
+    if (!openMenus) return;
+    openMenus.forEach(function (element) {
+      if (element !== clickedMenu) {
+        element.classList.remove('open', 'card');
+        element.querySelector('.sub-menu').classList.remove('card');
+        submenuDismiss.remove();
+        submenuScreen.remove();
+      }
+    });
+  }
+});

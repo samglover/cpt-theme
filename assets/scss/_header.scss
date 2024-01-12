@@ -48,11 +48,6 @@
   position: relative;
   width: 100%;
   z-index: 10;
-
-  a,
-  a:hover {
-    text-decoration: none;
-  }
 }
 
 .site-header-primary-nav__inner {
@@ -86,9 +81,10 @@
     font-size: inherit;
     margin: 0;
     padding: 0;
+    text-decoration: none;;
 
     &:not(:hover) {
-      color: var(--text-color );
+      color: $headings;
     }
   }
 }
@@ -96,7 +92,6 @@
 .site-description {
   color: $light-text;
   display: block;
-  font-family: $headings;
   font-weight: normal;
   line-height: $line-height-sm;
   margin: 0 0 .1em 0;

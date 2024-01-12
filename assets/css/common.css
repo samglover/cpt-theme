@@ -1,5 +1,12 @@
+a:not(:hover) {
+  text-decoration-color: var(--wp--preset--color--gray-wash);
+}
+
 .wp-element-button {
   transition: box-shadow 0.2s;
+}
+.wp-element-button:hover:not(:active) {
+  box-shadow: var(--wp--preset--shadow--box-shadow);
 }
 
 .wp-block-button.has-xs-font-size > .wp-block-button__link {
@@ -13,8 +20,7 @@
 .wp-block-group.has-background {
   margin-top: var(--wp--preset--spacing--60);
   margin-bottom: var(--wp--preset--spacing--60);
-  padding-top: var(--wp--preset--spacing--60);
-  padding-bottom: var(--wp--preset--spacing--60);
+  padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--40);
 }
 
 #preheader-widgets,

@@ -1,7 +1,7 @@
 === Client Power Tools ===
 Contributors: samglover
 Requires at least: 5.5
-Tested up to: 5.9
+Tested up to: 6.4
 Requires PHP: 7.3.5
 Stable tag: trunk.
 License: GPLv3
@@ -15,4 +15,4 @@ The Client Power Tools theme for WordPress.
 
 == Upgrade Notice ==
 
-**WARNING: Version 2.x update probably breaks child themes based on version 1.x because lots of tags and styles have changed. Do not update the Client Power Tools Theme on a live site.**
+**WARNING: Major version updates (e.g. 3.x) probably break child themes based on previous versions (e.g. 1.x). Do not update major versions on a live website!

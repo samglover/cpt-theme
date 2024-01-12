@@ -1,11 +1,6 @@
+// Stops the page from scrolling behind dropdown menu modals on mobile.
 body {
-  // Sets the admin bar height variable to 0px when the admin bar is not present.
-  &:not(.admin-bar) {
-    --wp-admin--admin-bar--height: 0px;
-  }
-
   @media (max-width: $breakpoint-sm) {
-    // Stops the page from scrolling behind dropdown menu modals on mobile.
     &:has(.menu-item-has-children.open) {
       height: 100%;
       overflow: hidden;
@@ -13,240 +8,227 @@ body {
   }
 }
 
-.site-header {
-  .menu {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: $spacing-sm;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+// Submenus
+// On desktop submenus are dropdowns. On mobile they become modals.
+.menu > .menu-item-has-children {
+  position: relative;
 
-    .menu-item {
-      line-height: $line-height-sm;
-      
-      a {
-        display: block;
-        font-family: $headings;
-        text-decoration: none;
-        white-space: nowrap;
+  // Adds a "+" after top-level menu items except for the collapsed menu.
+  &:not(.collapsed-menu) > a::after {
+    content: '\0002B'; // "+"
+    display: inline-grid;
+    height: .9em;
+    margin-left: .15em;
+    place-content: center;
+    transition: transform 150ms ease-in-out;
+    width: .9em;
+  }
 
-        &:not(:hover) {
-          color: $menu-text;
-        }
+  // Adds a transparent overlay on top-level menu items that disables menu item links 
+  // until the menu is opened.
+  &:not(.open)::before {
+    content: '';
+    cursor: pointer;
+    inset: 0;
+    position: absolute; 
+    z-index: 10; 
+  }
 
-        // Covers <a> tags that go nowhere (the way I usually use them, anyway).
-        &:where(:not([href]), [href=""], [href="#"]) {
-          color: $menu-text;
-          text-decoration: none;
-        }
-      }
-      
-    }
+  // Top-Level Submenus
+  > .sub-menu {
+    animation: growDown_centered 150ms ease-in-out forwards;
+    display: none;
+    font-size: $font-size-sm;
+    max-width: calc(100vw - ($spacing-sm * 2));
+    padding: $spacing-xxs $spacing-sm;
+    position: absolute;
+      left: 50%;
+    transform: translateX(-50%);
+    transform-origin: top;
+    width: max-content;
+    z-index: 10;
+  }
 
-    > .menu-item-has-children {
-      position: relative;
-
-      // Transparent overlay disables menu item links until the menu is opened.
-      &:not(.collapsed-menu):not(.open)::before {
-        content: '';
-        cursor: pointer;
-        inset: 0;
-        position: absolute; 
-        z-index: 10; 
-      }
-
-      // On desktop this is a transparent overlay for Javascript.
-      // On mobile this becomes an actual close button. (See below.)
-      .close-dropdown {
-        cursor: pointer;
-        height: $font-size-sm;
-        position: absolute;  
-          top: 50%;
-          right: calc(-1 * (1lh - $font-size-sm) / 2);
-        transform: translateY(-50%);
-        width: $font-size-sm;
-        z-index: 10;
-
-        &:hover  {
-          & + a::after {
-            background-color: rgba(255, 255, 255, .25);
-            border-radius: 9999px;
-          }
-        }
-      }
-
-      // Inserts a + after top-level menu items (except for the collapsed menu and sub-menus 
-      // that have been collapsed into it.
-      &:not(.collapsed-menu):not(.collapsed-menu &) {
-        > a::after {
-          content: '\0002B'; // "+"
-          display: inline-grid;
-          height: .9em;
-          margin-left: .15em;
-          place-content: center;
-          transition: transform 150ms ease-in-out;
-          width: .9em;
-        }
-
-        // Prevents the x from taking on the link-hover color.
-        &:hover:not(:active) {
-          > a::after {
-            color: $menu-text;
-          }
-        }
-      }
-
-      // Default (desktop) dropdown menu styles.
-      > .sub-menu {
-        animation: growDown_centered 150ms ease-in-out forwards;
-        background-color: var(--wp--preset--color--page);
-        border: $border;
-        box-shadow: $box-shadow;
-        display: none;
-        font-size: $font-size-sm;
-        padding: $spacing-xxs $spacing-sm;
-        position: absolute;
-          left: 50%;
-        transform: translateX(-50%);
-        transform-origin: top;
-        z-index: 10;
-      }
-
-      // Handles the dropdown menu functionality.
-      &.open {
-        // On desktop, shows the sub-menu and rotates the + on hover.
-        > a {
-          + ul.sub-menu {
-            display: block;
-          }
-
-          &::after {
-            transform: rotate(45deg);
-          }
-        }
-
-        // Mobile
-        @media (max-width: $breakpoint-sm) {
-          animation: growOut 150ms ease-in-out forwards;
-          background-color: var(--wp--preset--color--page);
-          border: $border;
-          box-shadow: $box-shadow;
-          height: calc(100vh - $spacing-sm * 2 - var(--wp-admin--admin-bar--height));
-          margin: 0;
-          overflow: auto;
-          padding: $spacing-sm $spacing-md;
-          position: fixed;
-            top: calc($spacing-sm + var(--wp-admin--admin-bar--height));
-            right: $spacing-sm;
-            bottom: $spacing-sm;
-            left: $spacing-sm;
-          transform-origin: top center;
-          width: calc(100vw - ($spacing-sm * 2));
-          z-index: 20;
-
-          .menu-item {
-            font-size: $font-size-md;
-
-            a {
-              white-space: normal;
-            }
-          }
-
-          > a {
-            color: $menu-text;
-            font-size: $font-size-lg;
-            font-weight: bold;
-
-            &:not(:hover) {
-              text-decoration: underline;
-              text-decoration-color: $gray-wash;
-            }
-
-            &:hover {
-              color: $link-hover;
-              text-decoration: underline;
-              text-decoration-color: currentColor;
-            }
-
-            &::after {
-              display: none !important;
-            }
-          }
-
-          .close-dropdown {
-            background-color: LightGray;
-            background-image: url("../images/close.svg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 50%;
-            border: $border;
-            border-radius: 9999px;
-            height: $font-size-lg;
-            line-height: 1;
-            margin: 0;
-            position: absolute;
-              right: $spacing-xxs;
-              top: $spacing-xxs;
-            transform: unset;
-            transition: box-shadow .2s;
-            width: $font-size-lg;
-
-            &:hover:not(:active) {
-              box-shadow: $box-shadow;
-            }
-          }
-
-          & + .dropdown-screen {
-            background-color: rgb(0, 0, 0, .4);
-            display: block;
-            height: 100vh;
-            inset: 0;
-            position: fixed;
-            width: 100vw;
-            z-index: 10;
-          }
-
-          > .sub-menu {
-            animation: unset;
-            background: none;
-            border: none;
-            box-shadow: none;
-            margin: 0;
-            padding: 0;
-            position: unset;
-            transform: unset;
-          }
-        }
-      }
+  // Deeper Submenus
+  .menu-item-has-children {
+    .sub-menu {
+      margin-left: 0;
+      padding-left: 1em;
     }
   }
 
-  .sub-menu {
-    .menu-item {
-      display: block;
-      margin-top: $spacing-xxs;
-      margin-bottom: $spacing-xxs;
+  // Open Submenus
+  &.open {
+    // When open, the "+" rotates and the submenu is shown.
+    > a {
+      &::after {
+        transform: rotate(45deg);
+      }
 
-      a {
-        text-decoration: revert;
-        text-decoration-color: $gray-wash;
-
-        &:hover {
-          text-decoration-color: currentColor;
-        }
+      + .sub-menu {
+        display: block;
       }
     }
 
-    .sub-menu {
-      list-style-type: disc;
-      margin-left: calc(.8 * $spacing-sm);
-      padding: 0;
+    // When open on mobile, the submenu is a modal.
+    @media (max-width: $breakpoint-sm) {
+      animation: pulse 150ms ease-in-out forwards;
+      margin: 0;
+      max-height: calc(100vh - $spacing-sm * 2 - var(--wp-admin--admin-bar--height));
+      overflow: auto;
+      position: fixed;
+        top: calc($spacing-sm + var(--wp-admin--admin-bar--height));
+        right: $spacing-sm;
+        left: $spacing-sm;
+      transform-origin: top center;
+      width: calc(100vw - ($spacing-sm * 2));
+      z-index: 20;
 
       .menu-item {
-        display: list-item;
+        font-size: $font-size-md;
       }
+
+      > a {
+        color: $menu-text;
+        font-size: $font-size-lg;
+        font-weight: bold;
+
+        &::after {
+          display: none !important;
+        }
+      }
+
+      > .sub-menu {
+        animation: unset;
+        background: none;
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        position: unset;
+        transform: unset;
+        width: auto;
+      }
+    }
+  }
+}
+
+// Submenu Dismiss Button
+// On desktop the submenu dismiss button is a transparent overlay 
+// for Javascript. On mobile it becomes an actual close button.
+.submenu-dismiss {
+  background-color: transparent;
+  border: unset;
+  box-shadow: none;
+  cursor: pointer;
+  height: $font-size-sm;
+  position: absolute;  
+  top: 50%;
+  right: calc(-1 * (1lh - $font-size-sm) / 2);
+  transform: translateY(-50%);
+  width: $font-size-sm;
+  z-index: 10;
+  
+  &:hover:not(:active)  {
+    box-shadow: none;
+
+    + a::after {
+      background-color: rgba(255, 255, 255, .25);
+      border-radius: 9999px;
+      box-shadow: $box-shadow;
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    background-color: LightGray;
+    background-image: url("../images/close.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    border: var(--wp--custom--border--normal);
+    border-radius: var(--wp--custom--border--radius--buttons);
+    height: $font-size-lg;
+    line-height: 1;
+    margin: 0;
+    position: absolute;
+      right: $spacing-xxs;
+      top: $spacing-xxs;
+    transform: unset;
+    width: $font-size-lg;
+
+    &:hover:not(:active)  {
+      box-shadow: $box-shadow;
+  
+      + a::after {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+#collapsed-menu {
+  > a {
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: .075em;
+    transform: rotate(90deg);
+  }
+
+  .submenu-dismiss {
+    @media (min-width: $breakpoint-sm) {
+      display: none;
+    }
+    
+  }
+}
+
+.submenu-screen {
+  background-color: rgb(0, 0, 0, .4);
+  display: block;
+  height: 100vh;
+  inset: 0;
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: $spacing-sm;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > .menu-item > a {
+    text-decoration: none;
+  }
+
+  .menu-item {
+    line-height: $line-height-sm;
+
+    a {
+      color: $menu-text;
+      display: block;
+    }
+  }
+}
+
+.sub-menu {
+  .menu-item {
+    display: block;
+    margin-top: $spacing-xxs;
+    margin-bottom: $spacing-xxs;
+  }
+
+  .sub-menu {
+    list-style-type: disc;
+    margin-left: calc(.8 * $spacing-sm);
+    padding: 0;
+
+    .menu-item {
+      display: list-item;
     }
   }
 }
@@ -278,43 +260,6 @@ body {
     order: 2;
     place-items: center start;
     position: revert;
-  }
-
-  .menu {
-    .collapsed-menu {
-      @media (min-width: $breakpoint-sm) {
-        .close-dropdown {
-          height: 100%;
-          inset: 0;
-          transform: unset;
-          width: 100%;
-        }
-      }
-
-      > a {
-        display: inline-block;
-        font-weight: bold;
-        letter-spacing: .075em;
-        text-decoration: none;
-        transform: rotate(90deg);
-      }
-
-      .sub-menu {
-        .menu-item-has-children {
-          > a {
-            font-size: $font-size-xs;
-            margin-top: .75em;
-            opacity: $light-text;
-            text-transform: uppercase;
-          }
-        }
-  
-        .sub-menu {
-          list-style: none;
-          margin-left: 0;
-        }
-      }      
-    }
   }
 }
 

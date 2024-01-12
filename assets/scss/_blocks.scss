@@ -16,7 +16,6 @@
   &.has-background {
     margin-top: $spacing-lg;
     margin-bottom: $spacing-lg;
-    padding-top: $spacing-lg;
-    padding-bottom: $spacing-lg;
+    padding: $spacing-lg $spacing-sm;
   }
 }

@@ -1,5 +1,9 @@
 <?php
 
+/** 
+ * Theme Supports, Page Excerpts, Image Sizes & Nav Menus
+ */
+add_action('after_setup_theme', 'theme_setup');
 function theme_setup() {
   add_theme_support('custom-logo', [
     'height' => 480,
@@ -27,38 +31,11 @@ function theme_setup() {
   register_nav_menu('secondary', __('Secondary Menu (Below Header)', 'cpt-theme'));
 }
 
-add_action('after_setup_theme', 'theme_setup');
-
-
-function default_options() {
-  $default_options = [
-    // Heading
-    'cpt_sites_sticky_header'                 => false,
-		'cpt_sites_show_site_title'               => true,
-		'cpt_sites_show_primary_menu'	            => true,
-    'cpt_sites_show_secondary_menu'           => false,
-    'cpt_sites_show_primary_menu_cta'         => false,
-    'cpt_sites_primary_menu_cta_text_color'   => 'White',
-    'cpt_sites_primary_menu_cta_button_color' => 'Coral',
-    'cpt_sites_primary_menu_cta_text'         => 'Contact Us',
-    'cpt_sites_primary_menu_cta_style'        => 'link',
-    // Fonts moved to theme.json in 3.0.
-    // Colors moved to theme.json in 3.0.
-  ];
-
-  foreach ($default_options as $key => $val){
-    if (!get_option($key)){
-      update_option($key, $val);
-    }
-  }
-}
-
-add_action('after_switch_theme', 'default_options');
-
 
 /**
- * Register Widget Areas
+ * Register Sidebars/Widget Areas
  */
+add_action('widgets_init', 'register_widget_areas');
 function register_widget_areas() {
   register_sidebar([
     'id'            => 'preheader-widgets',
@@ -79,4 +56,28 @@ function register_widget_areas() {
   ]);
 }
 
-add_action('widgets_init', 'register_widget_areas');
+
+/**
+ * Default Theme Options
+ */
+add_action('after_switch_theme', 'default_options');
+function default_options() {
+  $default_options = [
+    // Heading
+    'cpt_sites_sticky_header'                 => false,
+		'cpt_sites_show_site_title'               => true,
+		'cpt_sites_show_primary_menu'	            => true,
+    'cpt_sites_show_secondary_menu'           => false,
+    'cpt_sites_show_primary_menu_cta'         => false,
+    'cpt_sites_primary_menu_cta_text_color'   => 'White',
+    'cpt_sites_primary_menu_cta_button_color' => 'Coral',
+    'cpt_sites_primary_menu_cta_text'         => 'Contact Us',
+    'cpt_sites_primary_menu_cta_style'        => 'link',
+    // Fonts moved to theme.json in 3.0.
+    // Colors moved to theme.json in 3.0.
+  ];
+
+  foreach ($default_options as $key => $val) {
+    if (!get_option($key)) update_option($key, $val);
+  }
+}
