@@ -399,6 +399,14 @@ body:not(.admin-bar) {
   grid-gap: var(--wp--preset--spacing--40);
   grid-template-columns: minmax(0, 1fr) max-content;
 }
+@media (max-width: 576px) {
+  .primary-menu-container {
+    justify-content: space-between;
+  }
+  .show-header-cta .primary-menu-container {
+    grid-template-columns: repeat(2, auto);
+  }
+}
 
 #primary-menu {
   display: grid;

@@ -16,6 +16,7 @@ function toggleMenu(event) {
   let clickedMenu = event.currentTarget;
   if (clickedMenu.classList.contains('open')) {
     closeOpenMenus(clickedMenu);
+    dropdownScreen.remove();
   } else {
     closeOpenMenus(clickedMenu);
     clickedMenu.classList.add('open');

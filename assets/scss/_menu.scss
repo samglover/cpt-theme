@@ -259,6 +259,14 @@ body {
     grid-gap: $spacing-sm;
     grid-template-columns: minmax(0, 1fr) max-content;
   }
+
+  @media (max-width: $breakpoint-sm) {
+    justify-content: space-between;
+
+    .show-header-cta & {
+      grid-template-columns: repeat(2, auto);
+    }
+  }
 }
 
 #primary-menu {
