@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 3.0.7
+
+#### Changed
+- Refinements to the menu collapser script so it runs faster and more efficiently, and so it looks better when it runs.
+
 
 ## 3.0.6
 

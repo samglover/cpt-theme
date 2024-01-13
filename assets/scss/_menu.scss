@@ -179,7 +179,6 @@ body {
     @media (min-width: $breakpoint-sm) {
       display: none;
     }
-    
   }
 }
 
@@ -203,6 +202,7 @@ body {
 
   > .menu-item > a {
     text-decoration: none;
+    text-wrap: nowrap;
   }
 
   .menu-item {

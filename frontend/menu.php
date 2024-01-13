@@ -4,7 +4,7 @@ function collapsed_menu_item($items, $args) {
   if (!get_option('cpt_sites_show_primary_menu') || $args->theme_location != 'primary')return $items;
   ob_start();
     ?>
-      <li id="collapsed-menu" class="menu-item menu-item-has-children collapsed-menu">
+      <li id="collapsed-menu" class="menu-item menu-item-has-children collapsed-menu" style="display: none;">
         <a href="#">|||</a>
         <ul class="sub-menu"></ul>
       </li>
