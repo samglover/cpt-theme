@@ -22,7 +22,7 @@ input[type="submit"] {
   transition: box-shadow .2s;
 
   &:hover:not(:active) {
-    box-shadow: var(--wp--preset--shadow--box-shadow);
+    box-shadow: $box-shadow;
   }
 }
 

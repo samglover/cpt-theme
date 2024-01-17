@@ -1,1 +1,53 @@
-a:not(:hover){text-decoration-color:var(--wp--preset--color--gray-wash)}.wp-element-button{transition:box-shadow .2s}.wp-element-button:hover:not(:active){box-shadow:var(--wp--preset--shadow--box-shadow)}.wp-block-button.has-xs-font-size>.wp-block-button__link{border-width:var(--wp--custom--border--width--buttons-xs)}.wp-block-button.has-sm-font-size>.wp-block-button__link{border-width:var(--wp--custom--border--width--buttons-sm)}.wp-block-cover.has-background,.wp-block-group.has-background{margin-top:var(--wp--preset--spacing--60);margin-bottom:var(--wp--preset--spacing--60);padding:var(--wp--preset--spacing--60) var(--wp--preset--spacing--40)}#preheader-widgets,#footer-widgets{display:flex;flex-wrap:wrap;line-height:var(--wp--custom--typography--line-height--sm);list-style:none;margin:0;padding:0}#preheader-widgets .widget>:first-child,#footer-widgets .widget>:first-child{margin-top:0}#preheader-widgets .widget>:last-child,#footer-widgets .widget>:last-child{margin-bottom:0}#preheader-widgets{align-items:center;gap:var(--wp--preset--spacing--40)}#footer-widgets{gap:var(--wp--preset--spacing--50)}
+a:not(:hover) {
+  text-decoration-color: var(--wp--preset--color--gray-wash);
+}
+
+.wp-element-button {
+  transition: box-shadow 0.2s;
+}
+.wp-element-button:hover:not(:active) {
+  box-shadow: var(--wp--preset--shadow--box-shadow);
+}
+
+.wp-block-button.has-xs-font-size > .wp-block-button__link {
+  border-width: var(--wp--custom--border--width--buttons-xs);
+}
+.wp-block-button.has-sm-font-size > .wp-block-button__link {
+  border-width: var(--wp--custom--border--width--buttons-sm);
+}
+
+.wp-block-cover.has-background,
+.wp-block-group.has-background {
+  margin-top: var(--wp--preset--spacing--60);
+  margin-bottom: var(--wp--preset--spacing--60);
+  padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--40);
+}
+
+#preheader-widgets,
+#footer-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: var(--wp--custom--typography--line-height--sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#preheader-widgets .widget > :first-child,
+#footer-widgets .widget > :first-child {
+  margin-top: 0;
+}
+#preheader-widgets .widget > :last-child,
+#footer-widgets .widget > :last-child {
+  margin-bottom: 0;
+}
+
+#preheader-widgets {
+  align-items: center;
+  gap: var(--wp--preset--spacing--40);
+}
+
+#footer-widgets {
+  gap: var(--wp--preset--spacing--50);
+}
+
+/*# sourceMappingURL=common.css.map */

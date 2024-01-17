@@ -1,0 +1,43 @@
+// These customizations apply the CPT Theme variables to Client Power Tools.
+.customize-cpt {
+  .cpt-modal-card {
+    background-color: $page-color;
+    border: $border;
+    box-shadow: $box-shadow;
+    padding: $spacing-md;
+  }
+
+  .cpt-notice {
+    background-color: $page-color;
+    border: $border;
+    box-shadow: $box-shadow;
+    padding: $spacing-sm;
+  }
+
+  .cpt-dismiss-button {
+    border: $border;
+    height: $font-size-lg;
+      right: $spacing-xxs;
+      top: $spacing-xxs;
+    width: $font-size-lg;
+
+    &:hover:not(:active) {
+      box-shadow: var(--wp--preset--shadow--box-shadow);
+    }
+  }
+
+  .entry-title:not(.cpt-entry-title) {
+    color: $light-text;
+  }
+
+  #cpt-nav {
+    .menu {
+      font-size: $font-size-sm;
+      gap: $spacing-xxs $spacing-xs;
+    }
+
+    .cpt-tabs {
+      border-color: var(--wp--custom--border--color--normal);
+    }
+  }
+}
