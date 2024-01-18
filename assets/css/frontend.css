@@ -289,6 +289,7 @@ li::marker {
 .submenu-dismiss {
   background-color: transparent;
   border: unset;
+  border-radius: var(--wp--custom--border--radius--buttons);
   box-shadow: none;
   cursor: pointer;
   height: var(--wp--preset--font-size--sm);
@@ -303,12 +304,12 @@ li::marker {
   z-index: 10;
 }
 .submenu-dismiss:hover:not(:active) {
-  box-shadow: none;
+  box-shadow: var(--wp--preset--shadow--box-shadow);
 }
 .submenu-dismiss:hover:not(:active) + a::after {
   background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 9999px;
-  box-shadow: var(--wp--preset--shadow--box-shadow);
+  border-radius: var(--wp--custom--border--radius--buttons);
+  box-shadow: none;
 }
 @media (max-width: 576px) {
   .submenu-dismiss {
@@ -325,12 +326,6 @@ li::marker {
     top: var(--wp--preset--spacing--20);
     transform: unset;
     width: var(--wp--preset--font-size--lg);
-  }
-  .submenu-dismiss:hover:not(:active) {
-    box-shadow: var(--wp--preset--shadow--box-shadow);
-  }
-  .submenu-dismiss:hover:not(:active) + a::after {
-    box-shadow: none;
   }
 }
 

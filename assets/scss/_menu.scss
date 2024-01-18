@@ -119,6 +119,7 @@ body {
 .submenu-dismiss {
   background-color: transparent;
   border: unset;
+  border-radius: $button-border-radius;
   box-shadow: none;
   cursor: pointer;
   height: $font-size-sm;
@@ -133,12 +134,12 @@ body {
   z-index: 10;
   
   &:hover:not(:active)  {
-    box-shadow: none;
+    box-shadow: $box-shadow;
 
     + a::after {
       background-color: rgba(255, 255, 255, .25);
-      border-radius: 9999px;
-      box-shadow: $box-shadow;
+      border-radius: $button-border-radius;
+      box-shadow: none;
     }
   }
 
@@ -156,14 +157,6 @@ body {
       top: $spacing-xxs;
     transform: unset;
     width: $font-size-lg;
-
-    &:hover:not(:active)  {
-      box-shadow: $box-shadow;
-  
-      + a::after {
-        box-shadow: none;
-      }
-    }
   }
 }
 
