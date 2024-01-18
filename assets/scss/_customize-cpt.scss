@@ -1,23 +1,5 @@
 // These customizations apply the CPT Theme variables to Client Power Tools.
 .customize-cpt {
-  .cpt-modal-card {
-    background-color: $page-color;
-    border: $border;
-    box-shadow: $box-shadow;
-    padding: $spacing-md;
-  }
-
-  .cpt-notice {
-    background-color: $page-color;
-    border: $border;
-    box-shadow: $box-shadow;
-    padding: $spacing-sm;
-  }
-
-  #cpt-login-messages {
-    font-size: $font-size-sm;
-  }
-
   .cpt-dismiss-button {
     border: $border;
     height: $font-size-lg;
@@ -47,13 +29,31 @@
     }
   }
 
-  .cpt-message,
-  .cpt-project {
+  .cpt-notice:where(:not(body.wp-admin)) {
+    .cpt-notice-message {
+      font-size: $font-size-sm;
+      padding-left: $spacing-xs;
+    }
+
+    &.is-dismissible {
+      min-height: calc($spacing-xs * 2 + $border-width * 2 + $font-size-lg);
+
+      .cpt-notice-message {
+        padding-right: calc($spacing-xs * 2 + $border-width * 2 + $font-size-lg);
+      }
+    }
+
+    .cpt-notice-dismiss {
+      top: $spacing-xs;
+      right: $spacing-xs;
+    }
+  }
+
+  .cpt-message {
     &.card {
       background-color: $page-color;
       border: $border;
       box-shadow: $box-shadow;
-      margin-bottom: $spacing-sm;
     }
   }
 }
