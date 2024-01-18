@@ -78,11 +78,6 @@ body:not(.admin-bar) {
   padding-bottom: var(--wp--preset--spacing--40);
 }
 
-.site-header-secondary-nav {
-  padding-top: var(--wp--preset--spacing--20);
-  padding-bottom: var(--wp--preset--spacing--20);
-}
-
 .breadcrumbs {
   padding-top: var(--wp--preset--spacing--40);
   padding-bottom: var(--wp--preset--spacing--40);
@@ -304,12 +299,12 @@ li::marker {
   z-index: 10;
 }
 .submenu-dismiss:hover:not(:active) {
-  box-shadow: var(--wp--preset--shadow--box-shadow);
+  box-shadow: none;
 }
 .submenu-dismiss:hover:not(:active) + a::after {
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: var(--wp--custom--border--radius--buttons);
-  box-shadow: none;
+  box-shadow: var(--wp--preset--shadow--box-shadow);
 }
 @media (max-width: 576px) {
   .submenu-dismiss {
@@ -359,12 +354,6 @@ li::marker {
   margin: 0;
   padding: 0;
 }
-.menu > .menu-item > a {
-  text-wrap: nowrap;
-}
-.menu > .menu-item > a:not(:hover) {
-  text-decoration: none;
-}
 .menu .menu-item {
   line-height: var(--wp--custom--typography--line-height--sm);
 }
@@ -381,6 +370,15 @@ li::marker {
 }
 .menu .menu-item.current-menu-item > a::after {
   font-weight: initial;
+}
+.menu > .menu-item {
+  line-height: 2.5em;
+}
+.menu > .menu-item > a {
+  text-wrap: nowrap;
+}
+.menu > .menu-item > a:not(:hover) {
+  text-decoration: none;
 }
 
 .sub-menu .menu-item {
