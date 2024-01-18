@@ -212,19 +212,25 @@ body {
   .menu-item {
     line-height: $line-height-sm;
 
-    &.current-menu-item {
-      > a {
-        font-weight: bold;
-      }
-
-      > a::after {
-        font-weight: initial;
-      }
-    }
-
     a {
       color: $menu-text;
       display: block;
+
+      &:not([href]),
+      &[href="#"] {
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+    
+    &.current-menu-item {
+      > a {
+        font-weight: 500;
+      }
+  
+      > a::after {
+        font-weight: initial;
+      }
     }
   }
 }

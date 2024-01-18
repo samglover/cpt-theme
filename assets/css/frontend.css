@@ -373,15 +373,19 @@ li::marker {
 .menu .menu-item {
   line-height: var(--wp--custom--typography--line-height--sm);
 }
-.menu .menu-item.current-menu-item > a {
-  font-weight: bold;
-}
-.menu .menu-item.current-menu-item > a::after {
-  font-weight: initial;
-}
 .menu .menu-item a {
   color: DarkSlateGray;
   display: block;
+}
+.menu .menu-item a:not([href]), .menu .menu-item a[href="#"] {
+  cursor: default;
+  pointer-events: none;
+}
+.menu .menu-item.current-menu-item > a {
+  font-weight: 500;
+}
+.menu .menu-item.current-menu-item > a::after {
+  font-weight: initial;
 }
 
 .sub-menu .menu-item {
@@ -926,8 +930,12 @@ body:has(#cta-modal.visible) {
 #cta-modal.visible + #cta-modal-screen {
   display: block;
 }
-#cta-modal:nth-child(2) {
+#cta-modal > :nth-child(2) {
   margin-top: 0;
+}
+#cta-modal :last-child,
+#cta-modal :last-child :last-child {
+  margin-bottom: 0;
 }
 #cta-modal .cta-modal-dismiss {
   background-color: LightGray;

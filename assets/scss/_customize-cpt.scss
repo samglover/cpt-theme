@@ -14,6 +14,10 @@
     padding: $spacing-sm;
   }
 
+  #cpt-login-messages {
+    font-size: $font-size-sm;
+  }
+
   .cpt-dismiss-button {
     border: $border;
     height: $font-size-lg;
@@ -26,8 +30,10 @@
     }
   }
 
-  .entry-title:not(.cpt-entry-title) {
-    color: $light-text;
+  &.client-dashboard {
+    .entry-title:not(.cpt-entry-title) {
+      color: $light-text;
+    }
   }
 
   #cpt-nav {
@@ -38,6 +44,16 @@
 
     .cpt-tabs {
       border-color: var(--wp--custom--border--color--normal);
+    }
+  }
+
+  .cpt-message,
+  .cpt-project {
+    &.card {
+      background-color: $page-color;
+      border: $border;
+      box-shadow: $box-shadow;
+      margin-bottom: $spacing-sm;
     }
   }
 }

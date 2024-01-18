@@ -10,6 +10,9 @@
   box-shadow: var(--wp--preset--shadow--box-shadow);
   padding: var(--wp--preset--spacing--40);
 }
+.customize-cpt #cpt-login-messages {
+  font-size: var(--wp--preset--font-size--sm);
+}
 .customize-cpt .cpt-dismiss-button {
   border: var(--wp--custom--border--normal);
   height: var(--wp--preset--font-size--lg);
@@ -20,7 +23,7 @@
 .customize-cpt .cpt-dismiss-button:hover:not(:active) {
   box-shadow: var(--wp--preset--shadow--box-shadow);
 }
-.customize-cpt .entry-title:not(.cpt-entry-title) {
+.customize-cpt.client-dashboard .entry-title:not(.cpt-entry-title) {
   color: var(--wp--preset--color--light-text);
 }
 .customize-cpt #cpt-nav .menu {
@@ -29,6 +32,13 @@
 }
 .customize-cpt #cpt-nav .cpt-tabs {
   border-color: var(--wp--custom--border--color--normal);
+}
+.customize-cpt .cpt-message.card,
+.customize-cpt .cpt-project.card {
+  background-color: var(--wp--preset--color--page);
+  border: var(--wp--custom--border--normal);
+  box-shadow: var(--wp--preset--shadow--box-shadow);
+  margin-bottom: var(--wp--preset--spacing--40);
 }
 
 /*# sourceMappingURL=cpt.css.map */

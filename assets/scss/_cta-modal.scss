@@ -29,8 +29,13 @@ body {
     }
   }
 
-  &:nth-child(2) {
+  > :nth-child(2) {
     margin-top: 0;
+  }
+
+  :last-child,
+  :last-child :last-child {
+    margin-bottom: 0;
   }
 
   .cta-modal-dismiss {
