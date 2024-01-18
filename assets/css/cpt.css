@@ -17,7 +17,15 @@
 }
 .customize-cpt #cpt-nav .cpt-tabs {
   border-color: var(--wp--custom--border--color--normal);
-  padding: 0 var(--wp--preset--spacing--40);
+  padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--40);
+}
+@media (max-width: 576px) {
+  .customize-cpt #cpt-nav .cpt-tabs {
+    padding: var(--wp--preset--spacing--30);
+  }
+  .customize-cpt #cpt-nav .cpt-tabs .cpt-tab.open {
+    width: auto;
+  }
 }
 .customize-cpt .cpt-notice:where(:not(body.wp-admin)) .cpt-notice-message {
   font-size: var(--wp--preset--font-size--sm);

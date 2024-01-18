@@ -12,6 +12,9 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 - Customizations for the Client Power Tools Portal plugin if it is installed and active.
 
+### Fixed
+- The Call to Action modal animation now works.
+
 
 ## 3.0.8
 

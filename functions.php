@@ -33,7 +33,7 @@ add_action('wp_enqueue_scripts', 'cpt_theme_frontend_stylesheets_scripts');
 function cpt_theme_frontend_stylesheets_scripts() {
   wp_enqueue_style('cpt-theme-normalize', CPT_THEME_DIR_URI . 'assets/css/normalize.css', [], CPT_THEME_VERSION);
 	wp_enqueue_style('cpt-theme-frontend', CPT_THEME_DIR_URI . 'assets/css/frontend.css', [], CPT_THEME_VERSION);
-  if (is_plugin_active('client-power-tools/client-power-tools.php')) wp_enqueue_style('cpt-theme-cpt', CPT_THEME_DIR_URI . 'assets/css/cpt.css', [], CPT_THEME_VERSION);
+  if (in_array('client-power-tools/client-power-tools.php' , get_option('active_plugins'))) wp_enqueue_style('cpt-theme-cpt', CPT_THEME_DIR_URI . 'assets/css/cpt.css', [], CPT_THEME_VERSION);
 
 	wp_enqueue_script('cpt-theme-menu-collapser', CPT_THEME_DIR_URI . 'assets/js/menu-collapser.js', ['wp-dom-ready'], CPT_THEME_VERSION, true);
 	wp_enqueue_script('cpt-theme-menu-dropdowns', CPT_THEME_DIR_URI . 'assets/js/menu-dropdowns.js', ['wp-dom-ready'], CPT_THEME_VERSION, true);

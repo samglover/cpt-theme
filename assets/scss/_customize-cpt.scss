@@ -26,7 +26,15 @@
 
     .cpt-tabs {
       border-color: var(--wp--custom--border--color--normal);
-      padding: 0 $spacing-sm;
+      padding: $spacing-xxs $spacing-sm;
+
+      @media (max-width: $breakpoint-sm) {
+        padding: $spacing-xs;
+
+        .cpt-tab.open {
+          width: auto;
+        }
+      }
     }
   }
 

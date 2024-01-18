@@ -7,7 +7,7 @@ body {
 }
 
 #cta-modal {
-  animation: pulse 150ms ease-in-out forwards;
+  animation: pulse_centered 150ms ease-in-out forwards;
   display: none;
   margin: 0 auto;
   max-height: calc(100vh - $spacing-sm * 2 - var(--wp-admin--admin-bar--height));
@@ -16,8 +16,7 @@ body {
   position: fixed;
     top: calc($spacing-sm + var(--wp-admin--admin-bar--height));
     left: 50%;
-  transform: translateX(-50%) !important;
-  transform-origin: top center;
+  transform-origin: top;
   width: calc($breakpoint-sm - $spacing-sm * 2);
   z-index: 20;
 
