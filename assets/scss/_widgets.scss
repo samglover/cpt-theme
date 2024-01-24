@@ -1,28 +1,7 @@
 #preheader-widgets,
 #footer-widgets {
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
   line-height: $line-height-sm;
   list-style: none;
-  margin: 0;
-  padding: 0;
-
-  .widget {
-    > :first-child {
-      margin-top: 0;
-    }
-
-    > :last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-#preheader-widgets {
-  align-items: center;
-  gap: $spacing-sm;
-}
-
-#footer-widgets {
-  gap: $spacing-md;
+  padding-left: 0;
 }
