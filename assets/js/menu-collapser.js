@@ -7,7 +7,7 @@ const CollapsedSubMenu  = document.querySelector('#collapsed-menu > .sub-menu');
 // case the dimensions have changed (due to fonts, for example). Also runs 
 // whenever the window is resized.
 menuCollapser();
-wp.domReady(menuCollapser);
+// wp.domReady(menuCollapser);
 window.addEventListener('resize', menuCollapser);
 
 /**
@@ -33,16 +33,24 @@ function menuWidth() {
 }
 
 function resetMenu() {
+  if (CollapsedMenu.style.display != "none") CollapsedMenu.style.display = "none";
+
   let collapsedMenuItems = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
+  if (collapsedMenuItems.length == 0) return;
+
+  // console.log('Resetting the menu …');
   collapsedMenuItems.forEach(function (element) {
     Menu.insertBefore(element, CollapsedMenu);
   });
-  CollapsedMenu.style.display = "none";
 }
 
 function collapseMenu() {
   CollapsedMenu.style.display = "revert";
+  
   let primaryMenuItems = Menu.querySelectorAll('.menu-item:not(.sub-menu .menu-item):not(.collapsed-menu)');
+  if (primaryMenuItems.length == 0) return;
+
+  // console.log('Collapsing the menu …');
   for (let i = primaryMenuItems.length - 1; i >= 0; i--) {
     if (menuContainerWidth() <= menuWidth()) {
       let collapsedMenuItems = CollapsedSubMenu.querySelectorAll('.menu-item:not(.sub-menu .sub-menu .menu-item)');
