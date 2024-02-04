@@ -12,7 +12,7 @@
   <?php if (
     $blocks && 
     $blocks[0]['blockName'] != 'core/cover' && 
-    $blocks[0]['innerBlocks'][0]['blockName'] != 'core/cover'
+    (isset($blocks[0]['innerBlocks'][0]['blockName']) && $blocks[0]['innerBlocks'][0]['blockName'] != 'core/cover')
   ) { ?>
     <header class="<?php echo $header_classes; ?>"<?php echo $header_style; ?>>
       <?php the_title('<h1 class="entry-title wp-block-post-title">', '</h1>'); ?>

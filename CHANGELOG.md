@@ -9,6 +9,10 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - The page template now hides the page header (title) on the front page.
 - The page template does not output the page header if the first block on the page is a cover block or a group block with a cover block as the first inner block.
 
+### Fixed
+- Added /assets/js/admin-editor-classes.js to add the correct classes to the block editor root container.
+
+
 ## 3.0.9
 
 ### Changed
