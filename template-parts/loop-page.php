@@ -8,10 +8,7 @@
       $header_style = ' style="background-image: url('. wp_get_attachment_image_url(get_post_thumbnail_id(), 'full') .');"';
     }
   ?>
-  <?php if (
-    !is_front_page() || 
-    ($blocks && $blocks[0]['blockName'] != 'core/cover')
-  ) { ?>
+  <?php if ($blocks && $blocks[0]['blockName'] != 'core/cover') { ?>
     <header class="<?php echo $header_classes; ?>"<?php echo $header_style; ?>>
       <?php the_title('<h1 class="entry-title wp-block-post-title">', '</h1>'); ?>
     </header>
