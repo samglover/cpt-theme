@@ -3,7 +3,13 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## 3.0.9beta
+## 3.0.10
+
+### Changed
+- The page template now hides the page header (title) on the front page.
+- The page template does not output the page header if the first block on the page is a cover block or a group block with a cover block as the first inner block.
+
+## 3.0.9
 
 ### Changed
 - Name updated to Client Power Tools Theme since there are also several Client Power Tools plugins.
