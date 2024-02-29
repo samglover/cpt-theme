@@ -412,6 +412,18 @@
         }
       },
       "core/quote": {
+        "border": {
+          "left": {
+            "color": "var(--wp--preset--color--gray-wash)",
+            "style": "solid",
+            "width": "5px"
+          }
+        },
+        "spacing": {
+          "padding": {
+            "left": "var(--wp--preset--spacing--30)"
+          }
+        },
         "elements": {
           "cite": {
             "color": {
