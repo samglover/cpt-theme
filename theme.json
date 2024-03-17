@@ -427,7 +427,6 @@
             },
             "typography": {
               "fontSize": "80%",
-              "fontStyle": "normal",
               "lineHeight": "var(--wp--custom--typography--line-height--sm)"
             }
           }
