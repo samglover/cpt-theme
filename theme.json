@@ -416,6 +416,11 @@
           "padding": false
         },
         "elements": {
+          "blockquote": {
+            "spacing": {
+              "padding": false
+            }
+          },
           "cite": {
             "color": {
               "text": "var(--wp--preset--color--light-text)"
