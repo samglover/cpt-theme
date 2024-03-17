@@ -411,6 +411,23 @@
           "lineHeight": "var(--wp--custom--typography--line-height--sm)"
         }
       },
+      "core/pullquote": {
+        "spacing": {
+          "padding": false
+        },
+        "elements": {
+          "cite": {
+            "color": {
+              "text": "var(--wp--preset--color--light-text)"
+            },
+            "typography": {
+              "fontSize": "80%",
+              "fontStyle": "normal",
+              "lineHeight": "var(--wp--custom--typography--line-height--sm)"
+            }
+          }
+        }
+      },
       "core/quote": {
         "border": {
           "left": {
