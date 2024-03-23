@@ -1,5 +1,6 @@
 <?php
 
+add_action('admin_menu', 'cpt_sites_submenu_pages');
 function cpt_sites_submenu_pages() {
   // TODO: Check to make sure the parent admin page exists.
 
@@ -13,9 +14,8 @@ function cpt_sites_submenu_pages() {
   );
 }
 
-add_action('admin_menu', 'cpt_sites_submenu_pages');
 
-
+add_action('admin_init', 'site_appearance_init');
 function site_appearance_init() {
   add_settings_section(
     'cpt-sites-header',
@@ -25,6 +25,7 @@ function site_appearance_init() {
   );
 
   // Header
+  register_setting('cpt-theme', 'cpt_sites_sticky_header');
   add_settings_field(
     'cpt_sites_sticky_header',
     '<label for="cpt_sites_sticky_header">' . esc_html__('Sticky Header', 'cpt-theme') . '</label>',
@@ -33,8 +34,7 @@ function site_appearance_init() {
     'cpt-sites-header'
   );
 
-  register_setting('cpt-theme', 'cpt_sites_sticky_header');
-
+  register_setting('cpt-theme', 'cpt_sites_show_preheader');
   add_settings_field(
     'cpt_sites_show_preheader',
     '<label for="cpt_sites_show_preheader">' . esc_html__('Preheader', 'cpt-theme') . '</label>',
@@ -43,8 +43,7 @@ function site_appearance_init() {
     'cpt-sites-header'
   );
 
-  register_setting('cpt-theme', 'cpt_sites_show_preheader');
-
+  register_setting('cpt-theme', 'cpt_sites_show_site_title');
   add_settings_field(
     'cpt_sites_show_site_title',
     '<label for="cpt_sites_show_site_title">' . esc_html__('Site Title', 'cpt-theme') . '</label>',
@@ -53,8 +52,7 @@ function site_appearance_init() {
     'cpt-sites-header'
   );
 
-  register_setting('cpt-theme', 'cpt_sites_show_site_title');
-
+  register_setting('cpt-theme', 'cpt_sites_show_primary_menu');
   add_settings_field(
     'cpt_sites_show_primary_menu',
     '<label for="cpt_sites_show_primary_menu">' . esc_html__('Primary Menu (in Header)', 'cpt-theme') . '</label>',
@@ -63,8 +61,7 @@ function site_appearance_init() {
     'cpt-sites-header'
   );
 
-  register_setting('cpt-theme', 'cpt_sites_show_primary_menu');
-
+  register_setting('cpt-theme', 'cpt_sites_show_primary_menu_cta');
   add_settings_field(
     'cpt_sites_show_primary_menu_cta',
     '<label for="cpt_sites_show_primary_menu_cta">' . esc_html__('Header CTA', 'cpt-theme') . '</label>',
@@ -73,8 +70,7 @@ function site_appearance_init() {
     'cpt-sites-header'
   );
 
-  register_setting('cpt-theme', 'cpt_sites_show_primary_menu_cta');
-
+  register_setting('cpt-theme', 'cpt_sites_primary_menu_cta_text');
   add_settings_field(
     'cpt_sites_primary_menu_cta_text',
     '<label for="cpt_sites_primary_menu_cta_text">' . esc_html__('Header CTA Text', 'cpt-theme') . '</label>',
@@ -83,8 +79,7 @@ function site_appearance_init() {
     'cpt-sites-header'
   );
 
-  register_setting('cpt-theme', 'cpt_sites_primary_menu_cta_text');
-
+  register_setting('cpt-theme', 'cpt_sites_primary_menu_cta_text_color');
   add_settings_field(
     'cpt_sites_primary_menu_cta_text_color',
     '<label for="cpt_sites_primary_menu_cta_text_color">' . esc_html__('Header CTA Text Color', 'cpt-theme') . '</label>',
@@ -93,8 +88,7 @@ function site_appearance_init() {
     'cpt-sites-header'
   );
 
-  register_setting('cpt-theme', 'cpt_sites_primary_menu_cta_text_color');
-
+  register_setting('cpt-theme', 'cpt_sites_primary_menu_cta_button_color');
   add_settings_field(
     'cpt_sites_primary_menu_cta_button_color',
     '<label for="cpt_sites_primary_menu_cta_button_color">' . esc_html__('Header CTA Button Color', 'cpt-theme') . '</label>',
@@ -103,8 +97,7 @@ function site_appearance_init() {
     'cpt-sites-header'
   );
 
-  register_setting('cpt-theme', 'cpt_sites_primary_menu_cta_button_color');
-
+  register_setting('cpt-theme', 'cpt_sites_primary_menu_cta_url');
   add_settings_field(
     'cpt_sites_primary_menu_cta_url',
     '<label for="cpt_sites_primary_menu_cta_url">' . esc_html__('Header CTA URL', 'cpt-theme') . '</label>',
@@ -113,8 +106,7 @@ function site_appearance_init() {
     'cpt-sites-header'
   );
 
-  register_setting('cpt-theme', 'cpt_sites_primary_menu_cta_url');
-
+  register_setting('cpt-theme', 'cpt_sites_primary_menu_cta_style');
   add_settings_field(
     'cpt_sites_primary_menu_cta_style',
     '<label for="cpt_sites_primary_menu_cta_style">' . esc_html__('Header CTA Style', 'cpt-theme') . '</label>',
@@ -123,8 +115,7 @@ function site_appearance_init() {
     'cpt-sites-header'
   );
 
-  register_setting('cpt-theme', 'cpt_sites_primary_menu_cta_style');
-
+  register_setting('cpt-theme', 'cpt_sites_primary_menu_cta_code');
   add_settings_field(
     'cpt_sites_primary_menu_cta_code',
     '<label for="cpt_sites_primary_menu_cta_code">' . esc_html__('Header CTA Code', 'cpt-theme') . '</label>',
@@ -133,8 +124,7 @@ function site_appearance_init() {
     'cpt-sites-header'
   );
 
-  register_setting('cpt-theme', 'cpt_sites_primary_menu_cta_code');
-
+  register_setting('cpt-theme', 'cpt_sites_show_secondary_menu');
   add_settings_field(
     'cpt_sites_show_secondary_menu',
     '<label for="cpt_sites_show_secondary_menu">' . esc_html__('Secondary Menu (Below Header)', 'cpt-theme') . '</label>',
@@ -143,8 +133,7 @@ function site_appearance_init() {
     'cpt-sites-header'
   );
 
-  register_setting('cpt-theme', 'cpt_sites_show_secondary_menu');
-
+  register_setting('cpt-theme', 'cpt_sites_show_breadcrumbs');
   add_settings_field(
     'cpt_sites_show_breadcrumbs',
     '<label for="cpt_sites_show_breadcrumbs">' . esc_html__('Breadcrumbs', 'cpt-theme') . '</label>',
@@ -152,15 +141,11 @@ function site_appearance_init() {
     'cpt-theme-appearance',
     'cpt-sites-header'
   );
-
-  register_setting('cpt-theme', 'cpt_sites_show_breadcrumbs');
 }
-
-add_action('admin_init', 'site_appearance_init');
 
 
 function site_appearance() {
-  if ( !current_user_can('manage_options') ) {
+  if (!current_user_can('manage_options')) {
     wp_die(
       '<p>' . esc_html__('Sorry, you are not allowed to access this page.', 'cpt-theme') . '</p>',
       403
