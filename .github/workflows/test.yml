@@ -15,7 +15,7 @@ jobs:
           new_issue_url=$(gh issue create \
             --title "$TITLE" \
             --assignee "$ASSIGNEES" \
-            --project "$PROJECT" \
+            # --project "$PROJECT" \
             --label "$LABELS" \
             --body "$BODY")
         env:
@@ -23,7 +23,7 @@ jobs:
           GH_REPO: ${{ github.repository }}
           TITLE: Check this interview for updates
           ASSIGNEES: 
-          PROJECT: Check Interviews for Updates
+          # PROJECT: Check Interviews for Updates
           LABELS: 
           BODY: |
             - [ ] Check for errors by running through the interview several times. Use different inputs each time.
