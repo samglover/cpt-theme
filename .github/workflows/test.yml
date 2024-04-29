@@ -48,4 +48,4 @@ jobs:
             * Un-assign yourself from this issue
             * Change the project selection for this issue to the Interview Upkeep project.
           PINNED: false
-          CLOSE_PREVIOUS: true
+          CLOSE_PREVIOUS: false
