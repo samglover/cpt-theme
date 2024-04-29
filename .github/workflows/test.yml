@@ -14,17 +14,17 @@ jobs:
         run: |
           new_issue_url=$(gh issue create \
             --title "$TITLE" \
-            --assignee "$ASSIGNEES" \
+            # --assignee "$ASSIGNEES" \
             # --project "$PROJECT" \
-            --label "$LABELS" \
+            # --label "$LABELS" \
             --body "$BODY")
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           TITLE: Check this interview for updates
-          ASSIGNEES: 
+          # ASSIGNEES: 
           # PROJECT: Check Interviews for Updates
-          LABELS: 
+          # LABELS: 
           BODY: |
             - [ ] Check for errors by running through the interview several times. Use different inputs each time.
             - [ ] Check for new versions of the PDF or DOCX forms in the `data/templates` folder.
