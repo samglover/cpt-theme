@@ -1,7 +1,7 @@
 name: Annual interview upkeep
 on:
   schedule:
-    - cron: */1 * * * *
+    - cron: * * * * *
 
 jobs:
   create_issue:
