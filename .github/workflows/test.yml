@@ -1,0 +1,51 @@
+name: Annual interview upkeep
+on:
+  schedule:
+    - cron: */1 * * * *
+
+jobs:
+  create_issue:
+    name: Create team sync issue
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create team sync issue
+        run: |
+          if [[ $CLOSE_PREVIOUS == true ]]; then
+            previous_issue_number=$(gh issue list \
+              --label "$LABELS" \
+              --json number \
+              --jq '.[0].number')
+            if [[ -n $previous_issue_number ]]; then
+              gh issue close "$previous_issue_number"
+              gh issue unpin "$previous_issue_number"
+            fi
+          fi
+          new_issue_url=$(gh issue create \
+            --title "$TITLE" \
+            --assignee "$ASSIGNEES" \
+            --project "$PROJECT" \
+            --label "$LABELS" \
+            --body "$BODY")
+          if [[ $PINNED == true ]]; then
+            gh issue pin "$new_issue_url"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          TITLE: Check this interview for updates
+          ASSIGNEES: 
+          PROJECT: Check Interviews for Updates
+          LABELS: 
+          BODY: |
+            - [ ] Check for errors by running through the interview several times. Use different inputs each time.
+            - [ ] Check for new versions of the PDF or DOCX forms in the `data/templates` folder.
+            - [ ] Check for updates to the law(s) on which the interview is based.
+            
+            If any of the above reveal a need to update this interview, do the following:
+            * Describe the updates necessary in a comment on this issue.
+            * Un-assign yourself from this issue
+            * Change the project selection for this issue to the Interview Upkeep project.
+          PINNED: false
+          CLOSE_PREVIOUS: true
