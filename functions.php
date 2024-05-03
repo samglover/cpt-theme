@@ -54,6 +54,7 @@ function cpt_theme_admin_stylesheets_scripts() {
   wp_enqueue_style('wp-color-picker');
 
   wp_enqueue_script('color-picker', CPT_THEME_DIR_URI . 'includes/color-picker.js', ['wp-color-picker'], CPT_THEME_VERSION, true);
+  wp_enqueue_script('cpt-editor-classes', CPT_THEME_DIR_URI . 'assets/js/admin-editor-classes.js', [], CPT_THEME_VERSION, true);
 }
 
 
