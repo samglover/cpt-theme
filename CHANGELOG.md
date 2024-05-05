@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 3.0.13
+
+### Fixed
+- The script that adds necessary styles to the post editor's root container was not working the same on post-6.3 installs because [since 6.3 WordPress loads the post editor in an iframe](https://make.wordpress.org/core/2023/07/18/miscellaneous-editor-changes-in-wordpress-6-3/#post-editor-iframed). And the iframe does not always load before enqueued Javascript files, so the fix required some additional conditions. This should address most of the likely scenarios for pre- and post-6.3 installs so that the post editor contains the `.has-global-padding` and `.is-layout-constrained` classes but not `.is-layout-flow` so that it behaves like the `.entry-content` element on posts and pages. Also [shared on StackOverflow](https://stackoverflow.com/a/78426095/2844226) where I initially found the clue to my solution.
+
+
 ## 3.0.12
 
 ### Changed
