@@ -375,10 +375,20 @@
       "lineHeight": "var(--wp--custom--typography--line-height--normal)"
     },
     "blocks": {
+      "core/buttons": {
+        "spacing": {
+          "blockGap": "var(--wp--preset--spacing--20)"
+        }
+      },
       "core/code": {
         "typography": {
           "fontSize": "var(--wp--preset--font-size--sm)",
           "lineHeight": "var(--wp--custom--typography--line-height--normal)"
+        }
+      },
+      "core/heading": {
+        "color": {
+          "text": "var(--wp--preset--color--headings)"
         }
       },
       "core/latest-comments": {
@@ -421,12 +431,13 @@
               "padding": false
             }
           },
-          "cite": {
+          "citation": {
             "color": {
               "text": "var(--wp--preset--color--light-text)"
             },
             "typography": {
-              "fontSize": "80%",
+              "fontSize": "var(--wp--preset--font-size--sm)",
+              "fontStyle": "normal",
               "lineHeight": "var(--wp--custom--typography--line-height--sm)"
             }
           }
@@ -443,17 +454,6 @@
         "spacing": {
           "padding": {
             "left": "var(--wp--preset--spacing--30)"
-          }
-        },
-        "elements": {
-          "cite": {
-            "color": {
-              "text": "var(--wp--preset--color--light-text)"
-            },
-            "typography": {
-              "fontSize": "80%",
-              "lineHeight": "var(--wp--custom--typography--line-height--sm)"
-            }
           }
         }
       },
@@ -504,6 +504,16 @@
         "typography": {
           "lineHeight": "var(--wp--custom--typography--line-height--sm)",
           "textDecoration": "none"
+        }
+      },
+      "cite": {
+        "color": {
+          "text": "var(--wp--preset--color--light-text)"
+        },
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--sm)",
+          "fontStyle": "normal",
+          "lineHeight": "var(--wp--custom--typography--line-height--sm)"
         }
       },
 			"h1": {
