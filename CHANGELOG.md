@@ -7,6 +7,7 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fixed
 * In cases where the page was empty or had very little content the page would not fill the vertical height of the browser. Fixed by using flex to stretch the page content to fill the browser height.
+* Remove padding from image blocks styled as cards.
 
 
 ## 3.0.13

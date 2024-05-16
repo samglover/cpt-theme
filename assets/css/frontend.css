@@ -884,6 +884,10 @@ img {
   box-shadow: var(--wp--preset--shadow--box-shadow);
   padding: var(--wp--preset--spacing--50);
 }
+.card.wp-block-image,
+.is-style-card.wp-block-image {
+  padding: 0;
+}
 
 .clearfix {
   clear: both;

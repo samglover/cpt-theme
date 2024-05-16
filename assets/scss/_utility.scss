@@ -4,6 +4,10 @@
   border: $border;
   box-shadow: $box-shadow;
   padding: $spacing-md;
+
+  &.wp-block-image {
+    padding: 0;
+  }
 }
 
 .clearfix {
