@@ -26,6 +26,9 @@ body {
 }
 
 #page-content {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - var(--wp-admin--admin-bar--height));
   overflow: hidden;
   padding: 0;
 }
@@ -47,6 +50,7 @@ body {
 }
 
 .site-main {
+  flex-grow: 1;
   margin-block-start: 0 !important;
   margin-top: 0;
   margin-bottom: 0;

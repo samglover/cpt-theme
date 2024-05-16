@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 3.0.14 - 2024-05-16
+
+### Fixed
+* In cases where the page was empty or had very little content the page would not fill the vertical height of the browser. Fixed by using flex to stretch the page content to fill the browser height.
+
+
 ## 3.0.13
 
 ### Changed
