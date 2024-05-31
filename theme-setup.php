@@ -77,7 +77,5 @@ function default_options() {
     // Colors moved to theme.json in 3.0.
   ];
 
-  foreach ($default_options as $key => $val) {
-    if (!get_option($key)) update_option($key, $val);
-  }
+  foreach ($default_options as $key => $val) foreach ($default_options as $key => $val) add_option($key, $val);
 }
