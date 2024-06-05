@@ -84,7 +84,8 @@ function cpt_theme_customizer_options($wp_customize) {
 /**
  * CSS Variables
  */
-add_action('wp_head', 'cpt_theme_css_variables');
+add_action('wp_head', 'cpt_theme_css_variables', 0);
+add_action('admin_head', 'cpt_theme_css_variables', 0);
 function cpt_theme_css_variables() {
   ?>
     <style>
