@@ -5,6 +5,11 @@ html {
   font-family: sans-serif;
 }
 
+ol,
+ul {
+  padding-left: $spacing-sm;
+}
+
 li::marker {
   color: $light-text;
 }
