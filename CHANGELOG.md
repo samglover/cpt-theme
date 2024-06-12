@@ -7,6 +7,8 @@ is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 * Reduce left padding on lists.
+* Align CTA text in the center of the button.
+
 
 ## 3.0.14 - 2024-05-31
 
