@@ -51,7 +51,7 @@
 
 .site-header-primary-nav__inner {
   display: flex;
-  gap: $spacing-sm;
+  gap: $spacing-xs;
   justify-content: space-between;
 
   @media (max-width: $breakpoint-sm) {
