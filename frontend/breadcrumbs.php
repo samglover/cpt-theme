@@ -71,7 +71,7 @@ function breadcrumbs() {
   if (is_singular('post')) {
     $blog_page_id = get_option('page_for_posts');
     $breadcrumbs[] = '<span class="breadcrumb"><a href="' . get_permalink($blog_page_id) . '">' . get_the_title($blog_page_id) . '</a></span>';
-  } elseif (is_singular()) {
+  } elseif (is_singular() && !is_page()) {
     $post_type = get_post_type();
     $link = get_post_type_archive_link($post_type);
     $title = apply_filters('post_type_archive_title', get_post_type_object($post_type)->labels->name, $post_type);
