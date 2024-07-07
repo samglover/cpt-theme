@@ -3,11 +3,7 @@ const Menu              = document.querySelector('#primary-menu > .menu');
 const CollapsedMenu     = document.querySelector('#collapsed-menu');
 const CollapsedSubMenu  = document.querySelector('#collapsed-menu > .sub-menu');
 
-// Loads the collapse function immediately, then again when the DOM is ready in 
-// case the dimensions have changed (due to fonts, for example). Also runs 
-// whenever the window is resized.
-menuCollapser();
-// wp.domReady(menuCollapser);
+wp.domReady(menuCollapser);
 window.addEventListener('resize', menuCollapser);
 
 /**
@@ -17,6 +13,7 @@ window.addEventListener('resize', menuCollapser);
  * collapses the overflow into a new sub-menu.
  */
 function menuCollapser() {
+  // console.log('Running menu collapser function.');
   if (!Menu) return;
   if (menuContainerWidth() > menuWidth()) resetMenu();
   if (menuContainerWidth() <= menuWidth()) collapseMenu();
