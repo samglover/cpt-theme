@@ -13,15 +13,26 @@ body {
 .menu > .menu-item-has-children {
   position: relative;
 
+  &:not(.collapsed-menu) > a {
+    text-decoration: none;
+  }
+  
   // Adds a "+" after top-level menu items except for the collapsed menu.
-  &:not(.collapsed-menu) > a::after {
-    content: '\0002B'; // "+"
-    display: inline-grid;
-    height: .9em;
-    margin-left: .15em;
-    place-content: center;
-    transition: transform 150ms ease-in-out;
-    width: .9em;
+  &:not(.collapsed-menu) {
+    > a {
+      align-items: center;
+      display: flex;
+      gap: .15em;
+    }
+    
+    > a::after {
+      content: '\0002B'; // "+"
+      display: inline-grid;
+      height: .9em;
+      place-content: center;
+      transition: transform 150ms ease-in-out;
+      width: .9em;
+    }
   }
 
   // Adds a transparent overlay on top-level menu items that disables menu item links 
@@ -42,6 +53,7 @@ body {
     max-width: calc(100vw - ($spacing-sm * 2));
     padding: $spacing-xxs $spacing-sm;
     position: absolute;
+      top: 100%;
       left: 50%;
     transform: translateX(-50%);
     transform-origin: top;
@@ -129,12 +141,10 @@ body {
   box-shadow: none;
   cursor: pointer;
   height: .9em;
-  line-height: 1;
-  margin: 0 0 0 .15em;
   padding: 0;
   position: absolute;  
-    top: calc(50% + .9px);
-    right: .9px;
+    top: 50%;
+    right: 0;
   transform: translateY(-50%);
   width: .9em;
   z-index: 10;
