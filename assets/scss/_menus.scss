@@ -257,7 +257,7 @@ body {
   place-items: center stretch;
 
   .show-header-cta & {
-    grid-gap: $spacing-sm;
+    gap: $spacing-sm;
     grid-template-columns: minmax(0, 1fr) max-content;
   }
 
