@@ -5,6 +5,10 @@ html {
   font-family: sans-serif;
 }
 
+a {
+  text-underline-offset: .15em;
+}
+
 ol,
 ul {
   padding-left: $spacing-sm;
