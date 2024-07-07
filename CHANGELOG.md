@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 3.0.16 - 2024-07-07
+
+### Changed
+* Changed all CSS **grid-gap** properties to **gap**.
+* Changed site header layout from grid to flex, which also helped fix the below issues with the menu collapser.
+* Now the menu collapser only runs when the DOM is ready, not before.
+* Added a .15em offset to link underlines.
+
+### Fixed
+* CTA no longer stretches to the full width of the menu container when there is no primary menu selected (fix for [issue #21](https://github.com/samglover/cpt-theme/issues/21)).
+* Menu now collapses gradually instead of all at once (fix for [issue #15](https://github.com/samglover/cpt-theme/issues/15)).
+* Fixes submenu dismiss button overlay alignment on drop-down menus.
+* Breadcrumbs for custom post types now include the post type archive instead of the blog page (fix for [issue #16](https://github.com/samglover/cpt-theme/issues/16)).
+
+
 ## 3.0.15 - 2024-06-11
 
 ### Changed

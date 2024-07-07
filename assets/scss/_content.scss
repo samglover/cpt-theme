@@ -103,12 +103,12 @@
   .has-post-thumbnail {
     align-items: center;
     display: grid;
-    grid-gap: $spacing-md;
+    gap: $spacing-md;
     grid-template-columns: 40% 1fr;
 
     @media (max-width: $breakpoint-sm) {
       grid-template-columns: 1fr;
-      grid-gap: $spacing-sm;
+      gap: $spacing-sm;
     }
 
     .title-excerpt-footer__container {
