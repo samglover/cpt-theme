@@ -3,8 +3,8 @@
 function breadcrumbs() {
   if (is_front_page()) return;
 
-  // Gets the last breadcrumb (the current page) first (we'll flip the order as
-  // the last step).
+  // Gets the last breadcrumb (the current page) first. Then we'll walk up the 
+  // ancestry tree and flip the order as the last step.
   ob_start();
     echo '<span class="breadcrumb last-breadcrumb">';
       if (is_home()) {
@@ -68,10 +68,16 @@ function breadcrumbs() {
     }
   }
 
-  if ((is_singular('post') || is_archive('post')) && get_option('show_on_front') == 'page') {
+  if (is_singular('post')) {
     $blog_page_id = get_option('page_for_posts');
     $breadcrumbs[] = '<span class="breadcrumb"><a href="' . get_permalink($blog_page_id) . '">' . get_the_title($blog_page_id) . '</a></span>';
+  } elseif (is_singular()) {
+    $post_type = get_post_type();
+    $link = get_post_type_archive_link($post_type);
+    $title = apply_filters('post_type_archive_title', get_post_type_object($post_type)->labels->name, $post_type);
+    $breadcrumbs[] = '<span class="breadcrumb"><a href="' . $link . '">' . $title . '</a></span>';
   }
+  
   $breadcrumbs[]  = '<span class="breadcrumb home-breadcrumb"><a href="' .  esc_url(home_url()) . '">Home</a></span>';
   $breadcrumbs    = array_reverse($breadcrumbs);
 
