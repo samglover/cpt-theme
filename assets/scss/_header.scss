@@ -8,13 +8,12 @@
   &.has-custom-logo {
     .site-branding {
       align-items: center;
-      display: grid;
-      gap: $spacing-sm;
-      grid-template-columns: repeat(2, max-content);
+      display: flex;
+      gap: $spacing-xs;
+    }
 
-      @media (max-width: $breakpoint-sm) {
-        grid-template-columns: 100%;
-      }
+    .site-logo {
+      min-width: 50px;
     }
   }
 
@@ -51,12 +50,12 @@
 }
 
 .site-header-primary-nav__inner {
-  display: grid;
+  display: flex;
   gap: $spacing-sm;
-  grid-template-columns: minmax(auto, max-content) minmax(min-content, 1fr);
+  justify-content: space-between;
 
   @media (max-width: $breakpoint-sm) {
-    grid-template-columns: 100%;
+    flex-direction: column;
   }
 }
 

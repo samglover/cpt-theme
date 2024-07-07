@@ -190,7 +190,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 0 $spacing-sm;
+  gap: 0 $spacing-xs;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -253,26 +253,21 @@ body {
 }
 
 .primary-menu-container {
-  display: grid;
-  place-items: center stretch;
-
-  .show-header-cta & {
-    gap: $spacing-sm;
-    grid-template-columns: minmax(0, 1fr) max-content;
-  }
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  gap: $spacing-xs;
+  justify-content: right;
 
   @media (max-width: $breakpoint-sm) {
     justify-content: space-between;
-
-    .show-header-cta & {
-      grid-template-columns: repeat(2, auto);
-    }
   }
 }
 
 #primary-menu {
-  display: grid;
-  place-items: center end;
+  display: flex;
+  flex-grow: 1;
+  justify-content: right;
   position: relative;
 
   @media (max-width: $breakpoint-sm) {
@@ -287,6 +282,7 @@ body {
   background-color: var(--header-cta-button-color);
   color: var(--header-cta-text-color);
   text-align: center;
+  text-wrap: nowrap;
 }
 
 .secondary-menu-container {
