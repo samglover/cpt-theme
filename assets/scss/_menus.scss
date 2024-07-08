@@ -169,6 +169,10 @@ body {
       top: $spacing-xxs;
     transform: unset;
     width: $font-size-lg;
+
+    &:hover:not(:active)  {
+      background-color: LightGray;
+    }
   }
 }
 
@@ -282,7 +286,6 @@ body {
 
   @media (max-width: $breakpoint-sm) {
     order: 2;
-    place-items: center start;
     position: revert;
   }
 }
