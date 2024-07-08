@@ -50,8 +50,8 @@
 }
 
 .site-header-primary-nav__inner {
-  display: grid;
-  grid-gap: $spacing-sm;
+  display: flex;
+  gap: $spacing-sm;
   grid-template-columns: minmax(auto, max-content) minmax(min-content, 1fr);
 
   @media (max-width: $breakpoint-sm) {
