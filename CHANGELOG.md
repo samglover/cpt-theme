@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 3.0.17 - 2024-07-08
+
+### Changed
+* Added a blog breadcrumb to category, tag, and taxonomy archives.
+
+
 ## 3.0.16 - 2024-07-07
 
 ### Changed

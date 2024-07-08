@@ -66,6 +66,9 @@ function breadcrumbs() {
       $term_obj = get_term($term_id);
       $breadcrumbs[] = '<span class="breadcrumb"><a href="' . get_term_link($term_obj->term_id) . '">' . $term_obj->name . '</a></span>';
     }
+
+    $blog_page_id = get_option('page_for_posts');
+    $breadcrumbs[] = '<span class="breadcrumb"><a href="' . get_permalink($blog_page_id) . '">' . get_the_title($blog_page_id) . '</a></span>';
   }
 
   if (is_singular('post')) {
