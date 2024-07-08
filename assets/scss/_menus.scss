@@ -272,6 +272,7 @@ body {
   flex-grow: 1;
   gap: $spacing-xs;
   justify-content: right;
+  position: relative;
 
   @media (max-width: $breakpoint-sm) {
     justify-content: space-between;
