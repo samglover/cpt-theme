@@ -42,6 +42,7 @@ $line-height-sm: var(--wp--custom--typography--line-height--sm);
 $line-height-normal: var(--wp--custom--typography--line-height--normal);
 
 // Spacing
+$spacing-tiny: calc(.5 * var(--wp--preset--spacing--20)); 
 $spacing-xxs: var(--wp--preset--spacing--20);
 $spacing-xs: var(--wp--preset--spacing--30);
 $spacing-sm: var(--wp--preset--spacing--40);
