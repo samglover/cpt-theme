@@ -13,6 +13,11 @@
         }
       ?>
     </h1>
+    <?php if (is_archive()) { ?>
+      <div class="term-description wp-block-group has-global-padding is-layout-constrained has-gray-wash-background-color">
+        <?php the_archive_description(); ?>
+      </div>
+    <?php } ?>
     <?php
       if (is_search()) {
         ?>
