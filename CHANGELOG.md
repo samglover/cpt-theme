@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 3.0.18 - 2024-07-09
+
+### Changed
+* Added term descriptions to the index template with a background to set it off from the list of posts.
+* Adjusted font size and spacing of comments.
+
+
 ## 3.0.17 - 2024-07-08
 
 ### Changed
@@ -457,6 +464,7 @@ Steps to add a font in your child theme:
 - Updated search form in page templates.
 - Don't show the secondary menu container if the secondary menu isn't on.
 - Show a breadcrumb for the blog page when the front page (home) is set to a page.
+
 
 ## 2.3.4 - 2022-09-26
 
