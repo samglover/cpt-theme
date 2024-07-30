@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. The format
 is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 3.0.20 - 2024-07-30
+
+### Changed
+* Set the default bottom margin for headings (block and element) to the default font size.
+
+
 ## 3.0.19 - 2024-07-11
 
 ### Changed

@@ -389,6 +389,11 @@
       "core/heading": {
         "color": {
           "text": "var(--wp--preset--color--headings)"
+        },
+        "spacing": {
+          "margin": {
+            "bottom": "var(--wp--preset--font-size--normal)"
+          }
         }
       },
       "core/latest-comments": {
