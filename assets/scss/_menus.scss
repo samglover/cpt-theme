@@ -204,7 +204,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 0 $spacing-xs;
+  gap: 0 $spacing-sm;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -270,7 +270,7 @@ body {
   align-items: center;
   display: flex;
   flex-grow: 1;
-  gap: $spacing-xs;
+  gap: $spacing-sm;
   justify-content: right;
   position: relative;
 
@@ -310,7 +310,7 @@ body {
   .menu {
     font-size: $font-size-sm;
     flex-wrap: wrap;
-    gap: $spacing-xxs $spacing-xs;
+    gap: $spacing-xxs $spacing-sm;
 
     @media (min-width: $breakpoint-sm) {
       > .menu-item-has-children:first-child > .sub-menu {
