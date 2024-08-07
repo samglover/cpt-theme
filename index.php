@@ -14,7 +14,7 @@
       ?>
     </h1>
     <?php if (is_archive() && !empty(get_the_archive_description())) { ?>
-      <div class="term-description wp-block-group has-global-padding is-layout-constrained has-gray-wash-background-color">
+      <div class="term-description wp-block-group alignfull has-global-padding is-layout-constrained has-gray-wash-background-color">
         <?php the_archive_description(); ?>
       </div>
     <?php } ?>
