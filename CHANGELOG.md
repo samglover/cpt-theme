@@ -1,7 +1,13 @@
 # Changelog for the Client Power Tools WordPress Theme
 
-All notable changes to this project will be documented in this file. The format
-is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+## 3.0.23 - 2024-08-07
+
+### Fixed
+* Fixed secondary gradient.
+* Fixed indentation of settings.typography.fontFamilies[0].fontFace in theme.json.
+
 
 ## 3.0.22 - 2024-08-07
 
