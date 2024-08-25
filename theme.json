@@ -115,6 +115,7 @@
 		},
     "typography": {
       "customFontSize": false,
+      "defaultFontSizes": false,
       "dropCap": false,
       "fluid": true,
       "letterSpacing": false,
