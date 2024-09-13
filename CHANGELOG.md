@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 3.0.25 - 2024-09-13
+
+### Changed
+* Increased the size of the submenu dismiss button on mobile and aligned it with the card padding.
+* Increased the spacing between menu items on mobile.
+
+
 ## 3.0.24 - 2024-08-24
 
 ### Changed
