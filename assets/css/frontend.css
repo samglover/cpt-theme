@@ -351,8 +351,8 @@ li::marker {
     border-radius: var(--wp--custom--border--radius--buttons);
     height: var(--wp--preset--font-size--xl);
     position: absolute;
-    right: var(--wp--preset--spacing--50);
-    top: var(--wp--preset--spacing--50);
+    right: calc(0.5 * var(--wp--preset--spacing--20));
+    top: calc(0.5 * var(--wp--preset--spacing--20));
     transform: unset;
     width: var(--wp--preset--font-size--xl);
   }
