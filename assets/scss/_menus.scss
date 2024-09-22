@@ -183,10 +183,6 @@ body {
     font-weight: bold;
     letter-spacing: .075em;
     transform: rotate(90deg);
-
-    @media (max-width: $breakpoint-sm) {
-      margin-bottom: $spacing-sm;
-    }
   }
 
   .submenu-dismiss {
