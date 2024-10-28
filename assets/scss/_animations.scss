@@ -1,3 +1,8 @@
+@keyframes rotatingFadeIn {
+  0% { opacity: 0; transform: translateY(-50%) rotate(-45deg); }
+  100% { opacity: 1; transform: translateY(-50%) rotate(0); }
+}
+
 @keyframes growDown {
   // Based off of: https://codinhood.com/micro/10-dropdown-menu-animations-css-transform
   0% { transform: scaleY(0); }
