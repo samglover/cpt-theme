@@ -19,23 +19,9 @@
   }
 
   #cpt-nav {
-    .menu {
-      font-size: $font-size-sm;
-      gap: $spacing-xxs $spacing-xs;
-    }
-
-    .cpt-tabs {
-      border-color: var(--wp--custom--border--color--normal);
-      padding: $spacing-xxs $spacing-sm;
-
-      @media (max-width: $breakpoint-sm) {
-        padding: $spacing-xs;
-
-        .cpt-tab.open {
-          width: auto;
-        }
-      }
-    }
+    background-color: $gray-wash;
+    padding-top: $spacing-xxs;
+    padding-bottom: $spacing-xxs;
   }
 
   .cpt-notice:where(:not(body.wp-admin)) {

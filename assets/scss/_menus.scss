@@ -1,193 +1,167 @@
-// Stops the page from scrolling behind dropdown menu modals on mobile.
-body {
-  @media (max-width: $breakpoint-sm) {
-    &:has(.menu-item-has-children.open) {
-      height: 100%;
-      overflow: hidden;
-    }
-  }
-}
+// Global menu styles
+.menu {
+  display: flex;
+  gap: $spacing-xs $spacing-sm;
+  line-height: $line-height-normal;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
-// Submenus
-// On desktop submenus are dropdowns. On mobile they become modals.
-.menu > .menu-item-has-children {
-  position: relative;
+  .menu-item {
+    a {
+      color: $menu-text;
+      display: block;
 
-  &:not(.collapsed-menu) > a {
-    text-decoration: none;
-  }
-  
-  // Adds a "+" after top-level menu items except for the collapsed menu.
-  &:not(.collapsed-menu) {
-    > a {
-      align-items: center;
-      display: flex;
-      gap: .15em;
+      // Prevents "fake" links from behaving like real ones.
+      &:not([href]),
+      &[href="#"] {
+        cursor: default;
+        pointer-events: none;
+      }
     }
     
-    > a::after {
-      content: '\0002B'; // "+"
-      display: inline-grid;
-      height: .9em;
-      place-content: center;
-      transition: transform 150ms ease-in-out;
-      width: .9em;
-    }
-  }
-
-  // Adds a transparent overlay on top-level menu items that disables menu item links 
-  // until the menu is opened.
-  &:not(.open)::before {
-    content: '';
-    cursor: pointer;
-    inset: 0;
-    position: absolute; 
-    z-index: 10; 
-  }
-
-  // Top-Level Submenus
-  > .sub-menu {
-    animation: growDown_centered 150ms ease-in-out forwards;
-    display: none;
-    font-size: $font-size-sm;
-    max-width: calc(100vw - ($spacing-sm * 2));
-    padding: $spacing-xxs $spacing-sm;
-    position: absolute;
-      top: 100%;
-      left: 50%;
-    transform: translateX(-50%);
-    transform-origin: top;
-    width: max-content;
-    z-index: 10;
-  }
-
-  // Deeper Submenus
-  .menu-item-has-children {
-    .sub-menu {
-      margin-left: 0;
-      padding-left: 1em;
-    }
-  }
-
-  // Open Submenus
-  &.open {
-    // When open, the "+" rotates and the submenu is shown.
-    > a {
-      &::after {
-        transform: rotate(45deg);
-      }
-
-      + .sub-menu {
-        display: block;
-      }
-
-    }
-
-    // When open on mobile, the submenu is a modal.
-    @media (max-width: $breakpoint-sm) {
-      animation: pulse 150ms ease-in-out forwards;
-      margin: 0;
-      max-height: calc(100vh - $spacing-sm * 2 - var(--wp-admin--admin-bar--height));
-      overflow: auto;
-      position: fixed;
-        top: calc($spacing-sm + var(--wp-admin--admin-bar--height));
-        right: $spacing-sm;
-        left: $spacing-sm;
-      transform-origin: top center;
-      width: calc(100vw - ($spacing-sm * 2));
-      z-index: 20;
-
-      .menu-item {
-        font-size: $font-size-md;
-        margin: $spacing-xs 0;
-      }
-
+    &.current-menu-item {
       > a {
-        color: $menu-text;
-        font-size: $font-size-lg;
-        font-weight: bold;
+        font-weight: bolder;
+      }
+    }
+  }
 
-        &::after {
-          display: none !important;
+  // Top-level menu items
+  > .menu-item {
+    > a {
+      text-wrap: nowrap;
+  
+      &:not(:hover) {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .sub-menu {
+    .menu-item {
+      display: block;
+      margin-top: $spacing-xxs;
+      margin-bottom: $spacing-xxs;
+    }
+  
+    .sub-menu {
+      list-style-type: disc;
+      margin-left: calc(.8 * $spacing-sm);
+      padding: 0;
+  
+      .menu-item {
+        display: list-item;
+      }
+    }
+  }
+
+  // Top-level submenus
+  > .menu-item-has-children {
+    position: relative;
+
+    &:not(.open)::before {
+      content: '';
+      cursor: pointer;
+      inset: 0;
+      position: absolute; 
+      z-index: 10; 
+    }
+
+    &:not(.collapsed-menu) {
+      align-items: center;
+      display: flex;
+      gap: $spacing-tiny;
+
+      &::after {
+        background-image: url('../images/close-dark.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        content: '';
+        display: inline-grid;
+        height: .9em;
+        place-content: center;
+        transform: rotate(-45deg);
+        transition: transform 150ms ease-in-out;
+        width: .9em;
+      }
+    }
+
+    .submenu-dismiss {
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 50%;
+      border: $border;
+      border-radius: $button-border-radius;
+      box-shadow: none;
+      cursor: pointer;
+      height: .9em;
+      margin: 0;
+      padding: 0;
+      position: absolute;  
+        top: 50%;
+        right: 0;
+      transform: translateY(-50%);
+      width: .9em;
+      z-index: 10;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: LightGray;
+        background-image: url('../images/close.svg');
+      }
+      
+      &:hover:not(:active),
+      &:focus:not(:active)        {
+        box-shadow: $box-shadow;
+      }
+    }
+
+    > .sub-menu {
+      animation: growDown_centered 150ms ease-in-out forwards;
+      background-color: $page-color;
+      border: $border;
+      box-shadow: $box-shadow;
+      display: none;
+      font-size: $font-size-sm;
+      max-width: 25ch;
+      padding: $spacing-xs $spacing-sm;
+      position: absolute;
+        top: 100%;
+        left: 50%;
+      transform: translateX(-50%);
+      transform-origin: top;
+      width: max-content;
+      z-index: 10;
+
+      > :first-child {
+        margin-top: 0;
+      }
+
+      > :last-child,
+      > :last-child :last-child {
+        margin-bottom: 0;
+      }
+
+      .menu-item-has-children {
+        .sub-menu {
+          margin-left: 0;
+          padding-left: 1em;
         }
+      }
+    }
+
+    &.open {
+      &::after {
+        transform: revert;
       }
 
       > .sub-menu {
-        animation: unset;
-        background: none;
-        border: none;
-        box-shadow: none;
-        margin: 0;
-        padding: 0;
-        position: unset;
-        transform: unset;
-        width: auto;
+        display: block;
       }
-
-      :last-child,
-      :last-child :last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-
-// Submenu Dismiss Button
-// On desktop the submenu dismiss button is a transparent overlay 
-// for Javascript. On mobile it becomes an actual close button.
-.submenu-dismiss {
-  background-color: transparent;
-  border: unset;
-  border-radius: $button-border-radius;
-  box-shadow: none;
-  cursor: pointer;
-  height: .9em;
-  padding: 0;
-  position: absolute;  
-    top: 50%;
-    right: 0;
-  transform: translateY(-50%);
-  width: .9em;
-  z-index: 10;
-  
-  &:hover:not(:active)  {
-    background-color: rgba(255, 255, 255, .25);
-    border-radius: $button-border-radius;
-    box-shadow: $box-shadow;
-  }
-
-  @media (max-width: $breakpoint-sm) {
-    background-color: LightGray;
-    background-image: url("../images/close.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 50%;
-    border: var(--wp--custom--border--normal);
-    border-radius: var(--wp--custom--border--radius--buttons);
-    height: $font-size-xl;
-    position: absolute;
-      right: $spacing-tiny;
-      top: $spacing-tiny;
-    transform: unset;
-    width: $font-size-xl;
-
-    &:hover:not(:active)  {
-      background-color: LightGray;
-    }
-  }
-}
-
-#collapsed-menu {
-  > a {
-    display: inline-block;
-    font-weight: bold;
-    letter-spacing: .075em;
-    transform: rotate(90deg);
-  }
-
-  .submenu-dismiss {
-    @media (min-width: $breakpoint-sm) {
-      display: none;
     }
   }
 }
@@ -201,71 +175,6 @@ body {
   width: 100vw;
 }
 
-.menu {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 0 $spacing-sm;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  .menu-item {
-    line-height: $line-height-sm;
-
-    a {
-      color: $menu-text;
-      display: block;
-
-      &:not([href]),
-      &[href="#"] {
-        cursor: default;
-        pointer-events: none;
-      }
-    }
-    
-    &.current-menu-item {
-      > a {
-        font-weight: 500;
-      }
-  
-      > a::after {
-        font-weight: initial;
-      }
-    }
-  }
-
-  // Top-level menu items
-  > .menu-item {
-    line-height: $line-height-normal;
-
-    > a {
-      text-wrap: nowrap;
-  
-      &:not(:hover) {
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-.sub-menu {
-  .menu-item {
-    display: block;
-    margin-top: $spacing-xxs;
-    margin-bottom: $spacing-xxs;
-  }
-
-  .sub-menu {
-    list-style-type: disc;
-    margin-left: calc(.8 * $spacing-sm);
-    padding: 0;
-
-    .menu-item {
-      display: list-item;
-    }
-  }
-}
 
 .primary-menu-container {
   align-items: center;
@@ -292,6 +201,23 @@ body {
   }
 }
 
+
+#collapsed-menu {
+  > a {
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: .075em;
+    transform: rotate(90deg);
+  }
+
+  .submenu-dismiss {
+    @media (min-width: $breakpoint-sm) {
+      display: none;
+    }
+  }
+}
+
+
 #header-cta {
   animation: pulse 1s ease-in-out .5s 1 running;
   background-color: var(--header-cta-button-color);
@@ -299,6 +225,7 @@ body {
   text-align: center;
   text-wrap: nowrap;
 }
+
 
 .secondary-menu-container {
   background-color: var(--wp--preset--color--secondary);
@@ -311,13 +238,88 @@ body {
   .menu {
     font-size: $font-size-sm;
     flex-wrap: wrap;
-    gap: $spacing-xxs $spacing-sm;
 
     @media (min-width: $breakpoint-sm) {
       > .menu-item-has-children:first-child > .sub-menu {
         animation: growDown 150ms ease-in-out forwards;
         position: absolute;
           left: 0;
+      }
+    }
+  }
+}
+
+// Mobile menu styles
+@media (max-width: $breakpoint-sm) {
+  // Stops the page from scrolling behind dropdown menu modals on mobile.
+  body {
+    &:has(.menu-item-has-children.open) {
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+
+  .menu {
+    > .menu-item-has-children {
+      &.open {
+        align-items: start;
+        animation: pulse 150ms ease-in-out forwards;
+        background-color: $page-color;
+        border: $border;
+        box-shadow: $box-shadow;
+        flex-direction: column;
+        margin: 0;
+        max-height: calc(100vh - $spacing-sm * 2 - var(--wp-admin--admin-bar--height));
+        overflow: auto;
+        padding: $spacing-sm;
+        position: fixed;
+          top: calc($spacing-sm + var(--wp-admin--admin-bar--height));
+          right: $spacing-sm;
+          left: $spacing-sm;
+        transform-origin: top center;
+        width: calc(100vw - ($spacing-sm * 2));
+        z-index: 20;
+
+        &::after {
+          display: none;
+        }
+  
+        .menu-item {
+          font-size: $font-size-md;
+        }
+  
+        > a {
+          color: $menu-text;
+          display: block;
+          font-size: $font-size-lg;
+          font-weight: bold;
+          max-width: calc(100% - $spacing-lg );
+          text-wrap: auto;
+        }
+  
+        > .sub-menu {
+          animation: unset;
+          background: none;
+          border: none;
+          box-shadow: none;
+          margin: 0;
+          max-width: calc(100vw - ($spacing-sm * 2));
+          padding: 0;
+          position: unset;
+          transform: unset;
+          width: auto;
+        }
+      }
+
+      .submenu-dismiss {
+        background-color: LightGray;
+        background-image: url('../images/close.svg');
+        height: $font-size-xl;
+        position: absolute;
+          right: $spacing-xs;
+          top: $spacing-xs;
+        transform: unset;
+        width: $font-size-xl;
       }
     }
   }

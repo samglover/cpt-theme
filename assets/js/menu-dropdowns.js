@@ -23,9 +23,6 @@ wp.domReady(() => {
       clickedMenu.prepend(submenuDismiss);
       if (window.innerWidth <= 576) {
         clickedMenu.after(submenuScreen);
-        clickedMenu.classList.add('card');
-      } else {
-        clickedMenu.querySelector('.sub-menu').classList.add('card');
       }
     }
   }
@@ -44,8 +41,7 @@ wp.domReady(() => {
     if (!openMenus) return;
     openMenus.forEach(function (element) {
       if (element !== clickedMenu) {
-        element.classList.remove('open', 'card');
-        element.querySelector('.sub-menu').classList.remove('card');
+        element.classList.remove('open');
         submenuDismiss.remove();
         submenuScreen.remove();
       }
