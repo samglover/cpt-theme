@@ -1,6 +1,6 @@
 # Changelog for the Client Power Tools WordPress Theme
 
-All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
 
 ## 3.1.0 & 3.1.1 - 2024-10-28
