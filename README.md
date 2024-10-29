@@ -49,13 +49,11 @@ function cpt_theme_child_frontend_stylesheets_scripts() {
 
 ### 4. Copy **theme.json**
 
-Copy the theme.json into the child theme folder. I usually delete most of the contents, and keep just the properties I need. Usually these include:
+Copy [theme.json](https://github.com/samglover/cpt-theme/blob/main/theme.json) into the child theme folder. I delete most of the contents and keep only the properties I need. Usually these include:
 
 * settings.colors.palette
 * settings.typography.fontFamilies
 * styles.typography.fontFamily
-
-That's usually all I need to get started.
 
 ### 4. Create CSS folders and files
 
@@ -77,7 +75,7 @@ Create the following files in **/assets/scss**:
 * _menus.scss
 * frontend.scss
 
-In frontend.scss, copy and paste the following:
+In **frontend.scss**, copy and paste the following:
 
 ```scss
 @import 'variables';
