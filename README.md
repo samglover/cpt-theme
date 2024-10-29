@@ -1,11 +1,6 @@
 # cpt-theme: the Client Power Tools theme for WordPress
 
-This is a hybrid WordPress theme I built to use as a parent theme for custom web development projects.
-
-* It uses theme.json for block styles and for some global style variables
-* It uses a PHP template for the preheader, header and footer, with widget areas in the preheader and footer
-* It uses classic PHP page templates
-* It uses a primary and secondary 
+A hybrid WordPress theme created by [Sam Glover](https://github.com/samglover). This theme is meant to be used as a parent theme for custom web development projects.
 
 ## Creating a Child Theme
 
