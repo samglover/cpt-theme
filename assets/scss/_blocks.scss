@@ -20,6 +20,12 @@
   }
 }
 
+.wp-block-list {
+  li::marker {
+    color: $light-text;
+  }
+}
+
 .wp-block-pullquote {
   padding: 0;
 

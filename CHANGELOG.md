@@ -2,6 +2,12 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+## 3.1.2 - 2024-11-11
+
+### Changed
+* Moved list spacing styles to theme.json
+* Moved list item marker styles to _blocks.scss
+
 
 ## 3.1.0 & 3.1.1 - 2024-10-28
 

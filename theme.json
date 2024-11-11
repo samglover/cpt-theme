@@ -407,11 +407,19 @@
       "core/list": {
         "spacing": {
           "padding": {
-            "left": "var(--wp--preset--spacing--60)"
+            "left": "1em"
           }
         },
         "typography": {
           "lineHeight": "var(--wp--custom--typography--line-height--normal)"
+        }
+      },
+      "core/list-item": {
+        "spacing": {
+          "margin": {
+            "top": "var(--wp--preset--spacing--30)",
+            "bottom": "var(--wp--preset--spacing--30)"
+          }
         }
       },
       "core/paragraph": {

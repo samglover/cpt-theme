@@ -12,12 +12,3 @@ a {
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: $font-size-normal;
 }
-
-ol,
-ul {
-  padding-left: $spacing-sm;
-}
-
-li::marker {
-  color: $light-text;
-}
