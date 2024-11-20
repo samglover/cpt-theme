@@ -407,7 +407,7 @@
       "core/list": {
         "spacing": {
           "padding": {
-            "left": "1em"
+            "left": "calc(2 * var(--wp--preset--spacing--40))"
           }
         },
         "typography": {
