@@ -20,6 +20,14 @@
   }
 }
 
+.wp-block-group {
+  &.is-layout-flex {
+    &.is-content-justification-space-between {
+      justify-content: space-between;
+    }
+  }
+}
+
 .wp-block-list {
   li::marker {
     color: $light-text;

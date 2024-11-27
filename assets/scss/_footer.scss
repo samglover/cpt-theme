@@ -11,16 +11,6 @@
   }
 }
 
-#footer-widgets {
-  align-items: start;
-  list-style: none;
-  padding-left: unset;
-}
-
 .footer-meta {
-  display: flex;
-  flex-wrap: wrap;
   font-size: $font-size-sm;
-  gap: $spacing-sm;
-  justify-content: space-between;
 }
