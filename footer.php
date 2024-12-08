@@ -12,7 +12,9 @@
 
   <?php if (get_option('cpt_sites_primary_menu_cta_style') == 'modal') { ?>
     <div id="cta-modal" class="modal card">
-      <button class="cta-modal-dismiss"></button>
+      <button class="cta-modal-dismiss">
+        <span class="screen-reader-text">Close</span>
+      </button>
       <?php
         $cta_code = get_option('cpt_sites_primary_menu_cta_code');
         $cta_code = wptexturize($cta_code);

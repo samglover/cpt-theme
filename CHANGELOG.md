@@ -3,6 +3,12 @@
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
 
+## 3.1.5 - 2024-12-08
+
+### Added
+* The modal dismiss button now has a screen reader text element within it for improved accessibility.
+
+
 ## 3.1.4 - 2024-11-27
 
 ### Changed
