@@ -576,6 +576,7 @@
 			},
       "caption": {
         "typography": {
+          "fontSize": "var(--wp--preset--font-size--sm)",
           "lineHeight": "var(--wp--custom--typography--line-height--sm)"
         }
       },

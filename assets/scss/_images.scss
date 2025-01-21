@@ -3,6 +3,12 @@ img {
   max-width: 100%;
 }
 
+.wp-block-image {
+  &.is-style-rounded {
+    text-align:center;
+  }
+}
+
 .wp-post-image {
   display: block;
   height: auto;
