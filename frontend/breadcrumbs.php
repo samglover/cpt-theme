@@ -64,6 +64,25 @@ function breadcrumbs($separator = '/') {
         }
       }
     }
+    
+    if (is_singular('post')) {
+      // Shows a blog breadcrumb only if the front page is not the page for posts.
+      if (get_option('show_on_front') !== 'posts') {
+        $blog_page_id = get_option('page_for_posts');
+        if ($blog_page_id) {
+          $breadcrumbs[] = [
+            'label' => get_the_title($blog_page_id),
+            'url'   => get_permalink($blog_page_id),
+          ];
+        }
+      }
+    } elseif (is_singular() && !is_page()) {
+      $post_type = get_post_type();
+      $breadcrumbs[] = [
+        'label' => apply_filters('post_type_archive_title', get_post_type_object($post_type)->labels->name, $post_type),
+        'url'   => get_post_type_archive_link($post_type),
+      ];
+    }
   } elseif (is_category() || is_tag() || is_tax()) {
     $term       = get_queried_object();
     $ancestors  = get_ancestors($term->term_id, $term->taxonomy);
@@ -76,27 +95,26 @@ function breadcrumbs($separator = '/') {
       ];
     }
 
-    $blog_page_id = get_option('page_for_posts');
-    if ($blog_page_id) {
+    $tax = get_taxonomy(get_queried_object()->taxonomy);
+    $object_types = $tax->object_type;
+
+    if ($object_types && in_array('post', $object_types)) {
+      $blog_page_id = get_option('page_for_posts');
+      if ($blog_page_id) {
+        $breadcrumbs[] = [
+          'label' => get_the_title($blog_page_id),
+          'url'   => get_permalink($blog_page_id),
+        ];
+      }
+    } else {
+      $post_type_object = get_post_type_object($object_types[0]);
+      $post_type_labels = get_post_type_labels($post_type_object);
       $breadcrumbs[] = [
-        'label' => get_the_title($blog_page_id),
-        'url'   => get_permalink($blog_page_id),
+        'label' => $post_type_labels->name,
+        'url'   => get_post_type_archive_link($object_types[0]),
       ];
     }
-  }
 
-  if (is_singular('post')) {
-    $blog_page_id = get_option('page_for_posts');
-    $breadcrumbs[] = [
-      'label' => get_the_title($blog_page_id),
-      'url'   => get_permalink($blog_page_id),
-    ];
-  } elseif (is_singular() && !is_page()) {
-    $post_type = get_post_type();
-    $breadcrumbs[] = [
-      'label' => apply_filters('post_type_archive_title', get_post_type_object($post_type)->labels->name, $post_type),
-      'url'   => get_post_type_archive_link($post_type),
-    ];
   }
 
   $breadcrumbs[] = [
@@ -124,9 +142,9 @@ function breadcrumbs($separator = '/') {
               <a 
                 href="<?php echo esc_url($breadcrumb['url']); ?>"
                 alt="<?php echo esc_attr($breadcrumb['label']); ?>"
-              ><?php echo esc_html($breadcrumb['label']); ?></a>
+              ><?php echo wp_kses_post($breadcrumb['label']); ?></a>
             <?php } else { ?>
-              <?php echo esc_html($breadcrumb['label']); ?>
+              <?php echo wp_kses_post($breadcrumb['label']); ?>
             <?php } ?>
           </span>
           <?php if ($key < count($breadcrumbs) -1) echo ' <span class="breadcrumbs-separator">' . $separator . '</span> '; ?>

@@ -5,7 +5,8 @@ All notable changes to this theme will be documented in this file. The format is
 ## 3.2.2 - 2025-01-26
 
 ### Fixed
-* No longer includes a random post in the breadcrumbs if a page for posts does not exist.
+* No longer includes a random post in the breadcrumbs if displaying a taxonomy archive when a page for posts does not exist. Instead, the function determines whether to show a blog or post type breadcrumb.
+* Use wp_kses_post for breadcrumb labels instead of esc_html.
 
 
 ## 3.2.1 - 2025-01-21
