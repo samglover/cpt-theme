@@ -2,6 +2,11 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+## 3.2.2 - 2025-01-26
+
+### Fixed
+* No longer includes a random post in the breadcrumbs if a page for posts does not exist.
+
 
 ## 3.2.1 - 2025-01-21
 

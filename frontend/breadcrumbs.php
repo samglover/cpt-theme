@@ -77,10 +77,12 @@ function breadcrumbs($separator = '/') {
     }
 
     $blog_page_id = get_option('page_for_posts');
-    $breadcrumbs[] = [
-      'label' => get_the_title($blog_page_id),
-      'url'   => get_permalink($blog_page_id),
-    ];
+    if ($blog_page_id) {
+      $breadcrumbs[] = [
+        'label' => get_the_title($blog_page_id),
+        'url'   => get_permalink($blog_page_id),
+      ];
+    }
   }
 
   if (is_singular('post')) {
