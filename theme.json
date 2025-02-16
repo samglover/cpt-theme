@@ -393,6 +393,7 @@
         },
         "spacing": {
           "margin": {
+            "top": "calc(2 * var(--wp--preset--font-size--normal))",
             "bottom": "var(--wp--preset--font-size--normal)"
           }
         }
