@@ -2,6 +2,12 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+## 3.2.3 - 2025-02-19
+
+### Changed
+* Wrapped the `img` style in normalize.scss in `:where()` in order to remove specificity so it's easier to override.
+
+
 ## 3.2.2 - 2025-01-26
 
 ### Fixed
