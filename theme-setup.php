@@ -1,9 +1,23 @@
 <?php
-
 /**
- * Theme Supports, Page Excerpts, Image Sizes & Nav Menus
+ * Theme setup, including:
+ * - Theme supports
+ * - Image sizes
+ * - Nav menus
+ * - Sidebars/widget areas
+ * - Default theme options
+ *
+ * @file    theme-setup.php
+ * @package CPT_Theme
+ * @since   1.0.0
  */
+
 add_action( 'after_setup_theme', 'theme_setup' );
+/**
+ * - Theme supports
+ * - Image sizes
+ * - Nav menus
+ */
 function theme_setup() {
 	add_theme_support(
 		'custom-logo',
@@ -40,10 +54,10 @@ function theme_setup() {
 }
 
 
-/**
- * Register Sidebars/Widget Areas
- */
 add_action( 'widgets_init', 'register_widget_areas' );
+/**
+ * Register sidebars/widget areas.
+ */
 function register_widget_areas() {
 	register_sidebar(
 		array(
@@ -52,12 +66,6 @@ function register_widget_areas() {
 			'description' => __( 'Displayed above the main header.', 'cpt-theme' ),
 		)
 	);
-
-	// register_sidebar([
-	// 'id'            => 'sidebar',
-	// 'name'          => __('Sidebar Widget Area', 'cpt-theme'),
-	// 'description'   => __('Displayed as a sidebar when using the Sidebar page template.', 'cpt-theme'),
-	// ]);
 
 	register_sidebar(
 		array(
@@ -69,10 +77,10 @@ function register_widget_areas() {
 }
 
 
-/**
- * Default Theme Options
- */
 add_action( 'after_switch_theme', 'default_options' );
+/**
+ * Sets default theme options.
+ */
 function default_options() {
 	$default_options = array(
 		'cpt_sites_sticky_header'                 => false,
@@ -84,8 +92,8 @@ function default_options() {
 		'cpt_sites_primary_menu_cta_button_color' => 'Coral',
 		'cpt_sites_primary_menu_cta_text'         => 'Contact Us',
 		'cpt_sites_primary_menu_cta_style'        => 'link',
-	// Fonts moved to theme.json in 3.0.
-	// Colors moved to theme.json in 3.0.
+		// Fonts moved to theme.json in 3.0.
+		// Colors moved to theme.json in 3.0.
 	);
 
 	foreach ( $default_options as $key => $val ) {

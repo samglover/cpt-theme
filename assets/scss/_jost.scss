@@ -3,9 +3,9 @@
 @font-face {
   font-family: 'Jost';
   src: local( 'Jost* Book' ),
-    url( '../../admin/fonts/Jost/Jost-Regular.woff2' ) format( 'woff2' ),
-    url( '../../admin/fonts/Jost/Jost-Regular.woff' ) format( 'woff' ),
-    url( '../../admin/fonts/Jost/Jost-Regular.ttf' ) format( 'truetype' );
+    url( '../fonts/jost/Jost-Regular.woff2' ) format( 'woff2' ),
+    url( '../fonts/jost/Jost-Regular.woff' ) format( 'woff' ),
+    url( '../fonts/jost/Jost-Regular.ttf' ) format( 'truetype' );
   font-weight: normal;
   font-style: normal;
 }
@@ -13,9 +13,9 @@
 @font-face {
   font-family: 'Jost';
   src: local( 'Jost* Bold' ),
-    url( '../../admin/fonts/Jost/Jost-Bold.woff2' ) format( 'woff2' ),
-    url( '../../admin/fonts/Jost/Jost-Bold.woff' ) format( 'woff' ),
-    url( '../../admin/fonts/Jost/Jost-Bold.ttf' ) format( 'truetype' );
+    url( '../fonts/jost/Jost-Bold.woff2' ) format( 'woff2' ),
+    url( '../fonts/jost/Jost-Bold.woff' ) format( 'woff' ),
+    url( '../fonts/jost/Jost-Bold.ttf' ) format( 'truetype' );
   font-weight: bold;
   font-style: normal;
 }
@@ -23,9 +23,9 @@
 @font-face {
   font-family: 'Jost';
   src: local( 'Jost* Book Italic' ),
-    url( '../../admin/fonts/Jost/Jost-Italic.woff2' ) format( 'woff2' ),
-    url( '../../admin/fonts/Jost/Jost-Italic.woff' ) format( 'woff' ),
-    url( '../../admin/fonts/Jost/Jost-Italic.ttf' ) format( 'truetype' );
+    url( '../fonts/jost/Jost-Italic.woff2' ) format( 'woff2' ),
+    url( '../fonts/jost/Jost-Italic.woff' ) format( 'woff' ),
+    url( '../fonts/jost/Jost-Italic.ttf' ) format( 'truetype' );
   font-weight: normal;
   font-style: italic;
 }
@@ -33,9 +33,9 @@
 @font-face {
   font-family: 'Jost';
   src: local( 'Jost* Bold Italic' ),
-    url( '../../admin/fonts/Jost/Jost-BoldItalic.woff2' ) format( 'woff2' ),
-    url( '../../admin/fonts/Jost/Jost-BoldItalic.woff' ) format( 'woff' ),
-    url( '../../admin/fonts/Jost/Jost-BoldItalic.ttf' ) format( 'truetype' );
+    url( '../fonts/jost/Jost-BoldItalic.woff2' ) format( 'woff2' ),
+    url( '../fonts/jost/Jost-BoldItalic.woff' ) format( 'woff' ),
+    url( '../fonts/jost/Jost-BoldItalic.ttf' ) format( 'truetype' );
   font-weight: bold;
   font-style: italic;
 }

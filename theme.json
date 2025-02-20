@@ -410,17 +410,11 @@
           "padding": {
             "left": "calc(2 * var(--wp--preset--spacing--40))"
           }
-        },
-        "typography": {
-          "lineHeight": "var(--wp--custom--typography--line-height--normal)"
         }
       },
       "core/list-item": {
-        "spacing": {
-          "margin": {
-            "top": "var(--wp--preset--spacing--30)",
-            "bottom": "var(--wp--preset--spacing--30)"
-          }
+        "typography": {
+          "lineHeight": "var(--wp--custom--typography--line-height--normal)"
         }
       },
       "core/paragraph": {

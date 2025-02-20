@@ -2,6 +2,25 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+## 3.2.4 - 2025-02-20
+
+### Added
+* PHP documentation
+* Non-block list items now have normal line-height.
+* Tables now have a gap between cells.
+* All output is now escaped.
+
+### Changed
+* Comment form labels are no longer all-caps.
+* Block list items no longer have margins.
+* Comment icon is now applied with CSS instead of inserted with file_get_contents().
+* Move the Jost font files to the `/assets/fonts` folder where it belongs.
+* The "page" and "404 not found" strings in `/frontend/breadcrumbs.php` are now translatable.
+
+### Fixed
+* Added the missing `</li>` closing tag in `/frontend/comment.php`.
+
+
 ## 3.2.3 - 2025-02-19
 
 ### Changed

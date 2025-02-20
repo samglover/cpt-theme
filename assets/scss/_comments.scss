@@ -1,14 +1,14 @@
 .comment-count {
   .comments-icon {
+    background-image: url(../images/comment.svg);
+    background-position: contain;
+    background-repeat: no-repeat;
+    background-size: 100%;
     display: inline-block;
     height: 1em;
     position: relative;
       top: .15em;
     width: 1em;
-
-    svg {
-      fill: $light-text;
-    }
   }
 
   a {
@@ -110,8 +110,7 @@
 
     label {
       font-size: $font-size-sm;
-      font-weight: bold;
-      text-transform: uppercase;
+      font-weight: bold;  
     }
 
     .comment-field {
