@@ -14,7 +14,6 @@
 	<?php
 	$blocks         = parse_blocks( $post->post_content );
 	$header_classes = 'page-header has-global-padding is-layout-constrained';
-	$header_style   = '';
 
 	if ( is_front_page() ) {
 		$header_classes .= ' screen-reader-text';
@@ -22,7 +21,6 @@
 
 	if ( has_post_thumbnail() ) {
 		$header_classes .= ' has-background-image alignfull';
-		$header_style    = ' style="background-image: url(' . wp_get_attachment_image_url( get_post_thumbnail_id(), 'full' ) . ');"';
 	}
 
 	if (
@@ -42,7 +40,9 @@
 		?>
 		<header 
 			class="<?php echo esc_attr( $header_classes ); ?>"
-			<?php echo esc_attr( $header_style ); ?>
+			<?php if ( has_post_thumbnail() ) { ?>
+				style="background-image: url('<?php echo esc_url( wp_get_attachment_image_url( get_post_thumbnail_id(), 'full' ) ); ?>');"
+			<?php } ?>
 		>
 			<?php the_title( '<h1 class="entry-title wp-block-post-title">', '</h1>' ); ?>
 		</header>
