@@ -7,53 +7,55 @@ All notable changes to this theme will be documented in this file. The format is
 ### Changed
 - Removed `!important` from `:disabled` style
 
+
 ## 3.2.5 - 2025-02-25
 
 ### Fixed
-* Page header background images now display as expected.
+- Page header background images now display as expected.
+
 
 ## 3.2.4 - 2025-02-20
 
 ### Added
-* PHP documentation
-* Non-block list items now have normal line-height.
-* Tables now have a gap between cells.
-* All output is now escaped.
+- PHP documentation
+- Non-block list items now have normal line-height.
+- Tables now have a gap between cells.
+- All output is now escaped.
 
 ### Changed
-* Comment form labels are no longer all-caps.
-* Block list items no longer have margins.
-* Comment icon is now applied with CSS instead of inserted with file_get_contents().
-* Move the Jost font files to the `/assets/fonts` folder where it belongs.
-* The "page" and "404 not found" strings in `/frontend/breadcrumbs.php` are now translatable.
+- Comment form labels are no longer all-caps.
+- Block list items no longer have margins.
+- Comment icon is now applied with CSS instead of inserted with file_get_contents().
+- Move the Jost font files to the `/assets/fonts` folder where it belongs.
+- The "page" and "404 not found" strings in `/frontend/breadcrumbs.php` are now translatable.
 
 ### Fixed
-* Added the missing `</li>` closing tag in `/frontend/comment.php`.
+- Added the missing `</li>` closing tag in `/frontend/comment.php`.
 
 
 ## 3.2.3 - 2025-02-19
 
 ### Changed
-* Wrapped the `img` style in normalize.scss in `:where()` in order to remove specificity so it's easier to override.
+- Wrapped the `img` style in normalize.scss in `:where()` in order to remove specificity so it's easier to override.
 
 
 ## 3.2.2 - 2025-01-26
 
 ### Fixed
-* No longer includes a random post in the breadcrumbs if displaying a taxonomy archive when a page for posts does not exist. Instead, the function determines whether to show a blog or post type breadcrumb.
-* Use wp_kses_post for breadcrumb labels instead of esc_html.
+- No longer includes a random post in the breadcrumbs if displaying a taxonomy archive when a page for posts does not exist. Instead, the function determines whether to show a blog or post type breadcrumb.
+- Use wp_kses_post for breadcrumb labels instead of esc_html.
 
 
 ## 3.2.1 - 2025-01-21
 
 ### Changed
-* Center images within the .wp-block-image container when using the rounded block style.
+- Center images within the .wp-block-image container when using the rounded block style.
 
 
 ## 3.2.0 - 2024-12-08
 
 ### Changed
-* Refactored breadcrumbs and added the `cpt_breadcrumbs` filter hook.
+- Refactored breadcrumbs and added the `cpt_breadcrumbs` filter hook.
 
 
 ## 3.1.5 - 2024-12-06
