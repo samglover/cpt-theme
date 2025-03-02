@@ -2,6 +2,11 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+## 3.2.6 - 2025-03-02
+
+### Changed
+- Removed `!important` from `:disabled` style
+
 ## 3.2.5 - 2025-02-25
 
 ### Fixed
