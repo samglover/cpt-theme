@@ -2,6 +2,12 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+## 3.3.0 - 2025-08-06
+
+### Added
+- The new `menu-prevent-offscreen-submenus.js` script aligns submenus to the right edge of the parent menu item if they would otherwise overflow the screen.
+- 
+
 ## 3.2.6 - 2025-03-02
 
 ### Changed

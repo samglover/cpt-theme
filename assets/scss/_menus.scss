@@ -111,7 +111,7 @@
         top: 50%;
         right: 0;
       transform: translateY(-50%);
-      width: .9em;
+      width: calc(.9em - 2 * $border-width);
       z-index: 10;
 
       &:hover,
@@ -134,7 +134,7 @@
       box-shadow: $box-shadow;
       display: none;
       font-size: $font-size-sm;
-      max-width: 25ch;
+      max-width: 230px;
       padding: $spacing-xs $spacing-sm;
       position: absolute;
         top: 100%;
@@ -159,6 +159,12 @@
           padding-left: 1em;
         }
       }
+    }
+
+    &.align-submenu-right > .sub-menu {
+      animation: growDown 150ms ease-in-out forwards;
+      right: 0;
+      left: unset;
     }
 
     &.open {
@@ -247,10 +253,12 @@
     flex-wrap: wrap;
 
     @media (min-width: $breakpoint-sm) {
-      > .menu-item-has-children:first-child > .sub-menu {
+      > .menu-item-has-children {
+        &:first-child > .sub-menu {
         animation: growDown 150ms ease-in-out forwards;
         position: absolute;
           left: 0;
+        }
       }
     }
   }
