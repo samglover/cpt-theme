@@ -104,7 +104,7 @@
       border-radius: $button-border-radius;
       box-shadow: none;
       cursor: pointer;
-      height: .9em;
+      height: calc(.9em - 2 * $border-width);
       margin: 0;
       padding: 0;
       position: absolute;  

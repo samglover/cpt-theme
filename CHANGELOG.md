@@ -6,7 +6,9 @@ All notable changes to this theme will be documented in this file. The format is
 
 ### Added
 - The new `menu-prevent-offscreen-submenus.js` script aligns submenus to the right edge of the parent menu item if they would otherwise overflow the screen.
-- 
+
+### Changed
+- Submenu dismiss overlay size adjusted to make it end up where it's supposed to.
 
 ## 3.2.6 - 2025-03-02
 
