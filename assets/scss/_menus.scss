@@ -87,11 +87,12 @@
         background-size: 50%;
         content: '';
         display: inline-grid;
-        height: .9em;
+        height: calc(.9 * $font-size-sm);
+        line-height: 1;
         place-content: center;
         transform: rotate(-45deg);
         transition: transform 150ms ease-in-out;
-        width: .9em;
+        width: calc(.9 * $font-size-sm);
       }
     }
 
@@ -104,14 +105,15 @@
       border-radius: $button-border-radius;
       box-shadow: none;
       cursor: pointer;
-      height: calc(.9em - 2 * $border-width);
+      height: calc(.9 * $font-size-sm);
+      line-height: 1;
       margin: 0;
       padding: 0;
       position: absolute;  
         top: 50%;
         right: 0;
       transform: translateY(-50%);
-      width: calc(.9em - 2 * $border-width);
+      width: calc(.9 * $font-size-sm);
       z-index: 10;
 
       &:hover,
