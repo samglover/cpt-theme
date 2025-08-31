@@ -7,8 +7,14 @@ All notable changes to this theme will be documented in this file. The format is
 ### Added
 - Max-width utility classes corresponding to breakpoints
 
+### Changed
+- Migrated `@import` SCSS rules to `@use`
+- Consolidated `_customize-cpt.scss` styles into `cpt.scss`
+
 ### Removed
-- Now that WordPress adds global padding/layout classes to the admin editor, the `admin-editor-classes.js` script is no longer necessary
+- Now that WordPress adds global padding/layout classes to the admin editor, the `/assets/js/admin-editor-classes.js` script is no longer necessary
+- Removed `/assets/scss/_customize-cpt.scss` (see above)
+
 
 ## 3.3.1 - 2025-08-12
 
