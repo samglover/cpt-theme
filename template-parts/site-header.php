@@ -8,11 +8,11 @@
  * @since      1.2.0
  */
 
-$header_classes  = 'site-header';
-$header_classes .= get_theme_mod( 'custom_logo' ) ? ' has-custom-logo' : '';
-$header_classes .= get_option( 'cpt_sites_show_preheader' ) ? ' show-preheader' : '';
-$header_classes .= get_option( 'cpt_sites_show_primary_menu' ) ? ' show-primary-menu' : '';
-$header_classes .= get_option( 'cpt_sites_show_primary_menu_cta' ) ? ' show-header-cta' : '';
+$site_header_classes  = 'site-header';
+$site_header_classes .= get_theme_mod( 'custom_logo' ) ? ' has-custom-logo' : '';
+$site_header_classes .= get_option( 'cpt_sites_show_preheader' ) ? ' show-preheader' : '';
+$site_header_classes .= get_option( 'cpt_sites_show_primary_menu' ) ? ' show-primary-menu' : '';
+$site_header_classes .= get_option( 'cpt_sites_show_primary_menu_cta' ) ? ' show-header-cta' : '';
 
 $site_title       = get_bloginfo( 'name' );
 $site_title_tag   = is_front_page() ? 'h1' : 'p';
@@ -25,7 +25,7 @@ $show_primary_menu = get_option( 'cpt_sites_show_primary_menu' );
 $show_cta          = get_option( 'cpt_sites_show_primary_menu_cta' );
 ?>
 
-<header class="<?php echo esc_attr( $header_classes ); ?>">
+<header class="<?php echo esc_attr( $site_header_classes ); ?>">
 	<?php if ( get_option( 'cpt_sites_show_preheader' ) ) { ?>
 		<div class="site-preheader wp-block-group alignfull has-global-padding is-layout-constrained">
 			<div class="site-preheader__inner wp-block-group alignwide">

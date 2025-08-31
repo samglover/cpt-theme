@@ -30,7 +30,12 @@ function breadcrumbs( $separator = '/' ) {
 			$label .= ' (' . $page_label . ' ' . get_query_var( 'paged' ) . ')';
 		}
 	} elseif ( is_singular() ) {
-		$label = get_the_title();
+		if ( has_post_title() ) {
+			$label = get_the_title();
+		} else {
+			$label = wp_trim_words( wp_strip_all_tags( get_the_content() ), 15, '…' );
+		}
+
 		if ( get_query_var( 'page' ) ) {
 			$label .= ' (' . $page_label . ' ' . get_query_var( 'page' ) . ')';
 		}

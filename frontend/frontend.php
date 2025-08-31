@@ -35,3 +35,56 @@ function read_more_link() {
 	<?php
 	return ob_get_clean();
 }
+
+
+/**
+ * Checks to see if the post has a title. Must be used in the loop.
+ *
+ * @return bool
+ */
+function has_post_title() {
+	if ( ! is_singular() ) {
+		return;
+	}
+
+	if ( ! empty( get_the_title() ) ) {
+		return true;
+	}
+
+	return false;
+}
+/**
+ * Checks to see if the post has a title or thumnail. Must be used in the loop.
+ *
+ * @return bool
+ */
+function has_post_header() {
+	if ( ! is_singular() ) {
+		return;
+	}
+
+	if ( has_post_title() || has_post_thumbnail() ) {
+		return true;
+	}
+
+	return false;
+}
+
+add_filter( 'pre_get_document_title', 'cpt_no_title_title_tag' );
+/**
+ * Uses the first 15 words of the content for the `title` tag if there is no post title.
+ *
+ * @param string $title The post title.
+ * @return string
+ */
+function cpt_no_title_title_tag( $title ) {
+	if (
+		! doing_action( 'wp_head' ) ||
+		! is_singular() ||
+		has_post_title()
+	) {
+		return $title;
+	}
+
+	return wp_trim_words( wp_strip_all_tags( get_the_content() ), 15, '…' );
+}
