@@ -6,10 +6,14 @@ All notable changes to this theme will be documented in this file. The format is
 
 ### Added
 - Max-width utility classes corresponding to breakpoints
+- `has_post_header()` and `has_post_title()` utility functions in `/frontend/frontend.php`
 
 ### Changed
 - Migrated `@import` SCSS rules to `@use`
 - Consolidated `_customize-cpt.scss` styles into `cpt.scss`
+- Addresses the edge case where a post or page has no title:
+  - Makes the post date in the byline into a link to the post
+  - Uses an excerpt of the post content for the breadcrumb label and `<title>` tag
 
 ### Removed
 - Now that WordPress adds global padding/layout classes to the admin editor, the `/assets/js/admin-editor-classes.js` script is no longer necessary
