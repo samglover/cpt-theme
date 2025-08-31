@@ -78,14 +78,6 @@ function cpt_theme_admin_stylesheets_scripts() {
 	wp_enqueue_script( 'color-picker', CPT_THEME_DIR_URI . 'includes/color-picker.js', array( 'wp-color-picker' ), CPT_THEME_VERSION, true );
 }
 
-add_action( 'enqueue_block_editor_assets', 'cpt_theme_editor_assets' );
-/**
- * Adds styles and scripts for the WP editor.
- */
-function cpt_theme_editor_assets() {
-	wp_enqueue_script( 'cpt-editor-classes', CPT_THEME_DIR_URI . 'assets/js/admin-editor-classes.js', array(), CPT_THEME_VERSION, true );
-}
-
 
 add_action( 'customize_register', 'cpt_theme_customizer_options' );
 /**
