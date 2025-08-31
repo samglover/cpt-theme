@@ -10,6 +10,22 @@
   }
 }
 
+.max-width-sm {
+  max-width: $breakpoint-sm !important;
+}
+
+.max-width-md {
+  max-width: $breakpoint-md !important;
+}
+
+.max-width-lg {
+  max-width: $breakpoint-lg !important;
+}
+
+.max-width-xl {
+  max-width: $breakpoint-xl !important;
+}
+
 .clearfix {
   clear: both;
   margin: 0;
