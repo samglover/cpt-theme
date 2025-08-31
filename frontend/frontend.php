@@ -43,7 +43,7 @@ function read_more_link() {
  * @return bool
  */
 function has_post_title() {
-	if ( ! in_the_loop() ) {
+	if ( ! is_singular() ) {
 		return;
 	}
 
@@ -59,7 +59,7 @@ function has_post_title() {
  * @return bool
  */
 function has_post_header() {
-	if ( ! in_the_loop() ) {
+	if ( ! is_singular() ) {
 		return;
 	}
 
@@ -68,4 +68,15 @@ function has_post_header() {
 	}
 
 	return false;
+}
+
+// add_filter( 'pre_get_document_title', 'cpt_no_title_tag' );
+function cpt_no_title_tag( $title ) {
+	if ( current_action() !== 'wp_head' ) {
+		return $title;
+	}
+	if ( ! is_singular() || ! empty( $title ) ) {
+		return $title;
+	}
+	return wp_trim_words( wp_strip_all_tags( get_the_content() ), 15, '…' );
 }
