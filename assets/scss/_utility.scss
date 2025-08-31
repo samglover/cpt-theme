@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .card,
 .is-style-card {
   background-color: $page-color;

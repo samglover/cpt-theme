@@ -1,19 +1,18 @@
-@import 'variables';
-@import 'animations';
-@import 'layout';
-@import 'typography';
+@use 'animations';
+@use 'layout';
+@use 'typography';
 
-@import 'header';
-@import 'menus';
-@import 'breadcrumbs';
-@import 'content';
-@import 'pagination';
-@import 'comments';
-@import 'footer';
+@use 'header';
+@use 'menus';
+@use 'breadcrumbs';
+@use 'content';
+@use 'pagination';
+@use 'comments';
+@use 'footer';
 
-@import 'forms';
-@import 'images';
-@import 'widgets';
-@import 'utility';
-@import 'cta-modal';
-@import 'print';
+@use 'forms';
+@use 'images';
+@use 'widgets';
+@use 'utility';
+@use 'cta-modal';
+@use 'print';
