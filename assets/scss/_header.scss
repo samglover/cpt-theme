@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .site-preheader {
   background-color: var(--wp--preset--color--secondary);
 }
