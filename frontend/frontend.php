@@ -70,13 +70,21 @@ function has_post_header() {
 	return false;
 }
 
-// add_filter( 'pre_get_document_title', 'cpt_no_title_tag' );
-function cpt_no_title_tag( $title ) {
-	if ( current_action() !== 'wp_head' ) {
+add_filter( 'pre_get_document_title', 'cpt_no_title_title_tag' );
+/**
+ * Uses the first 15 words of the content for the `title` tag if there is no post title.
+ *
+ * @param string $title The post title.
+ * @return string
+ */
+function cpt_no_title_title_tag( $title ) {
+	if (
+		! doing_action( 'wp_head' ) ||
+		! is_singular() ||
+		has_post_title()
+	) {
 		return $title;
 	}
-	if ( ! is_singular() || ! empty( $title ) ) {
-		return $title;
-	}
+
 	return wp_trim_words( wp_strip_all_tags( get_the_content() ), 15, '…' );
 }
