@@ -15,6 +15,7 @@ All notable changes to this theme will be documented in this file. The format is
   - Doesn't output the title container if there is no title or thumbnail
   - Makes the post date in the byline into a link to the post
   - Uses an excerpt of the post content for the breadcrumb label and `<title>` tag
+- `#page-content` now has `word-break: break-word;` to address the edge case where extremely long words could overflow their container
 
 ### Removed
 - Now that WordPress adds global padding/layout classes to the admin editor, the `/assets/js/admin-editor-classes.js` script is no longer necessary

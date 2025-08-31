@@ -7,6 +7,10 @@ html {
   font-family: sans-serif;
 }
 
+:where(#page-content) {
+  word-break: break-word;
+}
+
 a {
   text-underline-offset: .15em;
 }
