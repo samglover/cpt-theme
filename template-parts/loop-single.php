@@ -10,15 +10,24 @@
 
 ?>
 
+<?php
+$has_post_header = has_post_header();
+$has_post_title  = has_post_title();
+?>
+
 <article id="content" <?php post_class(); ?>>
-	<header class="page-header has-global-padding is-layout-constrained">
-		<?php
-		the_title( '<h1 class="entry-title wp-block-post-title">', '</h1>' );
-		if ( has_post_thumbnail() ) {
-			the_post_thumbnail();
-		}
-		?>
-	</header>
+	<?php if ( $has_post_header ) { ?>
+		<header class="page-header has-global-padding is-layout-constrained">
+			<?php
+			if ( $has_post_title ) {
+				the_title( '<h1 class="entry-title wp-block-post-title">', '</h1>' );
+			}
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail();
+			}
+			?>
+		</header>
+	<?php } ?>
 	<div class="entry-content wp-block-post-content has-global-padding is-layout-constrained">
 		<?php the_content(); ?>
 		<div class="clearfix"></div>

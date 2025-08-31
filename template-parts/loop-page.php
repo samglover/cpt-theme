@@ -10,9 +10,11 @@
 
 ?>
 
+<?php $has_page_header = has_post_header(); ?>
+
 <article id="content" <?php post_class(); ?>>
 	<?php
-	$blocks         = parse_blocks( $post->post_content );
+	$blocks              = parse_blocks( $post->post_content );
 	$page_header_classes = 'page-header has-global-padding is-layout-constrained';
 
 	if ( is_front_page() ) {
@@ -24,7 +26,8 @@
 	}
 
 	if (
-		! $blocks || (
+		(
+			! $blocks || (
 			$blocks && (
 				( 'core/cover' !== $blocks[0]['blockName'] )
 				&& (
@@ -35,7 +38,9 @@
 					)
 				)
 			)
-		)
+			)
+		) &&
+		$has_page_header
 	) {
 		?>
 		<header 
