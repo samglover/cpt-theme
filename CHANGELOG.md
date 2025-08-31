@@ -2,7 +2,7 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
-## 3.3.2
+## 3.3.2 - 2025-08-31
 
 ### Added
 - Max-width utility classes corresponding to breakpoints
