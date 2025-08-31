@@ -33,8 +33,9 @@ function breadcrumbs( $separator = '/' ) {
 		if ( has_post_title() ) {
 			$label = get_the_title();
 		} else {
-			$label .= wp_trim_words( wp_strip_all_tags( get_the_content() ), 15, '…' );
+			$label = wp_trim_words( wp_strip_all_tags( get_the_content() ), 15, '…' );
 		}
+
 		if ( get_query_var( 'page' ) ) {
 			$label .= ' (' . $page_label . ' ' . get_query_var( 'page' ) . ')';
 		}
