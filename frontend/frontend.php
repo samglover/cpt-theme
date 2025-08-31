@@ -35,3 +35,37 @@ function read_more_link() {
 	<?php
 	return ob_get_clean();
 }
+
+
+/**
+ * Checks to see if the post has a title. Must be used in the loop.
+ *
+ * @return bool
+ */
+function has_post_title() {
+	if ( ! in_the_loop() ) {
+		return;
+	}
+
+	if ( ! empty( get_the_title() ) ) {
+		return true;
+	}
+
+	return false;
+}
+/**
+ * Checks to see if the post has a title or thumnail. Must be used in the loop.
+ *
+ * @return bool
+ */
+function has_post_header() {
+	if ( ! in_the_loop() ) {
+		return;
+	}
+
+	if ( has_post_title() || has_post_thumbnail() ) {
+		return true;
+	}
+
+	return false;
+}
