@@ -13,14 +13,14 @@
 <article id="content" <?php post_class(); ?>>
 	<?php
 	$blocks         = parse_blocks( $post->post_content );
-	$header_classes = 'page-header has-global-padding is-layout-constrained';
+	$page_header_classes = 'page-header has-global-padding is-layout-constrained';
 
 	if ( is_front_page() ) {
-		$header_classes .= ' screen-reader-text';
+		$page_header_classes .= ' screen-reader-text';
 	}
 
 	if ( has_post_thumbnail() ) {
-		$header_classes .= ' has-background-image alignfull';
+		$page_header_classes .= ' has-background-image alignfull';
 	}
 
 	if (
@@ -39,7 +39,7 @@
 	) {
 		?>
 		<header 
-			class="<?php echo esc_attr( $header_classes ); ?>"
+			class="<?php echo esc_attr( $page_header_classes ); ?>"
 			<?php if ( has_post_thumbnail() ) { ?>
 				style="background-image: url('<?php echo esc_url( wp_get_attachment_image_url( get_post_thumbnail_id(), 'full' ) ); ?>');"
 			<?php } ?>
