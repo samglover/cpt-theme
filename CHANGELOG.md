@@ -12,6 +12,7 @@ All notable changes to this theme will be documented in this file. The format is
 - Migrated `@import` SCSS rules to `@use`
 - Consolidated `_customize-cpt.scss` styles into `cpt.scss`
 - Addresses the edge case where a post or page has no title:
+  - Doesn't output the title container if there is no title or thumbnail
   - Makes the post date in the byline into a link to the post
   - Uses an excerpt of the post content for the breadcrumb label and `<title>` tag
 
