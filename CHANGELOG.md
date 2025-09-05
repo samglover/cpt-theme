@@ -3,7 +3,13 @@
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
 
-## 3.3.3 -2025-09-01
+## 3.3.4 - 2025-09-05
+
+### Fixed
+- A JavaScript bug when the primary menu is disabled
+
+
+## 3.3.3 - 2025-09-01
 
 ### Changed
 - Add `flex-wrap: wrap;` to menus
