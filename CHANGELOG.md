@@ -2,6 +2,11 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+## 3.3.5 - 2025-09-18
+
+### Fixed
+- Wrap sticky header script in `wp.domReady()` so the admin bar can be found in the DOM
+
 
 ## 3.3.4 - 2025-09-05
 
