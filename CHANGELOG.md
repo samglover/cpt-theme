@@ -6,6 +6,7 @@ All notable changes to this theme will be documented in this file. The format is
 
 ### Changed
 - Reduce default menu y gap
+- Hide site logo alt text while the `img` element is loading
 
 
 ## 3.3.5 - 2025-09-18
