@@ -4,7 +4,7 @@
 .menu {
   display: flex;
   flex-wrap: wrap;
-  gap: $spacing-xs $spacing-sm;
+  gap: calc($spacing-xxs / 2) $spacing-sm;
   line-height: $line-height-normal;
   list-style: none;
   margin: 0;

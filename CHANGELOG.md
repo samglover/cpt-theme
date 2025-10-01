@@ -2,6 +2,12 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+## 3.3.6 - 2025-10-01
+
+### Changed
+- Reduce default menu y gap
+
+
 ## 3.3.5 - 2025-09-18
 
 ### Fixed
