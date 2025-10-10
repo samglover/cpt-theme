@@ -5,6 +5,9 @@ All notable changes to this theme will be documented in this file. The format is
 
 ## 3.3.6 - pending
 
+## Added
+- Two new options: (1) open external links in a new tab, and (2) add an icon to external links. These are disabled by default and use the DOMDocument class to parse the HTML safely.
+
 ### Changed
 - Updated all the icons in `assets/images` to be based on a 32px square canvase with 6px thick lines. All the updated icons now have black, 50% opaque, and white versions, plus a SlateGray version for the comment icon so it is the same color as the other post meta. This involved some references to the icon files in `_frontend.scss` and `_menus.scss`. *Note: not all the icons are actually used. Some are included for convenience when building child themes and plugins.*
 

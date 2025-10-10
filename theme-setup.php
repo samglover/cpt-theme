@@ -83,15 +83,17 @@ add_action( 'after_switch_theme', 'default_options' );
  */
 function default_options() {
 	$default_options = array(
-		'cpt_sites_sticky_header'                 => false,
-		'cpt_sites_show_site_title'               => true,
-		'cpt_sites_show_primary_menu'             => true,
-		'cpt_sites_show_secondary_menu'           => false,
-		'cpt_sites_show_primary_menu_cta'         => false,
-		'cpt_sites_primary_menu_cta_text_color'   => 'White',
-		'cpt_sites_primary_menu_cta_button_color' => 'Coral',
-		'cpt_sites_primary_menu_cta_text'         => 'Contact Us',
-		'cpt_sites_primary_menu_cta_style'        => 'link',
+		'cpt_sites_sticky_header'                  => false,
+		'cpt_sites_show_site_title'                => true,
+		'cpt_sites_show_primary_menu'              => true,
+		'cpt_sites_show_secondary_menu'            => false,
+		'cpt_sites_show_primary_menu_cta'          => false,
+		'cpt_sites_primary_menu_cta_text_color'    => 'White',
+		'cpt_sites_primary_menu_cta_button_color'  => 'Coral',
+		'cpt_sites_primary_menu_cta_text'          => 'Contact Us',
+		'cpt_sites_primary_menu_cta_style'         => 'link',
+		'cpt_sites_open_external_links_in_new_tab' => false,
+		'cpt_sites_show_external_link_icon'        => false,
 		// Fonts moved to theme.json in 3.0.
 		// Colors moved to theme.json in 3.0.
 	);
