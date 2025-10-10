@@ -2,7 +2,7 @@
 
 .comment-count {
   .comments-icon {
-    background-image: url(../images/comment.svg);
+    background-image: url(../images/comment-slategray.svg);
     background-position: contain;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -14,14 +14,12 @@
   }
 
   a {
+    color: $light-text;
     text-decoration: none;
 
     &:hover {
+      color: $link-hover;
       text-decoration: none;
-      
-      svg {
-        fill: $link-hover;
-      }
     }
   }
 }

@@ -84,7 +84,7 @@
       gap: $spacing-tiny;
 
       &::after {
-        background-image: url('../images/close-dark.svg');
+        background-image: url('../images/close-opaque.svg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: 50%;
@@ -123,7 +123,7 @@
       &:focus,
       &:active {
         background-color: LightGray;
-        background-image: url('../images/close.svg');
+        background-image: url('../images/close-white.svg');
       }
       
       &:hover:not(:active),
@@ -332,7 +332,7 @@
 
       .submenu-dismiss {
         background-color: LightGray;
-        background-image: url('../images/close.svg');
+        background-image: url('../images/close-white.svg');
         height: $font-size-xl;
         position: absolute;
           right: $spacing-xs;
