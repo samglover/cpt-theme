@@ -3,7 +3,7 @@
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
 
-## 3.3.6 - pending
+## 3.3.7 - 2025-10-10
 
 ## Added
 - Two new options: (1) open external links in a new tab, and (2) add an icon to external links. These are disabled by default and use the DOMDocument class to parse the HTML safely.
