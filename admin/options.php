@@ -160,7 +160,7 @@ function site_appearance_init() {
 		'cpt-theme-appearance'
 	);
 
-		register_setting( 'cpt_theme', 'cpt_sites_open_external_links_in_new_tab' );
+		register_setting( 'cpt-theme', 'cpt_sites_open_external_links_in_new_tab' );
 		add_settings_field(
 			'cpt_sites_open_external_links_in_new_tab',
 			'<label for="cpt_sites_open_external_links_in_new_tab">' . esc_html__( 'External link behavior', 'cpt-theme' ) . '</label>',
@@ -169,7 +169,7 @@ function site_appearance_init() {
 			'cpt-sites-content'
 		);
 
-		register_setting( 'cpt_theme', 'cpt_sites_show_external_link_icon' );
+		register_setting( 'cpt-theme', 'cpt_sites_show_external_link_icon' );
 		add_settings_field(
 			'cpt_sites_show_external_link_icon',
 			'<label for="cpt_sites_show_external_link_icon">' . esc_html__( 'External link icon', 'cpt-theme' ) . '</label>',
@@ -469,7 +469,7 @@ function cpt_sites_open_external_links_in_new_tab() {
 				name="cpt_sites_open_external_links_in_new_tab" 
 				id="cpt_sites_open_external_links_in_new_tab" 
 				type="checkbox"
-				value="0"
+				value="1"
 				<?php checked( get_option( 'cpt_sites_open_external_links_in_new_tab' ) ); ?>
 			>
 			<?php esc_html_e( 'Open external links in a new tab', 'cpt-theme' ); ?>
@@ -486,7 +486,7 @@ function cpt_sites_show_external_link_icon() {
 				name="cpt_sites_show_external_link_icon" 
 				id="cpt_sites_show_external_link_icon" 
 				type="checkbox" 
-				value="0"
+				value="1"
 				<?php checked( get_option( 'cpt_sites_show_external_link_icon' ) ); ?>
 			>
 			<?php
