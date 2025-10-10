@@ -1,0 +1,19 @@
+// @use 'variables' as *;
+
+.cpt-icon {
+	background-position: contain;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+
+	&.external-link {
+		background-image: url(../images/external-link-opaque.svg);
+		background-position: bottom;
+		background-size: .6666em;
+		margin-left: .2em;
+		opacity: .5;
+		width: .6666em;
+	}
+}
