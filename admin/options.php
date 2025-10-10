@@ -31,127 +31,152 @@ add_action( 'admin_init', 'site_appearance_init' );
 function site_appearance_init() {
 	add_settings_section(
 		'cpt-sites-header',
-		esc_html__( 'Theme Options', 'cpt-theme' ),
+		esc_html__( 'Header options', 'cpt-theme' ),
 		'cpt_sites_header',
 		'cpt-theme-appearance'
 	);
 
-	register_setting( 'cpt-theme', 'cpt_sites_sticky_header' );
-	add_settings_field(
-		'cpt_sites_sticky_header',
-		'<label for="cpt_sites_sticky_header">' . esc_html__( 'Sticky Header', 'cpt-theme' ) . '</label>',
-		'cpt_sites_sticky_header',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
+		register_setting( 'cpt-theme', 'cpt_sites_sticky_header' );
+		add_settings_field(
+			'cpt_sites_sticky_header',
+			'<label for="cpt_sites_sticky_header">' . esc_html__( 'Sticky Header', 'cpt-theme' ) . '</label>',
+			'cpt_sites_sticky_header',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_show_preheader' );
+		add_settings_field(
+			'cpt_sites_show_preheader',
+			'<label for="cpt_sites_show_preheader">' . esc_html__( 'Preheader', 'cpt-theme' ) . '</label>',
+			'cpt_sites_show_preheader',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_show_site_title' );
+		add_settings_field(
+			'cpt_sites_show_site_title',
+			'<label for="cpt_sites_show_site_title">' . esc_html__( 'Site Title', 'cpt-theme' ) . '</label>',
+			'cpt_sites_show_site_title',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_show_primary_menu' );
+		add_settings_field(
+			'cpt_sites_show_primary_menu',
+			'<label for="cpt_sites_show_primary_menu">' . esc_html__( 'Primary Menu (in Header)', 'cpt-theme' ) . '</label>',
+			'cpt_sites_show_primary_menu',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_show_primary_menu_cta' );
+		add_settings_field(
+			'cpt_sites_show_primary_menu_cta',
+			'<label for="cpt_sites_show_primary_menu_cta">' . esc_html__( 'Header CTA', 'cpt-theme' ) . '</label>',
+			'cpt_sites_show_primary_menu_cta',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_text' );
+		add_settings_field(
+			'cpt_sites_primary_menu_cta_text',
+			'<label for="cpt_sites_primary_menu_cta_text">' . esc_html__( 'Header CTA Text', 'cpt-theme' ) . '</label>',
+			'cpt_sites_primary_menu_cta_text',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_text_color' );
+		add_settings_field(
+			'cpt_sites_primary_menu_cta_text_color',
+			'<label for="cpt_sites_primary_menu_cta_text_color">' . esc_html__( 'Header CTA Text Color', 'cpt-theme' ) . '</label>',
+			'cpt_sites_primary_menu_cta_text_color',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_button_color' );
+		add_settings_field(
+			'cpt_sites_primary_menu_cta_button_color',
+			'<label for="cpt_sites_primary_menu_cta_button_color">' . esc_html__( 'Header CTA Button Color', 'cpt-theme' ) . '</label>',
+			'cpt_sites_primary_menu_cta_button_color',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_url' );
+		add_settings_field(
+			'cpt_sites_primary_menu_cta_url',
+			'<label for="cpt_sites_primary_menu_cta_url">' . esc_html__( 'Header CTA URL', 'cpt-theme' ) . '</label>',
+			'cpt_sites_primary_menu_cta_url',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_style' );
+		add_settings_field(
+			'cpt_sites_primary_menu_cta_style',
+			'<label for="cpt_sites_primary_menu_cta_style">' . esc_html__( 'Header CTA Style', 'cpt-theme' ) . '</label>',
+			'cpt_sites_primary_menu_cta_style',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_code' );
+		add_settings_field(
+			'cpt_sites_primary_menu_cta_code',
+			'<label for="cpt_sites_primary_menu_cta_code">' . esc_html__( 'Header CTA Code', 'cpt-theme' ) . '</label>',
+			'cpt_sites_primary_menu_cta_code',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_show_secondary_menu' );
+		add_settings_field(
+			'cpt_sites_show_secondary_menu',
+			'<label for="cpt_sites_show_secondary_menu">' . esc_html__( 'Secondary Menu (Below Header)', 'cpt-theme' ) . '</label>',
+			'cpt_sites_show_secondary_menu',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_show_breadcrumbs' );
+		add_settings_field(
+			'cpt_sites_show_breadcrumbs',
+			'<label for="cpt_sites_show_breadcrumbs">' . esc_html__( 'Breadcrumbs', 'cpt-theme' ) . '</label>',
+			'cpt_sites_show_breadcrumbs',
+			'cpt-theme-appearance',
+			'cpt-sites-header'
+		);
+
+	add_settings_section(
+		'cpt-sites-content',
+		esc_html__( 'Content options', 'cpt-theme' ),
+		'cpt_sites_content',
+		'cpt-theme-appearance'
 	);
 
-	register_setting( 'cpt-theme', 'cpt_sites_show_preheader' );
-	add_settings_field(
-		'cpt_sites_show_preheader',
-		'<label for="cpt_sites_show_preheader">' . esc_html__( 'Preheader', 'cpt-theme' ) . '</label>',
-		'cpt_sites_show_preheader',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
-	);
+		register_setting( 'cpt_theme', 'cpt_sites_open_external_links_in_new_tab' );
+		add_settings_field(
+			'cpt_sites_open_external_links_in_new_tab',
+			'<label for="cpt_sites_open_external_links_in_new_tab">' . esc_html__( 'Open external links in a new tab', 'cpt-theme' ) . '</label>',
+			'cpt_sites_open_external_links_in_new_tab',
+			'cpt-theme-appearance',
+			'cpt-sites-content'
+		);
 
-	register_setting( 'cpt-theme', 'cpt_sites_show_site_title' );
-	add_settings_field(
-		'cpt_sites_show_site_title',
-		'<label for="cpt_sites_show_site_title">' . esc_html__( 'Site Title', 'cpt-theme' ) . '</label>',
-		'cpt_sites_show_site_title',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
-	);
-
-	register_setting( 'cpt-theme', 'cpt_sites_show_primary_menu' );
-	add_settings_field(
-		'cpt_sites_show_primary_menu',
-		'<label for="cpt_sites_show_primary_menu">' . esc_html__( 'Primary Menu (in Header)', 'cpt-theme' ) . '</label>',
-		'cpt_sites_show_primary_menu',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
-	);
-
-	register_setting( 'cpt-theme', 'cpt_sites_show_primary_menu_cta' );
-	add_settings_field(
-		'cpt_sites_show_primary_menu_cta',
-		'<label for="cpt_sites_show_primary_menu_cta">' . esc_html__( 'Header CTA', 'cpt-theme' ) . '</label>',
-		'cpt_sites_show_primary_menu_cta',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
-	);
-
-	register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_text' );
-	add_settings_field(
-		'cpt_sites_primary_menu_cta_text',
-		'<label for="cpt_sites_primary_menu_cta_text">' . esc_html__( 'Header CTA Text', 'cpt-theme' ) . '</label>',
-		'cpt_sites_primary_menu_cta_text',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
-	);
-
-	register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_text_color' );
-	add_settings_field(
-		'cpt_sites_primary_menu_cta_text_color',
-		'<label for="cpt_sites_primary_menu_cta_text_color">' . esc_html__( 'Header CTA Text Color', 'cpt-theme' ) . '</label>',
-		'cpt_sites_primary_menu_cta_text_color',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
-	);
-
-	register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_button_color' );
-	add_settings_field(
-		'cpt_sites_primary_menu_cta_button_color',
-		'<label for="cpt_sites_primary_menu_cta_button_color">' . esc_html__( 'Header CTA Button Color', 'cpt-theme' ) . '</label>',
-		'cpt_sites_primary_menu_cta_button_color',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
-	);
-
-	register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_url' );
-	add_settings_field(
-		'cpt_sites_primary_menu_cta_url',
-		'<label for="cpt_sites_primary_menu_cta_url">' . esc_html__( 'Header CTA URL', 'cpt-theme' ) . '</label>',
-		'cpt_sites_primary_menu_cta_url',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
-	);
-
-	register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_style' );
-	add_settings_field(
-		'cpt_sites_primary_menu_cta_style',
-		'<label for="cpt_sites_primary_menu_cta_style">' . esc_html__( 'Header CTA Style', 'cpt-theme' ) . '</label>',
-		'cpt_sites_primary_menu_cta_style',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
-	);
-
-	register_setting( 'cpt-theme', 'cpt_sites_primary_menu_cta_code' );
-	add_settings_field(
-		'cpt_sites_primary_menu_cta_code',
-		'<label for="cpt_sites_primary_menu_cta_code">' . esc_html__( 'Header CTA Code', 'cpt-theme' ) . '</label>',
-		'cpt_sites_primary_menu_cta_code',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
-	);
-
-	register_setting( 'cpt-theme', 'cpt_sites_show_secondary_menu' );
-	add_settings_field(
-		'cpt_sites_show_secondary_menu',
-		'<label for="cpt_sites_show_secondary_menu">' . esc_html__( 'Secondary Menu (Below Header)', 'cpt-theme' ) . '</label>',
-		'cpt_sites_show_secondary_menu',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
-	);
-
-	register_setting( 'cpt-theme', 'cpt_sites_show_breadcrumbs' );
-	add_settings_field(
-		'cpt_sites_show_breadcrumbs',
-		'<label for="cpt_sites_show_breadcrumbs">' . esc_html__( 'Breadcrumbs', 'cpt-theme' ) . '</label>',
-		'cpt_sites_show_breadcrumbs',
-		'cpt-theme-appearance',
-		'cpt-sites-header'
-	);
+		register_setting( 'cpt_theme', 'cpt_sites_show_external_link_icon' );
+		add_settings_field(
+			'cpt_sites_show_external_link_icon',
+			'<label for="cpt_sites_show_external_link_icon">' . esc_html__( 'Indicate external links with an icon', 'cpt-theme' ) . '</label>',
+			'cpt_sites_show_external_link_icon',
+			'cpt-theme-appearance',
+			'cpt-sites-content'
+		);
 }
 
 /**
@@ -185,7 +210,7 @@ function site_appearance() {
 }
 
 /**
- * Outputs the header (empty).
+ * Outputs the header options header (empty).
  */
 function cpt_sites_header() {
 }
@@ -425,6 +450,45 @@ function cpt_sites_show_breadcrumbs() {
 				<?php checked( get_option( 'cpt_sites_show_breadcrumbs' ) ); ?>
 			>
 			<?php esc_html_e( 'Show breadcrumb navigation below the header.', 'cpt-theme' ); ?>
+		</label>
+	</fieldset>
+	<?php
+}
+
+/**
+ * Outputs the Content options header (empty).
+ */
+function cpt_sites_content() {
+}
+
+function cpt_sites_open_external_links_in_new_tab() {
+	?>
+	<fieldset>
+		<label for="cpt_sites_open_external_links_in_new_tab">
+			<input 
+				name="cpt_sites_open_external_links_in_new_tab" 
+				id="cpt_sites_open_external_links_in_new_tab" 
+				type="checkbox"
+				value="0"
+				<?php checked( get_option( 'cpt_sites_open_external_links_in_new_tab' ) ); ?>
+			>
+		</label>
+	</fieldset>
+	<?php
+}
+
+function cpt_sites_show_external_link_icon() {
+	?>
+	<fieldset>
+		<label for="cpt_sites_show_external_link_icon">
+			<input 
+				name="cpt_sites_show_external_link_icon" 
+				id="cpt_sites_show_external_link_icon" 
+				type="checkbox" 
+				value="0"
+				<?php checked( get_option( 'cpt_sites_show_external_link_icon' ) ); ?>
+			>
+			<?php esc_html_e( '<icon>', 'cpt-theme' ); ?>
 		</label>
 	</fieldset>
 	<?php
