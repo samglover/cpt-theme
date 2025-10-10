@@ -163,7 +163,7 @@ function site_appearance_init() {
 		register_setting( 'cpt_theme', 'cpt_sites_open_external_links_in_new_tab' );
 		add_settings_field(
 			'cpt_sites_open_external_links_in_new_tab',
-			'<label for="cpt_sites_open_external_links_in_new_tab">' . esc_html__( 'Open external links in a new tab', 'cpt-theme' ) . '</label>',
+			'<label for="cpt_sites_open_external_links_in_new_tab">' . esc_html__( 'External link behavior', 'cpt-theme' ) . '</label>',
 			'cpt_sites_open_external_links_in_new_tab',
 			'cpt-theme-appearance',
 			'cpt-sites-content'
@@ -172,7 +172,7 @@ function site_appearance_init() {
 		register_setting( 'cpt_theme', 'cpt_sites_show_external_link_icon' );
 		add_settings_field(
 			'cpt_sites_show_external_link_icon',
-			'<label for="cpt_sites_show_external_link_icon">' . esc_html__( 'Indicate external links with an icon', 'cpt-theme' ) . '</label>',
+			'<label for="cpt_sites_show_external_link_icon">' . esc_html__( 'External link icon', 'cpt-theme' ) . '</label>',
 			'cpt_sites_show_external_link_icon',
 			'cpt-theme-appearance',
 			'cpt-sites-content'
@@ -472,6 +472,7 @@ function cpt_sites_open_external_links_in_new_tab() {
 				value="0"
 				<?php checked( get_option( 'cpt_sites_open_external_links_in_new_tab' ) ); ?>
 			>
+			<?php esc_html_e( 'Open external links in a new tab', 'cpt-theme' ); ?>
 		</label>
 	</fieldset>
 	<?php
@@ -488,7 +489,13 @@ function cpt_sites_show_external_link_icon() {
 				value="0"
 				<?php checked( get_option( 'cpt_sites_show_external_link_icon' ) ); ?>
 			>
-			<?php esc_html_e( '<icon>', 'cpt-theme' ); ?>
+			<?php
+				printf(
+					// Translators: %s is a sample link with the icon.
+					esc_html__( 'Add an icon (%s) to external links', 'cpt-theme' ),
+					'<a href="" style="pointer-events: none;">link<i class="cpt-icon external-link"></i></a>'
+				);
+			?>
 		</label>
 	</fieldset>
 	<?php
