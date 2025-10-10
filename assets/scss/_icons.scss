@@ -9,11 +9,11 @@
 	width: 1em;
 
 	&.external-link {
-		background-image: url(../images/external-link-opaque.svg);
+		background-image: url(../images/external-link-thin-black.svg);
 		background-position: bottom;
 		background-size: .6666em;
 		margin-left: .2em;
-		opacity: .5;
+		opacity: .25;
 		width: .6666em;
 	}
 }
