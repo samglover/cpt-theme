@@ -2,6 +2,13 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+
+## 3.3.6 - pending
+
+### Changed
+- Updated all the icons in `assets/images` to be based on a 32px square canvase with 6px thick lines. All the updated icons now have black, 50% opaque, and white versions, plus a SlateGray version for the comment icon so it is the same color as the other post meta. This involved some references to the icon files in `_frontend.scss` and `_menus.scss`. *Note: not all the icons are actually used. Some are included for convenience when building child themes and plugins.*
+
+
 ## 3.3.6 - 2025-10-01
 
 ### Changed
