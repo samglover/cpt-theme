@@ -2,6 +2,11 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+## 3.3.8 - 2025-11-01
+
+## Changed
+- Set image width to 100% on image blocks with `.size-full`
+
 
 ## 3.3.7 - 2025-10-10
 

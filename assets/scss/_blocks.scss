@@ -30,6 +30,14 @@
   }
 }
 
+.wp-block-image {
+  &.size-full {
+    img {
+      width: 100%;
+    }
+  }
+}
+
 .wp-block-list {
   li::marker {
     color: $light-text;
