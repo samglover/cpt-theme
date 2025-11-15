@@ -160,6 +160,24 @@ function site_appearance_init() {
 		'cpt-theme-appearance'
 	);
 
+		register_setting( 'cpt-theme', 'cpt_sites_show_categories' );
+		add_settings_field(
+			'cpt_sites_show_categories',
+			'<label for="cpt_sites_show_categories">' . esc_html__( 'Show categories', 'cpt-theme' ) . '</label>',
+			'cpt_sites_show_categories',
+			'cpt-theme-appearance',
+			'cpt-sites-content'
+		);
+
+		register_setting( 'cpt-theme', 'cpt_sites_show_tags' );
+		add_settings_field(
+			'cpt_sites_show_tags',
+			'<label for="cpt_sites_show_tags">' . esc_html__( 'Show tags', 'cpt-theme' ) . '</label>',
+			'cpt_sites_show_tags',
+			'cpt-theme-appearance',
+			'cpt-sites-content'
+		);
+
 		register_setting( 'cpt-theme', 'cpt_sites_open_external_links_in_new_tab' );
 		add_settings_field(
 			'cpt_sites_open_external_links_in_new_tab',
@@ -459,6 +477,40 @@ function cpt_sites_show_breadcrumbs() {
  * Outputs the Content options header (empty).
  */
 function cpt_sites_content() {
+}
+
+function cpt_sites_show_categories() {
+	?>
+	<fieldset>
+		<label for="cpt_sites_show_categories">
+			<input 
+				name="cpt_sites_show_categories" 
+				id="cpt_sites_show_categories" 
+				type="checkbox"
+				value="1"
+				<?php checked( get_option( 'cpt_sites_show_categories' ) ); ?>
+			>
+			<?php esc_html_e( 'Display categories on blog posts', 'cpt-theme' ); ?>
+		</label>
+	</fieldset>
+	<?php
+}
+
+function cpt_sites_show_tags() {
+	?>
+	<fieldset>
+		<label for="cpt_sites_show_tags">
+			<input 
+				name="cpt_sites_show_tags" 
+				id="cpt_sites_show_tags" 
+				type="checkbox"
+				value="1"
+				<?php checked( get_option( 'cpt_sites_show_tags' ) ); ?>
+			>
+			<?php esc_html_e( 'Display tags on blog posts', 'cpt-theme' ); ?>
+		</label>
+	</fieldset>
+	<?php
 }
 
 function cpt_sites_open_external_links_in_new_tab() {

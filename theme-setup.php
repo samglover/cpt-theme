@@ -92,6 +92,8 @@ function default_options() {
 		'cpt_sites_primary_menu_cta_button_color'  => 'Coral',
 		'cpt_sites_primary_menu_cta_text'          => 'Contact Us',
 		'cpt_sites_primary_menu_cta_style'         => 'link',
+		'cpt_sites_show_categories'                => true,
+		'cpt_sites_show_tags'                      => true,
 		'cpt_sites_open_external_links_in_new_tab' => false,
 		'cpt_sites_show_external_link_icon'        => false,
 		// Fonts moved to theme.json in 3.0.

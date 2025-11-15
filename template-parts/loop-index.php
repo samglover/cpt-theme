@@ -42,6 +42,7 @@
 		</div>
 		<footer class="entry-footer has-global-padding is-layout-constrained">
 			<?php $comment_count = get_comment_count( get_the_ID() )['approved']; ?>
+			<?php cpt_the_terms(); ?>
 			<p class="entry-byline">
 				<?php
 				$date = get_the_date( 'F jS, Y' );

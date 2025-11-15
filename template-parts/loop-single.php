@@ -41,6 +41,7 @@ $has_post_title  = has_post_title();
 			)
 		);
 		?>
+		<?php cpt_the_terms(); ?>
 		<p class="entry-byline">
 			<?php
 			printf(
