@@ -2,6 +2,12 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+## 3.3.9 - 2025-11-15
+
+## Added
+- Output post categories and tags, plus the option not to
+
+
 ## 3.3.8 - 2025-11-01
 
 ## Changed
