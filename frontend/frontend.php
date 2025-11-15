@@ -38,6 +38,58 @@ function read_more_link() {
 
 
 /**
+ * Outputs a post's categories and tags.
+ *
+ * @param int $post_id The post id (optional).
+ */
+function cpt_the_terms( $post_id = false ) {
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
+	if ( ! $post_id ) {
+		return;
+	}
+
+	if (
+		! get_option( 'cpt_sites_show_categories' )
+		&& ! get_option( 'cpt_sites_show_tags' )
+	) {
+		return;
+	}
+
+	$terms = '';
+
+	if ( get_option( 'cpt_sites_show_categories' ) ) {
+		$categories = get_the_category();
+		if ( $categories ) {
+			foreach ( $categories as $category ) {
+				$terms .= '<a class="post-category post-tag" href="' . get_term_link( $category->term_id ) . '" rel="tag">' . esc_html( $category->name ) . '</a> ';
+			}
+		}
+	}
+
+	if ( get_option( 'cpt_sites_show_tags' ) ) {
+		$tags = get_the_tags();
+		if ( $tags ) {
+			foreach ( $tags as $tag ) {
+				$terms .= '<a class="post-tag" href="' . get_term_link( $tag->term_id ) . '" rel="tag">' . esc_html( $tag->name ) . '</a> ';
+			}
+		}
+	}
+
+	if ( empty( $terms ) ) {
+		return;
+	}
+
+	?>
+	<p class="post-terms wp-block-post-terms">
+		<?php echo wp_kses_post( $terms ); ?>
+	</p>
+	<?php
+}
+
+/**
  * Checks to see if the post has a title. Must be used in the loop.
  *
  * @return bool
@@ -60,6 +112,7 @@ function has_post_title( $post_id = false ) {
 /**
  * Checks to see if the post has a title or thumnail. Must be used in the loop.
  *
+ * @param int $post_id The post id (optional).
  * @return bool
  */
 function has_post_header( $post_id = false ) {
