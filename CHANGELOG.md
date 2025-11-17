@@ -8,6 +8,9 @@ All notable changes to this theme will be documented in this file. The format is
 ## Added
 - Output post categories and tags, plus the option not to display them
 
+## Changed
+- Add a border radius to cards
+
 
 ## 3.3.8 - 2025-11-01
 
