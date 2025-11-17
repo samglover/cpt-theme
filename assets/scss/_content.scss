@@ -57,31 +57,31 @@
 
 .post-terms {
   font-size: $font-size-xs;
+}
 
-  .post-tag {
-    border-color: currentColor;
-    border-radius: $button-border-radius;
-    border-style: solid;
-    border-width: $border-width;
-    display: inline-block;
-    padding: .125em .625em;
-    text-decoration: none;
+.post-tag {
+  border-color: currentColor;
+  border-radius: $button-border-radius;
+  border-style: solid;
+  border-width: $border-width;
+  display: inline-block;
+  padding: .125em .625em;
+  text-decoration: none;
 
-    &:not(:hover, .post-category) {
-      color: $light-text;
-    }
+  &:not(:hover, .post-category) {
+    color: $light-text;
   }
+}
 
-  .post-category {
-    background-color: $light-text;
-    border-color: $light-text;
+.post-category {
+  background-color: $light-text;
+  border-color: $light-text;
+  color: white;
+  
+  &:hover {
+    background-color: $link-hover;
+    border-color: $link-hover;
     color: white;
-    
-    &:hover {
-      background-color: $link-hover;
-      border-color: $link-hover;
-      color: white;
-    }
   }
 }
 
