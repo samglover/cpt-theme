@@ -41,10 +41,10 @@
 			<div class="clearfix"></div>
 		</div>
 		<footer class="entry-footer has-global-padding is-layout-constrained">
-			<?php $comment_count = get_comment_count( get_the_ID() )['approved']; ?>
 			<?php cpt_the_terms(); ?>
 			<p class="entry-byline">
 				<?php
+				$comment_count = get_comment_count( get_the_ID() )['approved'];
 				$date = get_the_date( 'F jS, Y' );
 				if ( ! has_post_title() ) {
 					$date = '<a href="' . esc_url( get_the_permalink() ) . '">' . $date . '</a>';
