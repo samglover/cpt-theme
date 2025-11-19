@@ -6,6 +6,7 @@ All notable changes to this theme will be documented in this file. The format is
 
 ## Changed
 - Add a border radius to cards
+- Convert post terms to flex for spacing
 
 
 ## 3.3.9 - 2025-11-15

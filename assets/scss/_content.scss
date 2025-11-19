@@ -56,15 +56,19 @@
 }
 
 .post-terms {
+  display: flex;
+  flex-wrap: wrap;
   font-size: $font-size-xs;
+  gap: $spacing-tiny;
 }
 
 .post-tag {
   border-color: currentColor;
-  border-radius: $button-border-radius;
+  border-radius: $border-radius;
   border-style: solid;
   border-width: $border-width;
   display: inline-block;
+  text-wrap: nowrap;
   padding: .125em .625em;
   text-decoration: none;
 
