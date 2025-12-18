@@ -54,7 +54,7 @@ $comment_count = get_comment_count( get_the_ID() )['approved'];
 	<?php ob_start(); ?>
 
 	<p class="logged-in-as">
-		<?php esc_html( __( 'Logged in as', 'cpt-theme' ) . ' ' . wp_get_current_user()->display_name ); ?>
+		<?php echo esc_html( __( 'Logged in as', 'cpt-theme' ) . ' ' . wp_get_current_user()->display_name ); ?>
 		<a href="<?php echo esc_url( wp_logout_url( get_permalink() ) ); ?>">
 			<?php esc_html_e( 'Log out?', 'cpt-theme' ); ?>
 		</a>
