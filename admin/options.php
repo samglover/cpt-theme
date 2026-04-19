@@ -211,7 +211,7 @@ function site_appearance() {
 	?>
 		<div id="cpt-theme-options" class="wrap">
 			<div id="cpt-theme-header">
-				<?php echo file_get_contents( CPT_THEME_DIR_PATH . 'assets/images/cpt-logo.svg' ); ?>
+				<img src="<?php echo esc_url( CPT_THEME_DIR_URI . 'assets/images/cpt-logo.svg' ); ?>" alt="<?php esc_attr_e( 'Client Power Tools Theme', 'cpt-theme' ); ?>">
 				<div id="cpt-admin-page-title">
 					<h1 id="cpt-page-title"><?php esc_html_e( 'Customize Your Site\'s Appearance', 'cpt-theme' ); ?></h1>
 					<p id="cpt-subtitle"><?php esc_html_e( 'Client Power Tools Theme', 'cpt-theme' ); ?></p>
@@ -479,6 +479,9 @@ function cpt_sites_show_breadcrumbs() {
 function cpt_sites_content() {
 }
 
+/**
+ * Show categories
+ */
 function cpt_sites_show_categories() {
 	?>
 	<fieldset>
@@ -496,6 +499,10 @@ function cpt_sites_show_categories() {
 	<?php
 }
 
+
+/**
+ * Show tags
+ */
 function cpt_sites_show_tags() {
 	?>
 	<fieldset>
@@ -513,6 +520,10 @@ function cpt_sites_show_tags() {
 	<?php
 }
 
+
+/**
+ * Open external links in a new tab
+ */
 function cpt_sites_open_external_links_in_new_tab() {
 	?>
 	<fieldset>
@@ -530,6 +541,10 @@ function cpt_sites_open_external_links_in_new_tab() {
 	<?php
 }
 
+
+/**
+ * Show an icon on external links
+ */
 function cpt_sites_show_external_link_icon() {
 	?>
 	<fieldset>

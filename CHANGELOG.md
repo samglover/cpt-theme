@@ -2,28 +2,35 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+
+## 3.3.11 - 2026-04-19
+
+### Changed
+- Addressed a number of WP Coding Standards errors and warnings
+
+
 ## 3.3.10 - 2025-11-19
 
-## Changed
+### Changed
 - Add a border radius to cards
 - Convert post terms to flex for spacing
 
 
 ## 3.3.9 - 2025-11-15
 
-## Added
+### Added
 - Output post categories and tags, plus the option not to display them
 
 
 ## 3.3.8 - 2025-11-01
 
-## Changed
+### Changed
 - Set image width to 100% on image blocks with `.size-full`
 
 
 ## 3.3.7 - 2025-10-10
 
-## Added
+### Added
 - Two new options: (1) open external links in a new tab, and (2) add an icon to external links. These are disabled by default and use the DOMDocument class to parse the HTML safely.
 
 ### Changed

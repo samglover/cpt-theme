@@ -92,6 +92,7 @@ function cpt_the_terms( $post_id = false ) {
 /**
  * Checks to see if the post has a title. Must be used in the loop.
  *
+ * @param bool/int $post_id The post ID (optional).
  * @return bool
  */
 function has_post_title( $post_id = false ) {
