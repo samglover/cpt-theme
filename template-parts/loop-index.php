@@ -45,10 +45,12 @@
 			<p class="entry-byline">
 				<?php
 				$comment_count = get_comment_count( get_the_ID() )['approved'];
+
 				$date = get_the_date( 'F jS, Y' );
 				if ( ! has_post_title() ) {
 					$date = '<a href="' . esc_url( get_the_permalink() ) . '">' . $date . '</a>';
 				}
+
 				// Translators: %1$s is the author's display name. %2$s is the publication date.
 				printf(
 					'By %1$s on %2$s.',
@@ -56,6 +58,7 @@
 					/* $2%s */ wp_kses_post( $date ),
 				);
 				?>
+				
 				<?php if ( $comment_count ) { ?>
 					<span class="comment-count">
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>#comments">

@@ -54,21 +54,27 @@ $has_post_title  = has_post_title();
 			$modified_date = get_the_modified_date( 'F jS, Y' );
 
 			if ( strtotime( $modified_date ) > strtotime( $original_date ) ) {
-				printf(
-					// Translators: %s is the original publication date.
-					' ' . esc_html__( 'Originally published on %s.', 'cpt-theme' ),
-					$original_date
+				echo wp_kses_post(
+					sprintf(
+						// Translators: %s is the original publication date.
+						' ' . __( 'Originally published on %s.', 'cpt-theme' ),
+						$original_date
+					)
 				);
-				printf(
-					// Translators: %s is the date the post was last modified.
-					' ' . esc_html__( 'Last updated on %s.', 'cpt-theme' ),
-					$modified_date
+				echo wp_kses_post(
+					sprintf(
+						// Translators: %s is the date the post was last modified.
+						' ' . __( 'Last updated on %s.', 'cpt-theme' ),
+						$modified_date
+					)
 				);
 			} else {
-				printf(
-					// Translators: %s is the publication date.
-					' ' . esc_html__( 'Published on %s.', 'cpt-theme' ),
-					$original_date
+				echo wp_kses_post(
+					sprintf(
+						// Translators: %s is the publication date.
+						' ' . __( 'Published on %s.', 'cpt-theme' ),
+						$original_date
+					)
 				);
 			}
 			?>
