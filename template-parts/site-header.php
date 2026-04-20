@@ -48,10 +48,10 @@ $show_cta          = get_option( 'cpt_sites_show_primary_menu_cta' );
 				<?php } ?>
 				<div class="<?php echo esc_attr( $site_title_classes ); ?>">
 					<<?php echo esc_attr( $site_title_tag ); ?> class="site-title">
-						<a href="<?php echo esc_url( home_url() ); ?>"><?php echo wp_kses_post( $site_title ); ?></a>
+						<a href="<?php echo esc_url( home_url() ); ?>"><?php echo esc_html( $site_title ); ?></a>
 					</<?php echo esc_attr( $site_title_tag ); ?>>
 					<?php if ( $site_description ) { ?>
-						<p class="site-description"><?php echo wp_kses_post( $site_description ); ?></p>
+						<p class="site-description"><?php echo esc_html( $site_description ); ?></p>
 					<?php } ?>
 				</div>
 			</div>
@@ -75,7 +75,7 @@ $show_cta          = get_option( 'cpt_sites_show_primary_menu_cta' );
 							data-style="<?php echo esc_attr( get_option( 'cpt_sites_primary_menu_cta_style' ) ); ?>" 
 							href="<?php echo esc_url( get_option( 'cpt_sites_primary_menu_cta_url' ) ); ?>"
 						>
-							<?php echo wp_kses_post( get_option( 'cpt_sites_primary_menu_cta_text' ) ); ?>
+							<?php echo esc_html( get_option( 'cpt_sites_primary_menu_cta_text' ) ); ?>
 						</a>
 					<?php } ?>
 				</nav>

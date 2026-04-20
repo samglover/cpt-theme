@@ -7,6 +7,7 @@ All notable changes to this theme will be documented in this file. The format is
 
 ### Changed
 - Addressed a number of WP Coding Standards errors and warnings
+- Change `wp_kses_post` to `esc_html` in `site-header.php`
 
 
 ## 3.3.10 - 2025-11-19
