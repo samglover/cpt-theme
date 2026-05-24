@@ -2,6 +2,12 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+## 3.3.12 - 2026-05-24
+
+### Changed
+
+- Pagination styles now apply to WP query blocks
+
 
 ## 3.3.11 - 2026-04-19
 

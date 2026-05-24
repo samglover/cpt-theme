@@ -11,15 +11,17 @@
   margin: $spacing-sm 0;
 }
 
-.post-nav-links {
+.post-nav-links,
+.wp-block-query-pagination {
   margin: $spacing-xxs 0 $spacing-sm 0;
 }
 
 .nav-links,
-.post-nav-links {
+.post-nav-links,
+.wp-block-query-pagination {
   font-variant-numeric: lining-nums tabular-nums;
 
-  * {
+  *:not(.wp-block-query-pagination-numbers) {
     display: inline-grid;
     height: 2em;
     min-width: 2em;
@@ -37,7 +39,9 @@
   }
 
   .prev,
-  .next {
+  .wp-block-query-pagination-prev,
+  .next,
+  .wp-block-query-pagination-next {
     padding: $spacing-xs 1em;;
   }
 
