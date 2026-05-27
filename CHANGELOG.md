@@ -5,7 +5,7 @@ All notable changes to this theme will be documented in this file. The format is
 ## 3.3.13 - 2026-05-27
 
 ### Added
-- Style for `code` elements
+- Style for `code` elements and code blocks
 
 
 ## 3.3.12 - 2026-05-24
