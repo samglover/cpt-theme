@@ -8,6 +8,16 @@ a {
   }
 }
 
+code {
+  background-color: #eee;
+  border: $border;
+  border-radius: $field-border-radius;
+  display: inline-block;
+  font-size: $font-size-sm;
+  padding-right: $spacing-tiny;
+  padding-left: $spacing-tiny;
+}
+
 li {
   line-height: $line-height-normal;
 }
