@@ -20,7 +20,7 @@ require_once CPT_THEME_DIR_PATH . 'theme-setup.php';
 
 add_action( 'enqueue_block_assets', 'cpt_theme_block_assets' );
 /**
- * Stylesheets and scripts for blocks.
+ * Stylesheets and scripts for blocks, elements, and icons (includes normalizing stylesheet).
  */
 function cpt_theme_block_assets() {
 	wp_enqueue_style( 'cpt-theme-common', CPT_THEME_DIR_URI . 'assets/css/common.css', array(), CPT_THEME_VERSION );
@@ -41,7 +41,6 @@ add_action( 'wp_enqueue_scripts', 'cpt_theme_frontend_stylesheets_scripts' );
  * Frontend stylesheets and scripts.
  */
 function cpt_theme_frontend_stylesheets_scripts() {
-	wp_enqueue_style( 'cpt-theme-normalize', CPT_THEME_DIR_URI . 'assets/css/normalize.css', array(), CPT_THEME_VERSION );
 	wp_enqueue_style( 'cpt-theme-frontend', CPT_THEME_DIR_URI . 'assets/css/frontend.css', array(), CPT_THEME_VERSION );
 	if ( in_array( 'client-power-tools/client-power-tools.php', get_option( 'active_plugins' ), true ) ) {
 		wp_enqueue_style( 'cpt-theme-cpt', CPT_THEME_DIR_URI . 'assets/css/cpt.css', array(), CPT_THEME_VERSION );

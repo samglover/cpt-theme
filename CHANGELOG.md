@@ -7,6 +7,9 @@ All notable changes to this theme will be documented in this file. The format is
 ### Added
 - Style for `code` elements and code blocks
 
+### Changed
+- Include `normalize.css` via SCSS in `common.scss` instead of enqueueing it in `functions.php`. This makes it easier to override.
+
 
 ## 3.3.12 - 2026-05-24
 
