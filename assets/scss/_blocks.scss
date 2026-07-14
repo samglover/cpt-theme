@@ -57,3 +57,11 @@ pre.wp-block-code {
     margin: 0;
   }
 }
+
+.wp-block-search {
+  .wp-block-search__inside-wrapper {
+    align-content: center;
+    display: flex;
+    gap: $spacing-xxs;
+  }
+}
