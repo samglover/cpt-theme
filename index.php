@@ -32,7 +32,7 @@ get_header();
 			<form 
 				role="search" 
 				method="get" 
-				action="<?php echo esc_url( home_url() ); ?>http://robots.local/" 
+				action="<?php echo esc_url( home_url() ); ?>" 
 				class="wp-block-search__button-outside wp-block-search__text-button wp-block-search"
 			>
 				<label 
