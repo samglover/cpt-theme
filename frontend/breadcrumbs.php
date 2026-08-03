@@ -80,16 +80,25 @@ function breadcrumbs( $separator = '/' ) {
 			$categories = get_the_terms( $post_id, 'category' );
 
 			if ( $categories ) {
-				$category_id     = $categories[0]->term_id;
-				$category_url    = get_term_link( $category_id );
+				$category_id   = $categories[0]->term_id;
+				$category_url  = get_term_link( $category_id );
+				$category      = get_term( $category_id );
+				$breadcrumbs[] = array(
+					'label' => $category->name,
+					'url'   => get_term_link( $category_id ),
+				);
+
 				$category_parent = $categories[0]->parent;
-				while ( $category_parent ) {
-					$category        = get_term( $category_parent );
-					$breadcrumbs[]   = array(
-						'label' => $category->name,
-						'url'   => get_term_link( $category_id ),
-					);
-					$category_parent = $category->parent;
+
+				if ( $category_parent ) {
+					while ( $category_parent ) {
+						$category        = get_term( $category_parent );
+						$breadcrumbs[]   = array(
+							'label' => $category->name,
+							'url'   => get_term_link( $category_id ),
+						);
+						$category_parent = $category->parent;
+					}
 				}
 			}
 		}
