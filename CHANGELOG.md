@@ -5,7 +5,8 @@ All notable changes to this theme will be documented in this file. The format is
 ## 3.3.15 - 2026-08-03
 
 ### Fixed
-- Adds the category breadcrumb before walking through category parents
+- Added the category breadcrumb before walking through category parents
+- Added line height to `.exerpt` and `.entry-footer`
 
 
 ## 3.3.14 - 2026-07-14

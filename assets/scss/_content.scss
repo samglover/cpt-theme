@@ -126,11 +126,13 @@
   }
 
   .excerpt {
+    line-height: $line-height-normal;
     margin-top: $spacing-xxs;
     margin-bottom: $spacing-xxs;
   }
-
+  
   .entry-footer {
+    line-height: $line-height-sm;
     margin-top: 0;
     margin-bottom: 0;
   }
