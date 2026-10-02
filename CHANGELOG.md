@@ -8,6 +8,10 @@ All notable changes to this theme will be documented in this file. The format is
 - Increased the priority of `cpt_open_external_links_in_new_tab()` so it works with shortcodes
 
 
+### Changed
+- Reduce `.entry-content` bottom margin
+
+
 ## 3.3.15 - 2026-08-03
 
 ### Fixed
