@@ -7,6 +7,8 @@ All notable changes to this theme will be documented in this file. The format is
 ### Fixed
 - Increased the priority of `cpt_open_external_links_in_new_tab()` so it works with shortcodes
 
+### Added
+- `.h1` through `.h3` utility classes for font sizes
 
 ### Changed
 - Reduce `.entry-content` bottom margin
