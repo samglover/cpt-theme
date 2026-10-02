@@ -2,6 +2,12 @@
 
 All notable changes to this theme will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com) and uses [semantic versioning](https://semver.org/).
 
+## 3.3.16 - 2026-10-01
+
+### Fixed
+- Increased the priority of `cpt_open_external_links_in_new_tab()` so it works with shortcodes
+
+
 ## 3.3.15 - 2026-08-03
 
 ### Fixed

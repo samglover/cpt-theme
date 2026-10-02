@@ -152,7 +152,7 @@ function cpt_no_title_title_tag( $title_parts ) {
 }
 
 if ( get_option( 'cpt_sites_open_external_links_in_new_tab' ) ) {
-	add_filter( 'the_content', 'cpt_open_external_links_in_new_tab' );
+	add_filter( 'the_content', 'cpt_open_external_links_in_new_tab', 15 );
 	add_filter( 'the_excerpt', 'cpt_open_external_links_in_new_tab' );
 	add_filter( 'widget_text', 'cpt_open_external_links_in_new_tab' );
 	add_filter( 'widget_custom_html', 'cpt_open_external_links_in_new_tab' );
